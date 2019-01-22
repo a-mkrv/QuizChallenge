@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  TopicQuizCell.swift
 //  QuizChallenge
 //
 //  Created by Anton Makarov on 22/01/2019.
@@ -8,10 +8,6 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+class TopicQuizCell: UICollectionViewCell {
+    
 }

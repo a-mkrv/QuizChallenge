@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  TypeQuizViewController.swift
 //  QuizChallenge
 //
 //  Created by Anton Makarov on 22/01/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class TypeQuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
