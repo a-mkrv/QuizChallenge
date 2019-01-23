@@ -10,4 +10,9 @@ import UIKit
 
 class TypeQuizCell: UICollectionViewCell {
     
+    var delegate: PrepareDelegate?
+    
+    @IBAction func goChooseCategory(_ sender: Any) {
+        delegate?.scrollToCategories()
+    }
 }

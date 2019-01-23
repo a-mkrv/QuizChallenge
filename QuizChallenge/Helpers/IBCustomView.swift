@@ -42,7 +42,27 @@ import UIKit
 
 //MARK: UIImageView
 @IBDesignable class IBImageView: UIImageView {
-    @IBInspectable var cornerRadius: CGFloat = 0 { didSet { layer.cornerRadius = cornerRadius }}
+    
+    @IBInspectable var isCircle: Bool = false {
+        didSet {
+            if (!isCircle && cornerRadius > 0) {
+                return
+            }
+            layer.cornerRadius = isCircle ? frame.width / 2 : 0
+            clipsToBounds = isCircle
+        }
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            clipsToBounds = true
+            
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 0 { didSet { layer.borderWidth = borderWidth }}
+    @IBInspectable var borderColor: UIColor = .clear { didSet { layer.borderColor = borderColor.cgColor }}
 }
 
 //MARK: UITextField

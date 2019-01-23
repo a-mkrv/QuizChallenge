@@ -10,4 +10,9 @@ import UIKit
 
 class TopicQuizCell: UICollectionViewCell {
     
+    var delegate: PrepareDelegate?
+
+    @IBAction func startGame(_ sender: Any) {
+        delegate?.startGame()
+    }
 }

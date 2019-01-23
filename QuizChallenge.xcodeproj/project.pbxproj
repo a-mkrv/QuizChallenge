@@ -10,10 +10,10 @@
 		7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6221F5CFF900F76DE7 /* Question.swift */; };
 		7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6521F5D01800F76DE7 /* Quiz.swift */; };
 		7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6921F6E1F800F76DE7 /* MainViewController.swift */; };
-		7723AE6C21F70B3C00F76DE7 /* TypeQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6B21F70B3C00F76DE7 /* TypeQuizViewController.swift */; };
-		7723AE6E21F70C5D00F76DE7 /* UserQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6D21F70C5D00F76DE7 /* UserQuestionViewController.swift */; };
 		7723AE7421F7121200F76DE7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE7321F7121200F76DE7 /* NetworkManager.swift */; };
 		7740AADF21F86C5D00CDDE4A /* AdvertisingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */; };
+		7740AAE121F897CE00CDDE4A /* PrepareGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */; };
+		7740AAE321F89F4200CDDE4A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AAE221F89F4200CDDE4A /* GameViewController.swift */; };
 		77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717521F726DA008F4018 /* TypeQuizCell.swift */; };
 		77AB717821F72707008F4018 /* TopicQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717721F72707008F4018 /* TopicQuizCell.swift */; };
 		77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717A21F728A1008F4018 /* IBCustomView.swift */; };
@@ -36,10 +36,10 @@
 		7723AE6221F5CFF900F76DE7 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		7723AE6521F5D01800F76DE7 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		7723AE6921F6E1F800F76DE7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		7723AE6B21F70B3C00F76DE7 /* TypeQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeQuizViewController.swift; sourceTree = "<group>"; };
-		7723AE6D21F70C5D00F76DE7 /* UserQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionViewController.swift; sourceTree = "<group>"; };
 		7723AE7321F7121200F76DE7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingCell.swift; sourceTree = "<group>"; };
+		7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameViewController.swift; sourceTree = "<group>"; };
+		7740AAE221F89F4200CDDE4A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		77AB717521F726DA008F4018 /* TypeQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeQuizCell.swift; sourceTree = "<group>"; };
 		77AB717721F72707008F4018 /* TopicQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicQuizCell.swift; sourceTree = "<group>"; };
 		77AB717A21F728A1008F4018 /* IBCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBCustomView.swift; sourceTree = "<group>"; };
@@ -102,11 +102,11 @@
 		7723AE6821F6E18E00F76DE7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7723AE6921F6E1F800F76DE7 /* MainViewController.swift */,
-				7723AE6B21F70B3C00F76DE7 /* TypeQuizViewController.swift */,
-				7723AE6D21F70C5D00F76DE7 /* UserQuestionViewController.swift */,
 				77AB718221F75AAE008F4018 /* LoginViewController.swift */,
+				7723AE6921F6E1F800F76DE7 /* MainViewController.swift */,
 				77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */,
+				7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */,
+				7740AAE221F89F4200CDDE4A /* GameViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -340,13 +340,12 @@
 				7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */,
 				77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */,
 				7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */,
+				7740AAE321F89F4200CDDE4A /* GameViewController.swift in Sources */,
 				77AB718F21F86B18008F4018 /* AdvertisingViewController.swift in Sources */,
 				77AB718521F75C60008F4018 /* UIViewController+Extension.swift in Sources */,
 				77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */,
 				7723AE7421F7121200F76DE7 /* NetworkManager.swift in Sources */,
 				7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */,
-				7723AE6E21F70C5D00F76DE7 /* UserQuestionViewController.swift in Sources */,
-				7723AE6C21F70B3C00F76DE7 /* TypeQuizViewController.swift in Sources */,
 				77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */,
 				77AB718721F7617E008F4018 /* UIWindow+Extension.swift in Sources */,
 				77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */,
@@ -354,6 +353,7 @@
 				77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */,
 				77AB717821F72707008F4018 /* TopicQuizCell.swift in Sources */,
 				77AB718921F762E2008F4018 /* UISegue.swift in Sources */,
+				7740AAE121F897CE00CDDE4A /* PrepareGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
