@@ -15,7 +15,6 @@ extension UIWindow {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.isTranslucent = true
         navigationController.navigationBar.isHidden = true
-        navigationController.interactivePopGestureRecognizer?.delegate = nil
         
         guard animated else {
             rootViewController = navigationController
