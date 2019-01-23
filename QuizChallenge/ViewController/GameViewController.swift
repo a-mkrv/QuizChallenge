@@ -13,7 +13,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationItem.backBarButtonItem?.isEnabled = false;
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     @IBAction func cancelGame(_ sender: Any) {
