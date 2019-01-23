@@ -12,8 +12,13 @@ extension UIWindow {
     
     func switchRootViewController(_ viewController: UIViewController,  animated: Bool = true, duration: TimeInterval = 0.7, options: UIView.AnimationOptions = .transitionCrossDissolve, completion: (() -> Void)? = nil) {
         
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.isHidden = true
+        navigationController.interactivePopGestureRecognizer?.delegate = nil
+        
         guard animated else {
-            rootViewController = viewController
+            rootViewController = navigationController
             completion?()
             return
         }
@@ -21,7 +26,7 @@ extension UIWindow {
         UIView.transition(with: self, duration: duration, options: options, animations: {
             let oldState = UIView.areAnimationsEnabled
             UIView.setAnimationsEnabled(false)
-            self.rootViewController = viewController
+            self.rootViewController = navigationController
             UIView.setAnimationsEnabled(oldState)
         }) { _ in
             completion?()
