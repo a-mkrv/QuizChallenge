@@ -18,46 +18,121 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdC-a6-PGd">
-                                <rect key="frame" x="124" y="573" width="127" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QuizBackground" translatesAutoresizingMaskIntoConstraints="NO" id="q8W-D0-aMC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdC-a6-PGd" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="107" y="584" width="160" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Получить монеты"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Получить монеты">
+                                    <color key="titleColor" red="1" green="0.86323580109999998" blue="0.3263886386" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.86323580109999998" blue="0.3263886386" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="nUU-QL-0lP" kind="show" id="AoO-Ot-Acg"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8W-D0-aMC">
-                                <rect key="frame" x="67" y="60" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqv-wg-KQX" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="102" y="242" width="170" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqv-wg-KQX">
-                                <rect key="frame" x="134" y="242" width="117" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Одиночная игра"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jou-AJ-1MH">
-                                <rect key="frame" x="139" y="306" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Мультиплеер"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-eH-I6z">
-                                <rect key="frame" x="146" y="363" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Статистика"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Single Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="0.30439319349315069" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="AXm-pg-qSK" kind="show" id="ASG-fr-io7"/>
+                                    <segue destination="hdH-0D-Cfc" kind="show" id="Rsv-Yz-XtE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clW-zs-n9A">
-                                <rect key="frame" x="148" y="416" width="78" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jou-AJ-1MH" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="102" y="300" width="170" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Настройки"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Find Opponent">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="0.30439319349999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-eH-I6z" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="102" y="358" width="170" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Statistics">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="0.30439319349999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clW-zs-n9A" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="102" y="416" width="170" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="0.30439319349999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="PBe-zO-dTC" kind="show" id="irM-Be-CdO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="q8W-D0-aMC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BzW-RO-aCS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q8W-D0-aMC" secondAttribute="trailing" id="RxJ-0r-2x1"/>
+                            <constraint firstItem="q8W-D0-aMC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aiz-s7-EJV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q8W-D0-aMC" secondAttribute="bottom" id="uey-uZ-Emn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -65,20 +140,212 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Advertising View Controller-->
         <scene sceneID="JmX-2i-QbP">
             <objects>
-                <viewController id="nUU-QL-0lP" sceneMemberID="viewController">
+                <viewController id="nUU-QL-0lP" customClass="AdvertisingViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1jJ-si-Yya">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QuizBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-Ob-TIn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6o-Cw-DZ9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earn Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dK-9I-QOc">
+                                        <rect key="frame" x="87.5" y="0.0" width="200" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="xuS-QD-dxS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.89942744006849318" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gin-UY-S10">
+                                        <rect key="frame" x="10" y="17.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Udf-qm-nCe"/>
+                                            <constraint firstAttribute="height" constant="25" id="spE-ku-fWT"/>
+                                        </constraints>
+                                        <state key="normal" image="left-arrow"/>
+                                        <connections>
+                                            <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="47V-Jy-gVT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1dK-9I-QOc" secondAttribute="bottom" id="SyM-XP-A7z"/>
+                                    <constraint firstItem="1dK-9I-QOc" firstAttribute="top" secondItem="t6o-Cw-DZ9" secondAttribute="top" id="a3Z-Sg-Edc"/>
+                                    <constraint firstAttribute="height" constant="60" id="o9E-CI-GEa"/>
+                                    <constraint firstItem="1dK-9I-QOc" firstAttribute="centerX" secondItem="t6o-Cw-DZ9" secondAttribute="centerX" id="s7n-h9-GGZ"/>
+                                    <constraint firstItem="gin-UY-S10" firstAttribute="leading" secondItem="t6o-Cw-DZ9" secondAttribute="leading" constant="10" id="vA0-ja-JYT"/>
+                                    <constraint firstItem="gin-UY-S10" firstAttribute="centerY" secondItem="1dK-9I-QOc" secondAttribute="centerY" id="w0V-uz-Ljf"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dag-NG-l8H">
+                                <rect key="frame" x="75" y="100" width="152" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Ztp-bF-ce0"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="You have ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="390">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.86323580110199216" blue="0.32638863862488487" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name=".SFNSDisplay"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" coins">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="piggy-bank" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-rS-EOt">
+                                <rect key="frame" x="27" y="88" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="5a7-ng-nTI"/>
+                                    <constraint firstAttribute="width" constant="35" id="mGs-0M-0y9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   To get additional points, look through a short advertisement, share an App on a social network, or buy coins for real money." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rh-sc-QfU">
+                                <rect key="frame" x="30" y="134" width="315" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="A1x-iR-rfB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.40290560787671231" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I1F-J4-9rR">
+                                <rect key="frame" x="16" y="189" width="343" height="478"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Crx-0o-Z5b">
+                                    <size key="itemSize" width="146" height="160"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AdvertisingCell" id="ZIt-oq-iB5" customClass="AdvertisingCell" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="146" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="146" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPC-8c-Y41" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="146" height="160"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AdCoins" translatesAutoresizingMaskIntoConstraints="NO" id="BgW-43-COF">
+                                                            <rect key="frame" x="30.5" y="15" width="85" height="85"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="85" id="4Wc-Fa-PnZ"/>
+                                                                <constraint firstAttribute="height" constant="85" id="lO0-NS-ZrU"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch AD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qav-mt-6ZQ">
+                                                            <rect key="frame" x="0.0" y="110" width="146" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="zLu-zS-TmT"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+100 coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cx-4N-NiN">
+                                                            <rect key="frame" x="0.0" y="135" width="146" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="ToE-K5-BjR"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.44777397260273971" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="0.20374036815068494" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="BgW-43-COF" firstAttribute="centerX" secondItem="oPC-8c-Y41" secondAttribute="centerX" id="0Lq-fw-YfK"/>
+                                                        <constraint firstItem="5Cx-4N-NiN" firstAttribute="top" secondItem="Qav-mt-6ZQ" secondAttribute="bottom" constant="5" id="0q8-oD-bV6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Qav-mt-6ZQ" secondAttribute="trailing" id="Ecf-S6-FCq"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5Cx-4N-NiN" secondAttribute="trailing" id="FTM-ex-5U0"/>
+                                                        <constraint firstItem="Qav-mt-6ZQ" firstAttribute="leading" secondItem="oPC-8c-Y41" secondAttribute="leading" id="Jzn-EM-Pqv"/>
+                                                        <constraint firstItem="Qav-mt-6ZQ" firstAttribute="top" secondItem="BgW-43-COF" secondAttribute="bottom" constant="10" id="QEv-Xx-xYu"/>
+                                                        <constraint firstItem="5Cx-4N-NiN" firstAttribute="leading" secondItem="oPC-8c-Y41" secondAttribute="leading" id="aGQ-s7-nwS"/>
+                                                        <constraint firstItem="BgW-43-COF" firstAttribute="top" secondItem="oPC-8c-Y41" secondAttribute="top" constant="15" id="j5a-ta-C3v"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="oPC-8c-Y41" secondAttribute="trailing" id="vEV-MT-XLC"/>
+                                            <constraint firstItem="oPC-8c-Y41" firstAttribute="leading" secondItem="ZIt-oq-iB5" secondAttribute="leading" id="xIw-uA-gKO"/>
+                                            <constraint firstAttribute="bottom" secondItem="oPC-8c-Y41" secondAttribute="bottom" id="z9h-W3-8l8"/>
+                                            <constraint firstItem="oPC-8c-Y41" firstAttribute="top" secondItem="ZIt-oq-iB5" secondAttribute="top" id="zjt-Vq-Avr"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="adIcon" destination="BgW-43-COF" id="8aC-T0-KmD"/>
+                                            <outlet property="countCoinsLabel" destination="5Cx-4N-NiN" id="w0t-dj-csg"/>
+                                            <outlet property="nameLabel" destination="Qav-mt-6ZQ" id="DKR-mo-woU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="nUU-QL-0lP" id="aYh-Cf-g5u"/>
+                                    <outlet property="delegate" destination="nUU-QL-0lP" id="fsu-4J-sbf"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9UU-rS-EOt" firstAttribute="top" secondItem="t6o-Cw-DZ9" secondAttribute="bottom" constant="8" id="5UZ-mm-xt7"/>
+                            <constraint firstItem="o0E-Nv-zr1" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dag-NG-l8H" secondAttribute="trailing" constant="148" id="6oC-at-ABa"/>
+                            <constraint firstItem="o0E-Nv-zr1" firstAttribute="trailing" secondItem="4rh-sc-QfU" secondAttribute="trailing" constant="30" id="Azk-ZT-0dr"/>
+                            <constraint firstItem="dag-NG-l8H" firstAttribute="bottom" secondItem="9UU-rS-EOt" secondAttribute="bottom" constant="1" id="JBL-eT-vAo"/>
+                            <constraint firstItem="t6o-Cw-DZ9" firstAttribute="trailing" secondItem="o0E-Nv-zr1" secondAttribute="trailing" id="Jnp-M0-pbg"/>
+                            <constraint firstItem="dag-NG-l8H" firstAttribute="leading" secondItem="9UU-rS-EOt" secondAttribute="trailing" constant="13" id="LXU-fj-pdW"/>
+                            <constraint firstItem="t6o-Cw-DZ9" firstAttribute="leading" secondItem="o0E-Nv-zr1" secondAttribute="leading" id="PAs-Ft-wMh"/>
+                            <constraint firstItem="I1F-J4-9rR" firstAttribute="top" secondItem="4rh-sc-QfU" secondAttribute="bottom" constant="12" id="TRT-je-Le6"/>
+                            <constraint firstItem="o0E-Nv-zr1" firstAttribute="trailing" secondItem="bh1-Ob-TIn" secondAttribute="trailing" id="aCI-w6-xgK"/>
+                            <constraint firstItem="4rh-sc-QfU" firstAttribute="leading" secondItem="1jJ-si-Yya" secondAttribute="leading" constant="30" id="bZR-Sz-Ivn"/>
+                            <constraint firstItem="bh1-Ob-TIn" firstAttribute="top" secondItem="1jJ-si-Yya" secondAttribute="top" id="c8z-wi-5Yb"/>
+                            <constraint firstItem="9UU-rS-EOt" firstAttribute="leading" secondItem="o0E-Nv-zr1" secondAttribute="leading" constant="27" id="gHV-rt-jC1"/>
+                            <constraint firstItem="o0E-Nv-zr1" firstAttribute="trailing" secondItem="I1F-J4-9rR" secondAttribute="trailing" constant="16" id="gKw-n5-RdZ"/>
+                            <constraint firstItem="t6o-Cw-DZ9" firstAttribute="top" secondItem="o0E-Nv-zr1" secondAttribute="top" id="gjn-Ti-gCp"/>
+                            <constraint firstItem="o0E-Nv-zr1" firstAttribute="bottom" secondItem="I1F-J4-9rR" secondAttribute="bottom" id="hbr-U2-PPz"/>
+                            <constraint firstItem="o0E-Nv-zr1" firstAttribute="bottom" secondItem="bh1-Ob-TIn" secondAttribute="bottom" id="mEa-QG-2Mc"/>
+                            <constraint firstItem="bh1-Ob-TIn" firstAttribute="leading" secondItem="o0E-Nv-zr1" secondAttribute="leading" id="rn9-ta-t91"/>
+                            <constraint firstItem="4rh-sc-QfU" firstAttribute="top" secondItem="dag-NG-l8H" secondAttribute="bottom" constant="10" id="s3e-22-bbA"/>
+                            <constraint firstItem="I1F-J4-9rR" firstAttribute="leading" secondItem="o0E-Nv-zr1" secondAttribute="leading" constant="16" id="sTm-dH-xo7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="o0E-Nv-zr1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zxm-75-SvU"/>
+                    <connections>
+                        <outlet property="adCollectionView" destination="I1F-J4-9rR" id="04q-04-qi6"/>
+                        <outlet property="coinsCountLabel" destination="dag-NG-l8H" id="wud-6q-h8h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cN-dN-fYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="917"/>
+            <point key="canvasLocation" x="-349.60000000000002" y="912.5937031484259"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NNM-T2-6fb">
@@ -234,25 +501,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89n-Ja-xe7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2264.8000000000002" y="151.57421289355324"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xzf-uv-keP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AXm-pg-qSK" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="etu-we-2IV">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hdH-0D-Cfc" kind="relationship" relationship="rootViewController" id="ydv-vq-4uK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E3k-za-nvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1325.5999999999999" y="151.57421289355324"/>
+            <point key="canvasLocation" x="871" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AdCoins" width="323" height="323"/>
+        <image name="QuizBackground" width="2400" height="2000"/>
+        <image name="left-arrow" width="48" height="48"/>
+        <image name="piggy-bank" width="48" height="48"/>
+    </resources>
 </document>
