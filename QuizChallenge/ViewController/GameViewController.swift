@@ -41,7 +41,7 @@ class GameViewController: UIViewController {
         // UI & Time Config
         buttons = [answer1Button, answer2Button, answer3Button, answer4Button]
         timeForQuestion = Float((quiz?.timeForQuestion ?? 20) * 100)
-        
+        _ = buttons.map({ $0.titleLabel?.text = "?" })
         timeLabel.text = "20 seconds"
         timeProgressView.setProgress(0.0, animated: false)
         
@@ -65,10 +65,7 @@ class GameViewController: UIViewController {
         counter += 1
         timeLabel.text = "\(20 - Int(counter / timeForQuestion * 20)) seconds"
         timeProgressView.setProgress(1 - counter / timeForQuestion, animated: true)
-        
-        if counter == timeForQuestion {
-            nextQuestion()
-        }
+        counter == timeForQuestion ? nextQuestion() : ()
     }
     
     // Invalid timer
@@ -136,7 +133,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func cancelGame(_ sender: Any) {
-        timer.invalidate();
+        invalidTimer()
         
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
         self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
