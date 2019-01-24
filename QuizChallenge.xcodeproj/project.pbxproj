@@ -14,6 +14,16 @@
 		7740AADF21F86C5D00CDDE4A /* AdvertisingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */; };
 		7740AAE121F897CE00CDDE4A /* PrepareGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */; };
 		7740AAE321F89F4200CDDE4A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AAE221F89F4200CDDE4A /* GameViewController.swift */; };
+		7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D0F021F9A39700F3A677 /* FourImagesView.swift */; };
+		7742D0F321F9A3A600F3A677 /* FourImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7742D0F221F9A3A600F3A677 /* FourImagesView.xib */; };
+		7742D0F521F9A3D700F3A677 /* SimpleQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7742D0F421F9A3D700F3A677 /* SimpleQuestionView.xib */; };
+		7742D0F721F9A3E500F3A677 /* SimpleQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D0F621F9A3E500F3A677 /* SimpleQuestionView.swift */; };
+		7742D0F921F9A3F500F3A677 /* TrueFalseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D0F821F9A3F500F3A677 /* TrueFalseView.swift */; };
+		7742D0FB21F9A40400F3A677 /* TrueFalseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7742D0FA21F9A40400F3A677 /* TrueFalseView.xib */; };
+		7742D0FD21F9B36500F3A677 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D0FC21F9B36500F3A677 /* CountdownView.swift */; };
+		7742D0FF21F9B36F00F3A677 /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7742D0FE21F9B36F00F3A677 /* CountdownView.xib */; };
+		7742D10121F9B88B00F3A677 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D10021F9B88B00F3A677 /* CircleView.swift */; };
+		7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D10221F9CB1900F3A677 /* GameViewController+Koloda.swift */; };
 		77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717521F726DA008F4018 /* TypeQuizCell.swift */; };
 		77AB717821F72707008F4018 /* TopicQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717721F72707008F4018 /* TopicQuizCell.swift */; };
 		77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717A21F728A1008F4018 /* IBCustomView.swift */; };
@@ -40,6 +50,16 @@
 		7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingCell.swift; sourceTree = "<group>"; };
 		7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameViewController.swift; sourceTree = "<group>"; };
 		7740AAE221F89F4200CDDE4A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7742D0F021F9A39700F3A677 /* FourImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourImagesView.swift; sourceTree = "<group>"; };
+		7742D0F221F9A3A600F3A677 /* FourImagesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FourImagesView.xib; sourceTree = "<group>"; };
+		7742D0F421F9A3D700F3A677 /* SimpleQuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleQuestionView.xib; sourceTree = "<group>"; };
+		7742D0F621F9A3E500F3A677 /* SimpleQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleQuestionView.swift; sourceTree = "<group>"; };
+		7742D0F821F9A3F500F3A677 /* TrueFalseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFalseView.swift; sourceTree = "<group>"; };
+		7742D0FA21F9A40400F3A677 /* TrueFalseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrueFalseView.xib; sourceTree = "<group>"; };
+		7742D0FC21F9B36500F3A677 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		7742D0FE21F9B36F00F3A677 /* CountdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
+		7742D10021F9B88B00F3A677 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		7742D10221F9CB1900F3A677 /* GameViewController+Koloda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Koloda.swift"; sourceTree = "<group>"; };
 		77AB717521F726DA008F4018 /* TypeQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeQuizCell.swift; sourceTree = "<group>"; };
 		77AB717721F72707008F4018 /* TopicQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicQuizCell.swift; sourceTree = "<group>"; };
 		77AB717A21F728A1008F4018 /* IBCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBCustomView.swift; sourceTree = "<group>"; };
@@ -107,6 +127,7 @@
 				77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */,
 				7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */,
 				7740AAE221F89F4200CDDE4A /* GameViewController.swift */,
+				7742D10221F9CB1900F3A677 /* GameViewController+Koloda.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -147,9 +168,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7742D0EF21F982E100F3A677 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				7742D0F021F9A39700F3A677 /* FourImagesView.swift */,
+				7742D0F221F9A3A600F3A677 /* FourImagesView.xib */,
+				7742D0F621F9A3E500F3A677 /* SimpleQuestionView.swift */,
+				7742D0F421F9A3D700F3A677 /* SimpleQuestionView.xib */,
+				7742D0F821F9A3F500F3A677 /* TrueFalseView.swift */,
+				7742D0FA21F9A40400F3A677 /* TrueFalseView.xib */,
+				7742D0FC21F9B36500F3A677 /* CountdownView.swift */,
+				7742D0FE21F9B36F00F3A677 /* CountdownView.xib */,
+				7742D10021F9B88B00F3A677 /* CircleView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
 		77AB717421F726B4008F4018 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7742D0EF21F982E100F3A677 /* GameView */,
 				77AB717521F726DA008F4018 /* TypeQuizCell.swift */,
 				77AB717721F72707008F4018 /* TopicQuizCell.swift */,
 				7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */,
@@ -280,8 +318,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				77AB717F21F7459A008F4018 /* Login.storyboard in Resources */,
+				7742D0FB21F9A40400F3A677 /* TrueFalseView.xib in Resources */,
 				77E2B46221F192FF00E0FE75 /* LaunchScreen.storyboard in Resources */,
 				77E2B45F21F192FF00E0FE75 /* Assets.xcassets in Resources */,
+				7742D0F321F9A3A600F3A677 /* FourImagesView.xib in Resources */,
+				7742D0F521F9A3D700F3A677 /* SimpleQuestionView.xib in Resources */,
+				7742D0FF21F9B36F00F3A677 /* CountdownView.xib in Resources */,
 				77E2B45D21F192FD00E0FE75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,12 +378,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7742D0FD21F9B36500F3A677 /* CountdownView.swift in Sources */,
 				77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */,
 				7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */,
 				77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */,
 				7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */,
 				7740AAE321F89F4200CDDE4A /* GameViewController.swift in Sources */,
 				77AB718F21F86B18008F4018 /* AdvertisingViewController.swift in Sources */,
+				7742D10121F9B88B00F3A677 /* CircleView.swift in Sources */,
+				7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */,
 				77AB718521F75C60008F4018 /* UIViewController+Extension.swift in Sources */,
 				77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */,
 				7723AE7421F7121200F76DE7 /* NetworkManager.swift in Sources */,
@@ -349,11 +394,14 @@
 				77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */,
 				77AB718721F7617E008F4018 /* UIWindow+Extension.swift in Sources */,
 				77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */,
+				7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */,
 				7740AADF21F86C5D00CDDE4A /* AdvertisingCell.swift in Sources */,
 				77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */,
+				7742D0F721F9A3E500F3A677 /* SimpleQuestionView.swift in Sources */,
 				77AB717821F72707008F4018 /* TopicQuizCell.swift in Sources */,
 				77AB718921F762E2008F4018 /* UISegue.swift in Sources */,
 				7740AAE121F897CE00CDDE4A /* PrepareGameViewController.swift in Sources */,
+				7742D0F921F9A3F500F3A677 /* TrueFalseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

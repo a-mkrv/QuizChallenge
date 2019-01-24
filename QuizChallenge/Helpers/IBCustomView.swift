@@ -82,3 +82,20 @@ import UIKit
         layer.addSublayer(border)
     }
 }
+
+@IBDesignable class IBProgressView: UIProgressView {
+    
+    @IBInspectable var barHeight : CGFloat = 1 {
+        didSet {
+            self.transform = self.transform.scaledBy(x: 1, y: barHeight)
+        }
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            clipsToBounds = true
+            
+        }
+    }
+}
