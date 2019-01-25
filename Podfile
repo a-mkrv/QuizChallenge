@@ -8,6 +8,11 @@ target 'QuizChallenge' do
   use_frameworks!
 
   pod "Koloda"
-  pod "Alamofire"
+  pod 'TransitionButton'  
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'RealmSwift'
+  pod 'AlamofireObjectMapper'
+  pod 'ObjectMapper'
 
 end
