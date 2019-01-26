@@ -12,6 +12,8 @@ import ObjectMapper
 import AlamofireObjectMapper
 import RealmSwift
 
+typealias APIParameters = [String : Any]
+
 enum Result<Value> {
     case success(Value)
     case error(String, Int)
@@ -33,22 +35,22 @@ class NetworkManager {
     }
     
     // MARK: - Open Methods
-    func getUser(completion: @escaping (Result<Bool>) -> Void) {
-        getRequest(type: User.self, completion: completion)
+    func getUser(with credentials: APIParameters, completion: @escaping (Result<User>) -> ()) {
+        getRequest(type: User.self, parameters: credentials) { completion($0) }
     }
     
     // ... get / create other object
     
     // MARK: - Private request logic
-    private func getRequest <T: Object> (type: T.Type, completion: @escaping (Result<Bool>) -> Void) -> Void where T:Mappable, T:Endpoint {
+    private func getRequest <T: Object> (type: T.Type, parameters: APIParameters? = nil, completion: @escaping (Result<T>) -> ()) where T:Mappable, T:Endpoint {
         
-        session.request(type.url()).responseObject { (response: DataResponse<T>) in
+        session.request(type.url(), parameters: parameters).responseObject { (response: DataResponse<T>) in
             
             switch response.result {
             case .success(let item):
                 do {
                     try RealmManager.shared.storeObject(item)
-                    completion(.success(true))
+                    completion(.success(item))
                 } catch let error as NSError {
                     completion(.error(error.description, error.code))
                 }
@@ -59,5 +61,12 @@ class NetworkManager {
         }
     }
     
-    // ... post
+    private func postRequest(parameters: APIParameters, completion: @escaping (Result<Any>) -> ()) {
+        
+        session.request(URL(string: "www")!, method: .post, parameters: parameters).responseJSON { response in
+            // Waiting for server logic
+        }
+    }
+    
+    // ... get .. post
 }
