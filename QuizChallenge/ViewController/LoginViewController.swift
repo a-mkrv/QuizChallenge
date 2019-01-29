@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainController = storyboard.instantiateViewController(withIdentifier: "MainSB") as? MainViewController
+        UserDefaults.standard.isLoggedIn = true
         self.view.window?.switchRootViewController(mainController!)
     }
     

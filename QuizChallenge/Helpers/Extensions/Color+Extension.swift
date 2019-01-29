@@ -27,6 +27,14 @@ extension UIColor {
         )
     }
     
+    static var random: UIColor {
+        return UIColor(red: .random(in: 0...1),
+                       green: .random(in: 0...1),
+                       blue: .random(in: 0...1),
+                       alpha: 1.0)
+    }
+    
+    
     static let mainBlue = UIColor(red:0.18, green:0.42, blue:0.62, alpha:1.00)
     static let mainGray = UIColor(red:0.89, green:0.89, blue:0.91, alpha:1.00)
 }
