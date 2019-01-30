@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7707D143220187F1006AA699 /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7707D142220187F1006AA699 /* Categories.json */; };
 		7707D1452201901A006AA699 /* TypeDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7707D1442201901A006AA699 /* TypeDecodable.swift */; };
+		7707D1472201B699006AA699 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7707D1462201B699006AA699 /* Settings.swift */; };
 		7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6221F5CFF900F76DE7 /* Question.swift */; };
 		7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6521F5D01800F76DE7 /* Quiz.swift */; };
 		7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6921F6E1F800F76DE7 /* MainViewController.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		7707D142220187F1006AA699 /* Categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
 		7707D1442201901A006AA699 /* TypeDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDecodable.swift; sourceTree = "<group>"; };
+		7707D1462201B699006AA699 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7723AE6221F5CFF900F76DE7 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		7723AE6521F5D01800F76DE7 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		7723AE6921F6E1F800F76DE7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				777C770721FACBBD0022A636 /* Statistics.swift */,
 				777C770921FAD27C0022A636 /* Session.swift */,
 				7707D1442201901A006AA699 /* TypeDecodable.swift */,
+				7707D1462201B699006AA699 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,25 +433,31 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/BouncyLayout/BouncyLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMPopTip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BouncyLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -501,6 +510,7 @@
 				7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */,
 				7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */,
 				7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */,
+				7707D1472201B699006AA699 /* Settings.swift in Sources */,
 				77AB718521F75C60008F4018 /* UIViewController+Extension.swift in Sources */,
 				777C770C21FAF15D0022A636 /* RealmManager.swift in Sources */,
 				77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */,

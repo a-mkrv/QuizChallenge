@@ -74,6 +74,18 @@ class RealmManager {
             }
         })
     }
+    
+    func updateSettings(sound: Bool, notify: Bool, saveQuestion: Bool, payButton: Bool) throws {
+        try execute({ realm in
+            try realm.write {
+                let settings = RealmManager.shared.getObjects(SettingsModel.self)?.first
+                settings?.backgroundSoud = sound
+                settings?.notifications = notify
+                settings?.saveQuestions = saveQuestion
+                settings?.buyPremiumEnabled = payButton
+            }
+        })
+    }
 
     // MARK: - Other supporting methods
     private func execute(_ completion: (_ realmObject: Realm) throws -> Void) throws {
