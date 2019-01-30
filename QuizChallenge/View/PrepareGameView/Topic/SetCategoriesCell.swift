@@ -17,21 +17,22 @@ class SetCategoriesCell: UITableViewCell, UICollectionViewDelegate, UICollection
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var typeLabel: UILabel!
     
-    var categories = [String]()
+    var categories: [TypeElement]?
     var curTableCellIndex: Int?
     var curSelectCellIndex: Int?
     var delegate: CellSelectable!
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
     override func prepareForReuse() {
-        print("Test")
-        reloadSelectedCell()
+        super.prepareForReuse()
+        categories = nil
+        collectionView.reloadData()
     }
     
     func reloadSelectedCell() {
@@ -41,15 +42,19 @@ class SetCategoriesCell: UITableViewCell, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return categories?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cellId = String(describing: ConcreteTopicCell.self)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ConcreteTopicCell
-        cell.imageCell.backgroundColor = UIColor.random
-        cell.nameCell.text = categories[indexPath.row]
+        
+        if let catCell = categories?[indexPath.row] {
+            cell.imageCell.image = UIImage(named: catCell.image)
+            cell.nameCell.text = catCell.name
+            return cell
+        }
         
         return cell
     }

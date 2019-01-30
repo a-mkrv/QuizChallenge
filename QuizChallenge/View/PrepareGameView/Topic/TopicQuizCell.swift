@@ -11,21 +11,17 @@ import UIKit
 class TopicQuizCell: UICollectionViewCell, CellSelectable {
     
     @IBOutlet weak var tableView: UITableView!
-    var curSelectedCellIndex: Int?
     
+    let dataSource = loadJsonCategories(from: "Categories")
+    var curSelectedCellIndex: Int?
     var delegate: PrepareDelegate?
-    let dataSource = [("Sport", ["All", "Football", "Gym"]),
-                      ("Animals", ["All", "Bear", "Dogs", "Cats"]),
-                      ("IT", ["All", "Computer", "Mobile", "Programming"]),
-                      ("Person", ["All", "Famous", "Russian", "Girls"]),
-                      ("Cars", ["All", "Audi", "Lexus", "Lada"]),
-                      ("Other", ["All", "Sounds", "Questions", "Wall", "Navigate"])]
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         tableView.delegate = self
-        tableView.dataSource = self        
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
     }
     
     @IBAction func startGame(_ sender: Any) {
@@ -46,15 +42,16 @@ class TopicQuizCell: UICollectionViewCell, CellSelectable {
 extension TopicQuizCell: UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return dataSource?.typeQuestions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellId = String(describing: SetCategoriesCell.self)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SetCategoriesCell
-        cell.typeLabel.text = dataSource[indexPath.row].0
-        cell.categories = dataSource[indexPath.row].1
+        
+        cell.typeLabel.text = dataSource?.typeQuestions[indexPath.row].name
+        cell.categories = dataSource?.typeQuestions[indexPath.row].types ?? []
         cell.curTableCellIndex = indexPath.row
         cell.delegate = self
         

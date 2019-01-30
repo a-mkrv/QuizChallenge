@@ -14,8 +14,10 @@ class ConcreteTopicCell: BaseSelectedCell {
     @IBOutlet weak var nameCell: UILabel!
     
     override func prepareForReuse() {
-        nameCell.text = "Test"
+        nameCell.text = nil
+        
+        // FIXME: Add placeholder image
+        imageCell.backgroundColor = .clear
         selectCell(selectState: false)
-        print("test 2")
     }
 }

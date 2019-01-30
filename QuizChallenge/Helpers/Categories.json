@@ -1,0 +1,91 @@
+{
+    "type_questions":[
+        {
+            "name": "2018",
+            "types": [
+                {"name":"Mix", "image":"1"},
+                {"name":"Events", "image":"2"},
+                {"name":"World Cup 2018", "image":"3"}
+            ]
+        },
+        {
+            "name": "Sport",
+            "types": [
+                {"name":"Mix", "image":"6"},
+                {"name":"World Cup 2018", "image":"5"},
+                {"name":"Football", "image":"4"},
+                {"name":"Hockey", "image":"3"},
+                {"name":"MMA", "image":"2"},
+                {"name":"F1", "image":"1"},
+                {"name":"Biatlon", "image":"7"}
+            ]
+        },
+        {
+            "name": "Movies & Entertainment",
+            "types": [
+                {"name":"Mix", "image":"2"},
+                {"name":"TV Series", "image":"3"},
+                {"name":"Hollywood", "image":"4"},
+                {"name":"Russian films", "image":"8"}
+            ]
+        },
+        {
+            "name": "Travel & Tourism",
+            "types": [
+                {"name":"All World", "image":"9"},
+                {"name":"India", "image":"8"},
+                {"name":"Russia", "image":"7"},
+                {"name":"Mountains", "image":"6"}
+            ]
+        },
+        {
+            "name": "Songs & Music",
+            "types": [
+                {"name":"Mix", "image":"1"},
+                {"name":"Songs 2018", "image":"3"},
+                {"name":"Other", "image":"5"}
+            ]
+        },
+        {
+            "name": "IT & Technology",
+            "types": [
+                {"name":"Mix", "image":"4"},
+                {"name":"Computers", "image":"4"},
+                {"name":"Mobile", "image":"3"},
+                {"name":"Other", "image":"2"}
+            ]
+        },
+        {
+            "name": "Food & Kitchen",
+            "types": [
+                {"name":"Mix", "image":"1"},
+                {"name":"Vegetables", "image":"1"},
+                {"name":"Fruits", "image":"2"},
+                {"name":"Mushrooms", "image":"2"},
+                {"name":"Russian", "image":"3"}
+            ]
+        },
+        {
+            "name": "Food & Kitchen",
+            "types": [
+                {"name":"Mix", "image":"1"},
+                {"name":"Vegetables", "image":"1"},
+                {"name":"Fruits", "image":"2"},
+                {"name":"Mushrooms", "image":"2"},
+                {"name":"Russian", "image":"3"}
+            ]
+        },
+        {
+            "name": "IT & Technology",
+            "types": [
+                {"name":"Mix", "image":"4"},
+                {"name":"Computers", "image":"4"},
+                {"name":"Mobile", "image":"3"},
+                {"name":"Other", "image":"2"}
+            ]
+        }
+    ]
+}
+
+
+
