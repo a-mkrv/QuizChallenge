@@ -7,27 +7,88 @@
 //
 
 import UIKit
+import SCLAlertView
 
-func loadViewController(from storyboard: String, named name: String) -> UIViewController? {
-    let storyboard = UIStoryboard(name: storyboard, bundle: nil)
-    return storyboard.instantiateViewController(withIdentifier: name)
+// MARK: - Closure typealias
+
+public typealias EmptyClosure = () -> Void
+public typealias BoolClosure = () -> Bool
+public typealias IntClosure = () -> Int
+public typealias StringClosure = () -> String
+
+// MARK: - Alert Helper
+
+enum AlertType {
+    case warning
+    case error
+    case success
 }
 
-func loadJsonCategories(from file: String) -> TypeDecodable? {
-   
-    if let path = Bundle.main.path(forResource: file, ofType: "json") {
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            guard let jsonResult = try? JSONDecoder().decode(TypeDecodable.self, from: data) else {
-                print("Error parse json")
-                return nil
-            }
-            
-            return jsonResult
-        } catch {
-            print("Error load json: \(error.localizedDescription)")
+class AlertHelper {
+    
+    let timeOutShowing = 3.0
+    let alertView = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+    let colorTextButton: UInt = 0xFFFFFF
+    
+    // Question Alert
+    func showConfirmView(title: String, subTitle: String, firstButtonText: String, secondButtonText: String? = nil, completion: @escaping EmptyClosure, secondCompletion: EmptyClosure? = nil) {
+        
+        alertView.addButton(firstButtonText) { completion() }
+        
+        if let text = secondButtonText, secondCompletion != nil {
+            alertView.addButton(text) { secondCompletion?() }
         }
+        
+        alertView.showTitle(title, subTitle: subTitle, style: .question, closeButtonTitle: nil, timeout: nil, colorStyle: 0x43577E, colorTextButton: colorTextButton, circleIconImage: nil)
     }
     
-    return nil
+    // Simple Alert with duration
+    func showAlertView(title: String, subTitle: String, buttonText: String, type: AlertType, completion: EmptyClosure? = nil) {
+        
+        alertView.addButton(buttonText) { completion?() }
+        
+        let timeOut = SCLAlertView.SCLTimeoutConfiguration(timeoutValue: timeOutShowing, timeoutAction: { completion?() })
+
+        // App Color: 0x43577E
+        switch type {
+        case .warning:
+            alertView.showWarning(title, subTitle: subTitle, closeButtonTitle: buttonText, timeout: timeOut)
+        case .error:
+            alertView.showError(title, subTitle: subTitle, closeButtonTitle: buttonText, timeout: timeOut)
+        case .success:
+            alertView.showSuccess(title, subTitle: subTitle, closeButtonTitle: buttonText, timeout: timeOut)
+        }
+    }
+}
+
+// MARK: - Common Helper Class
+
+class CommonHelper {
+    
+    static var alert = AlertHelper()
+    
+    static func loadViewController(from storyboard: String, named name: String) -> UIViewController? {
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: name)
+    }
+    
+    // Load test file with questions
+    static func loadJsonCategories(from file: String) -> TypeDecodable? {
+        
+        if let path = Bundle.main.path(forResource: file, ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                guard let jsonResult = try? JSONDecoder().decode(TypeDecodable.self, from: data) else {
+                    print("Error parse json")
+                    return nil
+                }
+                
+                return jsonResult
+            } catch {
+                print("Error load json: \(error.localizedDescription)")
+            }
+        }
+        return nil
+    }
+    
 }

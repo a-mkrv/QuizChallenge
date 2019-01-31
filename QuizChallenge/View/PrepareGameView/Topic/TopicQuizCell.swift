@@ -12,7 +12,7 @@ class TopicQuizCell: UICollectionViewCell, CellSelectable {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let dataSource = loadJsonCategories(from: "Categories")
+    let dataSource = CommonHelper.loadJsonCategories(from: "Categories")
     var curSelectedCellIndex: Int?
     var delegate: PrepareDelegate?
     

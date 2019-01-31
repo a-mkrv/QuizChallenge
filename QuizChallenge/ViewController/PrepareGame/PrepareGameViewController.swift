@@ -40,7 +40,7 @@ class PrepareGameViewController: UIViewController {
         }
         
         dataSource.startGameCallback = {
-            let gameVC = loadViewController(from: "Main", named: "GameSB") as! GameViewController
+            let gameVC = CommonHelper.loadViewController(from: "Main", named: "GameSB") as! GameViewController
             self.navigationController?.pushViewController(gameVC, animated: true)
         }
     }
