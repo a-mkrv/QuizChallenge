@@ -14,6 +14,7 @@
 		7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6521F5D01800F76DE7 /* Quiz.swift */; };
 		7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE6921F6E1F800F76DE7 /* MainViewController.swift */; };
 		7723AE7421F7121200F76DE7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723AE7321F7121200F76DE7 /* NetworkManager.swift */; };
+		772D1A932203318600607290 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772D1A922203318600607290 /* WelcomeViewController.swift */; };
 		7740AADF21F86C5D00CDDE4A /* AdvertisingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */; };
 		7740AAE121F897CE00CDDE4A /* PrepareGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */; };
 		7740AAE321F89F4200CDDE4A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740AAE221F89F4200CDDE4A /* GameViewController.swift */; };
@@ -39,6 +40,7 @@
 		777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C771321FC4D920022A636 /* ProfileSettingsViewController.swift */; };
 		777EAF9F220076DC00A3C14B /* GameModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAF9E220076DC00A3C14B /* GameModeCell.swift */; };
 		777EAFA32200823400A3C14B /* BaseSelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAFA22200823400A3C14B /* BaseSelectedCell.swift */; };
+		77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77894EA122081AF60041EE94 /* WelcomePageCell.swift */; };
 		7797F6F122003EE300DAB4C7 /* ConcreteTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F022003EE300DAB4C7 /* ConcreteTopicCell.swift */; };
 		7797F6F322003F4C00DAB4C7 /* SetCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F222003F4C00DAB4C7 /* SetCategoriesCell.swift */; };
 		7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */; };
@@ -68,6 +70,7 @@
 		7723AE6521F5D01800F76DE7 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		7723AE6921F6E1F800F76DE7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7723AE7321F7121200F76DE7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		772D1A922203318600607290 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingCell.swift; sourceTree = "<group>"; };
 		7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameViewController.swift; sourceTree = "<group>"; };
 		7740AAE221F89F4200CDDE4A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		777C771321FC4D920022A636 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileSettingsViewController.swift; path = "../New Group/ProfileSettingsViewController.swift"; sourceTree = "<group>"; };
 		777EAF9E220076DC00A3C14B /* GameModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeCell.swift; sourceTree = "<group>"; };
 		777EAFA22200823400A3C14B /* BaseSelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSelectedCell.swift; sourceTree = "<group>"; };
+		77894EA122081AF60041EE94 /* WelcomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageCell.swift; sourceTree = "<group>"; };
 		7797F6F022003EE300DAB4C7 /* ConcreteTopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteTopicCell.swift; sourceTree = "<group>"; };
 		7797F6F222003F4C00DAB4C7 /* SetCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoriesCell.swift; sourceTree = "<group>"; };
 		7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDataSource.swift; sourceTree = "<group>"; };
@@ -164,8 +168,8 @@
 		7723AE6821F6E18E00F76DE7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				772D1A912203316800607290 /* Login */,
 				7797F6F4220053EA00DAB4C7 /* PrepareGame */,
-				77AB718221F75AAE008F4018 /* LoginViewController.swift */,
 				7723AE6921F6E1F800F76DE7 /* MainViewController.swift */,
 				77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */,
 				7740AAE221F89F4200CDDE4A /* GameViewController.swift */,
@@ -213,6 +217,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		772D1A912203316800607290 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				77AB718221F75AAE008F4018 /* LoginViewController.swift */,
+				772D1A922203318600607290 /* WelcomeViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		7742D0EF21F982E100F3A677 /* GameView */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +270,21 @@
 			path = Topic;
 			sourceTree = "<group>";
 		};
+		77894E9B2204A7890041EE94 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				77894EA122081AF60041EE94 /* WelcomePageCell.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		77894EA02206DAA30041EE94 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		7797F6F4220053EA00DAB4C7 /* PrepareGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +307,7 @@
 		77AB717421F726B4008F4018 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				77894E9B2204A7890041EE94 /* LoginView */,
 				7797F6F722006B1E00DAB4C7 /* PrepareGameView */,
 				7742D0EF21F982E100F3A677 /* GameView */,
 				7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */,
@@ -339,6 +368,7 @@
 		77E2B46921F1930C00E0FE75 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				77894EA02206DAA30041EE94 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -437,7 +467,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/BouncyLayout/BouncyLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -452,7 +481,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BouncyLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -508,6 +536,7 @@
 				77AB718F21F86B18008F4018 /* AdvertisingViewController.swift in Sources */,
 				7742D10121F9B88B00F3A677 /* CircleView.swift in Sources */,
 				7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */,
+				77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */,
 				7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */,
 				7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */,
 				7707D1472201B699006AA699 /* Settings.swift in Sources */,
@@ -518,6 +547,7 @@
 				7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */,
 				77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */,
 				77AB718721F7617E008F4018 /* UIWindow+Extension.swift in Sources */,
+				772D1A932203318600607290 /* WelcomeViewController.swift in Sources */,
 				77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */,
 				7707D1452201901A006AA699 /* TypeDecodable.swift in Sources */,
 				7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */,

@@ -11,7 +11,6 @@ target 'QuizChallenge' do
   pod "Koloda"
   pod 'TransitionButton'  
   pod 'SCLAlertView'
-  pod "BouncyLayout"
   pod 'AMPopTip'
   
   # Network, Storage
