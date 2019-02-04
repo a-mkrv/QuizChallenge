@@ -33,6 +33,8 @@
 		7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */; };
 		7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7745EA4221FF77E400210E96 /* HelperFile.swift */; };
 		776EC55B21FA3827005BA18A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EC55A21FA3827005BA18A /* User.swift */; };
+		777A67A222086A7C00031808 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A67A122086A7C00031808 /* RegistrationViewController.swift */; };
+		777A67A422086BBD00031808 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A67A322086BBD00031808 /* UIView+Extension.swift */; };
 		777C770821FACBBD0022A636 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C770721FACBBD0022A636 /* Statistics.swift */; };
 		777C770A21FAD27C0022A636 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C770921FAD27C0022A636 /* Session.swift */; };
 		777C770C21FAF15D0022A636 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C770B21FAF15D0022A636 /* RealmManager.swift */; };
@@ -89,6 +91,8 @@
 		7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		7745EA4221FF77E400210E96 /* HelperFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFile.swift; sourceTree = "<group>"; };
 		776EC55A21FA3827005BA18A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		777A67A122086A7C00031808 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		777A67A322086BBD00031808 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		777C770721FACBBD0022A636 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		777C770921FAD27C0022A636 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		777C770B21FAF15D0022A636 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				77AB718621F7617E008F4018 /* UIWindow+Extension.swift */,
 				77AB718821F762E2008F4018 /* UISegue.swift */,
 				7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */,
+				777A67A322086BBD00031808 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				77AB718221F75AAE008F4018 /* LoginViewController.swift */,
 				772D1A922203318600607290 /* WelcomeViewController.swift */,
+				777A67A122086A7C00031808 /* RegistrationViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -522,6 +528,7 @@
 				777C770A21FAD27C0022A636 /* Session.swift in Sources */,
 				776EC55B21FA3827005BA18A /* User.swift in Sources */,
 				7797F6F122003EE300DAB4C7 /* ConcreteTopicCell.swift in Sources */,
+				777A67A422086BBD00031808 /* UIView+Extension.swift in Sources */,
 				777C770821FACBBD0022A636 /* Statistics.swift in Sources */,
 				7742D0FD21F9B36500F3A677 /* CountdownView.swift in Sources */,
 				777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */,
@@ -533,6 +540,7 @@
 				7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */,
 				7740AAE321F89F4200CDDE4A /* GameViewController.swift in Sources */,
 				7745EA3F21FDBA5B00210E96 /* AudioManager.swift in Sources */,
+				777A67A222086A7C00031808 /* RegistrationViewController.swift in Sources */,
 				77AB718F21F86B18008F4018 /* AdvertisingViewController.swift in Sources */,
 				7742D10121F9B88B00F3A677 /* CircleView.swift in Sources */,
 				7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */,
