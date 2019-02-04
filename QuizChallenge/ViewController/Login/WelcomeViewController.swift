@@ -36,7 +36,7 @@ class WelcomeViewController: UIViewController {
     let pages: [Page] = [ Page(title: "First page", description: "First page", imageName: "nn"),
                           Page(title: "Second page", description: "Second page", imageName: "nn"),
                           Page(title: "Third page", description: "Third page", imageName: "nn"),
-                          Page(title: "Fourth page", description: "Fourth page", imageName: "nn")]
+                          Page(title: "Good Game!", description: "Fourth page", imageName: "nn")]
     
     // MARK: - Lifecycle
     
@@ -64,8 +64,13 @@ class WelcomeViewController: UIViewController {
             
             UIView.animate(withDuration: 1.0) {
                 self.view.layoutIfNeeded()
-            }            
+            }
+            
+            UIView.transition(with: appNameLabel, duration: 1.0, options: .transitionCrossDissolve, animations: {() -> Void in
+                self.appNameLabel.textColor = .white
+            })
         }
+            
         
         let indexPath = IndexPath(item: pageControl.currentPage + 1, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)

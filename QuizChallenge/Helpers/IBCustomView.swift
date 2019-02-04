@@ -14,6 +14,18 @@ import UIKit
     @IBInspectable var cornerRadius: CGFloat = 0 { didSet { layer.cornerRadius = cornerRadius }}
     @IBInspectable var borderWidth: CGFloat = 0 { didSet { layer.borderWidth = borderWidth }}
     @IBInspectable var borderColor: UIColor = .clear { didSet { layer.borderColor = borderColor.cgColor }}
+    
+    @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0) { didSet { setShadow() }}
+    @IBInspectable var shadowOpacity: Float = 0 { didSet { setShadow() }}
+    @IBInspectable var shadowColor: UIColor = .clear { didSet { setShadow() }}
+    @IBInspectable var shadowRadius: CGFloat = 0 { didSet { setShadow() }}
+    
+    func setShadow() {
+        self.layer.shadowColor = shadowColor.cgColor
+        self.layer.shadowOpacity = shadowOpacity
+        self.layer.shadowOffset = shadowOffset
+        self.layer.shadowRadius = shadowRadius
+    }
 }
 
 @IBDesignable class GradientView: IBView {
@@ -60,7 +72,7 @@ import UIKit
     @IBInspectable var borderWidth: CGFloat = 0 { didSet { sharedInit() }}
     @IBInspectable var borderColor: UIColor = .clear { didSet { sharedInit() }}
     
-    @IBInspectable var shadowOffset = CGSize(width: 0, height: 0) { didSet { sharedInit() }}
+    @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0) { didSet { sharedInit() }}
     @IBInspectable var shadowOpacity: Float = 0 { didSet { sharedInit() }}
     @IBInspectable var shadowColor: UIColor = .clear { didSet { sharedInit() }}
     @IBInspectable var shadowRadius: CGFloat = 0 { didSet { sharedInit() }}
