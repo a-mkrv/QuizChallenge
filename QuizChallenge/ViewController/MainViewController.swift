@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import TransitionButton
 
-class MainViewController: UIViewController {
+class MainViewController: CustomTransitionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

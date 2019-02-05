@@ -62,15 +62,11 @@ class WelcomeViewController: UIViewController {
             bottomViewConstraint.constant = -bottomViewHeight
             topSpaceHeaderView.constant = 0
             
-            UIView.animate(withDuration: 1.0) {
-                self.view.layoutIfNeeded()
-            }
-            
             UIView.transition(with: appNameLabel, duration: 1.0, options: .transitionCrossDissolve, animations: {() -> Void in
+                self.view.layoutIfNeeded()
                 self.appNameLabel.textColor = .white
             })
         }
-            
         
         let indexPath = IndexPath(item: pageControl.currentPage + 1, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)

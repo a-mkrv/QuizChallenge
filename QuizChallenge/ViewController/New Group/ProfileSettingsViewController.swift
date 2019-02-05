@@ -13,6 +13,7 @@ class ProfileSettingsViewController: UIViewController {
     // MARK: - Outlets & Properties
     
     @IBOutlet weak var userDataView: IBView!
+    @IBOutlet weak var userImageView: IBImageView!
     
     var isShowKeyboard = false
     
@@ -47,7 +48,7 @@ class ProfileSettingsViewController: UIViewController {
             return
         }
         
-        if let touch = touches.first, touch.view != userDataView {
+        if let touch = touches.first, touch.view != userDataView, touch.view != userImageView  {
             dismiss(animated: true, completion: nil)
         }
     }
