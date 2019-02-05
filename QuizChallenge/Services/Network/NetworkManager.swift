@@ -39,26 +39,52 @@ class NetworkManager {
         getRequest(type: User.self, parameters: credentials) { completion($0) }
     }
     
+    func getQuestions(with credentials: APIParameters, completion: @escaping (Result<Question>) -> ()) {
+        getRequest(type: Question.self, parameters: credentials) { completion($0) }
+    }
+    
     // ... get / create other object
+    
+    func cancelAllSessions() {
+        Alamofire.SessionManager.default.session.getAllTasks { tasks in
+            tasks.forEach({ $0.cancel() })
+        }
+    }
     
     // MARK: - Private request logic
     private func getRequest <T: Object> (type: T.Type, parameters: APIParameters? = nil, completion: @escaping (Result<T>) -> ()) where T:Mappable, T:Endpoint {
         
-        session.request(type.url(), parameters: parameters).responseObject { (response: DataResponse<T>) in
-            
-            switch response.result {
-            case .success(let item):
-                do {
-                    try RealmManager.shared.storeObject(item)
-                    completion(.success(item))
-                } catch let error as NSError {
-                    completion(.error(error.description, error.code))
-                }
-                
+        let parameterss: [String: Any] = [
+            "type" : "text",
+            "category" : "cars"
+        ]
+        
+        Alamofire.request(type.url(), method: .get, parameters: parameterss, encoding: JSONEncoding.prettyPrinted, headers: nil).responseJSON { response in
+            switch response.result
+            {
+            case .success(let json):
+                print(json)
+                let code = response as? HTTPURLResponse
             case .failure(let error as NSError):
                 completion(.error(error.description, error.code))
             }
         }
+        
+//        session.request(type.url(), parameters: parameters, encoding: JSONEncoding.default).responseObject { (response: DataResponse<T>) in
+//
+//            switch response.result {
+//            case .success(let item):
+//                do {
+//                    try RealmManager.shared.storeObject(item)
+//                    completion(.success(item))
+//                } catch let error as NSError {
+//                    completion(.error(error.description, error.code))
+//                }
+//
+//            case .failure(let error as NSError):
+//                completion(.error(error.description, error.code))
+//            }
+//        }
     }
     
     private func postRequest(parameters: APIParameters, completion: @escaping (Result<Any>) -> ()) {

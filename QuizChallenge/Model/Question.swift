@@ -7,33 +7,61 @@
 //
 
 import Foundation
+import RealmSwift
+import ObjectMapper
 
-enum QuestCategory {
-    case All
-    case Animal
-    case Sport
-    case Education
-    case Technology
-    case Mainstream
-    case Celebrities
-    case History
-    case Food
-    case WorldAround
+class Question: Object, Mappable, Endpoint {
+    
+    @objc dynamic var id = 0
+    @objc dynamic var text = ""
+    @objc dynamic var image = ""
+    let answers = List<Answer>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        id      <- map["id"]
+        text    <- map["text"]
+        image   <- map["image"]
+        
+        var answers: [Answer]?
+        answers <- map["answers"]
+        
+        if let ansArray = answers {
+            for answer in ansArray {
+                self.answers.append(answer)
+            }
+        }
+    }
+    
+    static func url() -> String {
+        return "http://138.68.106.0:8080/question"
+    }
 }
 
-class Question: NSObject {
-    let question: String
-    let answers: [String]
-    var correctAnswer: String
-    let category: QuestCategory!
-    var isCorrect: Bool = false
-    let imageUrl: String?
-
-    init(question: String, answers: [String], correct: String, category: QuestCategory, imgUrl: String? = nil) {
-        self.question = question
-        self.answers = answers
-        self.correctAnswer = correct
-        self.category = category
-        self.imageUrl = imgUrl
+class Answer: Object, Mappable {
+    
+    @objc dynamic var id = 0
+    @objc dynamic var text = ""
+    @objc dynamic var isCorrect = false
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        id      <- map["id"]
+        text    <- map["text"]
+        isCorrect   <- map["is_correct"]
     }
 }
