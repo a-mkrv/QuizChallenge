@@ -28,7 +28,6 @@
 		7742D0FF21F9B36F00F3A677 /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7742D0FE21F9B36F00F3A677 /* CountdownView.xib */; };
 		7742D10121F9B88B00F3A677 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D10021F9B88B00F3A677 /* CircleView.swift */; };
 		7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D10221F9CB1900F3A677 /* GameViewController+Koloda.swift */; };
-		7742D10521F9D3DE00F3A677 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742D10421F9D3DE00F3A677 /* QuizViewModel.swift */; };
 		7745EA3F21FDBA5B00210E96 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7745EA3E21FDBA5B00210E96 /* AudioManager.swift */; };
 		7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */; };
 		7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7745EA4221FF77E400210E96 /* HelperFile.swift */; };
@@ -86,7 +85,6 @@
 		7742D0FE21F9B36F00F3A677 /* CountdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
 		7742D10021F9B88B00F3A677 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		7742D10221F9CB1900F3A677 /* GameViewController+Koloda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Koloda.swift"; sourceTree = "<group>"; };
-		7742D10421F9D3DE00F3A677 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		7745EA3E21FDBA5B00210E96 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		7745EA4221FF77E400210E96 /* HelperFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFile.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 		7723AE6721F64E9E00F76DE7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7742D10421F9D3DE00F3A677 /* QuizViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -533,7 +530,6 @@
 				777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */,
 				77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */,
 				7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */,
-				7742D10521F9D3DE00F3A677 /* QuizViewModel.swift in Sources */,
 				77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */,
 				7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */,
 				7740AAE321F89F4200CDDE4A /* GameViewController.swift in Sources */,
