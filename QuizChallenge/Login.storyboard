@@ -25,7 +25,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="fnO-G3-k8m">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle-3" translatesAutoresizingMaskIntoConstraints="NO" id="tso-8b-h8s" userLabel="LogoImage" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoPuzzle" translatesAutoresizingMaskIntoConstraints="NO" id="tso-8b-h8s" userLabel="LogoImage" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
                                         <rect key="frame" x="142" y="42" width="91" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -894,7 +894,7 @@
         <image name="facebook" width="90.352943420410156" height="90.352943420410156"/>
         <image name="google" width="418.90908813476562" height="418.90908813476562"/>
         <image name="left-arrow" width="48" height="48"/>
-        <image name="puzzle-3" width="512" height="512"/>
+        <image name="logoPuzzle" width="512" height="512"/>
         <image name="vk" width="89.475730895996094" height="89.475730895996094"/>
         <namedColor name="AppColor">
             <color red="0.25098039215686274" green="0.29803921568627451" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

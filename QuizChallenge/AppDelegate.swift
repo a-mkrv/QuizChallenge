@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         var initialViewController: UIViewController?
 
-        if (isLoggedIn()) {
+        if (!isLoggedIn()) {
             initialViewController = CommonHelper.loadViewController(from: "Main", named: "MainSB") as? MainViewController
         } else {
             initialViewController = CommonHelper.loadViewController(from: "Login", named: "WelcomeSB") as? WelcomeViewController

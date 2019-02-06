@@ -8,18 +8,13 @@
 
 import UIKit
 
-class TopicQuizCell: UICollectionViewCell, CellSelectable {
+class TopicQuizCell: UICollectionViewCell {
     
-    func selectCell(index: Int) {
-        
-    }
     @IBOutlet weak var heightCategoryConstraints: NSLayoutConstraint!
-    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var subcategoryCollectionView: UICollectionView!
     
     let dataSource = CommonHelper.loadJsonCategories(from: "Categories")
-    var curSelectedCellIndex: Int?
     var delegate: PrepareDelegate?
     
     var isShowCatBlock = false

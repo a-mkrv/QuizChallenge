@@ -40,7 +40,7 @@ extension AdvertisingViewController: UICollectionViewDelegate, UICollectionViewD
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdvertisingCell", for: indexPath as IndexPath) as! AdvertisingCell
         
-        cell.adIcon.image = UIImage(named: "AdCoins")
+        cell.adIcon.image = UIImage(named: "adCoins")
         cell.countCoinsLabel.text = adDescription[indexPath.row]
         cell.nameLabel.text = advertising[indexPath.row]
         

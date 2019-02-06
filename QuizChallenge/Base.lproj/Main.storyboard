@@ -213,11 +213,11 @@
                                 <rect key="frame" x="78" y="400" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal-3" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-bY-IvI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-bY-IvI">
                                 <rect key="frame" x="78" y="474" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="controls-2" translatesAutoresizingMaskIntoConstraints="NO" id="0Tb-rh-p4g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="0Tb-rh-p4g">
                                 <rect key="frame" x="78" y="546" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -243,7 +243,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QuizBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-Ob-TIn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-Ob-TIn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6o-Cw-DZ9" userLabel="HeaderView">
@@ -343,7 +343,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPC-8c-Y41" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="146" height="160"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AdCoins" translatesAutoresizingMaskIntoConstraints="NO" id="BgW-43-COF">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adCoins" translatesAutoresizingMaskIntoConstraints="NO" id="BgW-43-COF">
                                                             <rect key="frame" x="30.5" y="15" width="85" height="85"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="85" id="4Wc-Fa-PnZ"/>
@@ -1107,7 +1107,7 @@
                                                             </cells>
                                                         </collectionView>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n0f-TE-Uxq">
-                                                            <rect key="frame" x="8" y="137" width="359" height="304"/>
+                                                            <rect key="frame" x="8" y="137" width="359" height="360"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="LTR-Pi-JVd">
                                                                 <size key="itemSize" width="158" height="156"/>
@@ -1186,6 +1186,13 @@
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
+                                                        <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqz-zx-7z9">
+                                                            <rect key="frame" x="0.0" y="437" width="375" height="60"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="05E-8j-p5K"/>
+                                                            </constraints>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRw-MQ-xJR">
                                                             <rect key="frame" x="21" y="100" width="200" height="30"/>
                                                             <constraints>
@@ -1196,37 +1203,45 @@
                                                             <color key="textColor" red="0.29803921570000003" green="0.35686274509999999" blue="0.86666666670000003" alpha="0.80246682359999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-xT-qIu" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                                            <rect key="frame" x="126.5" y="447" width="122" height="40"/>
+                                                            <color key="backgroundColor" name="RoyalLightColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="ccv-nk-YYM"/>
+                                                                <constraint firstAttribute="width" constant="122" id="tnh-Av-hhQ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                            <state key="normal" title="Start">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="startGame:" destination="L7W-B4-SOE" eventType="touchUpInside" id="Gg8-4o-r65"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="ef8-Lv-huP" firstAttribute="top" secondItem="igD-2C-Eqa" secondAttribute="top" id="3zp-u4-Smz"/>
                                                         <constraint firstItem="n0f-TE-Uxq" firstAttribute="top" secondItem="YRw-MQ-xJR" secondAttribute="bottom" constant="7" id="7iQ-tI-6yh"/>
-                                                        <constraint firstAttribute="bottom" secondItem="n0f-TE-Uxq" secondAttribute="bottom" constant="56" id="FhZ-pe-Av4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="n0f-TE-Uxq" secondAttribute="bottom" id="FhZ-pe-Av4"/>
                                                         <constraint firstAttribute="trailing" secondItem="ef8-Lv-huP" secondAttribute="trailing" id="MYh-XO-a4Z"/>
+                                                        <constraint firstItem="qqz-zx-7z9" firstAttribute="leading" secondItem="igD-2C-Eqa" secondAttribute="leading" id="Mh7-0v-G1w"/>
                                                         <constraint firstItem="YRw-MQ-xJR" firstAttribute="leading" secondItem="igD-2C-Eqa" secondAttribute="leading" constant="21" id="RqW-9D-GJv"/>
+                                                        <constraint firstItem="sBU-xT-qIu" firstAttribute="centerY" secondItem="qqz-zx-7z9" secondAttribute="centerY" id="W7F-fa-ews"/>
                                                         <constraint firstAttribute="trailing" secondItem="n0f-TE-Uxq" secondAttribute="trailing" constant="8" id="dIA-2c-rXU"/>
                                                         <constraint firstItem="n0f-TE-Uxq" firstAttribute="leading" secondItem="igD-2C-Eqa" secondAttribute="leading" constant="8" id="jh7-c6-lcW"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qqz-zx-7z9" secondAttribute="bottom" id="o2l-yG-Nt6"/>
                                                         <constraint firstItem="YRw-MQ-xJR" firstAttribute="top" secondItem="ef8-Lv-huP" secondAttribute="bottom" id="pfh-yK-4KX"/>
                                                         <constraint firstItem="ef8-Lv-huP" firstAttribute="leading" secondItem="igD-2C-Eqa" secondAttribute="leading" id="s0c-zO-q5H"/>
+                                                        <constraint firstAttribute="trailing" secondItem="qqz-zx-7z9" secondAttribute="trailing" id="vjM-8b-ust"/>
+                                                        <constraint firstItem="sBU-xT-qIu" firstAttribute="centerX" secondItem="n0f-TE-Uxq" secondAttribute="centerX" id="w2b-00-POF"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-xT-qIu" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
-                                                    <rect key="frame" x="126" y="515" width="122" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" name="RoyalLightColor"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                                    <state key="normal" title="Start">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="startGame:" destination="L7W-B4-SOE" eventType="touchUpInside" id="Gg8-4o-r65"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1321,7 +1336,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QuizBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5ad-z3-rpG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="5ad-z3-rpG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="243"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heN-s1-Rup" userLabel="HeaderView">
@@ -1516,7 +1531,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rk-aq-vU9">
                                 <rect key="frame" x="165" y="591" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="clock"/>
+                                <state key="normal" image="resetTime"/>
                                 <connections>
                                     <action selector="addTime:" destination="zKX-o5-E0F" eventType="touchUpInside" id="Vv5-Pg-XJL"/>
                                 </connections>
@@ -1580,30 +1595,29 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="1080" height="720"/>
-        <image name="3" width="1080" height="720"/>
-        <image name="6" width="1080" height="864"/>
-        <image name="AdCoins" width="323" height="323"/>
+        <image name="1" width="1280" height="853"/>
+        <image name="3" width="1024" height="683"/>
+        <image name="6" width="1920" height="1080"/>
         <image name="Background" width="375" height="230"/>
         <image name="BlueRec" width="305" height="82"/>
         <image name="GrayRec" width="305" height="82"/>
         <image name="Group2" width="375" height="204"/>
         <image name="OrangeRec" width="305" height="82"/>
         <image name="PurpleRec" width="305" height="82"/>
-        <image name="QuizBackground" width="2400" height="2000"/>
         <image name="TestBack" width="502" height="721"/>
         <image name="activeGames" width="96" height="96"/>
+        <image name="adCoins" width="323" height="323"/>
         <image name="badge" width="96" height="96"/>
         <image name="cancel" width="18.399999618530273" height="18.399999618530273"/>
-        <image name="clock" width="96" height="96"/>
         <image name="console" width="48" height="48"/>
-        <image name="controls-2" width="48" height="48"/>
         <image name="hint" width="96" height="96"/>
         <image name="left-arrow" width="48" height="48"/>
-        <image name="medal-3" width="48" height="48"/>
+        <image name="medal" width="48" height="48"/>
         <image name="next" width="96" height="96"/>
         <image name="piggy-bank" width="48" height="48"/>
         <image name="question" width="48" height="48"/>
+        <image name="resetTime" width="96" height="96"/>
+        <image name="settings" width="48" height="48"/>
         <image name="user" width="48" height="48"/>
         <namedColor name="Color-5">
             <color red="0.34900000691413879" green="0.65100002288818359" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
