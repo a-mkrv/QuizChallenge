@@ -17,11 +17,11 @@ import UIKit
     
     @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0) { didSet { setShadow() }}
     @IBInspectable var shadowOpacity: Float = 0 { didSet { setShadow() }}
-    @IBInspectable var shadowColor: UIColor = .clear { didSet { setShadow() }}
+    @IBInspectable var shadowColor: UIColor? { didSet { setShadow() }}
     @IBInspectable var shadowRadius: CGFloat = 0 { didSet { setShadow() }}
     
     func setShadow() {
-        self.layer.shadowColor = shadowColor.cgColor
+        self.layer.shadowColor = shadowColor?.cgColor
         self.layer.shadowOpacity = shadowOpacity
         self.layer.shadowOffset = shadowOffset
         self.layer.shadowRadius = shadowRadius
@@ -30,8 +30,8 @@ import UIKit
 
 @IBDesignable class GradientView: IBView {
     
-    @IBInspectable var startColor:   UIColor = .black { didSet { updateColors() }}
-    @IBInspectable var endColor:     UIColor = .white { didSet { updateColors() }}
+    @IBInspectable var startColor:   UIColor?  { didSet { updateColors() }}
+    @IBInspectable var endColor:     UIColor?  { didSet { updateColors() }}
     @IBInspectable var startLocation: Double =   0.05 { didSet { updateLocations() }}
     @IBInspectable var endLocation:   Double =   0.95 { didSet { updateLocations() }}
     @IBInspectable var horizontalMode:  Bool =  false { didSet { updatePoints() }}
@@ -54,7 +54,7 @@ import UIKit
         gradientLayer.locations = [startLocation as NSNumber, endLocation as NSNumber]
     }
     func updateColors() {
-        gradientLayer.colors    = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.colors    = [startColor?.cgColor, endColor?.cgColor]
     }
     
     override func layoutSubviews() {

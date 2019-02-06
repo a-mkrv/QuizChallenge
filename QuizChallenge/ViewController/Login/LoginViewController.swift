@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
         backgroundQueue.async(execute: {
             
-            sleep(3)
+            sleep(1)
             
             DispatchQueue.main.async(execute: { () -> Void in
                 //self.loginButton.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.3568627451, blue: 0.8666666667, alpha: 0.8011558219)

@@ -43,9 +43,10 @@
 		777EAF9F220076DC00A3C14B /* GameModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAF9E220076DC00A3C14B /* GameModeCell.swift */; };
 		777EAFA32200823400A3C14B /* BaseSelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAFA22200823400A3C14B /* BaseSelectedCell.swift */; };
 		77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77894EA122081AF60041EE94 /* WelcomePageCell.swift */; };
-		7797F6F122003EE300DAB4C7 /* ConcreteTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F022003EE300DAB4C7 /* ConcreteTopicCell.swift */; };
 		7797F6F322003F4C00DAB4C7 /* SetCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F222003F4C00DAB4C7 /* SetCategoriesCell.swift */; };
 		7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */; };
+		77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0B2209D75300C821B6 /* CategoryCell.swift */; };
+		77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */; };
 		77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717521F726DA008F4018 /* TypeQuizCell.swift */; };
 		77AB717821F72707008F4018 /* TopicQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717721F72707008F4018 /* TopicQuizCell.swift */; };
 		77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717A21F728A1008F4018 /* IBCustomView.swift */; };
@@ -101,9 +102,10 @@
 		777EAF9E220076DC00A3C14B /* GameModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeCell.swift; sourceTree = "<group>"; };
 		777EAFA22200823400A3C14B /* BaseSelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSelectedCell.swift; sourceTree = "<group>"; };
 		77894EA122081AF60041EE94 /* WelcomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageCell.swift; sourceTree = "<group>"; };
-		7797F6F022003EE300DAB4C7 /* ConcreteTopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteTopicCell.swift; sourceTree = "<group>"; };
 		7797F6F222003F4C00DAB4C7 /* SetCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoriesCell.swift; sourceTree = "<group>"; };
 		7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDataSource.swift; sourceTree = "<group>"; };
+		77A00A0B2209D75300C821B6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCell.swift; sourceTree = "<group>"; };
 		77AB717521F726DA008F4018 /* TypeQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeQuizCell.swift; sourceTree = "<group>"; };
 		77AB717721F72707008F4018 /* TopicQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicQuizCell.swift; sourceTree = "<group>"; };
 		77AB717A21F728A1008F4018 /* IBCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBCustomView.swift; sourceTree = "<group>"; };
@@ -271,7 +273,8 @@
 			children = (
 				77AB717721F72707008F4018 /* TopicQuizCell.swift */,
 				7797F6F222003F4C00DAB4C7 /* SetCategoriesCell.swift */,
-				7797F6F022003EE300DAB4C7 /* ConcreteTopicCell.swift */,
+				77A00A0B2209D75300C821B6 /* CategoryCell.swift */,
+				77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -527,7 +530,6 @@
 			files = (
 				777C770A21FAD27C0022A636 /* Session.swift in Sources */,
 				776EC55B21FA3827005BA18A /* User.swift in Sources */,
-				7797F6F122003EE300DAB4C7 /* ConcreteTopicCell.swift in Sources */,
 				777A67A422086BBD00031808 /* UIView+Extension.swift in Sources */,
 				777C770821FACBBD0022A636 /* Statistics.swift in Sources */,
 				7742D0FD21F9B36500F3A677 /* CountdownView.swift in Sources */,
@@ -548,6 +550,7 @@
 				7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */,
 				7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */,
 				7707D1472201B699006AA699 /* Settings.swift in Sources */,
+				77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */,
 				77AB718521F75C60008F4018 /* UIViewController+Extension.swift in Sources */,
 				777C770C21FAF15D0022A636 /* RealmManager.swift in Sources */,
 				77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */,
@@ -556,6 +559,7 @@
 				77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */,
 				77AB718721F7617E008F4018 /* UIWindow+Extension.swift in Sources */,
 				772D1A932203318600607290 /* WelcomeViewController.swift in Sources */,
+				77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */,
 				77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */,
 				7707D1452201901A006AA699 /* TypeDecodable.swift in Sources */,
 				7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */,
