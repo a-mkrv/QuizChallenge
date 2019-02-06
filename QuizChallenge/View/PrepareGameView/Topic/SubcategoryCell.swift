@@ -10,4 +10,7 @@ import UIKit
 
 class SubcategoryCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageView: IBImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
 }

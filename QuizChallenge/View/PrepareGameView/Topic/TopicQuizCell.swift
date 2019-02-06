@@ -21,7 +21,10 @@ class TopicQuizCell: UICollectionViewCell, CellSelectable {
     let dataSource = CommonHelper.loadJsonCategories(from: "Categories")
     var curSelectedCellIndex: Int?
     var delegate: PrepareDelegate?
+    
     var isShowCatBlock = false
+    var selectedCategory = 0
+    var dataCount = 0
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -44,7 +47,9 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         if collectionView == self.categoryCollectionView {
             return dataSource?.typeQuestions.count ?? 0
         } else {
-            return 5
+            let dataCount = dataSource?.typeQuestions[selectedCategory].types.count ?? 0
+            self.dataCount = dataCount
+            return dataCount
         }
     }
     
@@ -58,6 +63,9 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubcategoryCell", for: indexPath) as! SubcategoryCell
+            let dataCell = dataSource?.typeQuestions[selectedCategory].types[indexPath.row]
+            cell.imageView.image = UIImage(named: (dataCell?.image)!)
+            cell.nameLabel.text = dataCell?.name
             return cell
         }
     }
@@ -78,7 +86,18 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         return CGSize(width: collectionViewWidth / 3, height: 80)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == categoryCollectionView {
+            selectedCategory = indexPath.row
+            subcategoryCollectionView.reloadData()
+            categoryCollectionView.scrollToItem(at: IndexPath(row: selectedCategory, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        guard dataCount > 4 else { return }
         
         if (scrollView.contentOffset.y >= 100 && !isShowCatBlock) {
             heightCategoryConstraints.constant = 0

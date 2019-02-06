@@ -35,11 +35,11 @@ class NetworkManager {
     }
     
     // MARK: - Open Methods
-    func getUser(with credentials: APIParameters, completion: @escaping (Result<User>) -> ()) {
+    func getUser(with credentials: APIParameters, completion: @escaping (Result<User>) -> Void) {
         getRequest(type: User.self, parameters: credentials) { completion($0) }
     }
     
-    func getQuestions(with credentials: APIParameters, completion: @escaping (Result<Question>) -> ()) {
+    func getQuestions(with credentials: APIParameters, completion: @escaping (Result<Question>) -> Void) {
         getRequest(type: Question.self, parameters: credentials) { completion($0) }
     }
     
@@ -52,7 +52,7 @@ class NetworkManager {
     }
     
     // MARK: - Private request logic
-    private func getRequest <T: Object> (type: T.Type, parameters: APIParameters? = nil, completion: @escaping (Result<T>) -> ()) where T:Mappable, T:Endpoint {
+    private func getRequest <T: Object> (type: T.Type, parameters: APIParameters? = nil, completion: @escaping (Result<T>) -> Void) where T:Mappable, T:Endpoint {
         
         let parameterss: [String: Any] = [
             "type" : "text",
@@ -87,7 +87,7 @@ class NetworkManager {
 //        }
     }
     
-    private func postRequest(parameters: APIParameters, completion: @escaping (Result<Any>) -> ()) {
+    private func postRequest(parameters: APIParameters, completion: @escaping (Result<Any>) -> Void) {
         
         session.request(URL(string: "www")!, method: .post, parameters: parameters).responseJSON { response in
             // Waiting for server logic

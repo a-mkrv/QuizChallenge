@@ -14,7 +14,7 @@ class CountdownView: UIView {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var prepareLabel: UILabel!
     
-    var startCallback: (() -> ())?
+    var startCallback: EmptyClosure?
     var timer: Timer!
     var seconds = 3
     

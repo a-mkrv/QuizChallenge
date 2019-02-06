@@ -43,7 +43,6 @@
 		777EAF9F220076DC00A3C14B /* GameModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAF9E220076DC00A3C14B /* GameModeCell.swift */; };
 		777EAFA32200823400A3C14B /* BaseSelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAFA22200823400A3C14B /* BaseSelectedCell.swift */; };
 		77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77894EA122081AF60041EE94 /* WelcomePageCell.swift */; };
-		7797F6F322003F4C00DAB4C7 /* SetCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F222003F4C00DAB4C7 /* SetCategoriesCell.swift */; };
 		7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */; };
 		77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0B2209D75300C821B6 /* CategoryCell.swift */; };
 		77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */; };
@@ -102,7 +101,6 @@
 		777EAF9E220076DC00A3C14B /* GameModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeCell.swift; sourceTree = "<group>"; };
 		777EAFA22200823400A3C14B /* BaseSelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSelectedCell.swift; sourceTree = "<group>"; };
 		77894EA122081AF60041EE94 /* WelcomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageCell.swift; sourceTree = "<group>"; };
-		7797F6F222003F4C00DAB4C7 /* SetCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoriesCell.swift; sourceTree = "<group>"; };
 		7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDataSource.swift; sourceTree = "<group>"; };
 		77A00A0B2209D75300C821B6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCell.swift; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				77AB717721F72707008F4018 /* TopicQuizCell.swift */,
-				7797F6F222003F4C00DAB4C7 /* SetCategoriesCell.swift */,
 				77A00A0B2209D75300C821B6 /* CategoryCell.swift */,
 				77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */,
 			);
@@ -536,7 +533,6 @@
 				777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */,
 				77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */,
 				7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */,
-				7797F6F322003F4C00DAB4C7 /* SetCategoriesCell.swift in Sources */,
 				7742D10521F9D3DE00F3A677 /* QuizViewModel.swift in Sources */,
 				77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */,
 				7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */,
