@@ -12,5 +12,10 @@ class CategoryCell: UICollectionViewCell {
     
     @IBOutlet weak var backColorView: GradientView!
     @IBOutlet weak var categoryNameLabel: UILabel!
+ 
+    override func prepareForReuse() {
+        backColorView.shadowOpacity = 0
+        backColorView.shadowColor = .clear
+    }
     
 }

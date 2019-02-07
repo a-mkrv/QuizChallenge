@@ -13,16 +13,26 @@ class TopicQuizCell: UICollectionViewCell {
     @IBOutlet weak var heightCategoryConstraints: NSLayoutConstraint!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var subcategoryCollectionView: UICollectionView!
+    @IBOutlet weak var previewView: UIView!
     
     let dataSource = CommonHelper.loadJsonCategories(from: "Categories")
     var delegate: PrepareDelegate?
     
+    var isChooseCategory = false
     var isShowCatBlock = false
-    var selectedCategory = 0
+    var selectedCategory = -1
+    var selectedSubCategory = -1
     var dataCount = 0
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        // FIX: Call not once
+        
+        if !isChooseCategory {
+            previewView.isHidden = false
+            previewView.alpha = 1
+        }
         
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
@@ -42,9 +52,12 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         if collectionView == self.categoryCollectionView {
             return dataSource?.typeQuestions.count ?? 0
         } else {
-            let dataCount = dataSource?.typeQuestions[selectedCategory].types.count ?? 0
-            self.dataCount = dataCount
-            return dataCount
+            if selectedCategory != -1,  let dataCount = dataSource?.typeQuestions[selectedCategory].types.count {
+                self.dataCount = dataCount
+                return dataCount
+            }
+            
+            return 0
         }
     }
     
@@ -53,14 +66,26 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
             let cellColor = UIColor(named: "Color-\(indexPath.row)")
             cell.backColorView.startColor = cellColor
-            cell.backColorView.shadowColor = cellColor
             cell.categoryNameLabel.text = dataSource?.typeQuestions[indexPath.row].name
+            
+            if indexPath.row == selectedCategory {
+                cell.backColorView.shadowColor = cellColor
+                cell.backColorView.shadowOpacity = 1
+            }
+            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubcategoryCell", for: indexPath) as! SubcategoryCell
             let dataCell = dataSource?.typeQuestions[selectedCategory].types[indexPath.row]
             cell.imageView.image = UIImage(named: (dataCell?.image)!)
             cell.nameLabel.text = dataCell?.name
+            if indexPath.row == selectedSubCategory {
+                cell.gameButtonView.isHidden = false
+            }
+            cell.callback = {
+                self.delegate?.startGame()
+            }
+            
             return cell
         }
     }
@@ -84,9 +109,26 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == categoryCollectionView {
+            if !isChooseCategory {
+                isChooseCategory = true
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.previewView.alpha = 0
+                }) { _ in
+                    self.previewView.isHidden = true
+                }
+            }
+            
             selectedCategory = indexPath.row
+            selectedSubCategory = -1
             subcategoryCollectionView.reloadData()
             categoryCollectionView.scrollToItem(at: IndexPath(row: selectedCategory, section: 0), at: .centeredHorizontally, animated: true)
+            categoryCollectionView.reloadData()
+        } else {
+            let cell = collectionView.cellForItem(at: indexPath) as! SubcategoryCell
+            cell.gameButtonView.isHidden = false
+            selectedSubCategory = indexPath.row
+            subcategoryCollectionView.scrollToItem(at: IndexPath(row: selectedSubCategory, section: 0), at: .centeredVertically, animated: true)
+            subcategoryCollectionView.reloadData()
         }
     }
     
@@ -94,11 +136,12 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         
         guard dataCount > 4 else { return }
         
+        // FIXME: Magic number (100 - height top collection view, 95)?
         if (scrollView.contentOffset.y >= 100 && !isShowCatBlock) {
             heightCategoryConstraints.constant = 0
             isShowCatBlock = true
             applyAnimation()
-        } else if (scrollView.contentOffset.y < 100 && isShowCatBlock) {
+        } else if (scrollView.contentOffset.y < 95 && isShowCatBlock) {
             heightCategoryConstraints.constant = 100
             isShowCatBlock = false
             applyAnimation()

@@ -12,5 +12,15 @@ class SubcategoryCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: IBImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var gameButtonView: UIView!
     
+    var callback: EmptyClosure?
+    
+    @IBAction func playGame(_ sender: Any) {
+        callback?()
+    }
+    
+    override func prepareForReuse() {
+        gameButtonView.isHidden = true
+    }
 }
