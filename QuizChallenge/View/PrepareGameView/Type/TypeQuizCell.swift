@@ -11,12 +11,13 @@ import UIKit
 class TypeQuizCell: UICollectionViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var chooseButton: IBButton!
     
     var delegate: PrepareDelegate?
     var selectedCellIndex: Int?
 
     private let dataSource = [("4 Pic 1 Answer", "collage"),
-                              ("Common Question", "3029241801_a7cd294df2"),
+                              ("Common Question", "wordcloud"),
                               ("True / False", "TrueFalse"),
                               ("Other", "Other")]
     
@@ -24,12 +25,17 @@ class TypeQuizCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        chooseButton.alpha = 0.5
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
     @IBAction func goChooseCategory(_ sender: Any) {
-        delegate?.scrollToCategories()
+        if selectedCellIndex == nil {
+            chooseButton.shake()
+        } else {
+            delegate?.scrollToCategories()
+        }
     }
 }
 
@@ -56,11 +62,13 @@ extension TypeQuizCell: UICollectionViewDataSource, UICollectionViewDelegate  {
         
         if let index = selectedCellIndex, index < dataSource.count {
             cell = collectionView.cellForItem(at: IndexPath(row: index, section: 0)) as? GameModeCell
-            cell?.selectCell(selectState: false)
+            cell?.isSelected(false)
         }
         
         selectedCellIndex = indexPath.row
+        chooseButton.alpha = 1
         cell = collectionView.cellForItem(at: indexPath) as? GameModeCell
-        cell?.selectCell(selectState: true)
+        cell?.isSelected(true)
     }
+    
 }

@@ -8,9 +8,23 @@
 
 import UIKit
 
-class GameModeCell: BaseSelectedCell {
+class GameModeCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-
+    @IBOutlet weak var selectedBackgroundImageView: UIImageView!
+    
+    override func layoutSubviews() {
+        isSelected(false)
+    }
+    
+    func isSelected(_ selected: Bool) {
+        if selected {
+            selectedBackgroundImageView.isHidden = false
+            nameLabel.textColor = .white
+        } else {
+            selectedBackgroundImageView.isHidden = true
+            nameLabel.textColor = .black
+        }
+    }
 }

@@ -40,7 +40,6 @@
 		777C771221FC4CD60022A636 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C771121FC4CD60022A636 /* SettingsViewController.swift */; };
 		777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C771321FC4D920022A636 /* ProfileSettingsViewController.swift */; };
 		777EAF9F220076DC00A3C14B /* GameModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAF9E220076DC00A3C14B /* GameModeCell.swift */; };
-		777EAFA32200823400A3C14B /* BaseSelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAFA22200823400A3C14B /* BaseSelectedCell.swift */; };
 		77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77894EA122081AF60041EE94 /* WelcomePageCell.swift */; };
 		7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */; };
 		77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0B2209D75300C821B6 /* CategoryCell.swift */; };
@@ -97,7 +96,6 @@
 		777C771121FC4CD60022A636 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		777C771321FC4D920022A636 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileSettingsViewController.swift; path = "../New Group/ProfileSettingsViewController.swift"; sourceTree = "<group>"; };
 		777EAF9E220076DC00A3C14B /* GameModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeCell.swift; sourceTree = "<group>"; };
-		777EAFA22200823400A3C14B /* BaseSelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSelectedCell.swift; sourceTree = "<group>"; };
 		77894EA122081AF60041EE94 /* WelcomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageCell.swift; sourceTree = "<group>"; };
 		7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDataSource.swift; sourceTree = "<group>"; };
 		77A00A0B2209D75300C821B6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -300,7 +298,6 @@
 		7797F6F722006B1E00DAB4C7 /* PrepareGameView */ = {
 			isa = PBXGroup;
 			children = (
-				777EAFA22200823400A3C14B /* BaseSelectedCell.swift */,
 				777EAFA022007EA300A3C14B /* Type */,
 				777EAFA122007EB100A3C14B /* Topic */,
 			);
@@ -559,7 +556,6 @@
 				777C771221FC4CD60022A636 /* SettingsViewController.swift in Sources */,
 				77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */,
 				7742D0F721F9A3E500F3A677 /* SimpleQuestionView.swift in Sources */,
-				777EAFA32200823400A3C14B /* BaseSelectedCell.swift in Sources */,
 				7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */,
 				77AB717821F72707008F4018 /* TopicQuizCell.swift in Sources */,
 				777EAF9F220076DC00A3C14B /* GameModeCell.swift in Sources */,
