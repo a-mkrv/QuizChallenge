@@ -38,7 +38,11 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        // TODO: LogOut logic
+        CommonHelper.alert.showConfirmView(title: "Log Out", subTitle: "Are you sure you want to quit?", firstButtonText: "Yes", secondButtonText: "Cancel", completion: {
+                self.doLogOut()
+        }) {
+            print("Cancel")
+        }
     }
     
     @IBAction func pressBack(_ sender: Any) {
@@ -57,5 +61,13 @@ class SettingsViewController: UIViewController {
         backgroundSoundSwitch.isOn = settings.backgroundSoud
         notificationsSwitch.isOn = settings.notifications
         saveQuestionsSwitch.isOn = settings.saveQuestions
+    }
+    
+    private func doLogOut() {
+        UserDefaults.standard.clearAllAppData()
+        try! RealmManager.shared.clearAllData()
+        
+        let loginViewController = CommonHelper.loadViewController(from: "Login", named: "LoginSB") as? LoginViewController
+        view.window?.switchRootViewController(loginViewController!)
     }
 }

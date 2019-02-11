@@ -27,12 +27,12 @@ enum AlertType {
 class AlertHelper {
     
     let timeOutShowing = 3.0
-    let alertView = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
     let colorTextButton: UInt = 0xFFFFFF
     
     // Question Alert
     func showConfirmView(title: String, subTitle: String, firstButtonText: String, secondButtonText: String? = nil, completion: @escaping EmptyClosure, secondCompletion: EmptyClosure? = nil) {
         
+        let alertView = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alertView.addButton(firstButtonText) { completion() }
         
         if let text = secondButtonText, secondCompletion != nil {
@@ -45,6 +45,7 @@ class AlertHelper {
     // Simple Alert with duration
     func showAlertView(title: String, subTitle: String, buttonText: String, type: AlertType, completion: EmptyClosure? = nil) {
         
+        let alertView = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alertView.addButton(buttonText) { completion?() }
         
         let timeOut = SCLAlertView.SCLTimeoutConfiguration(timeoutValue: timeOutShowing, timeoutAction: { completion?() })

@@ -32,27 +32,11 @@ class LoginViewController: UIViewController {
             sleep(1)
             
             DispatchQueue.main.async(execute: { () -> Void in
-                //self.loginButton.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.3568627451, blue: 0.8666666667, alpha: 0.8011558219)
                 self.loginButton.stopAnimation(animationStyle: .expand, completion: {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let mainController = storyboard.instantiateViewController(withIdentifier: "MainSB") as? MainViewController
-                    //self.view.window?.switchRootViewController(mainController!)
-                    self.present(mainController!, animated: true, completion: nil)
+                    self.doLogin()
                 })
             })
         })
-    
-        return
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainController = storyboard.instantiateViewController(withIdentifier: "MainSB") as? MainViewController
-        UserDefaults.standard.isLoggedIn = true
-        
-        let setSettings = SettingsModel()
-        try! RealmManager.shared.storeObject(setSettings)
-        
-        
-        self.view.window?.switchRootViewController(mainController!)
     }
     
     @IBAction func editingLoginField(_ sender: Any) {
@@ -63,4 +47,14 @@ class LoginViewController: UIViewController {
 
     }
     
+    func doLogin() {
+        
+        UserDefaults.standard.isLoggedIn = true
+        
+        let setSettings = SettingsModel()
+        try! RealmManager.shared.storeObject(setSettings)
+        
+        let mainController = CommonHelper.loadViewController(from: "Main", named: "MainSB") as? MainViewController
+        view.window?.switchRootViewController(mainController!)
+    }
 }

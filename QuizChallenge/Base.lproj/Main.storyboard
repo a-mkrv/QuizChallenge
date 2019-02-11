@@ -646,7 +646,7 @@
                                             <color key="titleColor" red="1" green="0.2428745658" blue="0.1238016852" alpha="0.82815175510000005" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="logOut:" destination="PBe-zO-dTC" eventType="touchUpInside" id="HSz-b4-znz"/>
+                                            <action selector="logOut:" destination="PBe-zO-dTC" eventType="touchUpInside" id="Net-yz-DGl"/>
                                         </connections>
                                     </button>
                                 </subviews>
