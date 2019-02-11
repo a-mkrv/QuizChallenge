@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import SCLAlertView
 
 // MARK: - Closure typealias
@@ -67,7 +68,14 @@ class AlertHelper {
 class CommonHelper {
     
     static var alert = AlertHelper()
+    static let networkStateManager = NetworkReachabilityManager()
+
+    // Check Internet connection
+    static func checkNetworkStatus() -> Bool {
+        return networkStateManager?.isReachable ?? false
+    }
     
+    // Load view controller from storyboard
     static func loadViewController(from storyboard: String, named name: String) -> UIViewController? {
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: name)

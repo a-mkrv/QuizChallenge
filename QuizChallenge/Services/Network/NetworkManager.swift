@@ -35,7 +35,7 @@ class NetworkManager {
     }
     
     // MARK: - Open Methods
-    func getUser(with credentials: APIParameters, completion: @escaping (Result<User>) -> Void) {
+    func doLogin(with credentials: APIParameters, completion: @escaping (Result<User>) -> Void) {
         getRequest(type: User.self, parameters: credentials) { completion($0) }
     }
     

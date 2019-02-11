@@ -267,6 +267,8 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="eek-lA-hDN" id="cXX-Pm-sbn"/>
+                        <outlet property="loginTextField" destination="eR5-KC-Y9e" id="OD3-x7-vgl"/>
+                        <outlet property="passwordTextField" destination="RO9-Jz-ri2" id="jjd-P6-V1a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS4-Yv-QRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -887,7 +889,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="7" width="1080" height="720"/>
+        <image name="7" width="604" height="604"/>
         <image name="Background" width="375" height="230"/>
         <image name="Group" width="375" height="230"/>
         <image name="caret-arrow-up" width="18" height="18"/>

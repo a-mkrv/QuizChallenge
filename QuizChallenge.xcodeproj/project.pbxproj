@@ -55,6 +55,7 @@
 		77AB718721F7617E008F4018 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718621F7617E008F4018 /* UIWindow+Extension.swift */; };
 		77AB718921F762E2008F4018 /* UISegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718821F762E2008F4018 /* UISegue.swift */; };
 		77AB718F21F86B18008F4018 /* AdvertisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */; };
+		77D653692211B92700E942B0 /* ValidCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D653682211B92700E942B0 /* ValidCredentials.swift */; };
 		77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2B45721F192FD00E0FE75 /* AppDelegate.swift */; };
 		77E2B45D21F192FD00E0FE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E2B45B21F192FD00E0FE75 /* Main.storyboard */; };
 		77E2B45F21F192FF00E0FE75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E2B45E21F192FF00E0FE75 /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 		77AB718621F7617E008F4018 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		77AB718821F762E2008F4018 /* UISegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegue.swift; sourceTree = "<group>"; };
 		77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingViewController.swift; sourceTree = "<group>"; };
+		77D653682211B92700E942B0 /* ValidCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidCredentials.swift; sourceTree = "<group>"; };
 		77E2B45421F192FD00E0FE75 /* QuizChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E2B45721F192FD00E0FE75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E2B45C21F192FD00E0FE75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				77AB718221F75AAE008F4018 /* LoginViewController.swift */,
 				772D1A922203318600607290 /* WelcomeViewController.swift */,
 				777A67A122086A7C00031808 /* RegistrationViewController.swift */,
+				77D653682211B92700E942B0 /* ValidCredentials.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				772D1A932203318600607290 /* WelcomeViewController.swift in Sources */,
 				77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */,
 				77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */,
+				77D653692211B92700E942B0 /* ValidCredentials.swift in Sources */,
 				7707D1452201901A006AA699 /* TypeDecodable.swift in Sources */,
 				7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */,
 				7740AADF21F86C5D00CDDE4A /* AdvertisingCell.swift in Sources */,
