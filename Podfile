@@ -19,5 +19,7 @@ target 'QuizChallenge' do
   pod 'RealmSwift'
   pod 'AlamofireObjectMapper'
   pod 'ObjectMapper'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
 
 end

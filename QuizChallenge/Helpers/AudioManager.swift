@@ -17,7 +17,7 @@ class AudioManager {
 
     func playMusic() {
         if isPlaying()  {
-            print("Player Already Playing")
+            Logger.error(msg: "Player Already Playing")
             return
         }
         
@@ -30,7 +30,7 @@ class AudioManager {
             audioPlayer?.play()
             
         } catch let error as NSError {
-            print("Error playing: ", error.description)
+            Logger.error(msg: "Error playing: " + error.description)
         }
     }
     

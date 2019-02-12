@@ -41,7 +41,7 @@ class SettingsViewController: UIViewController {
         CommonHelper.alert.showConfirmView(title: "Log Out", subTitle: "Are you sure you want to quit?", firstButtonText: "Yes", secondButtonText: "Cancel", completion: {
                 self.doLogOut()
         }) {
-            print("Cancel")
+            Logger.debug(msg: "Cancel logout")
         }
     }
     
@@ -64,10 +64,8 @@ class SettingsViewController: UIViewController {
     }
     
     private func doLogOut() {
-        UserDefaults.standard.clearAllAppData()
         try! RealmManager.shared.clearAllData()
-        
-        let loginViewController = CommonHelper.loadViewController(from: "Login", named: "LoginSB") as? LoginViewController
-        view.window?.switchRootViewController(loginViewController!)
+        UserManager.shared.logOut()
+        Router.rootLoginVC()
     }
 }

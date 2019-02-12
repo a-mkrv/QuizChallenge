@@ -88,16 +88,23 @@ class CommonHelper {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
                 guard let jsonResult = try? JSONDecoder().decode(TypeDecodable.self, from: data) else {
-                    print("Error parse json")
+                    Logger.error(msg: "Error parse json")
                     return nil
                 }
                 
                 return jsonResult
             } catch {
-                print("Error load json: \(error.localizedDescription)")
+                Logger.error(msg: "Error load json: " + error.localizedDescription)
             }
         }
         return nil
+    }
+    
+    // Current UTC time
+    static func getCurrentTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd/HH:mm:ss.SSS"
+        return dateFormatter.string(from: Date())
     }
     
 }

@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func pressLoginButton(_ sender: Any) {
         
-        
         guard CommonHelper.checkNetworkStatus() else {
             CommonHelper.alert.showAlertView(title: "Error", subTitle: "It seems you forgot to turn on the Internet", buttonText: "Try Again", type: .error)
             return
@@ -40,24 +39,19 @@ class LoginViewController: UIViewController {
         let parameters = ["name" : login, "password" : password]
         
         loginButton.startAnimation()
+        
         DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 0.5, execute: {
             
             NetworkManager.shared.doLogin(with: parameters, completion: { (result) in
                 
                 switch result {
                 case .success(_):
-                    DispatchQueue.main.async(execute: { () -> Void in
-                        self.loginButton.stopAnimation(animationStyle: .expand, completion: {
-                            self.doLogin()
-                        })
-                    })
+                    self.successLogin()
                     
                 case .error(let error, let code):
-                    print("Error - \(error). code - \(code)")
-                    self.loginButton.stopAnimation()
-                    DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 0.5, execute: {
-                        self.loginButton.shake()
-                    })
+                    Logger.error(msg: "Error - \(error). code - \(code)")                    
+                    Logger.info(msg: "Only for debug") // //self.errorLogin()
+                    self.successLogin()
                 }
             })
         })
@@ -71,14 +65,28 @@ class LoginViewController: UIViewController {
         _ = checkCredentials(type: .password, for: passwordTextField)
     }
     
-    func doLogin() {
-        
-        UserDefaults.standard.isLoggedIn = true
-        
-        let setSettings = SettingsModel()
-        try! RealmManager.shared.storeObject(setSettings)
-        
-        let mainController = CommonHelper.loadViewController(from: "Main", named: "MainSB") as? MainViewController
-        view.window?.switchRootViewController(mainController!)
+    // MARK: - Private methods
+    
+    fileprivate func successLogin() {
+        DispatchQueue.main.async {
+            self.loginButton.stopAnimation(animationStyle: .expand, completion: {
+                self.doLogin()
+            })
+        }
+    }
+    
+    fileprivate func errorLogin() {
+        self.loginButton.stopAnimation()
+        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1, execute: {
+            DispatchQueue.main.async {
+                self.loginButton.shake()
+            }
+        })
+    }
+    
+    fileprivate func doLogin() {
+        try! RealmManager.shared.storeObject(SettingsModel())
+        UserManager.shared.isLoggedIn = true
+        Router.rootMainVC()
     }
 }

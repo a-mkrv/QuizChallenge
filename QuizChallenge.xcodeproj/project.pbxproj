@@ -52,10 +52,13 @@
 		77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718021F7571F008F4018 /* TextField+Extension.swift */; };
 		77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718221F75AAE008F4018 /* LoginViewController.swift */; };
 		77AB718521F75C60008F4018 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718421F75C60008F4018 /* UIViewController+Extension.swift */; };
-		77AB718721F7617E008F4018 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718621F7617E008F4018 /* UIWindow+Extension.swift */; };
 		77AB718921F762E2008F4018 /* UISegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718821F762E2008F4018 /* UISegue.swift */; };
 		77AB718F21F86B18008F4018 /* AdvertisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */; };
 		77D653692211B92700E942B0 /* ValidCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D653682211B92700E942B0 /* ValidCredentials.swift */; };
+		77D6536B2212B1AD00E942B0 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D6536A2212B1AD00E942B0 /* UserManager.swift */; };
+		77D6536D2212B4BD00E942B0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D6536C2212B4BD00E942B0 /* LoginViewModel.swift */; };
+		77D6536F2212B9B900E942B0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D6536E2212B9B900E942B0 /* Router.swift */; };
+		77D653712212C76700E942B0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D653702212C76700E942B0 /* Logger.swift */; };
 		77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2B45721F192FD00E0FE75 /* AppDelegate.swift */; };
 		77E2B45D21F192FD00E0FE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E2B45B21F192FD00E0FE75 /* Main.storyboard */; };
 		77E2B45F21F192FF00E0FE75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E2B45E21F192FF00E0FE75 /* Assets.xcassets */; };
@@ -109,10 +112,13 @@
 		77AB718021F7571F008F4018 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		77AB718221F75AAE008F4018 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		77AB718421F75C60008F4018 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		77AB718621F7617E008F4018 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		77AB718821F762E2008F4018 /* UISegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegue.swift; sourceTree = "<group>"; };
 		77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingViewController.swift; sourceTree = "<group>"; };
 		77D653682211B92700E942B0 /* ValidCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidCredentials.swift; sourceTree = "<group>"; };
+		77D6536A2212B1AD00E942B0 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		77D6536C2212B4BD00E942B0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		77D6536E2212B9B900E942B0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		77D653702212C76700E942B0 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77E2B45421F192FD00E0FE75 /* QuizChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E2B45721F192FD00E0FE75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E2B45C21F192FD00E0FE75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		7723AE6721F64E9E00F76DE7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				77D6536C2212B4BD00E942B0 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -185,6 +192,7 @@
 			children = (
 				7723AE7121F70C7B00F76DE7 /* Storage */,
 				7723AE7021F70C7400F76DE7 /* Network */,
+				77D6536A2212B1AD00E942B0 /* UserManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -211,7 +219,6 @@
 				77AB717C21F7292E008F4018 /* Color+Extension.swift */,
 				77AB718021F7571F008F4018 /* TextField+Extension.swift */,
 				77AB718421F75C60008F4018 /* UIViewController+Extension.swift */,
-				77AB718621F7617E008F4018 /* UIWindow+Extension.swift */,
 				77AB718821F762E2008F4018 /* UISegue.swift */,
 				7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */,
 				777A67A322086BBD00031808 /* UIView+Extension.swift */,
@@ -326,6 +333,8 @@
 				7745EA3E21FDBA5B00210E96 /* AudioManager.swift */,
 				7745EA4221FF77E400210E96 /* HelperFile.swift */,
 				7723AE7221F70CC600F76DE7 /* Extensions */,
+				77D6536E2212B9B900E942B0 /* Router.swift */,
+				77D653702212C76700E942B0 /* Logger.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -474,6 +483,9 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
@@ -488,6 +500,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
@@ -522,12 +537,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D6536D2212B4BD00E942B0 /* LoginViewModel.swift in Sources */,
 				777C770A21FAD27C0022A636 /* Session.swift in Sources */,
 				776EC55B21FA3827005BA18A /* User.swift in Sources */,
 				777A67A422086BBD00031808 /* UIView+Extension.swift in Sources */,
 				777C770821FACBBD0022A636 /* Statistics.swift in Sources */,
 				7742D0FD21F9B36500F3A677 /* CountdownView.swift in Sources */,
 				777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */,
+				77D653712212C76700E942B0 /* Logger.swift in Sources */,
 				77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */,
 				7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */,
 				77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */,
@@ -540,6 +557,7 @@
 				7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */,
 				77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */,
 				7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */,
+				77D6536B2212B1AD00E942B0 /* UserManager.swift in Sources */,
 				7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */,
 				7707D1472201B699006AA699 /* Settings.swift in Sources */,
 				77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */,
@@ -549,9 +567,9 @@
 				7723AE7421F7121200F76DE7 /* NetworkManager.swift in Sources */,
 				7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */,
 				77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */,
-				77AB718721F7617E008F4018 /* UIWindow+Extension.swift in Sources */,
 				772D1A932203318600607290 /* WelcomeViewController.swift in Sources */,
 				77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */,
+				77D6536F2212B9B900E942B0 /* Router.swift in Sources */,
 				77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */,
 				77D653692211B92700E942B0 /* ValidCredentials.swift in Sources */,
 				7707D1452201901A006AA699 /* TypeDecodable.swift in Sources */,

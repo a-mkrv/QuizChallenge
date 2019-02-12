@@ -93,10 +93,7 @@ extension WelcomeViewController: UICollectionViewDelegate, UICollectionViewDataS
         if indexPath.row == pages.count - 1 {
             cell.configLastPage()
             cell.callback = {
-                
-                let storyboard = UIStoryboard(name: "Login", bundle: nil)
-                let mainController = storyboard.instantiateViewController(withIdentifier: "LoginSB") as? LoginViewController
-                self.view.window?.switchRootViewController(mainController!)
+                Router.rootLoginVC()
             }
         }
         

@@ -13,33 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.white
-
-        var initialViewController: UIViewController?
-
-        if (isLoggedIn()) {
-            initialViewController = CommonHelper.loadViewController(from: "Main", named: "MainSB") as? MainViewController
-        } else {
-            initialViewController = CommonHelper.loadViewController(from: "Login", named: "WelcomeSB") as? WelcomeViewController
-        }
         
-        if let initVC = initialViewController {
-            let navigationController = UINavigationController(rootViewController: initVC)
-            navigationController.isNavigationBarHidden = true
-            navigationController.navigationBar.isTranslucent = true
-            self.window?.rootViewController = navigationController
-            self.window?.makeKeyAndVisible()
-        }
-
+        Router.setupRootVC()
+        
         return true
-    }
-
-    private func isLoggedIn() -> Bool {
-        return UserDefaults.standard.isLoggedIn ?? false
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
