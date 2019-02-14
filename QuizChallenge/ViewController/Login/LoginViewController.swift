@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import TransitionButton
 
 class LoginViewController: UIViewController {
@@ -15,64 +17,87 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: IBTextField!
     @IBOutlet weak var passwordTextField: IBTextField!
     
+    var viewModel: LoginViewModel?
+    var disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.borderColor = #colorLiteral(red: 0.2980392157, green: 0.3568627451, blue: 0.8666666667, alpha: 1)
         loginButton.layer.borderWidth = 2
+        setupRx()
     }
     
-    // MARK: Actions
+    func setViewModel(_ viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+    }
     
-    @IBAction func pressLoginButton(_ sender: Any) {
+    // MARK: - Setup RX
+    
+    fileprivate func setupRx() {
         
-        guard CommonHelper.checkNetworkStatus() else {
-            CommonHelper.alert.showAlertView(title: "Error", subTitle: "It seems you forgot to turn on the Internet", buttonText: "Try Again", type: .error)
+        guard let viewModel = self.viewModel else {
             return
         }
         
-        guard checkCredentials(type: .login, for: loginTextField) && checkCredentials(type: .password, for: passwordTextField) else {
-            CommonHelper.alert.showAlertView(title: "Error", subTitle: "Incorrect login or password", buttonText: "Try Again", type: .error)
-            return
-        }
+        // View
+        loginTextField.rx.controlEvent(.editingChanged)
+            .map { self.loginTextField.text! }
+            .bind(to: viewModel.username)
+            .disposed(by: disposeBag)
         
-        guard let login = loginTextField.text, let password = passwordTextField.text else { return }
-        let parameters = ["name" : login, "password" : password]
+        passwordTextField.rx.controlEvent(.editingChanged)
+            .map { self.passwordTextField.text }
+            .bind(to: viewModel.password)
+            .disposed(by: disposeBag)
         
-        loginButton.startAnimation()
-        
-        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 0.5, execute: {
-            
-            NetworkManager.shared.doLogin(with: parameters, completion: { (result) in
-                
-                switch result {
-                case .success(_):
+        loginButton.rx.tap
+            .flatMap { [unowned self] _ -> Observable<LoginResponse> in
+                self.loginButton.startAnimation()
+                return (self.viewModel?.serverNativeLogin())!
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { status in
+                switch status {
+                case .noInterner:
+                    self.loginButton.stopAnimation()
+                    CommonHelper.alert.showAlertView(title: "Error",
+                                                     subTitle: "It seems you forgot to turn on the Internet",
+                                                     buttonText: "Try Again",
+                                                     type: .error)
+                case .success:
                     self.successLogin()
-                    
-                case .error(let error, let code):
-                    Logger.error(msg: "Error - \(error). code - \(code)")                    
-                    Logger.info(msg: "Only for debug") // //self.errorLogin()
-                    self.successLogin()
+                case .failCredentials:
+                   self.errorLogin()
+                case .none:
+                    Logger.info(msg: "None Case Response")
                 }
-            })
-        })
-    }
+            }).disposed(by: disposeBag)
+        
+        // View Model
+        viewModel.isUserNameValid()
+            .observeOn(MainScheduler.instance)
+            .bind { self.loginTextField.lineColor = $0 ? UIColor.royal : .red }
+            .disposed(by: disposeBag)
     
-    @IBAction func editingLoginField(_ sender: Any) {
-        _ = checkCredentials(type: .login, for: loginTextField)
-    }
-    
-    @IBAction func editingPasswordField(_ sender: Any) {
-        _ = checkCredentials(type: .password, for: passwordTextField)
+        viewModel.isPasswordValid()
+            .observeOn(MainScheduler.instance)
+            .bind { self.passwordTextField.lineColor = $0 ? UIColor.royal : .red }
+            .disposed(by: disposeBag)
+ 
+        viewModel.isUserNameAndPasswordValid()
+        .observeOn(MainScheduler.instance)
+        .bind { self.loginButton.isEnabled = $0 }
+        .disposed(by: disposeBag)
     }
     
     // MARK: - Private methods
     
     fileprivate func successLogin() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             self.loginButton.stopAnimation(animationStyle: .expand, completion: {
                 self.doLogin()
             })
-        }
+        })
     }
     
     fileprivate func errorLogin() {

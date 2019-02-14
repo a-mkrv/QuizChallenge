@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 import RealmSwift
+
+// MARK: - Network settings
 
 typealias APIParameters = [String : Any]
 
@@ -18,6 +22,15 @@ enum Result<Value> {
     case success(Value)
     case error(String, Int)
 }
+
+enum ApiError: Error {
+    case forbidden              // Code 403
+    case notFound               // Code 404
+    case conflict               // Code 409
+    case internalServerError    // Code 500
+}
+
+// MARK: - NetworkManager
 
 class NetworkManager {
     
@@ -34,65 +47,54 @@ class NetworkManager {
         session = Alamofire.SessionManager(configuration: configuration)
     }
     
-    // MARK: - Open Methods
-    func doLogin(with credentials: APIParameters, completion: @escaping (Result<User>) -> Void) {
-        getRequest(type: User.self, parameters: credentials) { completion($0) }
+    // MARK: - Open API Methods
+    
+    func doLogin(with credentials: APIParameters) -> Observable<User> {
+        return request(type: User.self, parameters: credentials)
+            .observeOn(MainScheduler.instance)
+            .share(replay: 1, scope: .whileConnected)
     }
     
-    func getQuestions(with credentials: APIParameters, completion: @escaping (Result<Question>) -> Void) {
-        getRequest(type: Question.self, parameters: credentials) { completion($0) }
+    func getTestModel() -> Observable<TestModel> {
+        return request(type: TestModel.self, parameters: nil)
+            .observeOn(MainScheduler.instance)
+            .share(replay: 1, scope: .whileConnected)
     }
     
-    // ... get / create other object
+    // MARK: Private request method
+    
+    private func request <T: Object> (type: T.Type, parameters: APIParameters?) -> Observable<T> where T:Mappable, T:Endpoint {
+        
+        return Observable.create { observer in
+            
+            let request = Alamofire.request(type.url(), method: .get, parameters: parameters)
+                .validate()
+                .responseJSON { response in
+                    
+                    switch response.result {
+                    case .success(let value):
+                        if let response = Mapper<T>().map(JSONObject: value) {
+                            observer.onNext(response)
+                        } else {
+                            observer.onError(ApiError.notFound)
+                        }
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+                    observer.onCompleted()
+            }
+            
+            return Disposables.create {
+                request.cancel()
+            }
+        }
+    }
+    
+    // MARK: Other methods
     
     func cancelAllSessions() {
         Alamofire.SessionManager.default.session.getAllTasks { tasks in
             tasks.forEach({ $0.cancel() })
         }
     }
-    
-    // MARK: - Private request logic
-    private func getRequest <T: Object> (type: T.Type, parameters: APIParameters? = nil, completion: @escaping (Result<T>) -> Void) where T:Mappable, T:Endpoint {
-        
-        let parameterss: [String: Any] = [
-            "type" : "text",
-            "category" : "cars"
-        ]
-        
-        Alamofire.request(type.url(), method: .get, parameters: parameterss, encoding: JSONEncoding.prettyPrinted, headers: nil).responseJSON { response in
-            switch response.result
-            {
-            case .success(let json):
-                print(json)
-                let code = response as? HTTPURLResponse
-            case .failure(let error as NSError):
-                completion(.error(error.description, error.code))
-            }
-        }
-        
-//        session.request(type.url(), parameters: parameters, encoding: JSONEncoding.default).responseObject { (response: DataResponse<T>) in
-//
-//            switch response.result {
-//            case .success(let item):
-//                do {
-//                    try RealmManager.shared.storeObject(item)
-//                    completion(.success(item))
-//                } catch let error as NSError {
-//                    completion(.error(error.description, error.code))
-//                }
-//
-//            case .failure(let error as NSError):
-//                completion(.error(error.description, error.code))
-//            }
-//        }
-    }
-    
-    private func postRequest(parameters: APIParameters, completion: @escaping (Result<Any>) -> Void) {
-        
-        session.request(URL(string: "www")!, method: .post, parameters: parameters).responseJSON { response in
-            // Waiting for server logic
-        }
-    }
-    
-    // ... get .. post
 }

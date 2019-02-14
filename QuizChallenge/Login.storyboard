@@ -79,9 +79,6 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLine" value="YES"/>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="editingLoginField:" destination="vaq-do-ba8" eventType="editingChanged" id="ZI0-f4-x3U"/>
-                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-XA-OAe">
                                         <rect key="frame" x="53" y="40" width="42" height="21"/>
@@ -112,9 +109,6 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLine" value="YES"/>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="editingPasswordField:" destination="vaq-do-ba8" eventType="editingChanged" id="rYN-Eg-Wd6"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eek-lA-hDN" customClass="TransitionButton" customModule="TransitionButton">
                                         <rect key="frame" x="60" y="226" width="169" height="52"/>
@@ -150,9 +144,6 @@
                                                 <color key="value" name="RoyalColor"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="pressLoginButton:" destination="vaq-do-ba8" eventType="touchUpInside" id="6sL-HJ-Tck"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

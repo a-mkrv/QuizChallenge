@@ -13,16 +13,12 @@ class UserManager {
     static let shared = UserManager()
     
     var isLoggedIn: Bool {
-        get {
-            return UserDefaults.standard.isLoggedIn ?? false
-        }
-        set {
-            UserDefaults.standard.isLoggedIn = newValue
-        }
+        get { return UserDefaults.standard.isLoggedIn ?? false }
+        set { UserDefaults.standard.isLoggedIn = newValue }
     }
     
     func logOut() {
+        try! RealmManager.shared.clearAllData()
         UserDefaults.standard.clearAllAppData()
     }
-    
 }

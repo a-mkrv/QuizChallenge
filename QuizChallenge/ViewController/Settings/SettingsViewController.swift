@@ -41,7 +41,7 @@ class SettingsViewController: UIViewController {
         CommonHelper.alert.showConfirmView(title: "Log Out", subTitle: "Are you sure you want to quit?", firstButtonText: "Yes", secondButtonText: "Cancel", completion: {
                 self.doLogOut()
         }) {
-            Logger.debug(msg: "Cancel logout")
+            Logger.debug(msg: "Press Cancel logout")
         }
     }
     
@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func doLogOut() {
-        try! RealmManager.shared.clearAllData()
+        Logger.info(msg: "Logout process...")
         UserManager.shared.logOut()
         Router.rootLoginVC()
     }

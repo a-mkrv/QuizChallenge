@@ -13,10 +13,9 @@ class Router {
     // MARK: Func for load in AppDelegateс
     static func setupRootVC(){
         
-        let isLoggedIn = UserDefaults.standard.isLoggedIn ?? false
         var initialViewController: UIViewController?
         
-        if (isLoggedIn) {
+        if (UserManager.shared.isLoggedIn) {
             initialViewController = CommonHelper.loadViewController(from: "Main", named: "MainSB") as? MainViewController
         } else {
             initialViewController = CommonHelper.loadViewController(from: "Login", named: "WelcomeSB") as? WelcomeViewController
@@ -61,7 +60,8 @@ class Router {
     
     // MARK: Open login vc as a root
     static func rootLoginVC() {
-        if let loginViewController = CommonHelper.loadViewController(from: "Login", named: "LoginSB") as? LoginViewController {
+        if let loginViewController: LoginViewController = CommonHelper.loadViewController(from: "Login", named: "LoginSB") as? LoginViewController {
+            loginViewController.setViewModel(LoginViewModel())
             Router.switchAnimateRootVС(loginViewController)
         } else {
             Logger.error(msg: "Some error with opening the login screen")

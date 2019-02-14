@@ -54,7 +54,6 @@
 		77AB718521F75C60008F4018 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718421F75C60008F4018 /* UIViewController+Extension.swift */; };
 		77AB718921F762E2008F4018 /* UISegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718821F762E2008F4018 /* UISegue.swift */; };
 		77AB718F21F86B18008F4018 /* AdvertisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */; };
-		77D653692211B92700E942B0 /* ValidCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D653682211B92700E942B0 /* ValidCredentials.swift */; };
 		77D6536B2212B1AD00E942B0 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D6536A2212B1AD00E942B0 /* UserManager.swift */; };
 		77D6536D2212B4BD00E942B0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D6536C2212B4BD00E942B0 /* LoginViewModel.swift */; };
 		77D6536F2212B9B900E942B0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D6536E2212B9B900E942B0 /* Router.swift */; };
@@ -114,7 +113,6 @@
 		77AB718421F75C60008F4018 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		77AB718821F762E2008F4018 /* UISegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegue.swift; sourceTree = "<group>"; };
 		77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingViewController.swift; sourceTree = "<group>"; };
-		77D653682211B92700E942B0 /* ValidCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidCredentials.swift; sourceTree = "<group>"; };
 		77D6536A2212B1AD00E942B0 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		77D6536C2212B4BD00E942B0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		77D6536E2212B9B900E942B0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				77AB718221F75AAE008F4018 /* LoginViewController.swift */,
 				772D1A922203318600607290 /* WelcomeViewController.swift */,
 				777A67A122086A7C00031808 /* RegistrationViewController.swift */,
-				77D653682211B92700E942B0 /* ValidCredentials.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -571,7 +568,6 @@
 				77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */,
 				77D6536F2212B9B900E942B0 /* Router.swift in Sources */,
 				77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */,
-				77D653692211B92700E942B0 /* ValidCredentials.swift in Sources */,
 				7707D1452201901A006AA699 /* TypeDecodable.swift in Sources */,
 				7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */,
 				7740AADF21F86C5D00CDDE4A /* AdvertisingCell.swift in Sources */,

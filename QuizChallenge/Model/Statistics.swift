@@ -30,3 +30,31 @@ class Statistics: Object, Mappable, Endpoint {
         return "https://quizbackend.com/statisctics"
     }
 }
+
+class TestModel: Object, Mappable, Endpoint {
+    
+    @objc dynamic var userId = 0
+    @objc dynamic var id = 0
+    @objc dynamic var title = ""
+    @objc dynamic var completed = false
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    func mapping(map: Map) {
+        userId      <- map["userId"]
+        id          <- map["id"]
+        title       <- map["title"]
+        completed   <- map["completed"]
+    }
+    
+    static func url() -> String {
+        return "https://jsonplaceholder.typicode.com/todos/1"
+    }
+    
+}
