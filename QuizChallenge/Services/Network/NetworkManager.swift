@@ -38,7 +38,7 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     private var session = Alamofire.SessionManager(configuration: .default)
-    private let baseUrl = "https://quizbackend.com"
+    private let baseUrl = "http://138.68.102.85:8080"
     
     private init() {
         let configuration = URLSessionConfiguration.default
@@ -49,25 +49,25 @@ class NetworkManager {
     
     // MARK: - Open API Methods
     
-    func doLogin(with credentials: APIParameters) -> Observable<User> {
-        return request(type: User.self, parameters: credentials)
+    func doLogin(with credentials: APIParameters) -> Observable<Login> {
+        return doRequest(type: Login.self, parameters: credentials, method: .post)
             .observeOn(MainScheduler.instance)
             .share(replay: 1, scope: .whileConnected)
     }
     
     func getTestModel() -> Observable<TestModel> {
-        return request(type: TestModel.self, parameters: nil)
+        return doRequest(type: TestModel.self, parameters: nil, method: .get)
             .observeOn(MainScheduler.instance)
             .share(replay: 1, scope: .whileConnected)
     }
     
     // MARK: Private request method
     
-    private func request <T: Object> (type: T.Type, parameters: APIParameters?) -> Observable<T> where T:Mappable, T:Endpoint {
+    private func doRequest <T: Object> (type: T.Type, parameters: APIParameters?, method: HTTPMethod) -> Observable<T> where T:Mappable, T:Endpoint {
         
         return Observable.create { observer in
             
-            let request = Alamofire.request(type.url(), method: .get, parameters: parameters)
+            let request = Alamofire.request(self.baseUrl + type.url(), method: method, parameters: parameters, encoding: JSONEncoding.default)
                 .validate()
                 .responseJSON { response in
                     

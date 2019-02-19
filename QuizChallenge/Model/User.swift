@@ -14,16 +14,20 @@ protocol Endpoint {
     static func url() -> String
 }
 
-class User: Object, Mappable, Endpoint {
+class User: Object, Mappable {
     
     @objc dynamic var id = 0
-    @objc dynamic var name = ""
+    @objc dynamic var username = ""
     @objc dynamic var email = ""
-    @objc dynamic var points = 0
-    @objc dynamic var isDisableAD = false
+    @objc dynamic var realName = ""
+    @objc dynamic var city = ""
+    @objc dynamic var age = 0
     
-    var statistics = Statistics()
-    var session: Session?
+    //@objc dynamic var points = 0
+    //@objc dynamic var isDisableAD = false
+    
+    //var statistics = Statistics()
+    //var session: Session?
     
     override static func primaryKey() -> String? {
         return "id"
@@ -34,16 +38,16 @@ class User: Object, Mappable, Endpoint {
     }
     
     func mapping(map: Map) {
-        id      <- map["id"]
-        name    <- map["name"]
-        email   <- map["email"]
-        points  <- map["points"]
-        isDisableAD <- map["is_disable_ad"]
-        statistics  <- map["statistics"]
-        session     <- map["session"]
-    }
-    
-    static func url() -> String {
-        return "https://quizbackend.com/user"
+        id          <- map["id"]
+        username    <- map["username"]
+        email       <- map["email"]
+        realName    <- map["real_name"]
+        city        <- map["city"]
+        age         <- map["age"]
+        
+        //points      <- map["points"]
+        //isDisableAD <- map["is_disable_ad"]
+        //statistics  <- map["statistics"]
+        //session     <- map["session"]
     }
 }

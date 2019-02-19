@@ -33,7 +33,7 @@ class LoginViewModel {
         return username.asObservable().map { (username) in
             guard let username = username else { return false }
             let loginPredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._]{5,}")
-            return loginPredicate.evaluate(with: username)
+            return loginPredicate.evaluate(with: username) || username.count == 0
         }
     }
     
@@ -42,7 +42,7 @@ class LoginViewModel {
         return password.asObservable().map { (password) in
             guard let password = password else { return false }
             let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._]{5,}")
-            return passwordPredicate.evaluate(with: password)
+            return passwordPredicate.evaluate(with: password) || password.count == 0
         }
     }
     
@@ -53,16 +53,23 @@ class LoginViewModel {
     }
     
     func serverNativeLogin() -> Observable<LoginResponse> {
+      
         return Observable.create{ observer in
-            if !CommonHelper.checkNetworkStatus() {
-                observer.onNext(LoginResponse.noInterner)
+            
+            guard CommonHelper.checkNetworkStatus() else {
+                observer.onNext(.noInterner)
+                return Disposables.create()
             }
             
-            NetworkManager.shared.getTestModel()
-                .subscribe(onNext: { (test) in
-                    observer.onNext(LoginResponse.success)
-                }, onError: { (error) in
-                    observer.onNext(LoginResponse.failCredentials)
+            let credentials: APIParameters = ["username": self.username.value!,
+                                              "password": self.password.value!]
+            
+            print("next")
+            NetworkManager.shared.doLogin(with: credentials)
+                .subscribe(onNext: { _ in
+                    observer.onNext(.success)
+                }, onError: { _ in
+                    observer.onNext(.failCredentials)
                 }).disposed(by: self.disposeBag)
             
             return Disposables.create()

@@ -22,9 +22,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.layer.borderColor = #colorLiteral(red: 0.2980392157, green: 0.3568627451, blue: 0.8666666667, alpha: 1)
-        loginButton.layer.borderWidth = 2
         setupRx()
+        setupUI()
     }
     
     func setViewModel(_ viewModel: LoginViewModel) {
@@ -51,12 +50,22 @@ class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
         
         loginButton.rx.tap
+            .filter { [unowned self] _ in
+                var isValid = false
+                _ = self.viewModel?.isUserNameAndPasswordValid().subscribe(onNext: {status in
+                    isValid = status
+                })
+                if !isValid {
+                    self.loginButton.shake()
+                    return false
+                } else { return true }
+            }
             .flatMap { [unowned self] _ -> Observable<LoginResponse> in
                 self.loginButton.startAnimation()
                 return (self.viewModel?.serverNativeLogin())!
             }
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { status in
+            .subscribe(onNext: { [unowned self] status in
                 switch status {
                 case .noInterner:
                     self.loginButton.stopAnimation()
@@ -83,14 +92,18 @@ class LoginViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .bind { self.passwordTextField.lineColor = $0 ? UIColor.royal : .red }
             .disposed(by: disposeBag)
- 
-        viewModel.isUserNameAndPasswordValid()
-        .observeOn(MainScheduler.instance)
-        .bind { self.loginButton.isEnabled = $0 }
-        .disposed(by: disposeBag)
     }
     
     // MARK: - Private methods
+    
+    fileprivate func setupUI() {
+        loginTextField.text?.removeAll()
+        passwordTextField.text?.removeAll()
+        loginTextField.lineColor = UIColor.royal
+        passwordTextField.lineColor = UIColor.royal
+        loginButton.layer.borderColor = #colorLiteral(red: 0.2980392157, green: 0.3568627451, blue: 0.8666666667, alpha: 1)
+        loginButton.layer.borderWidth = 2
+    }
     
     fileprivate func successLogin() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
