@@ -11,11 +11,16 @@ import TransitionButton
 
 class MainViewController: CustomTransitionViewController {
 
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var activeGamesLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.usernameLabel.text = UserManager.shared.userName
     }
 }

@@ -12,9 +12,19 @@ class UserManager {
    
     static let shared = UserManager()
     
+    var userName: String {
+        get { return UserDefaults.standard.userName ?? "Unknown" }
+        set { UserDefaults.standard.userName = newValue }
+    }
+    
     var isLoggedIn: Bool {
         get { return UserDefaults.standard.isLoggedIn ?? false }
         set { UserDefaults.standard.isLoggedIn = newValue }
+    }
+    
+    var userToken: String {
+        get { return UserDefaults.standard.userToken ?? "" }
+        set { UserDefaults.standard.userToken = newValue }
     }
     
     func logOut() {

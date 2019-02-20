@@ -12,11 +12,16 @@ import ObjectMapper
 
 class Login: Object, Mappable, Endpoint {
     
-    @objc dynamic var token = 0
-    var user: User?
+    @objc dynamic var id = 0
+    @objc dynamic var token = ""
+    @objc dynamic var user: User? = nil
     
     required convenience init?(map: Map) {
         self.init()
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
     func mapping(map: Map) {

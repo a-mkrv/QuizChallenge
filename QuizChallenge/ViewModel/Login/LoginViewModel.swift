@@ -45,7 +45,10 @@ class LoginViewModel {
                                               "password": self.passwordViewModel.data.value]
             
             NetworkManager.shared.doLogin(with: credentials)
-                .subscribe(onNext: { _ in
+                .subscribe(onNext: { loginData in
+                    try? RealmManager.shared.storeObject(loginData)
+                    UserManager.shared.userToken = loginData.token
+                    UserManager.shared.userName = loginData.user?.username ?? "Unknown"
                     observer.onNext(.success)
                 }, onError: { _ in
                     observer.onNext(.failCredentials)

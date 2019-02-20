@@ -15,8 +15,7 @@ extension UserDefaults {
     private enum UserDefaultsKeys: String {
         case isLoggedIn
         case userToken
-        case userLogin
-        case userRating
+        case userName
     }
     
     private func createKey(_ key: String) -> String {
@@ -40,20 +39,12 @@ extension UserDefaults {
         get { return string(forKey: createKey(UserDefaultsKeys.userToken.rawValue)) }
     }
     
-    var userLogin: String? {
+    var userName: String? {
         set {
-            set(newValue, forKey: createKey(UserDefaultsKeys.userLogin.rawValue))
+            set(newValue, forKey: createKey(UserDefaultsKeys.userName.rawValue))
             synchronize()
         }
-        get { return string(forKey: createKey(UserDefaultsKeys.userLogin.rawValue)) }
-    }
-    
-    var userRating: Int? {
-        set {
-            set(newValue, forKey: createKey(UserDefaultsKeys.userRating.rawValue))
-            synchronize()
-        }
-        get { return integer(forKey: createKey(UserDefaultsKeys.userRating.rawValue)) }
+        get { return string(forKey: createKey(UserDefaultsKeys.userName.rawValue)) }
     }
     
     //MARK: Clear all data

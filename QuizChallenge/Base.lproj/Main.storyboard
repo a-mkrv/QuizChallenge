@@ -230,6 +230,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activeGamesLabel" destination="lvU-1B-mK2" id="NWx-mh-3To"/>
+                        <outlet property="pointsLabel" destination="p84-0r-zx0" id="Z6s-QG-0Pq"/>
+                        <outlet property="usernameLabel" destination="KmO-ah-8Zu" id="pTb-kj-vKq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
