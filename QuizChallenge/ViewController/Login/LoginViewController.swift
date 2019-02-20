@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 import TransitionButton
 
 class LoginViewController: UIViewController {
@@ -22,8 +21,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRx()
         setupUI()
+        setupRx()
     }
     
     func setViewModel(_ viewModel: LoginViewModel) {
@@ -39,16 +38,26 @@ class LoginViewController: UIViewController {
         }
         
         // View
-        loginTextField.rx.controlEvent(.editingChanged)
-            .map { self.loginTextField.text! }
-            .bind(to: viewModel.username)
+        loginTextField.rx.text.orEmpty
+            .bind(to: viewModel.usernameViewModel.data)
+            .disposed(by: disposeBag)
+    
+        passwordTextField.rx.text.orEmpty
+            .bind(to: viewModel.passwordViewModel.data)
             .disposed(by: disposeBag)
         
-        passwordTextField.rx.controlEvent(.editingChanged)
-            .map { self.passwordTextField.text }
-            .bind(to: viewModel.password)
+        // View Model
+        viewModel.usernameViewModel.validateCredentials()
+            .observeOn(MainScheduler.instance)
+            .bind { self.loginTextField.lineColor = $0 ? UIColor.royal : .red }
+            .disposed(by: disposeBag)
+    
+        viewModel.passwordViewModel.validateCredentials()
+            .observeOn(MainScheduler.instance)
+            .bind { self.passwordTextField.lineColor = $0 ? UIColor.royal : .red }
             .disposed(by: disposeBag)
         
+        // Tap Button
         loginButton.rx.tap
             .filter { [unowned self] _ in
                 var isValid = false
@@ -76,24 +85,20 @@ class LoginViewController: UIViewController {
                 case .success:
                     self.successLogin()
                 case .failCredentials:
-                   self.errorLogin()
+                    self.errorLogin()
                 case .none:
                     Logger.info(msg: "None Case Response")
                 }
             }).disposed(by: disposeBag)
-        
-        // View Model
-        viewModel.isUserNameValid()
-            .observeOn(MainScheduler.instance)
-            .bind { self.loginTextField.lineColor = $0 ? UIColor.royal : .red }
-            .disposed(by: disposeBag)
-    
-        viewModel.isPasswordValid()
-            .observeOn(MainScheduler.instance)
-            .bind { self.passwordTextField.lineColor = $0 ? UIColor.royal : .red }
-            .disposed(by: disposeBag)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RegisterSegue" {
+            let vc = segue.destination as! RegistrationViewController
+            vc.setViewModel(RegistrationViewModel())
+        }
+    }
+
     // MARK: - Private methods
     
     fileprivate func setupUI() {

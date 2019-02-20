@@ -44,13 +44,15 @@ class AlertHelper {
     }
     
     // Simple Alert with duration
-    func showAlertView(title: String, subTitle: String, buttonText: String, type: AlertType, completion: EmptyClosure? = nil) {
+    func showAlertView(title: String, subTitle: String, buttonText: String, type: AlertType, isAutoHide: Bool = true, completion: EmptyClosure? = nil) {
         
         let alertView = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alertView.addButton(buttonText) { completion?() }
         
-        let timeOut = SCLAlertView.SCLTimeoutConfiguration(timeoutValue: timeOutShowing, timeoutAction: { completion?() })
-
+        
+        var timeOut: SCLAlertView.SCLTimeoutConfiguration? = nil
+        isAutoHide ? (timeOut = SCLAlertView.SCLTimeoutConfiguration(timeoutValue: timeOutShowing, timeoutAction: { completion?() })) : (timeOut = nil)
+        
         // App Color: 0x43577E
         switch type {
         case .warning:

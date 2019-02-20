@@ -49,6 +49,12 @@ class NetworkManager {
     
     // MARK: - Open API Methods
     
+    func register(with userInfo: APIParameters) -> Observable<Registration> {
+        return doRequest(type: Registration.self, parameters: userInfo, method: .post)
+            .observeOn(MainScheduler.instance)
+            .share(replay: 1, scope: .whileConnected)
+    }
+    
     func doLogin(with credentials: APIParameters) -> Observable<Login> {
         return doRequest(type: Login.self, parameters: credentials, method: .post)
             .observeOn(MainScheduler.instance)
