@@ -101,7 +101,7 @@ class RegistrationViewController: UIViewController {
         self.signUpButton.stopAnimation()
         DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1, execute: {
             DispatchQueue.main.async {
-                CommonHelper.alert.showAlertView(title: "Registration Seccess", subTitle: "\nCongratulations, you are registered. \nClick the button to start the game\n", buttonText: "Start", type: .success, isAutoHide: false) {
+                CommonHelper.alert.showAlertView(title: "Registration Seccess", subTitle: "\nCongratulations, you are registered. \nClick the button to start the game\n", buttonText: "Start", type: .success, isAutoHide: false) {                    
                     self.navigationController?.popViewController(animated: true)
                 }
             }
