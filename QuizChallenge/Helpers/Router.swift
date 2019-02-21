@@ -18,7 +18,11 @@ class Router {
         if (UserManager.shared.isLoggedIn) {
             initialViewController = CommonHelper.loadViewController(from: "Main", named: "MainSB") as? MainViewController
         } else {
-            initialViewController = CommonHelper.loadViewController(from: "Login", named: "WelcomeSB") as? WelcomeViewController
+            if UserDefaults.standard.isShowWelcomeScreen {
+                Router.rootLoginVC()
+            } else {
+                initialViewController = CommonHelper.loadViewController(from: "Login", named: "WelcomeSB") as? WelcomeViewController
+            }
         }
         
         if let initVC = initialViewController {

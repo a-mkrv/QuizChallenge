@@ -12,6 +12,13 @@ class UserManager {
    
     static let shared = UserManager()
     
+    var curUser: User {
+        if let user = RealmManager.shared.getObjectByID(Login.self, id: 0)?.user {
+            return user
+        }
+        return User()
+    }
+    
     var userName: String {
         get { return UserDefaults.standard.userName ?? "Unknown" }
         set { UserDefaults.standard.userName = newValue }

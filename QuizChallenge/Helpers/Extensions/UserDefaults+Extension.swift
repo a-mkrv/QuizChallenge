@@ -16,6 +16,7 @@ extension UserDefaults {
         case isLoggedIn
         case userToken
         case userName
+        case isShowWelcomeScreen
     }
     
     private func createKey(_ key: String) -> String {
@@ -45,6 +46,14 @@ extension UserDefaults {
             synchronize()
         }
         get { return string(forKey: createKey(UserDefaultsKeys.userName.rawValue)) }
+    }
+    
+    var isShowWelcomeScreen: Bool {
+        set {
+            set(newValue, forKey: createKey(UserDefaultsKeys.isShowWelcomeScreen.rawValue))
+            synchronize()
+        }
+        get { return bool(forKey: createKey(UserDefaultsKeys.isShowWelcomeScreen.rawValue)) }
     }
     
     //MARK: Clear all data

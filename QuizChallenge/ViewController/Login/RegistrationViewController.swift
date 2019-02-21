@@ -57,6 +57,10 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - Button Actions
     
+    @IBAction func pressBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func chooseAvatarImage(_ sender: Any) {
         ImageSelector.shared.presentImagePicker(from: self) { [weak self] (image) in
             self?.avatarImageView.image = image
@@ -178,6 +182,15 @@ extension RegistrationViewController {
                     .observeOn(MainScheduler.instance)
                     .bind { fields[i].lineColor = $0 ? UIColor.royal : .red }
                     .disposed(by: disposeBag)
+                
+                // Keyboard Return Key Handler
+                fields[i].rx.controlEvent([.editingDidEndOnExit]).subscribe { text in
+                    if i == fields.count - 1 {
+                        fields[i].resignFirstResponder()
+                    } else {
+                        fields[i + 1].becomeFirstResponder()
+                    }
+                    }.disposed(by: disposeBag)
             }
         }
     }

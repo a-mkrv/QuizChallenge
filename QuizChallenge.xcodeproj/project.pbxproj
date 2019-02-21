@@ -298,13 +298,6 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
-		77894EA02206DAA30041EE94 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		7797F6F4220053EA00DAB4C7 /* PrepareGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,7 +369,6 @@
 				7723AE6721F64E9E00F76DE7 /* ViewModel */,
 				7723AE6821F6E18E00F76DE7 /* ViewController */,
 				77AB717921F7287A008F4018 /* Helpers */,
-				77E2B46921F1930C00E0FE75 /* Resources */,
 				77E2B45721F192FD00E0FE75 /* AppDelegate.swift */,
 				77AB717E21F7459A008F4018 /* Login.storyboard */,
 				77E2B45B21F192FD00E0FE75 /* Main.storyboard */,
@@ -385,14 +377,6 @@
 				77E2B46321F192FF00E0FE75 /* Info.plist */,
 			);
 			path = QuizChallenge;
-			sourceTree = "<group>";
-		};
-		77E2B46921F1930C00E0FE75 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				77894EA02206DAA30041EE94 /* Fonts */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		77F30105221BF92600C2C76B /* Login */ = {
@@ -494,7 +478,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
@@ -529,7 +513,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8BB321885D3874A138F8117 /* [CP] Check Pods Manifest.lock */ = {

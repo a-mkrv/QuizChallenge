@@ -93,6 +93,7 @@ extension WelcomeViewController: UICollectionViewDelegate, UICollectionViewDataS
         if indexPath.row == pages.count - 1 {
             cell.configLastPage()
             cell.callback = {
+                UserDefaults.standard.isShowWelcomeScreen = true
                 Router.rootLoginVC()
             }
         }

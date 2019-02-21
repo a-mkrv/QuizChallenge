@@ -20,7 +20,8 @@ class MainViewController: CustomTransitionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        self.usernameLabel.text = UserManager.shared.userName
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        usernameLabel.text = UserManager.shared.curUser.username
+        pointsLabel.text = "Points: \(UserManager.shared.curUser.points)"
     }
 }

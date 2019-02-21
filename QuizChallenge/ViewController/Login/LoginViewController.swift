@@ -57,6 +57,15 @@ class LoginViewController: UIViewController {
             .bind { self.passwordTextField.lineColor = $0 ? UIColor.royal : .red }
             .disposed(by: disposeBag)
         
+        // Keyboard Return Key Handler
+        loginTextField.rx.controlEvent([.editingDidEndOnExit]).subscribe { text in
+            self.passwordTextField.becomeFirstResponder()
+            }.disposed(by: disposeBag)
+        
+        passwordTextField.rx.controlEvent([.editingDidEndOnExit]).subscribe { text in
+            self.passwordTextField.resignFirstResponder()
+            }.disposed(by: disposeBag)
+        
         // Tap Button
         loginButton.rx.tap
             .filter { [unowned self] _ in
