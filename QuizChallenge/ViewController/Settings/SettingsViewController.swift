@@ -18,12 +18,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var notificationsSwitch: UISwitch!
     @IBOutlet weak var saveQuestionsSwitch: UISwitch!
     
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        usernameLabel.text = UserManager.shared.curUser.username
         setSwitchPositions()
     }
     
