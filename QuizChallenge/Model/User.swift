@@ -16,7 +16,7 @@ protocol Endpoint {
 
 class User: Object, Mappable {
     
-    @objc dynamic var id = 0
+    @objc dynamic var id = ""
     @objc dynamic var username = ""
     @objc dynamic var email = ""
     @objc dynamic var realName = ""

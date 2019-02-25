@@ -21,5 +21,6 @@ target 'QuizChallenge' do
   pod 'ObjectMapper'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod 'Sentry'
 
 end
