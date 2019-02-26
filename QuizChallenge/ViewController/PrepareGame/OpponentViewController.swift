@@ -10,10 +10,19 @@ import UIKit
 
 class OpponentViewController: UIViewController {
 
+    @IBOutlet weak var profileImageView: IBImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var gamesLabel: UILabel!
+    @IBOutlet weak var lossesLabel: UILabel!
+    @IBOutlet weak var winsLabel: UILabel!
+    
+    @IBOutlet weak var progressView: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        progressView.layer.cornerRadius = 10
+        progressView.clipsToBounds = true
     }
 
 }

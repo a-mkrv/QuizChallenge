@@ -8,10 +8,17 @@
 
 import Foundation
 
-enum  QuizType {
-    case TrueOrFalse
-    case GuessImage
-    case TextQuiz
+enum QuizType: String {
+    case TrueOrFalse, GuessImage, TextQuiz, Other
+    
+    var description: String {
+        switch self {
+        case .TrueOrFalse:   return "True / False"
+        case .GuessImage:   return "4 Pic 1 Answer"
+        case .TextQuiz: return "Common Question"
+        case .Other:    return "Other"
+        }
+    }
 }
 
 class Quiz: NSObject {

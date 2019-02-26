@@ -24,17 +24,8 @@ class FindUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRx()
-        setupUI()
     }
 
-    // MARK: - Setup UI
-
-    fileprivate func setupUI() {
-        userSearchTextField.text?.removeAll()
-        userSearchTextField.lineColor = UIColor.lightGray
-        usernameSearchButton.backgroundColor = UIColor.lightGray
-    }
-    
     // MARK: - Setup RX
     
     fileprivate func setupRx() {
@@ -44,14 +35,13 @@ class FindUserViewController: UIViewController {
             }.disposed(by: disposeBag)
         
         let usernameValid = userSearchTextField.rx.text.orEmpty
-            .map { $0.count >= 1 }
+            .map { !$0.isEmpty }
             .share(replay: 1)
         
         usernameValid
             .bind(onNext: { [weak self] (isValid) in
                 self?.usernameSearchButton.isEnabled = isValid
-                self?.usernameSearchButton.backgroundColor = isValid ? UIColor.lightRoyal : UIColor.lightGray
-                self?.userSearchTextField.lineColor = isValid ? UIColor.lightRoyal : UIColor.lightGray
+                self?.usernameSearchButton.setTitleColor(isValid ? UIColor(named: "LightBlue") : UIColor.lightGray, for: .normal)
             })
             .disposed(by: disposeBag)
         

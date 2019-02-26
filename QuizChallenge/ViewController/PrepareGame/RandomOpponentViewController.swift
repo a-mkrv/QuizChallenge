@@ -14,25 +14,27 @@ class RandomOpponentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //activityIndicator.animationDuration = 2
-        //activityIndicator.rotationDuration = 5
-        activityIndicator.numSegments = 12
-        activityIndicator.lineWidth = 6
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+
+            let navigationController = self.presentingViewController as? UINavigationController
+            self.dismiss(animated: false) {
+                let gameVC = CommonHelper.loadViewController(from: "Main", named: "GameSB") as! GameViewController
+                navigationController?.pushViewController(gameVC, animated: true)
+            }
+        }
     }
     
-    @IBAction func pressStartGame(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
         activityIndicator.startAnimating()
-
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func goWaitingToMainScreen(_ sender: Any) {
+        
+        let navigationController = self.presentingViewController as? UINavigationController
+        
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
     }
-    */
-
+ 
 }

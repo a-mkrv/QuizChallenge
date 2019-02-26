@@ -16,10 +16,10 @@ class TypeQuizCell: UICollectionViewCell {
     var delegate: PrepareDelegate?
     var selectedCellIndex: Int?
 
-    private let dataSource = [("4 Pic 1 Answer", "collage"),
-                              ("Common Question", "wordcloud"),
-                              ("True / False", "TrueFalse"),
-                              ("Other", "Other")]
+    private let dataSource = [(QuizType.GuessImage, "collage"),
+                              (QuizType.TextQuiz, "wordcloud"),
+                              (QuizType.TrueOrFalse, "TrueFalse"),
+                              (QuizType.Other, "Other")]
     
     
     override func layoutSubviews() {
@@ -34,6 +34,7 @@ class TypeQuizCell: UICollectionViewCell {
         if selectedCellIndex == nil {
             chooseButton.shake()
         } else {
+            PrepareGameSingleton.shared.typeQuestion = dataSource[selectedCellIndex!].0
             delegate?.scrollToCategories()
         }
     }
@@ -50,7 +51,7 @@ extension TypeQuizCell: UICollectionViewDataSource, UICollectionViewDelegate  {
         let cellId = String(describing: GameModeCell.self)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameModeCell
         
-        cell.nameLabel.text = dataSource[indexPath.row].0
+        cell.nameLabel.text = dataSource[indexPath.row].0.rawValue
         cell.image.image = UIImage(named: dataSource[indexPath.row].1)
         
         return cell

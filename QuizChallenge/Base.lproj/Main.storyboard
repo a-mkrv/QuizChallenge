@@ -11,6 +11,312 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Type Game View Controller-->
+        <scene sceneID="BD4-EV-RDb">
+            <objects>
+                <viewController id="IEX-ZO-ZFa" customClass="TypeGameViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JQV-rz-BUs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEs-LR-rGu" userLabel="HeaderView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Og4-84-jVg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUU-sD-I4D" userLabel="HeaderView">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-kw-wpq">
+                                                <rect key="frame" x="37.5" y="0.0" width="300" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="6oS-Z5-GUm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrB-CV-8s5">
+                                                <rect key="frame" x="10" y="17.5" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="55d-kZ-NrK"/>
+                                                    <constraint firstAttribute="width" constant="25" id="OAk-aR-y7d"/>
+                                                </constraints>
+                                                <state key="normal" image="left-arrow"/>
+                                                <connections>
+                                                    <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="XBR-kV-nZD"/>
+                                                    <action selector="pressBack:" destination="hdH-0D-Cfc" eventType="touchUpInside" id="s1I-ha-YxY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Acd-kw-wpq" firstAttribute="centerX" secondItem="wUU-sD-I4D" secondAttribute="centerX" id="7N1-lD-NoU"/>
+                                            <constraint firstItem="UrB-CV-8s5" firstAttribute="leading" secondItem="wUU-sD-I4D" secondAttribute="leading" constant="10" id="9Aa-df-IdE"/>
+                                            <constraint firstItem="UrB-CV-8s5" firstAttribute="centerY" secondItem="Acd-kw-wpq" secondAttribute="centerY" id="NGO-eZ-k1S"/>
+                                            <constraint firstItem="Acd-kw-wpq" firstAttribute="top" secondItem="wUU-sD-I4D" secondAttribute="top" id="XwA-zd-4S8"/>
+                                            <constraint firstAttribute="height" constant="60" id="ebr-6r-FHB"/>
+                                            <constraint firstAttribute="bottom" secondItem="Acd-kw-wpq" secondAttribute="bottom" id="fUV-Ia-mu8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Og4-84-jVg" secondAttribute="trailing" id="5cM-nf-UxJ"/>
+                                    <constraint firstItem="Og4-84-jVg" firstAttribute="top" secondItem="hEs-LR-rGu" secondAttribute="top" id="94o-Kd-Iuh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Og4-84-jVg" secondAttribute="bottom" constant="10" id="99S-yZ-JLs"/>
+                                    <constraint firstItem="wUU-sD-I4D" firstAttribute="top" secondItem="hEs-LR-rGu" secondAttribute="top" constant="20" id="C9Z-yb-nWn"/>
+                                    <constraint firstAttribute="height" constant="169" id="Dcn-aK-vkV"/>
+                                    <constraint firstItem="wUU-sD-I4D" firstAttribute="leading" secondItem="hEs-LR-rGu" secondAttribute="leading" id="bde-5l-9U4"/>
+                                    <constraint firstItem="Og4-84-jVg" firstAttribute="leading" secondItem="hEs-LR-rGu" secondAttribute="leading" id="dFC-qI-Fia"/>
+                                    <constraint firstAttribute="trailing" secondItem="wUU-sD-I4D" secondAttribute="trailing" id="r4I-Q7-WW7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oua-Gv-Llu" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="47" y="100" width="280" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quick Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REt-nN-njM">
+                                        <rect key="frame" x="45" y="16" width="191" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        <color key="textColor" name="RoyalLightColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZV4-sn-IbF" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="85" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="RoyalLightColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 round" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3S3-c5-4L8">
+                                        <rect key="frame" x="32" y="80" width="184" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="RoyalLightColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kih-7d-P5B" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="114" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="RoyalLightColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 round" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQM-bd-jii">
+                                        <rect key="frame" x="32" y="109" width="184" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="RoyalLightColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sword" translatesAutoresizingMaskIntoConstraints="NO" id="yUo-ML-Zkq">
+                                        <rect key="frame" x="177" y="83" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" name="RoyalLightColor"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJy-rP-i2s" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="137" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="RoyalLightColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 round" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18v-uI-55p">
+                                        <rect key="frame" x="32" y="132" width="184" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="RoyalLightColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpj-mE-B4R">
+                                        <rect key="frame" x="0.0" y="7" width="280" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="quickGamePress:" destination="IEX-ZO-ZFa" eventType="touchUpInside" id="Lh7-dv-cU7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="8" height="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="RoyalLightColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="AppColorMedium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t7a-Ue-jcY" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="47" y="320" width="280" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophy" translatesAutoresizingMaskIntoConstraints="NO" id="mzE-bR-9c8">
+                                        <rect key="frame" x="182" y="83" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.93437027930000005" green="0.57283092459999996" blue="0.37498258420000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tournament" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ss-8w-zov">
+                                        <rect key="frame" x="45" y="8" width="191" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        <color key="textColor" red="0.93437027930000005" green="0.57283092459999996" blue="0.37498258420000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4t-CK-vAg" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="65" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.93437027930000005" green="0.57283092459999996" blue="0.37498258420000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 round" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IO1-iI-M6N">
+                                        <rect key="frame" x="32" y="60" width="184" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.93437027930000005" green="0.57283092459999996" blue="0.37498258420000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9g-2f-mhP">
+                                        <rect key="frame" x="0.0" y="3" width="280" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="tournamentPress:" destination="IEX-ZO-ZFa" eventType="touchUpInside" id="TfW-IC-enK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="8" height="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.93437027930000005" green="0.57283092459999996" blue="0.37498258420000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="AppColorMedium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JaG-Tc-7JP" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="47" y="538" width="280" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Training" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u34-i2-Rnr">
+                                        <rect key="frame" x="44" y="8" width="188" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQq-5S-n9r" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="19" y="58" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Without rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uM-7m-ysg">
+                                        <rect key="frame" x="48" y="53" width="184" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="refresh" translatesAutoresizingMaskIntoConstraints="NO" id="WRF-KJ-INL">
+                                        <rect key="frame" x="222" y="53" width="50" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LmR-Nj-WAO" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="19" y="81" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random theams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnf-7b-nfl">
+                                        <rect key="frame" x="48" y="76" width="184" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="8" height="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="AppColorMedium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.95294117647058818" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nxC-De-7Td" firstAttribute="trailing" secondItem="hEs-LR-rGu" secondAttribute="trailing" id="9HP-rU-Zcm"/>
+                            <constraint firstItem="hEs-LR-rGu" firstAttribute="leading" secondItem="JQV-rz-BUs" secondAttribute="leading" id="g3W-gD-FE6"/>
+                            <constraint firstItem="hEs-LR-rGu" firstAttribute="top" secondItem="JQV-rz-BUs" secondAttribute="top" id="hqN-PU-67M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nxC-De-7Td"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUY-Pd-QSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-615.20000000000005" y="134.48275862068968"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -97,7 +403,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="hdH-0D-Cfc" kind="show" id="Rsv-Yz-XtE"/>
+                                    <segue destination="IEX-ZO-ZFa" kind="show" id="KeM-KM-YRG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-eH-I6z" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
@@ -949,7 +1255,7 @@
         <!--Single Game-->
         <scene sceneID="4vd-mb-5T0">
             <objects>
-                <viewController id="hdH-0D-Cfc" customClass="PrepareGameViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrepareQuestionSB" id="hdH-0D-Cfc" customClass="PrepareGameViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WDP-6c-wMk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1538,162 +1844,6 @@
             </objects>
             <point key="canvasLocation" x="869.60000000000002" y="133.5832083958021"/>
         </scene>
-        <!--Find User View Controller-->
-        <scene sceneID="Id5-Xp-93D">
-            <objects>
-                <viewController storyboardIdentifier="FindUserScreen" id="DLh-nN-h7g" customClass="FindUserViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TFa-oM-xtQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Tsl-NK-QhO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Bev-r4-9cV"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tce-TD-fbd" userLabel="HeaderView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Opponent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO8-Bc-J7s">
-                                        <rect key="frame" x="37.5" y="0.0" width="300" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="xWg-mC-INe"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00Q-Uz-aTx">
-                                        <rect key="frame" x="10" y="17.5" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="IEO-kX-M7s"/>
-                                            <constraint firstAttribute="height" constant="25" id="xcA-XS-zGU"/>
-                                        </constraints>
-                                        <state key="normal" image="left-arrow"/>
-                                        <connections>
-                                            <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="L6w-KM-OF9"/>
-                                            <action selector="pressBack:" destination="hdH-0D-Cfc" eventType="touchUpInside" id="PHY-zB-Txf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="QO8-Bc-J7s" firstAttribute="centerX" secondItem="Tce-TD-fbd" secondAttribute="centerX" id="AEL-Ir-pBk"/>
-                                    <constraint firstAttribute="height" constant="60" id="FGn-MO-Sa4"/>
-                                    <constraint firstItem="00Q-Uz-aTx" firstAttribute="leading" secondItem="Tce-TD-fbd" secondAttribute="leading" constant="10" id="ghc-0k-Q3n"/>
-                                    <constraint firstItem="00Q-Uz-aTx" firstAttribute="centerY" secondItem="QO8-Bc-J7s" secondAttribute="centerY" id="uPQ-VA-DEP"/>
-                                    <constraint firstItem="QO8-Bc-J7s" firstAttribute="top" secondItem="Tce-TD-fbd" secondAttribute="top" id="ySn-2R-WEU"/>
-                                    <constraint firstAttribute="bottom" secondItem="QO8-Bc-J7s" secondAttribute="bottom" id="ytu-2k-PWn"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwI-Mg-vRz">
-                                <rect key="frame" x="87" y="117" width="201" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rx1-DC-4sg">
-                                <rect key="frame" x="0.0" y="357" width="375" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="RoyalColor"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpX-Vp-u3m" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
-                                <rect key="frame" x="117" y="243" width="140" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="RoyalLightColor"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATL-oS-u8K" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
-                                <rect key="frame" x="117" y="520" width="140" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="RoyalLightColor"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <state key="normal" title="Find">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="randomSearch:" destination="DLh-nN-h7g" eventType="touchUpInside" id="QCG-v9-ZV1"/>
-                                    <segue destination="Uuq-dP-j7A" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="AeW-xE-0Rw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocq-j6-GZo" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
-                                <rect key="frame" x="117" y="334" width="140" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <state key="normal" title="Or">
-                                    <color key="titleColor" name="RoyalColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" name="RoyalColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKX-Na-7os">
-                                <rect key="frame" x="87" y="424" width="201" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="makarov" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b2z-wT-juv" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                <rect key="frame" x="87" y="167" width="201" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" name="RoyalColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Tsl-NK-QhO" firstAttribute="trailing" secondItem="PpA-Eh-e09" secondAttribute="trailing" id="3xH-YN-zX4"/>
-                            <constraint firstItem="Tsl-NK-QhO" firstAttribute="leading" secondItem="PpA-Eh-e09" secondAttribute="leading" id="8z5-Jz-hDo"/>
-                            <constraint firstItem="Tce-TD-fbd" firstAttribute="top" secondItem="PpA-Eh-e09" secondAttribute="top" id="W6Q-3A-jCz"/>
-                            <constraint firstItem="Tsl-NK-QhO" firstAttribute="top" secondItem="TFa-oM-xtQ" secondAttribute="top" id="aYD-6b-EGs"/>
-                            <constraint firstItem="Tce-TD-fbd" firstAttribute="leading" secondItem="PpA-Eh-e09" secondAttribute="leading" id="o0d-5y-gok"/>
-                            <constraint firstItem="Tce-TD-fbd" firstAttribute="trailing" secondItem="PpA-Eh-e09" secondAttribute="trailing" id="rSv-iy-BTn"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="PpA-Eh-e09"/>
-                    </view>
-                    <connections>
-                        <outlet property="userSearchTextField" destination="b2z-wT-juv" id="1xE-1o-1YB"/>
-                        <outlet property="usernameSearchButton" destination="YpX-Vp-u3m" id="GTB-Lj-Qec"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SPU-x9-zqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1612" y="137.18140929535232"/>
-        </scene>
         <!--Game View Controller-->
         <scene sceneID="iep-YK-Pss">
             <objects>
@@ -1957,7 +2107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52V-eZ-b8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3207" y="134"/>
+            <point key="canvasLocation" x="3991" y="849"/>
         </scene>
         <!--Opponent View Controller-->
         <scene sceneID="Pw8-WM-hH8">
@@ -1968,7 +2118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYB-Af-MR0" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
-                                <rect key="frame" x="20" y="85" width="335" height="442"/>
+                                <rect key="frame" x="20" y="134" width="335" height="442"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ygn-dh-x2o" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
                                         <rect key="frame" x="112.5" y="25" width="110" height="110"/>
@@ -2058,26 +2208,6 @@
                                             <constraint firstAttribute="trailing" secondItem="boA-Km-F7A" secondAttribute="trailing" id="sB3-u0-M8N"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkl-YA-lkt" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="286" width="215" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="Color-5"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g36-cJ-aoj" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="69" y="286" width="246" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="Color-8"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal" translatesAutoresizingMaskIntoConstraints="NO" id="DVb-ol-4IU">
                                         <rect key="frame" x="28" y="25" width="38" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2095,7 +2225,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" name="RoyalLightColor"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                        <state key="normal" title="Start Game">
+                                        <state key="normal" title="Start">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -2104,13 +2234,24 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-0K-Fj5">
+                                        <rect key="frame" x="20" y="293" width="295" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="DLZ-1e-97B"/>
+                                        </constraints>
+                                        <color key="progressTintColor" name="Color-5"/>
+                                        <color key="trackTintColor" name="Color-8"/>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SJt-0K-Fj5" secondAttribute="trailing" constant="20" id="2hV-t5-BD9"/>
                                     <constraint firstItem="Ygn-dh-x2o" firstAttribute="top" secondItem="sYB-Af-MR0" secondAttribute="top" constant="25" id="54e-xd-T1J"/>
                                     <constraint firstItem="Ygn-dh-x2o" firstAttribute="centerX" secondItem="sYB-Af-MR0" secondAttribute="centerX" id="5Xl-43-4Tg"/>
                                     <constraint firstItem="JxH-Vc-kRe" firstAttribute="leading" secondItem="sYB-Af-MR0" secondAttribute="leading" constant="20" id="H1Q-SK-Fld"/>
+                                    <constraint firstItem="SJt-0K-Fj5" firstAttribute="top" secondItem="wI4-f1-4L9" secondAttribute="bottom" constant="25" id="P0E-9x-1li"/>
                                     <constraint firstItem="JxH-Vc-kRe" firstAttribute="top" secondItem="Ygn-dh-x2o" secondAttribute="bottom" constant="8" id="T8y-dN-uAa"/>
+                                    <constraint firstItem="SJt-0K-Fj5" firstAttribute="leading" secondItem="sYB-Af-MR0" secondAttribute="leading" constant="20" id="TEk-Ie-C9q"/>
                                     <constraint firstItem="wI4-f1-4L9" firstAttribute="top" secondItem="JxH-Vc-kRe" secondAttribute="bottom" constant="10" id="Yrj-5r-WDJ"/>
                                     <constraint firstAttribute="trailing" secondItem="wI4-f1-4L9" secondAttribute="trailing" constant="25" id="cik-Hs-yih"/>
                                     <constraint firstAttribute="trailing" secondItem="JxH-Vc-kRe" secondAttribute="trailing" constant="20" id="kq4-co-elF"/>
@@ -2125,17 +2266,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="35s-Rb-yzS" firstAttribute="bottom" secondItem="sYB-Af-MR0" secondAttribute="bottom" constant="140" id="0wA-TO-IiF"/>
+                            <constraint firstItem="35s-Rb-yzS" firstAttribute="bottom" secondItem="sYB-Af-MR0" secondAttribute="bottom" constant="91" id="4dT-hz-Tm3"/>
                             <constraint firstItem="sYB-Af-MR0" firstAttribute="leading" secondItem="35s-Rb-yzS" secondAttribute="leading" constant="20" id="FsY-fd-8Kw"/>
                             <constraint firstItem="35s-Rb-yzS" firstAttribute="trailing" secondItem="sYB-Af-MR0" secondAttribute="trailing" constant="20" id="Tdf-IK-y1h"/>
-                            <constraint firstItem="sYB-Af-MR0" firstAttribute="top" secondItem="35s-Rb-yzS" secondAttribute="top" constant="65" id="ujL-Rd-LL4"/>
+                            <constraint firstItem="sYB-Af-MR0" firstAttribute="top" secondItem="35s-Rb-yzS" secondAttribute="top" constant="114" id="wFI-1w-0hj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="35s-Rb-yzS"/>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="SJt-0K-Fj5" id="YHp-3O-IZT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ru6-5e-4zN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="-80"/>
+            <point key="canvasLocation" x="2352.8000000000002" y="-80.50974512743629"/>
         </scene>
         <!--Random Opponent View Controller-->
         <scene sceneID="2bp-xL-IYh">
@@ -2146,7 +2290,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYM-gJ-tCu" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
-                                <rect key="frame" x="20" y="172" width="335" height="413"/>
+                                <rect key="frame" x="20" y="100" width="335" height="458"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDD-5T-Y9P" customClass="ActivityIndicatorView" customModule="QuizChallenge" customModuleProvider="target">
                                         <rect key="frame" x="67.5" y="20" width="200" height="200"/>
@@ -2157,13 +2301,13 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="numSegments">
-                                                <integer key="value" value="8"/>
+                                                <integer key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                                 <color key="value" name="RoyalColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="8"/>
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -2201,9 +2345,18 @@ You can return to the menu and wait for an opponent later.</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="pressStartGame:" destination="Uuq-dP-j7A" eventType="touchUpInside" id="Ipa-m0-81o"/>
+                                            <action selector="goWaitingToMainScreen:" destination="Uuq-dP-j7A" eventType="touchUpInside" id="V4o-Sy-QsE"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or wait for an opponent HERE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-lf-Snd">
+                                        <rect key="frame" x="20" y="413" width="295" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="7NI-Ko-Qxi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" name="RoyalColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2212,9 +2365,12 @@ You can return to the menu and wait for an opponent later.</string>
                                     <constraint firstItem="tUv-Gl-bc5" firstAttribute="top" secondItem="CDD-5T-Y9P" secondAttribute="bottom" constant="10" id="ExN-BP-BAc"/>
                                     <constraint firstItem="1uA-go-hPh" firstAttribute="top" secondItem="CDD-5T-Y9P" secondAttribute="top" constant="10" id="GOw-5d-PV7"/>
                                     <constraint firstAttribute="trailing" secondItem="tUv-Gl-bc5" secondAttribute="trailing" constant="15" id="NB5-12-crR"/>
+                                    <constraint firstItem="qN2-lf-Snd" firstAttribute="leading" secondItem="aYM-gJ-tCu" secondAttribute="leading" constant="20" id="RHY-mm-pry"/>
                                     <constraint firstItem="bmO-aQ-cjW" firstAttribute="top" secondItem="tUv-Gl-bc5" secondAttribute="bottom" constant="10" id="Rf9-DX-bpS"/>
                                     <constraint firstItem="1uA-go-hPh" firstAttribute="bottom" secondItem="CDD-5T-Y9P" secondAttribute="bottom" constant="-10" id="S7e-C0-3tl"/>
                                     <constraint firstItem="1uA-go-hPh" firstAttribute="trailing" secondItem="CDD-5T-Y9P" secondAttribute="trailing" constant="-10" id="Uhd-ye-8nm"/>
+                                    <constraint firstAttribute="trailing" secondItem="qN2-lf-Snd" secondAttribute="trailing" constant="20" id="XJt-M0-HM3"/>
+                                    <constraint firstItem="qN2-lf-Snd" firstAttribute="top" secondItem="bmO-aQ-cjW" secondAttribute="bottom" constant="25" id="dJd-3a-fUf"/>
                                     <constraint firstItem="CDD-5T-Y9P" firstAttribute="centerX" secondItem="aYM-gJ-tCu" secondAttribute="centerX" id="kAY-ZJ-2qn"/>
                                     <constraint firstItem="tUv-Gl-bc5" firstAttribute="leading" secondItem="aYM-gJ-tCu" secondAttribute="leading" constant="15" id="rsU-T4-Iaj"/>
                                     <constraint firstItem="bmO-aQ-cjW" firstAttribute="centerX" secondItem="aYM-gJ-tCu" secondAttribute="centerX" id="v3l-qt-gl1"/>
@@ -2228,9 +2384,9 @@ You can return to the menu and wait for an opponent later.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aSP-UY-6yG" firstAttribute="bottom" secondItem="aYM-gJ-tCu" secondAttribute="bottom" constant="109" id="4ah-TJ-bm2"/>
                             <constraint firstItem="aYM-gJ-tCu" firstAttribute="leading" secondItem="aSP-UY-6yG" secondAttribute="leading" constant="20" id="6Jv-aB-VW6"/>
-                            <constraint firstItem="aYM-gJ-tCu" firstAttribute="top" secondItem="aSP-UY-6yG" secondAttribute="top" constant="152" id="QA9-mv-fcM"/>
-                            <constraint firstItem="aSP-UY-6yG" firstAttribute="bottom" secondItem="aYM-gJ-tCu" secondAttribute="bottom" constant="82" id="ndc-XT-AYO"/>
+                            <constraint firstItem="aYM-gJ-tCu" firstAttribute="top" secondItem="aSP-UY-6yG" secondAttribute="top" constant="80" id="BDC-8t-e92"/>
                             <constraint firstItem="aSP-UY-6yG" firstAttribute="trailing" secondItem="aYM-gJ-tCu" secondAttribute="trailing" constant="20" id="nr7-zI-Rgr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aSP-UY-6yG"/>
@@ -2242,6 +2398,342 @@ You can return to the menu and wait for an opponent later.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdr-8L-xXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2352.8000000000002" y="629.2353823088456"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="E86-qj-mGy">
+            <objects>
+                <viewController id="Zan-Z4-K9d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ohZ-Pe-usb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qm1-w6-997" userLabel="HeaderView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="IGz-0K-q2j">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUZ-62-x9l">
+                                        <rect key="frame" x="87.5" y="20" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="OQU-4F-gag"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixC-fk-bjl">
+                                        <rect key="frame" x="10" y="30" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="iJr-iZ-t1d"/>
+                                            <constraint firstAttribute="width" constant="30" id="jXM-ZQ-jrq"/>
+                                        </constraints>
+                                        <state key="normal" image="left-arrow"/>
+                                        <connections>
+                                            <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="Lku-qK-bKS"/>
+                                            <action selector="pressBack:" destination="PBe-zO-dTC" eventType="touchUpInside" id="el1-NO-ECM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="IGz-0K-q2j" firstAttribute="leading" secondItem="qm1-w6-997" secondAttribute="leading" id="0BH-Id-oOj"/>
+                                    <constraint firstAttribute="bottom" secondItem="hUZ-62-x9l" secondAttribute="bottom" constant="10" id="BvJ-do-GuH"/>
+                                    <constraint firstItem="hUZ-62-x9l" firstAttribute="centerX" secondItem="qm1-w6-997" secondAttribute="centerX" id="D19-7j-gpY"/>
+                                    <constraint firstItem="IGz-0K-q2j" firstAttribute="top" secondItem="qm1-w6-997" secondAttribute="top" id="Dbi-OL-CVv"/>
+                                    <constraint firstItem="hUZ-62-x9l" firstAttribute="top" secondItem="qm1-w6-997" secondAttribute="top" constant="20" id="G0o-WR-nAe"/>
+                                    <constraint firstItem="ixC-fk-bjl" firstAttribute="leading" secondItem="qm1-w6-997" secondAttribute="leading" constant="10" id="Mtk-eb-e7Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="IGz-0K-q2j" secondAttribute="trailing" id="aeF-fh-xO0"/>
+                                    <constraint firstItem="ixC-fk-bjl" firstAttribute="centerY" secondItem="hUZ-62-x9l" secondAttribute="centerY" id="pVy-tW-zVg"/>
+                                    <constraint firstAttribute="bottom" secondItem="IGz-0K-q2j" secondAttribute="bottom" constant="10" id="xV9-XU-YcE"/>
+                                    <constraint firstAttribute="height" constant="80" id="zIm-nd-ATW"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="InC-Fb-ARk">
+                                <rect key="frame" x="0.0" y="332" width="375" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="RoyalColor"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdE-Eh-qO0">
+                                <rect key="frame" x="16" y="106" width="112" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qwerty 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVf-C5-V0X">
+                                <rect key="frame" x="154" y="106" width="193" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qwerty 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4N-0B-rhQ">
+                                <rect key="frame" x="16" y="395" width="193" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WmF-xq-eiX" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="137" y="279" width="100" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="RoyalColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mz-a5-2WN">
+                                <rect key="frame" x="154" y="172" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vks-hr-rgv">
+                                <rect key="frame" x="235" y="421" width="112" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qm1-w6-997" firstAttribute="trailing" secondItem="fJE-iC-ejF" secondAttribute="trailing" id="BoJ-pu-lGR"/>
+                            <constraint firstItem="qm1-w6-997" firstAttribute="top" secondItem="ohZ-Pe-usb" secondAttribute="top" id="wBo-AU-AVA"/>
+                            <constraint firstItem="qm1-w6-997" firstAttribute="leading" secondItem="fJE-iC-ejF" secondAttribute="leading" id="xoV-c3-3ER"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fJE-iC-ejF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Jy-SY-uI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3212" y="307.1964017991005"/>
+        </scene>
+        <!--Find User View Controller-->
+        <scene sceneID="cVk-Mn-1Fj">
+            <objects>
+                <viewController storyboardIdentifier="FindUserScreen" id="awt-gI-7OG" customClass="FindUserViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ixv-1f-Crb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcC-me-KJR" userLabel="HeaderView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="cvJ-Jh-Fpk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Opponent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C94-Fa-3Oh">
+                                        <rect key="frame" x="62.5" y="20" width="250" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="LCd-x6-88J"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ciq-WC-7qw">
+                                        <rect key="frame" x="10" y="30" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="TJe-gp-sPm"/>
+                                            <constraint firstAttribute="width" constant="30" id="sPv-df-0Mc"/>
+                                        </constraints>
+                                        <state key="normal" image="left-arrow"/>
+                                        <connections>
+                                            <action selector="pressBack:" destination="PBe-zO-dTC" eventType="touchUpInside" id="ErU-I3-JLL"/>
+                                            <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="jLo-eS-UGz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="C94-Fa-3Oh" firstAttribute="centerX" secondItem="jcC-me-KJR" secondAttribute="centerX" id="4Dy-IM-8IO"/>
+                                    <constraint firstItem="cvJ-Jh-Fpk" firstAttribute="leading" secondItem="jcC-me-KJR" secondAttribute="leading" id="Aev-WZ-Ti8"/>
+                                    <constraint firstItem="cvJ-Jh-Fpk" firstAttribute="top" secondItem="jcC-me-KJR" secondAttribute="top" id="E53-tC-uqf"/>
+                                    <constraint firstAttribute="bottom" secondItem="cvJ-Jh-Fpk" secondAttribute="bottom" constant="10" id="RJg-ma-qLB"/>
+                                    <constraint firstItem="C94-Fa-3Oh" firstAttribute="top" secondItem="jcC-me-KJR" secondAttribute="top" constant="20" id="RxL-5p-oJT"/>
+                                    <constraint firstAttribute="bottom" secondItem="C94-Fa-3Oh" secondAttribute="bottom" constant="10" id="ZzR-r3-pbk"/>
+                                    <constraint firstItem="Ciq-WC-7qw" firstAttribute="leading" secondItem="jcC-me-KJR" secondAttribute="leading" constant="10" id="bCL-um-Ikt"/>
+                                    <constraint firstItem="Ciq-WC-7qw" firstAttribute="centerY" secondItem="C94-Fa-3Oh" secondAttribute="centerY" id="gaJ-nD-ijm"/>
+                                    <constraint firstAttribute="height" constant="80" id="yhP-Gx-PI0"/>
+                                    <constraint firstAttribute="trailing" secondItem="cvJ-Jh-Fpk" secondAttribute="trailing" id="zIH-Hn-ISL"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aK8-WT-bw7" customClass="GradientView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="47" y="118" width="280" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFt-hQ-Sej">
+                                        <rect key="frame" x="45" y="16" width="191" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i7s-eU-83Z" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="45" y="90" width="200" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" red="0.94117647059999998" green="0.95294117649999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="8" height="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="AppColorMedium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" name="LightBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.28627450980392155" green="0.50980392156862742" blue="0.84705882352941175" alpha="0.79805787852112675" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z58-L8-uJC" customClass="GradientView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="47" y="399" width="280" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnH-c7-VXL">
+                                        <rect key="frame" x="45" y="8" width="191" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dices" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-yb-sYY">
+                                        <rect key="frame" x="95" y="67" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMM-OS-KFY">
+                                        <rect key="frame" x="8" y="8" width="264" height="173"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="randomSearch:" destination="awt-gI-7OG" eventType="touchUpInside" id="dVm-Dj-Vnh"/>
+                                            <segue destination="Uuq-dP-j7A" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="O4r-4U-aR1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="8" height="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="AppColorMedium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" name="Color-8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.93725490196078431" green="0.47450980392156861" blue="0.62745098039215685" alpha="0.80243177816901412" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mds-a7-Awq" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="117" y="275" width="140" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.95294117649999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.28627450980000002" green="0.50980392159999999" blue="0.84705882349999995" alpha="0.90413182219999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="4" height="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="AppColorMedium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.95294117649999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jcC-me-KJR" firstAttribute="leading" secondItem="ixv-1f-Crb" secondAttribute="leading" id="EvP-PK-FkA"/>
+                            <constraint firstItem="gtp-HH-bgl" firstAttribute="trailing" secondItem="jcC-me-KJR" secondAttribute="trailing" id="Y5O-oZ-3uw"/>
+                            <constraint firstItem="jcC-me-KJR" firstAttribute="top" secondItem="ixv-1f-Crb" secondAttribute="top" id="x0U-UQ-cHg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gtp-HH-bgl"/>
+                    </view>
+                    <connections>
+                        <outlet property="userSearchTextField" destination="i7s-eU-83Z" id="m54-al-Ytk"/>
+                        <outlet property="usernameSearchButton" destination="mds-a7-Awq" id="hD0-iu-5gL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXa-Jh-v9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1589.5999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
@@ -2263,6 +2755,7 @@ You can return to the menu and wait for an opponent later.</string>
         <image name="badge" width="96" height="96"/>
         <image name="cancel" width="18.399999618530273" height="18.399999618530273"/>
         <image name="console" width="48" height="48"/>
+        <image name="dices" width="192" height="192"/>
         <image name="hint" width="96" height="96"/>
         <image name="left-arrow" width="48" height="48"/>
         <image name="medal" width="48" height="48"/>
@@ -2271,11 +2764,17 @@ You can return to the menu and wait for an opponent later.</string>
         <image name="play" width="110" height="110"/>
         <image name="puzzle" width="409.60000610351562" height="409.60000610351562"/>
         <image name="question" width="48" height="48"/>
+        <image name="refresh" width="96" height="96"/>
         <image name="resetTime" width="96" height="96"/>
         <image name="settings" width="48" height="48"/>
+        <image name="sword" width="192" height="192"/>
+        <image name="trophy" width="96" height="96"/>
         <image name="user" width="48" height="48"/>
         <namedColor name="AppColor">
             <color red="0.25098039215686274" green="0.29803921568627451" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppColorMedium">
+            <color red="0.47058823529411764" green="0.52156862745098043" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color-0">
             <color red="0.49019607843137253" green="0.28627450980392155" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2291,6 +2790,9 @@ You can return to the menu and wait for an opponent later.</string>
         </namedColor>
         <namedColor name="Color-8">
             <color red="0.93725490196078431" green="0.47450980392156861" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightBlue">
+            <color red="0.28627450980392155" green="0.50980392156862742" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="RoyalColor">
             <color red="0.29803921568627451" green="0.35686274509803922" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

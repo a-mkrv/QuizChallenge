@@ -71,6 +71,8 @@
 		8D0B9B4122243B40003E5B33 /* OpponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B4022243B40003E5B33 /* OpponentViewController.swift */; };
 		8D0B9B43222446B2003E5B33 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B42222446B2003E5B33 /* ActivityIndicatorView.swift */; };
 		8D0B9B45222447A8003E5B33 /* RandomOpponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B44222447A8003E5B33 /* RandomOpponentViewController.swift */; };
+		8D0B9B47222564CA003E5B33 /* TypeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B46222564CA003E5B33 /* TypeGameViewController.swift */; };
+		8D0B9B4922256570003E5B33 /* PrepareGameSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B4822256570003E5B33 /* PrepareGameSingleton.swift */; };
 		A47C4FE3E0CB2CA1023E10E6 /* Pods_QuizChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909FF8AE582F54F77178FE1F /* Pods_QuizChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +144,8 @@
 		8D0B9B4022243B40003E5B33 /* OpponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentViewController.swift; sourceTree = "<group>"; };
 		8D0B9B42222446B2003E5B33 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		8D0B9B44222447A8003E5B33 /* RandomOpponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomOpponentViewController.swift; sourceTree = "<group>"; };
+		8D0B9B46222564CA003E5B33 /* TypeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeGameViewController.swift; sourceTree = "<group>"; };
+		8D0B9B4822256570003E5B33 /* PrepareGameSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameSingleton.swift; sourceTree = "<group>"; };
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		909FF8AE582F54F77178FE1F /* Pods_QuizChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -315,6 +319,8 @@
 				8D0B9B3E22242110003E5B33 /* FindUserViewController.swift */,
 				8D0B9B4022243B40003E5B33 /* OpponentViewController.swift */,
 				8D0B9B44222447A8003E5B33 /* RandomOpponentViewController.swift */,
+				8D0B9B46222564CA003E5B33 /* TypeGameViewController.swift */,
+				8D0B9B4822256570003E5B33 /* PrepareGameSingleton.swift */,
 			);
 			path = PrepareGame;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				77D6536D2212B4BD00E942B0 /* LoginViewModel.swift in Sources */,
 				777C770A21FAD27C0022A636 /* Session.swift in Sources */,
 				776EC55B21FA3827005BA18A /* User.swift in Sources */,
+				8D0B9B4922256570003E5B33 /* PrepareGameSingleton.swift in Sources */,
 				77F30107221BF95400C2C76B /* ValidationViewModel.swift in Sources */,
 				777A67A422086BBD00031808 /* UIView+Extension.swift in Sources */,
 				777C770821FACBBD0022A636 /* Statistics.swift in Sources */,
@@ -589,6 +596,7 @@
 				7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */,
 				77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */,
 				772D1A932203318600607290 /* WelcomeViewController.swift in Sources */,
+				8D0B9B47222564CA003E5B33 /* TypeGameViewController.swift in Sources */,
 				77F30104221BF4A200C2C76B /* RegistrationViewModel.swift in Sources */,
 				77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */,
 				8D0B9B4122243B40003E5B33 /* OpponentViewController.swift in Sources */,
@@ -756,6 +764,7 @@
 			baseConfigurationReference = 7E87CD470603266EBFE952E8 /* Pods-QuizChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA8RP8Z7ML;
@@ -767,6 +776,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.QuizChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -777,6 +787,7 @@
 			baseConfigurationReference = 8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA8RP8Z7ML;
@@ -788,6 +799,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.QuizChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

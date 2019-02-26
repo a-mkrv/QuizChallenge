@@ -118,6 +118,7 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
                 }
             }
             
+            PrepareGameSingleton.shared.selectCategory = dataSource?.typeQuestions[indexPath.row].name
             selectedCategory = indexPath.row
             selectedSubCategory = -1
             subcategoryCollectionView.reloadData()
@@ -126,6 +127,7 @@ extension TopicQuizCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         } else {
             let cell = collectionView.cellForItem(at: indexPath) as! SubcategoryCell
             cell.gameButtonView.isHidden = false
+            PrepareGameSingleton.shared.selectSubCategory = dataSource?.typeQuestions[selectedCategory].types[indexPath.row].name
             selectedSubCategory = indexPath.row
             subcategoryCollectionView.scrollToItem(at: IndexPath(row: selectedSubCategory, section: 0), at: .centeredVertically, animated: true)
             subcategoryCollectionView.reloadData()
