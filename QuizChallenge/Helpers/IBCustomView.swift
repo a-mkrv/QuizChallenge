@@ -50,11 +50,13 @@ import UIKit
             gradientLayer.endPoint   = diagonalMode ? CGPoint(x: 1, y: 1) : CGPoint(x: 0.5, y: 1)
         }
     }
+    
     func updateLocations() {
         gradientLayer.locations = [startLocation as NSNumber, endLocation as NSNumber]
     }
+    
     func updateColors() {
-        gradientLayer.colors    = [startColor?.cgColor, endColor?.cgColor]
+        gradientLayer.colors = [startColor?.cgColor ?? UIColor.clear.cgColor, endColor?.cgColor ?? UIColor.clear.cgColor]
     }
     
     override func layoutSubviews() {

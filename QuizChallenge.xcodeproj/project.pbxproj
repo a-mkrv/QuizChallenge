@@ -73,6 +73,9 @@
 		8D0B9B45222447A8003E5B33 /* RandomOpponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B44222447A8003E5B33 /* RandomOpponentViewController.swift */; };
 		8D0B9B47222564CA003E5B33 /* TypeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B46222564CA003E5B33 /* TypeGameViewController.swift */; };
 		8D0B9B4922256570003E5B33 /* PrepareGameSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B4822256570003E5B33 /* PrepareGameSingleton.swift */; };
+		8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */; };
+		8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FCA22280E510011B811 /* AnswerCreateView.swift */; };
+		8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */; };
 		A47C4FE3E0CB2CA1023E10E6 /* Pods_QuizChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909FF8AE582F54F77178FE1F /* Pods_QuizChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +150,9 @@
 		8D0B9B46222564CA003E5B33 /* TypeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeGameViewController.swift; sourceTree = "<group>"; };
 		8D0B9B4822256570003E5B33 /* PrepareGameSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameSingleton.swift; sourceTree = "<group>"; };
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
+		8DF64FCA22280E510011B811 /* AnswerCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCreateView.swift; sourceTree = "<group>"; };
+		8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCreateView.xib; sourceTree = "<group>"; };
 		909FF8AE582F54F77178FE1F /* Pods_QuizChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -205,6 +211,7 @@
 				7740AAE221F89F4200CDDE4A /* GameViewController.swift */,
 				7742D10221F9CB1900F3A677 /* GameViewController+Koloda.swift */,
 				777C771521FC4DA70022A636 /* Settings */,
+				8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -341,6 +348,8 @@
 				7797F6F722006B1E00DAB4C7 /* PrepareGameView */,
 				7742D0EF21F982E100F3A677 /* GameView */,
 				7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */,
+				8DF64FCA22280E510011B811 /* AnswerCreateView.swift */,
+				8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -477,6 +486,7 @@
 			files = (
 				7707D143220187F1006AA699 /* Categories.json in Resources */,
 				77AB717F21F7459A008F4018 /* Login.storyboard in Resources */,
+				8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */,
 				7742D0FB21F9A40400F3A677 /* TrueFalseView.xib in Resources */,
 				77E2B46221F192FF00E0FE75 /* LaunchScreen.storyboard in Resources */,
 				77E2B45F21F192FF00E0FE75 /* Assets.xcassets in Resources */,
@@ -595,6 +605,7 @@
 				7723AE7421F7121200F76DE7 /* NetworkManager.swift in Sources */,
 				7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */,
 				77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */,
+				8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */,
 				772D1A932203318600607290 /* WelcomeViewController.swift in Sources */,
 				8D0B9B47222564CA003E5B33 /* TypeGameViewController.swift in Sources */,
 				77F30104221BF4A200C2C76B /* RegistrationViewModel.swift in Sources */,
@@ -609,6 +620,7 @@
 				777C771221FC4CD60022A636 /* SettingsViewController.swift in Sources */,
 				77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */,
 				7742D0F721F9A3E500F3A677 /* SimpleQuestionView.swift in Sources */,
+				8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */,
 				77F30102221BE49200C2C76B /* Registration.swift in Sources */,
 				77F30109221C76D300C2C76B /* ImageSelector.swift in Sources */,
 				7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */,
@@ -769,12 +781,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA8RP8Z7ML;
 				INFOPLIST_FILE = QuizChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.QuizChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = Anton.Makarov.QuizChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -792,12 +804,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA8RP8Z7ML;
 				INFOPLIST_FILE = QuizChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.QuizChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = Anton.Makarov.QuizChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

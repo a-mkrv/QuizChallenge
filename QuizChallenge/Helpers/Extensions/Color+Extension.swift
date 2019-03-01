@@ -39,5 +39,6 @@ extension UIColor {
     static let mainGray = UIColor(red:0.89, green:0.89, blue:0.91, alpha:1.00)
     static let royal = UIColor(named: "RoyalColor") ?? .white
     static let lightRoyal = UIColor(named: "RoyalLightColor") ?? .white
+    static let lightRed = UIColor(named: "Color-8") ?? .red
 
 }
