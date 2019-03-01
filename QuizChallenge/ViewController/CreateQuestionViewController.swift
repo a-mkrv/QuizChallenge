@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import RxSwift
 
 class CreateQuestionViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var answersView: UIView!
     @IBOutlet weak var createButton: IBButton!
+    @IBOutlet weak var typeQuestion: IBTextField!
     @IBOutlet weak var questionTextView: UITextView!
     @IBOutlet weak var questionImageView: UIImageView!
     @IBOutlet weak var answer4Trailing: NSLayoutConstraint!
     @IBOutlet weak var answer3Leading: NSLayoutConstraint!
+    
+    var countAnswer = 2
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,17 +46,56 @@ class CreateQuestionViewController: UIViewController {
         }
         
         if sender.selectedSegmentIndex == 0 {
+            self.countAnswer = 2
             self.answer3Leading.constant = -300
             self.answer4Trailing.constant = -300
             UIView.animate(withDuration: 0.5, animations: {
                 self.view.layoutIfNeeded()
             })
         } else {
+            self.countAnswer = 4
             self.answer3Leading.constant = 0
             self.answer4Trailing.constant = 0
             UIView.animate(withDuration: 0.5, animations: {
                 self.view.layoutIfNeeded()
             })
+        }
+    }
+    
+    @IBAction func sendQuestion(_ sender: Any) {
+        guard let question = questionTextView.text, let type = typeQuestion.text, question.count > 7, type.count > 4 else {
+            CommonHelper.alert.showAlertView(title: "Oppps", subTitle: "\nQuestion or type are missing or too short", buttonText: "Ok", type: .error, isAutoHide: true, completion: nil)
+            return
+        }
+  
+        if let answers = answersQuestion() {
+            var fullAnswers = [APIParameters]()
+            
+            for (index, answer) in answers.enumerated() {
+                fullAnswers.append(["text": answer, "is_correct": index == 0])
+            }
+            
+            let params: APIParameters = ["text": question,
+                                         "type": "text",
+                                         "category": type,
+                                         "answers": fullAnswers
+            ]
+            
+            NetworkManager.shared.createQuestion(with: params)
+                .subscribe(onNext: { status in
+                    CommonHelper.alert.showAlertView(title: "Thanks!", subTitle: "\nThank you for updating our database of questions. \nYou get 10 coins", buttonText: "Fine", type: .success) {
+                        self.questionTextView.text.removeAll()
+                        self.typeQuestion.text?.removeAll()
+                        _ = (self.answersView.subviews as? [AnswerCreateView])?.map{
+                            $0.textView.resignFirstResponder()
+                            $0.resetTextView()
+                        }
+                    }
+                }, onError: { error in
+                     CommonHelper.alert.showAlertView(title: "Error", subTitle: "\nThere was an error sending a question", buttonText: "Try Again", type: .error, completion: nil)
+                }).disposed(by: self.disposeBag)
+        } else {
+            CommonHelper.alert.showAlertView(title: "Oppps", subTitle: "\nPlease, enter all answer", buttonText: "Ok", type: .error, completion: nil)
         }
     }
 }
@@ -64,9 +108,9 @@ extension CreateQuestionViewController: UITextViewDelegate {
             textView.textColor = UIColor.black
             
             UIView.animate(withDuration: 0.5, animations: {
-                self.questionImageView.alpha = 0
+                self.questionImageView.alpha = 0.3
             }, completion: { _ in
-                self.questionImageView.isHidden = true
+                //self.questionImageView.isHidden = true
             })
         }
     }
@@ -76,7 +120,7 @@ extension CreateQuestionViewController: UITextViewDelegate {
             textView.text = "Write your question!"
             textView.textColor = UIColor.lightGray
             
-            self.questionImageView.isHidden = false
+            //self.questionImageView.isHidden = false
             UIView.animate(withDuration: 0.5) {
                 self.questionImageView.alpha = 1
             }
@@ -112,6 +156,25 @@ extension CreateQuestionViewController {
             }
         }
         return false
+    }
+    
+    fileprivate func answersQuestion() -> [String]? {
+        let answers = (answersView.subviews as? [AnswerCreateView])?.sorted{$0.tag < $1.tag}.enumerated().filter({ (element) -> Bool in
+            
+            let (index, view) = element
+            if index >= countAnswer {
+                return false
+            }
+            if let text = view.textView.text, text != "Incorrect answer", text != "Correct answer" {
+                return true
+            }
+            return false
+        }).map({ (element) -> String in
+            let (_, view) = element
+            return view.textView.text
+        })
+        
+        return answers!.count == countAnswer ? answers! : nil
     }
 }
 

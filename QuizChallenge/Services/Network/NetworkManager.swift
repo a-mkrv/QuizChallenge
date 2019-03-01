@@ -67,7 +67,43 @@ class NetworkManager {
             .share(replay: 1, scope: .whileConnected)
     }
     
+    func createQuestion(with questionInfo: APIParameters) -> Observable<Bool> {
+        return doRequestWithoutModel(url: "/questions", parameters: questionInfo, method: .post)
+            .observeOn(MainScheduler.instance)
+            .share(replay: 1, scope: .whileConnected)
+    }
+
+    
+    func getActiveGames(with userInfo: APIParameters) -> Observable<Bool> {
+        return doRequestWithoutModel(url: "/games/search_game", parameters: userInfo, method: .get)
+            .observeOn(MainScheduler.instance)
+            .share(replay: 1, scope: .whileConnected)
+    }
+    
     // MARK: Private request method
+    
+    private func doRequestWithoutModel(url: String, parameters: APIParameters?, method: HTTPMethod) -> Observable<Bool> {
+        
+        return Observable.create { observer in
+            let header = ["Authorization": "Bearer " + UserManager.shared.userToken]
+            
+            let request = Alamofire.request(self.baseUrl + url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: header)
+                .responseJSON { response in
+                    
+                    switch response.result {
+                    case .success(_):
+                        observer.onNext(true)
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+                    observer.onCompleted()
+            }
+            
+            return Disposables.create {
+                request.cancel()
+            }
+        }
+    }
     
     private func doRequest <T: Object> (type: T.Type, parameters: APIParameters?, method: HTTPMethod) -> Observable<T> where T:Mappable, T:Endpoint {
         

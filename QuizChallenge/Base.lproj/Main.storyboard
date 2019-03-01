@@ -2908,6 +2908,9 @@ You can return to the menu and wait for an opponent later.</string>
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendQuestion:" destination="heb-cP-7ga" eventType="touchUpInside" id="zeg-5S-kS1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2948,6 +2951,7 @@ You can return to the menu and wait for an opponent later.</string>
                         <outlet property="createButton" destination="gUy-4u-vqb" id="jK1-ma-jQ6"/>
                         <outlet property="questionImageView" destination="0Mt-BR-Udy" id="aZq-AW-fnV"/>
                         <outlet property="questionTextView" destination="214-gq-Ncx" id="Xg2-TO-aOw"/>
+                        <outlet property="typeQuestion" destination="b72-xK-fH4" id="qsv-wY-7U2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQ8-yO-Gqe" userLabel="First Responder" sceneMemberID="firstResponder"/>

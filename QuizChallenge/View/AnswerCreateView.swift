@@ -11,8 +11,9 @@ import UIKit
 class AnswerCreateView: UIView {
     
     var view: UIView!
-    @IBOutlet weak var textView: UITextView!
+    var isFillText = false
     
+    @IBOutlet weak var textView: UITextView!
     @IBInspectable var isCorrect: Bool = false {
         didSet {
             textView.text = isCorrect ? "Correct answer" : "Incorrect answer"
@@ -79,12 +80,18 @@ extension AnswerCreateView: UITextViewDelegate {
             textView.text = nil
             textView.textColor = UIColor.black
         }
+        isFillText = true
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Incorrect answer"
-            textView.textColor = UIColor.lightGray
+            resetTextView()
         }
+    }
+    
+    func resetTextView() {
+        textView.text = isCorrect ? "Correct answer" : "Incorrect answer"
+        textView.textColor = UIColor.lightGray
+        isFillText = false
     }
 }
