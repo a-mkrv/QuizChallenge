@@ -18,6 +18,7 @@ class FindUserViewController: UIViewController {
     @IBOutlet weak var usernameSearchButton: IBButton!
    
     let disposeBag = DisposeBag()
+    var gameInfo = PrepareGameInfo()
     
     // MARK: - Lifecycle
 

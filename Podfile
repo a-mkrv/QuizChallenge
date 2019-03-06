@@ -12,6 +12,7 @@ target 'QuizChallenge' do
   pod 'TransitionButton'  
   pod 'SCLAlertView'
   pod 'AMPopTip'
+  pod 'SwiftEntryKit', '0.8.8'
   
   # Network, Storage
   pod 'Alamofire'

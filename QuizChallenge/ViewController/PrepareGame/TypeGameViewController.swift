@@ -29,6 +29,7 @@ class TypeGameViewController: UIViewController {
     
     func goToPrepareQuestion(_ type: TypeGame) {
         let prepareGameVC = CommonHelper.loadViewController(from: "Main", named: "PrepareQuestionSB") as! PrepareGameViewController
+        prepareGameVC.gameInfo.type = type
         self.navigationController?.pushViewController(prepareGameVC, animated: true)
     }
 }

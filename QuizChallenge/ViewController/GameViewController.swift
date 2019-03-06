@@ -24,8 +24,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var answer4Button: IBButton!
     
     // MARK: - Properties
-    let quiz: Quiz? = nil
-    
     private var timeForQuestion: Float = 2000
     private var counter: Float = 0.0
     private var timer: Timer!
@@ -40,7 +38,6 @@ class GameViewController: UIViewController {
         
         // UI & Time Config
         buttons = [answer1Button, answer2Button, answer3Button, answer4Button]
-        timeForQuestion = Float((quiz?.timeForQuestion ?? 20) * 100)
         _ = buttons.map({ $0.titleLabel?.text = "?" })
         timeLabel.text = "20 seconds"
         timeProgressView.setProgress(0.0, animated: false)

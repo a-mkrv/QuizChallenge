@@ -25,4 +25,11 @@ class OpponentViewController: UIViewController {
         progressView.clipsToBounds = true
     }
 
+    @IBAction func closeView(_ sender: Any) {
+    
+    }
+    
+    @IBAction func startGame(_ sender: Any) {
+    
+    }
 }

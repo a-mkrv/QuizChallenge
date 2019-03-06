@@ -25,6 +25,7 @@ class PrepareGameViewController: UIViewController {
     // MARK: - Data properties
     private var dataSource: TypeDecodable?
     private var dataCount = 0
+    var gameInfo = PrepareGameInfo()
 
     // MARK: - Lifecycle
     
@@ -54,6 +55,7 @@ class PrepareGameViewController: UIViewController {
     
     func findOpponent() {
         let gameVC = CommonHelper.loadViewController(from: "Main", named: "FindUserScreen") as! FindUserViewController
+        gameVC.gameInfo = gameInfo
         self.navigationController?.pushViewController(gameVC, animated: true)
     }
 }
@@ -136,7 +138,7 @@ extension PrepareGameViewController: UICollectionViewDelegate, UICollectionViewD
                 }
             }
             
-            PrepareGameSingleton.shared.selectCategory = dataSource?.typeQuestions[indexPath.row].name
+            gameInfo.selectCategory = dataSource?.typeQuestions[indexPath.row].name
             selectedCategory = indexPath.row
             selectedSubCategory = -1
             subcategoryCollectionView.reloadData()
@@ -145,7 +147,7 @@ extension PrepareGameViewController: UICollectionViewDelegate, UICollectionViewD
         } else {
             let cell = collectionView.cellForItem(at: indexPath) as! SubcategoryCell
             cell.gameButtonView.isHidden = false
-            PrepareGameSingleton.shared.selectSubCategory = dataSource?.typeQuestions[selectedCategory].types[indexPath.row].name
+            gameInfo.selectSubCategory = dataSource?.typeQuestions[selectedCategory].types[indexPath.row].name
             selectedSubCategory = indexPath.row
             subcategoryCollectionView.scrollToItem(at: IndexPath(row: selectedSubCategory, section: 0), at: .centeredVertically, animated: true)
             subcategoryCollectionView.reloadData()
