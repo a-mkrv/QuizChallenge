@@ -39,13 +39,9 @@
 		777C770C21FAF15D0022A636 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C770B21FAF15D0022A636 /* RealmManager.swift */; };
 		777C771221FC4CD60022A636 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C771121FC4CD60022A636 /* SettingsViewController.swift */; };
 		777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C771321FC4D920022A636 /* ProfileSettingsViewController.swift */; };
-		777EAF9F220076DC00A3C14B /* GameModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EAF9E220076DC00A3C14B /* GameModeCell.swift */; };
 		77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77894EA122081AF60041EE94 /* WelcomePageCell.swift */; };
-		7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */; };
 		77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0B2209D75300C821B6 /* CategoryCell.swift */; };
 		77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */; };
-		77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717521F726DA008F4018 /* TypeQuizCell.swift */; };
-		77AB717821F72707008F4018 /* TopicQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717721F72707008F4018 /* TopicQuizCell.swift */; };
 		77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717A21F728A1008F4018 /* IBCustomView.swift */; };
 		77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717C21F7292E008F4018 /* Color+Extension.swift */; };
 		77AB717F21F7459A008F4018 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77AB717E21F7459A008F4018 /* Login.storyboard */; };
@@ -112,13 +108,9 @@
 		777C770B21FAF15D0022A636 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		777C771121FC4CD60022A636 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		777C771321FC4D920022A636 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileSettingsViewController.swift; path = "../New Group/ProfileSettingsViewController.swift"; sourceTree = "<group>"; };
-		777EAF9E220076DC00A3C14B /* GameModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeCell.swift; sourceTree = "<group>"; };
 		77894EA122081AF60041EE94 /* WelcomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageCell.swift; sourceTree = "<group>"; };
-		7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDataSource.swift; sourceTree = "<group>"; };
 		77A00A0B2209D75300C821B6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCell.swift; sourceTree = "<group>"; };
-		77AB717521F726DA008F4018 /* TypeQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeQuizCell.swift; sourceTree = "<group>"; };
-		77AB717721F72707008F4018 /* TopicQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicQuizCell.swift; sourceTree = "<group>"; };
 		77AB717A21F728A1008F4018 /* IBCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBCustomView.swift; sourceTree = "<group>"; };
 		77AB717C21F7292E008F4018 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		77AB717E21F7459A008F4018 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -291,23 +283,13 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		777EAFA022007EA300A3C14B /* Type */ = {
+		777EAFA122007EB100A3C14B /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				77AB717521F726DA008F4018 /* TypeQuizCell.swift */,
-				777EAF9E220076DC00A3C14B /* GameModeCell.swift */,
-			);
-			path = Type;
-			sourceTree = "<group>";
-		};
-		777EAFA122007EB100A3C14B /* Topic */ = {
-			isa = PBXGroup;
-			children = (
-				77AB717721F72707008F4018 /* TopicQuizCell.swift */,
 				77A00A0B2209D75300C821B6 /* CategoryCell.swift */,
 				77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */,
 			);
-			path = Topic;
+			path = Category;
 			sourceTree = "<group>";
 		};
 		77894E9B2204A7890041EE94 /* LoginView */ = {
@@ -322,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				7740AAE021F897CE00CDDE4A /* PrepareGameViewController.swift */,
-				7797F6F52200540F00DAB4C7 /* PrepareDataSource.swift */,
 				8D0B9B3E22242110003E5B33 /* FindUserViewController.swift */,
 				8D0B9B4022243B40003E5B33 /* OpponentViewController.swift */,
 				8D0B9B44222447A8003E5B33 /* RandomOpponentViewController.swift */,
@@ -335,8 +316,7 @@
 		7797F6F722006B1E00DAB4C7 /* PrepareGameView */ = {
 			isa = PBXGroup;
 			children = (
-				777EAFA022007EA300A3C14B /* Type */,
-				777EAFA122007EB100A3C14B /* Topic */,
+				777EAFA122007EB100A3C14B /* Category */,
 			);
 			path = PrepareGameView;
 			sourceTree = "<group>";
@@ -581,7 +561,6 @@
 				7742D0FD21F9B36500F3A677 /* CountdownView.swift in Sources */,
 				777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */,
 				77D653712212C76700E942B0 /* Logger.swift in Sources */,
-				77AB717621F726DA008F4018 /* TypeQuizCell.swift in Sources */,
 				7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */,
 				77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */,
 				7723AE6621F5D01800F76DE7 /* Quiz.swift in Sources */,
@@ -595,7 +574,6 @@
 				77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */,
 				7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */,
 				77D6536B2212B1AD00E942B0 /* UserManager.swift in Sources */,
-				7797F6F62200540F00DAB4C7 /* PrepareDataSource.swift in Sources */,
 				7707D1472201B699006AA699 /* Settings.swift in Sources */,
 				77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */,
 				77AB718521F75C60008F4018 /* UIViewController+Extension.swift in Sources */,
@@ -624,9 +602,7 @@
 				77F30102221BE49200C2C76B /* Registration.swift in Sources */,
 				77F30109221C76D300C2C76B /* ImageSelector.swift in Sources */,
 				7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */,
-				77AB717821F72707008F4018 /* TopicQuizCell.swift in Sources */,
 				77F30100221BC9D900C2C76B /* Login.swift in Sources */,
-				777EAF9F220076DC00A3C14B /* GameModeCell.swift in Sources */,
 				77AB718921F762E2008F4018 /* UISegue.swift in Sources */,
 				7740AAE121F897CE00CDDE4A /* PrepareGameViewController.swift in Sources */,
 				7742D0F921F9A3F500F3A677 /* TrueFalseView.swift in Sources */,
