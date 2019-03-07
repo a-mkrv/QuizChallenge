@@ -780,7 +780,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="HQl-P9-WrI">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-L1-4Ih">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-L1-4Ih">
                                         <rect key="frame" x="87.5" y="20" width="200" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="2b0-2E-FjJ"/>
@@ -830,7 +830,7 @@
                                     <constraint firstAttribute="trailing" secondItem="HQl-P9-WrI" secondAttribute="trailing" id="zuj-1H-EC6"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZXi-xE-fv0" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="ZXi-xE-fv0" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
                                 <rect key="frame" x="123.5" y="98" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="OyV-gt-Crb"/>
@@ -846,7 +846,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1u-et-6tp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1u-et-6tp">
                                 <rect key="frame" x="50" y="242" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="alc-oh-Y0p"/>
@@ -1026,114 +1026,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NrN-IO-3Pm" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
-                                <rect key="frame" x="16" y="85" width="339" height="482"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrN-IO-3Pm" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="18" y="116" width="339" height="435"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1uH-d2-392" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="269" width="158" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" name="RoyalColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username@gmail.com" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="NRA-eL-k9M" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="19" y="255" width="284" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" name="RoyalColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username@gmail.com" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="bQ5-0q-B1e" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="73" y="205" width="241" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" name="RoyalColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KsX-tg-HnJ" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="354" width="247" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" name="RoyalColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzO-rc-GIR">
-                                        <rect key="frame" x="20" y="325" width="79" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OV8-Mg-Qrq" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="19" y="432" width="247" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" name="RoyalColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryn-kk-W2W">
-                                        <rect key="frame" x="19" y="403" width="144" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8MB-4H-LIv">
-                                        <rect key="frame" x="-1" y="188" width="304" height="2"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="0.16157427229999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a7-86-dFb">
-                                        <rect key="frame" x="230" y="397" width="84" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" red="0.217974484" green="0.27076959610000001" blue="0.41454672809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-NI-1wN" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-NI-1wN" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
                                         <rect key="frame" x="112" y="19" width="115" height="113"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="113" id="JyE-xc-VVh"/>
+                                            <constraint firstAttribute="width" constant="115" id="q5t-PP-4Mh"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -1144,30 +1045,204 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-eb-pbY">
-                                        <rect key="frame" x="122" y="284" width="89" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" red="0.217974484" green="0.27076959610000001" blue="0.41454672809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Age" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="4qA-KB-Mg9" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="73" y="178" width="210" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" name="RoyalColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Cx-fq-A5x">
+                                        <rect key="frame" x="36" y="140" width="267" height="287"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl7-rH-HTn">
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="287"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="PoD-8t-1S7">
+                                                        <rect key="frame" x="16" y="16" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" name="RoyalColor"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-8X-yIO">
+                                                        <rect key="frame" x="16" y="60" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" name="RoyalColor"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="usV-jM-QpC">
+                                                        <rect key="frame" x="16" y="136" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" name="RoyalColor"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="iLL-TP-CF2">
+                                                        <rect key="frame" x="16" y="174" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" name="RoyalColor"/>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="bQ5-0q-B1e" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                                        <rect key="frame" x="49" y="13" width="194" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                <color key="value" name="RoyalColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username@gmail.com" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="NRA-eL-k9M" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                                        <rect key="frame" x="49" y="57" width="194" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                <color key="value" name="RoyalColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-eb-pbY">
+                                                        <rect key="frame" x="99" y="102" width="69" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Save">
+                                                            <color key="titleColor" red="0.217974484" green="0.27076959610000001" blue="0.41454672809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a7-86-dFb">
+                                                        <rect key="frame" x="91" y="207" width="84" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Save">
+                                                            <color key="titleColor" red="0.217974484" green="0.27076959610000001" blue="0.41454672809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KsX-tg-HnJ" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                                        <rect key="frame" x="49" y="131" width="194" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                <color key="value" name="RoyalColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OV8-Mg-Qrq" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                                        <rect key="frame" x="49" y="169" width="194" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                <color key="value" name="RoyalColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqg-8D-y1f">
+                                                        <rect key="frame" x="34" y="257" width="209" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Edit additional information">
+                                                            <color key="titleColor" white="0.0" alpha="0.84803082191780821" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="changeAdditionalInformation:" destination="nOj-TL-zCU" eventType="touchUpInside" id="SgA-Ax-oZ2"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXW-hK-p0V">
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="287"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="SHg-6o-BXK">
+                                                        <rect key="frame" x="50" y="48" width="167" height="182"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your real name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JRA-KQ-plj" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="167" height="28.5"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                        <color key="value" name="RoyalColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vqq-Si-V7L" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="68.5" width="167" height="29"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="address-level1+2"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                        <color key="value" name="RoyalColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50J-gT-lye" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="137.5" width="167" height="44.5"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                        <color key="value" name="RoyalColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="SHg-6o-BXK" firstAttribute="top" secondItem="mXW-hK-p0V" secondAttribute="top" constant="48" id="97y-br-KCz"/>
+                                                    <constraint firstItem="SHg-6o-BXK" firstAttribute="leading" secondItem="mXW-hK-p0V" secondAttribute="leading" constant="50" id="OlI-TJ-FHs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="SHg-6o-BXK" secondAttribute="bottom" constant="57" id="jJR-Rv-kQQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SHg-6o-BXK" secondAttribute="trailing" constant="50" id="lp2-y0-f0N"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="kl7-rH-HTn" firstAttribute="top" secondItem="1Cx-fq-A5x" secondAttribute="top" id="Enf-5E-Gzl"/>
+                                            <constraint firstItem="mXW-hK-p0V" firstAttribute="leading" secondItem="1Cx-fq-A5x" secondAttribute="leading" id="L3q-bS-dJd"/>
+                                            <constraint firstAttribute="trailing" secondItem="kl7-rH-HTn" secondAttribute="trailing" id="Pzd-aD-68F"/>
+                                            <constraint firstItem="mXW-hK-p0V" firstAttribute="top" secondItem="1Cx-fq-A5x" secondAttribute="top" id="Q2g-eT-zc5"/>
+                                            <constraint firstItem="kl7-rH-HTn" firstAttribute="leading" secondItem="1Cx-fq-A5x" secondAttribute="leading" id="UWk-UB-lwm"/>
+                                            <constraint firstAttribute="trailing" secondItem="mXW-hK-p0V" secondAttribute="trailing" id="UxL-Xq-rvH"/>
+                                            <constraint firstAttribute="bottom" secondItem="kl7-rH-HTn" secondAttribute="bottom" id="XbH-cf-son"/>
+                                            <constraint firstAttribute="bottom" secondItem="mXW-hK-p0V" secondAttribute="bottom" id="rqk-Xa-EK7"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ecH-NI-1wN" firstAttribute="top" secondItem="NrN-IO-3Pm" secondAttribute="top" constant="19" id="63P-ep-Dc7"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Cx-fq-A5x" secondAttribute="trailing" constant="36" id="787-gj-EeH"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Cx-fq-A5x" secondAttribute="bottom" constant="8" id="Gge-Rd-XKI"/>
+                                    <constraint firstAttribute="height" constant="435" id="XuH-SR-Tqk"/>
+                                    <constraint firstItem="1Cx-fq-A5x" firstAttribute="top" secondItem="ecH-NI-1wN" secondAttribute="bottom" constant="8" id="bhP-EY-TsY"/>
+                                    <constraint firstAttribute="width" constant="339" id="fAI-im-Kls"/>
+                                    <constraint firstItem="ecH-NI-1wN" firstAttribute="centerX" secondItem="NrN-IO-3Pm" secondAttribute="centerX" id="g2z-he-lhA"/>
+                                    <constraint firstItem="1Cx-fq-A5x" firstAttribute="leading" secondItem="NrN-IO-3Pm" secondAttribute="leading" constant="36" id="geo-ob-vgQ"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
@@ -1176,17 +1251,22 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NrN-IO-3Pm" firstAttribute="centerX" secondItem="Ju8-Bi-wVx" secondAttribute="centerX" id="Swc-12-1AX"/>
+                            <constraint firstItem="NrN-IO-3Pm" firstAttribute="centerY" secondItem="Ju8-Bi-wVx" secondAttribute="centerY" id="ssP-YP-ZbW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pTe-Sh-fmh"/>
                     </view>
                     <connections>
+                        <outlet property="additionalInfoView" destination="mXW-hK-p0V" id="4g8-KX-4tf"/>
                         <outlet property="changePasswordButton" destination="2a7-86-dFb" id="3cz-Ux-zBU"/>
                         <outlet property="confPasswordTextField" destination="OV8-Mg-Qrq" id="k70-DT-O7e"/>
                         <outlet property="emailTextField" destination="NRA-eL-k9M" id="tSR-M2-2Hk"/>
                         <outlet property="generalSaveButton" destination="i7X-eb-pbY" id="7SM-jb-wXt"/>
+                        <outlet property="mainView" destination="NrN-IO-3Pm" id="U1D-fs-pkC"/>
                         <outlet property="passwordTextField" destination="KsX-tg-HnJ" id="Drj-r7-F4B"/>
-                        <outlet property="userDataView" destination="NrN-IO-3Pm" id="w41-ez-OHs"/>
+                        <outlet property="primarySettingsView" destination="kl7-rH-HTn" id="xBC-R1-Kgu"/>
                         <outlet property="userImageView" destination="ecH-NI-1wN" id="w0m-m6-si2"/>
-                        <outlet property="usernameTextField" destination="1uH-d2-392" id="AEv-ln-P7p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJd-UT-yOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2775,7 +2855,6 @@ You can return to the menu and wait for an opponent later.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="1280" height="853"/>
         <image name="3" width="1024" height="683"/>
         <image name="4" width="600" height="848"/>
         <image name="5" width="1920" height="1080"/>
@@ -2790,11 +2869,13 @@ You can return to the menu and wait for an opponent later.</string>
         <image name="TestBack" width="502" height="721"/>
         <image name="activeGames" width="96" height="96"/>
         <image name="adCoins" width="323" height="323"/>
+        <image name="avatar" width="48" height="48"/>
         <image name="badge" width="96" height="96"/>
         <image name="cancel" width="18.399999618530273" height="18.399999618530273"/>
         <image name="close" width="96" height="96"/>
         <image name="console" width="48" height="48"/>
         <image name="dices" width="192" height="192"/>
+        <image name="envelope" width="48" height="48"/>
         <image name="hint" width="96" height="96"/>
         <image name="left-arrow" width="48" height="48"/>
         <image name="medal" width="48" height="48"/>

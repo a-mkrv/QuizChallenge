@@ -53,7 +53,6 @@ class CreateQuestionViewController: UIViewController {
                 self.view.layoutIfNeeded()
             }) { _ in
                 _ = self.answersView.subviews.map( {
-                    print($0.tag)
                     if $0.tag == 2 {
                         $0.isHidden = true
                     }})
