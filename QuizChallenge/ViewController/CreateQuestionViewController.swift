@@ -46,16 +46,26 @@ class CreateQuestionViewController: UIViewController {
         }
         
         if sender.selectedSegmentIndex == 0 {
-            self.countAnswer = 2
-            self.answer3Leading.constant = -300
-            self.answer4Trailing.constant = -300
+            countAnswer = 2
+            answer3Leading.constant = -300
+            answer4Trailing.constant = -300
             UIView.animate(withDuration: 0.5, animations: {
                 self.view.layoutIfNeeded()
-            })
+            }) { _ in
+                _ = self.answersView.subviews.map( {
+                    print($0.tag)
+                    if $0.tag == 2 {
+                        $0.isHidden = true
+                    }})
+            }
         } else {
-            self.countAnswer = 4
-            self.answer3Leading.constant = 0
-            self.answer4Trailing.constant = 0
+            countAnswer = 4
+            answer3Leading.constant = 0
+            answer4Trailing.constant = 0
+            _ = self.answersView.subviews.map( {
+                if $0.tag == 2 {
+                    $0.isHidden = false
+                }})
             UIView.animate(withDuration: 0.5, animations: {
                 self.view.layoutIfNeeded()
             })

@@ -2666,7 +2666,7 @@ You can return to the menu and wait for an opponent later.</string>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isCorrect" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxR-6J-cXV" customClass="AnswerCreateView" customModule="QuizChallenge" customModuleProvider="target">
+                                    <view hidden="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxR-6J-cXV" customClass="AnswerCreateView" customModule="QuizChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="113" width="164.5" height="104"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
