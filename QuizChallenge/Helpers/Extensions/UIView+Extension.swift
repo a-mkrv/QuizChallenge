@@ -41,3 +41,11 @@ extension UIView {
         self.layer.add(shake, forKey: "position")
     }
 }
+
+extension UIView {
+    
+    // Spring Animation
+    static func springAnimate(duration: TimeInterval = 1.0, animateCompletion: @escaping () -> Void, finishCompletion: ((Bool) -> Void)? = nil) {
+        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: animateCompletion, completion: finishCompletion)
+    }
+}

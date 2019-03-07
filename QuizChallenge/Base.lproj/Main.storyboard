@@ -329,14 +329,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1x-Od-Zem">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group2" translatesAutoresizingMaskIntoConstraints="NO" id="Ffh-wb-EKu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="WOP-K6-04s" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="137" y="148" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="WOP-K6-04s" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="137.5" y="156.5" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WOP-K6-04s" secondAttribute="height" multiplier="1:1" id="4gM-e6-uIa"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="21"/>
@@ -350,9 +352,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUIZ  Challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVK-hC-ibQ">
-                                        <rect key="frame" x="44" y="61" width="287" height="83"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUIZ  Challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVK-hC-ibQ">
+                                        <rect key="frame" x="44" y="60.5" width="287" height="83"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="287" id="Vb3-wr-c4I"/>
+                                            <constraint firstAttribute="height" constant="83" id="g3A-4z-etu"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -361,8 +366,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Ffh-wb-EKu" secondAttribute="trailing" id="J4D-no-QgY"/>
+                                    <constraint firstItem="WOP-K6-04s" firstAttribute="top" secondItem="AVK-hC-ibQ" secondAttribute="bottom" constant="13" id="MFA-ey-A3i"/>
+                                    <constraint firstItem="WOP-K6-04s" firstAttribute="centerX" secondItem="A1x-Od-Zem" secondAttribute="centerX" id="RMx-gk-SSH"/>
+                                    <constraint firstItem="WOP-K6-04s" firstAttribute="bottom" secondItem="Ffh-wb-EKu" secondAttribute="bottom" multiplier="1.25" id="YI3-cr-sdQ"/>
                                     <constraint firstItem="Ffh-wb-EKu" firstAttribute="leading" secondItem="A1x-Od-Zem" secondAttribute="leading" id="YXS-YN-kvJ"/>
                                     <constraint firstItem="Ffh-wb-EKu" firstAttribute="top" secondItem="A1x-Od-Zem" secondAttribute="top" id="jUZ-s9-BvY"/>
+                                    <constraint firstItem="AVK-hC-ibQ" firstAttribute="centerX" secondItem="A1x-Od-Zem" secondAttribute="centerX" id="pkM-S7-GCE"/>
                                     <constraint firstAttribute="bottom" secondItem="Ffh-wb-EKu" secondAttribute="bottom" id="wd4-3q-2OX"/>
                                 </constraints>
                             </view>
@@ -534,6 +543,8 @@
                         <constraints>
                             <constraint firstItem="A1x-Od-Zem" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5pH-D6-Vdh"/>
                             <constraint firstItem="A1x-Od-Zem" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7gv-oP-r6b"/>
+                            <constraint firstItem="WOP-K6-04s" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="100 : 667" id="BYZ-kc-czg"/>
+                            <constraint firstItem="A1x-Od-Zem" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="205 : 667" id="Iw2-xi-CcX"/>
                             <constraint firstItem="A1x-Od-Zem" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Uz8-VS-jcI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -1927,6 +1938,11 @@
                                         </constraints>
                                         <color key="progressTintColor" name="Color-5"/>
                                         <color key="trackTintColor" name="Color-8"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CA7-kX-Wft">
                                         <rect key="frame" x="282" y="8" width="35" height="35"/>
@@ -1981,12 +1997,13 @@
                         <viewLayoutGuide key="safeArea" id="35s-Rb-yzS"/>
                     </view>
                     <connections>
+                        <outlet property="mainView" destination="sYB-Af-MR0" id="5LZ-d2-XXK"/>
                         <outlet property="progressView" destination="SJt-0K-Fj5" id="YHp-3O-IZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ru6-5e-4zN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2367" y="-101"/>
+            <point key="canvasLocation" x="2366" y="-102"/>
         </scene>
         <!--Random Opponent View Controller-->
         <scene sceneID="2bp-xL-IYh">
@@ -2102,6 +2119,7 @@ You can return to the menu and wait for an opponent later.</string>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="CDD-5T-Y9P" id="Ara-55-LZT"/>
+                        <outlet property="mainView" destination="aYM-gJ-tCu" id="FUx-ou-Qwc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdr-8L-xXf" userLabel="First Responder" sceneMemberID="firstResponder"/>

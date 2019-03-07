@@ -16,17 +16,24 @@ class OpponentViewController: UIViewController {
     @IBOutlet weak var lossesLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
     
+    @IBOutlet weak var mainView: IBView!
     @IBOutlet weak var progressView: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let viewPosition = mainView.frame.origin.y
+        mainView.frame.origin.y = 0
         
-        progressView.layer.cornerRadius = 10
-        progressView.clipsToBounds = true
+        UIView.springAnimate(animateCompletion: {
+            self.mainView.frame.origin.y = viewPosition
+        })
     }
 
     @IBAction func closeView(_ sender: Any) {
-    
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func startGame(_ sender: Any) {
