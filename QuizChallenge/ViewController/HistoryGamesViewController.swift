@@ -19,6 +19,7 @@ struct GameSection {
     var header: String
     var games: [String]
     var status: StatusGame
+    var isHidden = false
     
     init(header: String, games: [String], status: StatusGame) {
         self.header = header
@@ -47,7 +48,7 @@ class HistoryGamesViewController: UIViewController {
     }
     
     func loadGameHistory() {
-        let debugData = [1, 1, 1].sorted { $0 < $1 }.map( { return String($0) })
+        let debugData = [1, 0, 0, 1, 0, 1, 1].sorted { $0 < $1 }.map( { return String($0) })
         var activeGames = GameSection(header: "Active Games", games: [], status: .Active)
         var finishedGames = GameSection(header: "Finished Games", games: [], status: .Finished)
         debugData.forEach{ $0 == "0" ? finishedGames.games.append($0) : activeGames.games.append($0) }
@@ -75,6 +76,10 @@ extension HistoryGamesViewController: UITableViewDelegate, UITableViewDataSource
             return (Int(view.frame.height) / tableCellHeight)
         }
         
+        guard !gamesSections[section].isHidden else {
+            return 0
+        }
+        
         return gamesSections[section].games.count
     }
     
@@ -98,6 +103,7 @@ extension HistoryGamesViewController: UITableViewDelegate, UITableViewDataSource
         
         let view = UIView()
         view.backgroundColor = .white
+        view.tag = section
         
         let label = UILabel()
         label.text = gamesSections[section].header
@@ -105,11 +111,24 @@ extension HistoryGamesViewController: UITableViewDelegate, UITableViewDataSource
         label.font = UIFont(name: "Futura-Medium", size: 20.0)
         label.textColor = UIColor.royal
         
+        let headerTapGesture = UITapGestureRecognizer()
+        headerTapGesture.addTarget(self, action: #selector(sectionHeaderTouched(_:)))
+        view.addGestureRecognizer(headerTapGesture)
+        
         view.addSubview(label)
         return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return isHistoryLoaded ? 45 : 0
+    }
+    
+    @objc func sectionHeaderTouched(_ sender: UITapGestureRecognizer) {
+        
+        if let headerView = sender.view {
+            let tag = headerView.tag
+            gamesSections[tag].isHidden = !gamesSections[tag].isHidden
+            gamesTableView.reloadSections(IndexSet(integer: tag), with: .automatic)
+        }
     }
 }
