@@ -68,7 +68,9 @@
 		8D0B9B45222447A8003E5B33 /* RandomOpponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B44222447A8003E5B33 /* RandomOpponentViewController.swift */; };
 		8D0B9B47222564CA003E5B33 /* TypeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B46222564CA003E5B33 /* TypeGameViewController.swift */; };
 		8D0B9B4922256570003E5B33 /* PrepareGameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B4822256570003E5B33 /* PrepareGameInfo.swift */; };
+		8D204F69223653AE005F5875 /* HistoryGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D204F68223653AE005F5875 /* HistoryGamesViewController.swift */; };
 		8DA1DCE7222FF52700E1DDD1 /* GameInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA1DCE6222FF52700E1DDD1 /* GameInformationViewController.swift */; };
+		8DABF13122366316006C0B58 /* HistoryGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13022366316006C0B58 /* HistoryGameCell.swift */; };
 		8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */; };
 		8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FCA22280E510011B811 /* AnswerCreateView.swift */; };
 		8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */; };
@@ -140,7 +142,9 @@
 		8D0B9B44222447A8003E5B33 /* RandomOpponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomOpponentViewController.swift; sourceTree = "<group>"; };
 		8D0B9B46222564CA003E5B33 /* TypeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeGameViewController.swift; sourceTree = "<group>"; };
 		8D0B9B4822256570003E5B33 /* PrepareGameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameInfo.swift; sourceTree = "<group>"; };
+		8D204F68223653AE005F5875 /* HistoryGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGamesViewController.swift; sourceTree = "<group>"; };
 		8DA1DCE6222FF52700E1DDD1 /* GameInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInformationViewController.swift; sourceTree = "<group>"; };
+		8DABF13022366316006C0B58 /* HistoryGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGameCell.swift; sourceTree = "<group>"; };
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
 		8DF64FCA22280E510011B811 /* AnswerCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCreateView.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				77AB718E21F86B17008F4018 /* AdvertisingViewController.swift */,
 				7740AAE221F89F4200CDDE4A /* GameViewController.swift */,
 				7742D10221F9CB1900F3A677 /* GameViewController+Koloda.swift */,
+				8D204F68223653AE005F5875 /* HistoryGamesViewController.swift */,
 				8DA1DCE6222FF52700E1DDD1 /* GameInformationViewController.swift */,
 				8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */,
 				777C771521FC4DA70022A636 /* Settings */,
@@ -330,6 +335,7 @@
 				7740AADE21F86C5D00CDDE4A /* AdvertisingCell.swift */,
 				8DF64FCA22280E510011B811 /* AnswerCreateView.swift */,
 				8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */,
+				8DABF13022366316006C0B58 /* HistoryGameCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
@@ -521,6 +528,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
@@ -557,6 +565,7 @@
 			files = (
 				77D6536D2212B4BD00E942B0 /* LoginViewModel.swift in Sources */,
 				777C770A21FAD27C0022A636 /* Session.swift in Sources */,
+				8DABF13122366316006C0B58 /* HistoryGameCell.swift in Sources */,
 				776EC55B21FA3827005BA18A /* User.swift in Sources */,
 				8D0B9B4922256570003E5B33 /* PrepareGameInfo.swift in Sources */,
 				77F30107221BF95400C2C76B /* ValidationViewModel.swift in Sources */,
@@ -565,6 +574,7 @@
 				7742D0FD21F9B36500F3A677 /* CountdownView.swift in Sources */,
 				777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */,
 				77D653712212C76700E942B0 /* Logger.swift in Sources */,
+				8D204F69223653AE005F5875 /* HistoryGamesViewController.swift in Sources */,
 				7723AE6321F5CFF900F76DE7 /* Question.swift in Sources */,
 				77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */,
 				7740AAE321F89F4200CDDE4A /* GameViewController.swift in Sources */,

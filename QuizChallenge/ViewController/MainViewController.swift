@@ -17,6 +17,7 @@ class MainViewController: CustomTransitionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Logger.info(msg: "User Token: \(UserManager.shared.userToken)")
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -13,6 +13,7 @@ target 'QuizChallenge' do
   pod 'SCLAlertView'
   pod 'AMPopTip'
   pod 'SwiftEntryKit', '0.8.8'
+  pod "SkeletonView"
   
   # Network, Storage
   pod 'Alamofire'
