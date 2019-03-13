@@ -27,7 +27,7 @@ class Statistics: Object, Mappable, Endpoint {
     }
     
     static func url() -> String {
-        return "https://quizbackend.com/statisctics"
+        return "https://quizbackend.com/statistics"
     }
 }
 

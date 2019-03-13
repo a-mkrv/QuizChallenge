@@ -25,7 +25,7 @@ class AdvertisingViewController: UIViewController {
     }
 }
 
-//MARK: CollectioView Delegates
+//MARK: CollectionView Delegates
 extension AdvertisingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

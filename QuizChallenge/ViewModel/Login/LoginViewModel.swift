@@ -12,7 +12,7 @@ import RxCocoa
 
 enum LoginResponse {
     case success
-    case noInterner
+    case noInternet
     case failCredentials
     case none
 }
@@ -37,7 +37,7 @@ class LoginViewModel {
         return Observable.create{ observer in
             
             guard CommonHelper.checkNetworkStatus() else {
-                observer.onNext(.noInterner)
+                observer.onNext(.noInternet)
                 return Disposables.create()
             }
             

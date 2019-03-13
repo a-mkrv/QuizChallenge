@@ -34,7 +34,7 @@ class AudioManager {
         }
     }
     
-    func stopMuscic() {
+    func stopMusic() {
         isPlaying() ? audioPlayer!.stop() : ()
     }
     

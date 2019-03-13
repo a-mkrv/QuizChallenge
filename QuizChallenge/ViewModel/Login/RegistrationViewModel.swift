@@ -31,7 +31,7 @@ class RegistrationViewModel {
         return Observable.create{ observer in
             
             guard CommonHelper.checkNetworkStatus() else {
-                observer.onNext(.noInterner)
+                observer.onNext(.noInternet)
                 return Disposables.create()
             }
             

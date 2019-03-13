@@ -79,7 +79,7 @@ class RealmManager {
         try execute({ realm in
             try realm.write {
                 let settings = RealmManager.shared.getObjects(SettingsModel.self)?.first
-                settings?.backgroundSoud = sound
+                settings?.backgroundSound = sound
                 settings?.notifications = notify
                 settings?.saveQuestions = saveQuestion
                 settings?.buyPremiumEnabled = payButton

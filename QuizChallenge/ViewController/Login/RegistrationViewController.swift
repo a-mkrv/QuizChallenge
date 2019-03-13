@@ -58,7 +58,7 @@ class RegistrationViewController: UIViewController {
     // MARK: - Button Actions
     
     @IBAction func pressBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func chooseAvatarImage(_ sender: Any) {
@@ -68,6 +68,7 @@ class RegistrationViewController: UIViewController {
         }
     }
     
+    // Flipping registration fields
     @IBAction func chooseDataType(_ sender: UIButton) {
         
         if !optionalInfoIsShow && sender.tag == 1 {
@@ -93,7 +94,7 @@ class RegistrationViewController: UIViewController {
     }
     
     private func errorRegistration() {
-        self.signUpButton.stopAnimation()
+        signUpButton.stopAnimation()
         DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1, execute: {
             DispatchQueue.main.async {
                 self.signUpButton.shake()
@@ -101,8 +102,8 @@ class RegistrationViewController: UIViewController {
         })
     }
     
-    private func successRegistrtion() {
-        self.signUpButton.stopAnimation()
+    private func successRegistration() {
+        signUpButton.stopAnimation()
         DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1, execute: {
             DispatchQueue.main.async {
                 CommonHelper.alert.showAlertView(title: "Registration Success", subTitle: "\nCongratulations, you are registered. \nClick the button to start the game\n", buttonText: "Start", type: .success, isAutoHide: false) {                    
@@ -153,14 +154,14 @@ extension RegistrationViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] status in
                 switch status {
-                case .noInterner:
+                case .noInternet:
                     self.signUpButton.stopAnimation()
                     CommonHelper.alert.showAlertView(title: "Error",
                                                      subTitle: "It seems you forgot to turn on the Internet",
                                                      buttonText: "Try Again",
                                                      type: .error)
                 case .success:
-                    self.successRegistrtion()
+                    self.successRegistration()
                 case .failCredentials:
                     self.errorRegistration()
                 case .none:

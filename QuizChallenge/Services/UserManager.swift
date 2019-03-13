@@ -34,8 +34,14 @@ class UserManager {
         set { UserDefaults.standard.userToken = newValue }
     }
     
-    func logOut() {
-        try! RealmManager.shared.clearAllData()
-        UserDefaults.standard.clearAllAppData()
+    func logOut(complition: BoolClosure) {
+        do {
+            try RealmManager.shared.clearAllData()
+            UserDefaults.standard.clearAllAppData()
+            complition(true)
+        } catch {
+            Logger.error(msg: "Realm Storage Error. Unable to cleare data")
+            complition(false)
+        }
     }
 }

@@ -14,7 +14,7 @@ public final class ActivityIndicatorView: UIView {
     /// Specifies the segment animation duration.
     public var animationDuration: Double = 1
     
-    /// Specifies the indicator rotation animatino duration.
+    /// Specifies the indicator rotation animation duration.
     public var rotationDuration: Double = 10
     
     /// Specifies the number of segments in the indicator.

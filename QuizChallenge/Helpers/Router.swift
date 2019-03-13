@@ -10,7 +10,7 @@ import UIKit
 
 class Router {
     
-    // MARK: Func for load in AppDelegateс
+    // MARK: Func for load in AppDelegate
     static func setupRootVC(){
         
         var initialViewController: UIViewController?

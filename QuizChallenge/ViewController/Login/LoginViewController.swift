@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] status in
                 switch status {
-                case .noInterner:
+                case .noInternet:
                     self.loginButton.stopAnimation()
                     CommonHelper.alert.showAlertView(title: "Error",
                                                      subTitle: "It seems you forgot to turn on the Internet",
@@ -137,8 +137,12 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func doLogin() {
-        try! RealmManager.shared.storeObject(SettingsModel())
-        UserManager.shared.isLoggedIn = true
-        Router.rootMainVC()
+        do {
+            try RealmManager.shared.storeObject(SettingsModel())
+            UserManager.shared.isLoggedIn = true
+            Router.rootMainVC()
+        } catch {
+            Logger.error(msg: "Realm Storage Error. Unable to login")
+        }
     }
 }

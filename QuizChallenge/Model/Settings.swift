@@ -13,7 +13,7 @@ class SettingsModel: Object {
     @objc dynamic var id = 1
     @objc dynamic var notifications = true
     @objc dynamic var saveQuestions = true
-    @objc dynamic var backgroundSoud = true
+    @objc dynamic var backgroundSound = true
     @objc dynamic var buyPremiumEnabled = true
     
     override static func primaryKey() -> String? {

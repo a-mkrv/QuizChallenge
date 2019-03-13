@@ -13,9 +13,9 @@ import SCLAlertView
 // MARK: - Closure typealias
 
 public typealias EmptyClosure = () -> Void
-public typealias BoolClosure = () -> Bool
-public typealias IntClosure = () -> Int
-public typealias StringClosure = () -> String
+public typealias BoolClosure = (Bool) -> ()
+public typealias IntClosure = (Int) -> ()
+public typealias StringClosure = (String) -> ()
 
 // MARK: - Alert Helper
 

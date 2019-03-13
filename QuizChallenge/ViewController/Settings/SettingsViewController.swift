@@ -29,11 +29,15 @@ class SettingsViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func switchAction(_ sender: UISwitch) {
-            try! RealmManager.shared.updateSettings(sound: backgroundSoundSwitch.isOn, notify: notificationsSwitch.isOn, saveQuestion: saveQuestionsSwitch.isOn, payButton: true)
+        do {
+            try RealmManager.shared.updateSettings(sound: backgroundSoundSwitch.isOn, notify: notificationsSwitch.isOn, saveQuestion: saveQuestionsSwitch.isOn, payButton: true)
+        } catch {
+            Logger.error(msg: "Realm Error. Unable to update storage")
+        }
     }
     
     @IBAction func resetGameProgress(_ sender: Any) {
-        // TODO: Reset Game Statisctics logic
+        // TODO: Reset Game Statistics logic
     }
     
     @IBAction func logOut(_ sender: Any) {
@@ -57,14 +61,15 @@ class SettingsViewController: UIViewController {
         
         // FIXME: Turn On at start app
         //AudioManager.shared.playMusic()
-        backgroundSoundSwitch.isOn = settings.backgroundSoud
+        backgroundSoundSwitch.isOn = settings.backgroundSound
         notificationsSwitch.isOn = settings.notifications
         saveQuestionsSwitch.isOn = settings.saveQuestions
     }
     
     private func doLogOut() {
         Logger.info(msg: "Logout process...")
-        UserManager.shared.logOut()
-        Router.rootLoginVC()
+        UserManager.shared.logOut {
+            $0 ? Router.rootLoginVC() : Logger.error(msg: "Error. Unable to logout")
+        }
     }
 }
