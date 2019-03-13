@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import TransitionButton
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: BaseViewController {
     
     // MARK: - UI Outlets
     
@@ -56,10 +56,6 @@ class RegistrationViewController: UIViewController {
     }
     
     // MARK: - Button Actions
-    
-    @IBAction func pressBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     
     @IBAction func chooseAvatarImage(_ sender: Any) {
         ImageSelector.shared.presentImagePicker(from: self) { [weak self] (image) in

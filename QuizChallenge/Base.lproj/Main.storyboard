@@ -45,7 +45,7 @@
                                                 </constraints>
                                                 <state key="normal" image="left-arrow"/>
                                                 <connections>
-                                                    <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="XBR-kV-nZD"/>
+                                                    <action selector="pressBack:" destination="IEX-ZO-ZFa" eventType="touchUpInside" id="6Li-Un-1MP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -787,7 +787,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="HQl-P9-WrI">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-L1-4Ih">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-L1-4Ih">
                                         <rect key="frame" x="87.5" y="20" width="200" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="2b0-2E-FjJ"/>
@@ -804,8 +804,7 @@
                                         </constraints>
                                         <state key="normal" image="left-arrow"/>
                                         <connections>
-                                            <action selector="pressBack:" destination="PBe-zO-dTC" eventType="touchUpInside" id="76F-2J-JXk"/>
-                                            <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="e5O-ER-a15"/>
+                                            <action selector="pressBack:" destination="PBe-zO-dTC" eventType="touchUpInside" id="0R0-3b-4Bq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flc-sR-cAZ">
@@ -1311,7 +1310,7 @@
                                         </constraints>
                                         <state key="normal" image="left-arrow"/>
                                         <connections>
-                                            <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="KHN-Ov-A9K"/>
+                                            <action selector="pressBack:" destination="hdH-0D-Cfc" eventType="touchUpInside" id="FMo-P9-HQG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2242,11 +2241,6 @@ You can return to the menu and wait for an opponent later.</string>
                                             <constraint firstAttribute="width" secondItem="ixC-fk-bjl" secondAttribute="height" multiplier="1 : 1" id="u08-P6-mgB"/>
                                         </constraints>
                                         <state key="normal" image="left-arrow"/>
-                                        <connections>
-                                            <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="Lku-qK-bKS"/>
-                                            <action selector="pressBack:" destination="PBe-zO-dTC" eventType="touchUpInside" id="el1-NO-ECM"/>
-                                            <action selector="pressBack:" destination="Zan-Z4-K9d" eventType="touchUpInside" id="sEl-m5-CoZ"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2479,7 +2473,7 @@ You can return to the menu and wait for an opponent later.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="IVD-44-1vb" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
-                                                    <rect key="frame" x="258.5" y="11" width="69.5" height="69.5"/>
+                                                    <rect key="frame" x="258" y="11" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="IVD-44-1vb" secondAttribute="height" multiplier="1:1" id="1xx-QK-Qfz"/>
                                                     </constraints>
@@ -2488,7 +2482,7 @@ You can return to the menu and wait for an opponent later.</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="marioCode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dMR-M5-Yhe">
-                                                    <rect key="frame" x="15" y="84.5" width="92" height="26"/>
+                                                    <rect key="frame" x="15" y="85" width="92" height="26"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2500,7 +2494,7 @@ You can return to the menu and wait for an opponent later.</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alexl0l" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="No1-xM-8oB">
-                                                    <rect key="frame" x="258.5" y="84.5" width="69.5" height="26"/>
+                                                    <rect key="frame" x="258" y="85" width="70" height="26"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2515,7 +2509,7 @@ You can return to the menu and wait for an opponent later.</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISE-ik-2dv">
-                                                    <rect key="frame" x="94.5" y="11" width="154" height="35"/>
+                                                    <rect key="frame" x="95" y="11" width="153" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="6ER-HR-6BS"/>
                                                     </constraints>
@@ -2530,7 +2524,7 @@ You can return to the menu and wait for an opponent later.</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 - points - 15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdP-SV-Qej">
-                                                    <rect key="frame" x="94.5" y="51" width="154" height="30"/>
+                                                    <rect key="frame" x="95" y="51" width="153" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Uaf-Il-RUo"/>
                                                     </constraints>
@@ -2545,7 +2539,7 @@ You can return to the menu and wait for an opponent later.</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="glz-08-bfZ" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="11" width="69.5" height="69.5"/>
+                                                    <rect key="frame" x="15" y="11" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="glz-08-bfZ" secondAttribute="height" multiplier="1:1" id="t0n-PV-1aW"/>
                                                     </constraints>
@@ -2645,8 +2639,7 @@ You can return to the menu and wait for an opponent later.</string>
                                         </constraints>
                                         <state key="normal" image="left-arrow"/>
                                         <connections>
-                                            <action selector="pressBack:" destination="PBe-zO-dTC" eventType="touchUpInside" id="ErU-I3-JLL"/>
-                                            <action selector="pressBack:" destination="nUU-QL-0lP" eventType="touchUpInside" id="jLo-eS-UGz"/>
+                                            <action selector="pressBack:" destination="awt-gI-7OG" eventType="touchUpInside" id="XBj-9P-kHG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2852,7 +2845,7 @@ You can return to the menu and wait for an opponent later.</string>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="CgC-iR-rj3">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qwescdfbfg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="d0w-gA-wqh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="d0w-gA-wqh">
                                         <rect key="frame" x="60" y="20" width="255" height="40"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.89942744009999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2864,6 +2857,9 @@ You can return to the menu and wait for an opponent later.</string>
                                             <constraint firstAttribute="width" secondItem="Das-Ty-nOX" secondAttribute="height" id="rTt-sF-AMT"/>
                                         </constraints>
                                         <state key="normal" image="left-arrow"/>
+                                        <connections>
+                                            <action selector="pressBack:" destination="heb-cP-7ga" eventType="touchUpInside" id="PXh-QT-zS4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

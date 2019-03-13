@@ -72,6 +72,8 @@
 		8DA1DCE7222FF52700E1DDD1 /* GameInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA1DCE6222FF52700E1DDD1 /* GameInformationViewController.swift */; };
 		8DABF13122366316006C0B58 /* HistoryGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13022366316006C0B58 /* HistoryGameCell.swift */; };
 		8DABF1382238FCFC006C0B58 /* WelcomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF1372238FCFC006C0B58 /* WelcomeDataSource.swift */; };
+		8DABF13A22391349006C0B58 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13922391348006C0B58 /* NavigationViewController.swift */; };
+		8DABF13C22391912006C0B58 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13B22391912006C0B58 /* BaseViewController.swift */; };
 		8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */; };
 		8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FCA22280E510011B811 /* AnswerCreateView.swift */; };
 		8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */; };
@@ -147,6 +149,8 @@
 		8DA1DCE6222FF52700E1DDD1 /* GameInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInformationViewController.swift; sourceTree = "<group>"; };
 		8DABF13022366316006C0B58 /* HistoryGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGameCell.swift; sourceTree = "<group>"; };
 		8DABF1372238FCFC006C0B58 /* WelcomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDataSource.swift; sourceTree = "<group>"; };
+		8DABF13922391348006C0B58 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		8DABF13B22391912006C0B58 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
 		8DF64FCA22280E510011B811 /* AnswerCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCreateView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 				8D204F68223653AE005F5875 /* HistoryGamesViewController.swift */,
 				8DA1DCE6222FF52700E1DDD1 /* GameInformationViewController.swift */,
 				8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */,
+				8DABF13922391348006C0B58 /* NavigationViewController.swift */,
+				8DABF13B22391912006C0B58 /* BaseViewController.swift */,
 				777C771521FC4DA70022A636 /* Settings */,
 			);
 			path = ViewController;
@@ -579,6 +585,7 @@
 				8DABF13122366316006C0B58 /* HistoryGameCell.swift in Sources */,
 				776EC55B21FA3827005BA18A /* User.swift in Sources */,
 				8D0B9B4922256570003E5B33 /* PrepareGameInfo.swift in Sources */,
+				8DABF13C22391912006C0B58 /* BaseViewController.swift in Sources */,
 				77F30107221BF95400C2C76B /* ValidationViewModel.swift in Sources */,
 				777A67A422086BBD00031808 /* UIView+Extension.swift in Sources */,
 				777C770821FACBBD0022A636 /* Statistics.swift in Sources */,
@@ -594,6 +601,7 @@
 				777A67A222086A7C00031808 /* RegistrationViewController.swift in Sources */,
 				77AB718F21F86B18008F4018 /* AdvertisingViewController.swift in Sources */,
 				7742D10121F9B88B00F3A677 /* CircleView.swift in Sources */,
+				8DABF13A22391349006C0B58 /* NavigationViewController.swift in Sources */,
 				7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */,
 				77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */,
 				7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */,

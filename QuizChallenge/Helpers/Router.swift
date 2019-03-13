@@ -26,7 +26,7 @@ class Router {
         }
         
         if let initVC = initialViewController {
-            let navigationController = UINavigationController(rootViewController: initVC)
+            let navigationController = SwipeNavigationController(rootViewController: initVC)
             navigationController.isNavigationBarHidden = true
             navigationController.navigationBar.isTranslucent = true
             
@@ -43,7 +43,7 @@ class Router {
     // MARK: Switch root view controller with animate
     static func switchAnimateRootVС(_ viewController: UIViewController, duration: TimeInterval = 0.7, options: UIView.AnimationOptions = .transitionCrossDissolve, completion: (() -> Void)? = nil) {
         
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController = SwipeNavigationController(rootViewController: viewController)
         navigationController.navigationBar.isTranslucent = true
         navigationController.navigationBar.isHidden = true
         

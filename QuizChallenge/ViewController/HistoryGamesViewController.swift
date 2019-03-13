@@ -28,7 +28,7 @@ struct GameSection {
     }
 }
 
-class HistoryGamesViewController: UIViewController {
+class HistoryGamesViewController: BaseViewController {
     
     @IBOutlet weak var gamesTableView: UITableView!
     
@@ -55,10 +55,6 @@ class HistoryGamesViewController: UIViewController {
         
         activeGames.games.isEmpty ? () : gamesSections.append(activeGames)
         finishedGames.games.isEmpty ? () : gamesSections.append(finishedGames)
-    }
-    
-    @IBAction func pressBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
 }
 

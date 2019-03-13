@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdvertisingViewController: UIViewController {
+class AdvertisingViewController: BaseViewController {
     
     let advertising = ["Watch Ad", "Share VK", "Share FB", "Share Tweet", "Buy 100", "Buy 300", "Buy 500"]
     let adDescription = ["+30 coins", "+30 coins", "+30 coins", "+30 coins", "60 RUB", "150 RUB", "300 RUB"]
@@ -18,10 +18,6 @@ class AdvertisingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    @IBAction func pressBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
 }
 

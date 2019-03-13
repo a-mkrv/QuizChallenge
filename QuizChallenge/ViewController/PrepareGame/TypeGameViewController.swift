@@ -13,7 +13,7 @@ enum TypeGame {
     case Tourney
 }
 
-class TypeGameViewController: UIViewController {
+class TypeGameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

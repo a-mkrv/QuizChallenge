@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class FindUserViewController: UIViewController {
+class FindUserViewController: BaseViewController {
 
     // MARK: - UI Outlets
 

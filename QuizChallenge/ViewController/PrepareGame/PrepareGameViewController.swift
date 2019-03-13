@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PrepareGameViewController: UIViewController {
+class PrepareGameViewController: BaseViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var heightCategoryConstraints: NSLayoutConstraint!
@@ -44,10 +44,6 @@ class PrepareGameViewController: UIViewController {
     }
     
     //MARK: - IBActions
-    
-    @IBAction func pressBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     
     @IBAction func startGame(_ sender: Any) {
         findOpponent()

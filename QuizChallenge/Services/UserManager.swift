@@ -40,7 +40,7 @@ class UserManager {
             UserDefaults.standard.clearAllAppData()
             complition(true)
         } catch {
-            Logger.error(msg: "Realm Storage Error. Unable to cleare data")
+            Logger.error(msg: "Realm Storage Error: \(error.localizedDescription) \nUnable to cleare data")
             complition(false)
         }
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: BaseViewController {
     
     // MARK: - Outlets
     
@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
         do {
             try RealmManager.shared.updateSettings(sound: backgroundSoundSwitch.isOn, notify: notificationsSwitch.isOn, saveQuestion: saveQuestionsSwitch.isOn, payButton: true)
         } catch {
-            Logger.error(msg: "Realm Error. Unable to update storage")
+            Logger.error(msg: "Realm Error: \(error.localizedDescription) \nUnable to update storage")
         }
     }
     
@@ -46,10 +46,6 @@ class SettingsViewController: UIViewController {
         }) {
             Logger.debug(msg: "Press Cancel logout")
         }
-    }
-    
-    @IBAction func pressBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Private

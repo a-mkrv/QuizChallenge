@@ -142,7 +142,7 @@ class LoginViewController: UIViewController {
             UserManager.shared.isLoggedIn = true
             Router.rootMainVC()
         } catch {
-            Logger.error(msg: "Realm Storage Error. Unable to login")
+            Logger.error(msg: "Realm Storage Error: \(error.localizedDescription) \nUnable to login")
         }
     }
 }

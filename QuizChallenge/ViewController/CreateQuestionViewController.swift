@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class CreateQuestionViewController: UIViewController {
+class CreateQuestionViewController: BaseViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var answersView: UIView!

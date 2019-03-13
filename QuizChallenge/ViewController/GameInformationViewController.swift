@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameInformationViewController: UIViewController {
+class GameInformationViewController: BaseViewController {
 
     @IBOutlet weak var gamer1ImageView: IBImageView!
     @IBOutlet weak var gamer1NameLabel: UILabel!
@@ -23,9 +23,5 @@ class GameInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-    
-    @IBAction func pressBack(_ sender: Any) {
-    
     }
 }

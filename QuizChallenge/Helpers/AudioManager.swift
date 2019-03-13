@@ -29,8 +29,8 @@ class AudioManager {
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
             
-        } catch let error as NSError {
-            Logger.error(msg: "Error playing: " + error.description)
+        } catch {
+            Logger.error(msg: "Error playing: " + error.localizedDescription)
         }
     }
     
