@@ -574,9 +574,7 @@
                         <outlet property="bottomViewConstraint" destination="UEB-v3-XW7" id="1PN-fF-Rbv"/>
                         <outlet property="collectionView" destination="iL6-c6-gkK" id="4hv-du-ubX"/>
                         <outlet property="headerView" destination="agf-GQ-5Od" id="X9E-sC-ZF6"/>
-                        <outlet property="nextButton" destination="fAh-cR-Dmh" id="zgd-jK-hI5"/>
                         <outlet property="pageControl" destination="9R7-V6-zhB" id="hMB-eH-5aq"/>
-                        <outlet property="skipButton" destination="0jT-lJ-B6S" id="w5m-p5-jZl"/>
                         <outlet property="topSpaceHeaderView" destination="QZN-Rs-iXC" id="9ux-Vr-aVb"/>
                     </connections>
                 </viewController>
