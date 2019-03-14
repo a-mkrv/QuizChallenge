@@ -12,13 +12,6 @@ fileprivate let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName
 
 extension UserDefaults {
     
-    private enum UserDefaultsKeys: String {
-        case isLoggedIn
-        case userToken
-        case userName
-        case isShowWelcomeScreen
-    }
-    
     private func createKey(_ key: String) -> String {
         return (appName ?? "QuizChallenge") + "-" + key
     }
@@ -26,34 +19,34 @@ extension UserDefaults {
     //FIXME: Refactoring in separate one object (UserManager)
     var isLoggedIn: Bool? {
         set {
-            set(newValue, forKey: createKey(UserDefaultsKeys.isLoggedIn.rawValue))
+            set(newValue, forKey: createKey(#function))
             synchronize()
         }
-        get { return bool(forKey: createKey(UserDefaultsKeys.isLoggedIn.rawValue)) }
+        get { return bool(forKey: createKey(#function)) }
     }
     
     var userToken: String? {
         set {
-            set(newValue, forKey: createKey(UserDefaultsKeys.userToken.rawValue))
+            set(newValue, forKey: createKey(#function))
             synchronize()
         }
-        get { return string(forKey: createKey(UserDefaultsKeys.userToken.rawValue)) }
+        get { return string(forKey: createKey(#function)) }
     }
     
     var userName: String? {
         set {
-            set(newValue, forKey: createKey(UserDefaultsKeys.userName.rawValue))
+            set(newValue, forKey: createKey(#function))
             synchronize()
         }
-        get { return string(forKey: createKey(UserDefaultsKeys.userName.rawValue)) }
+        get { return string(forKey: createKey(#function)) }
     }
     
     var isShowWelcomeScreen: Bool {
         set {
-            set(newValue, forKey: createKey(UserDefaultsKeys.isShowWelcomeScreen.rawValue))
+            set(newValue, forKey: createKey(#function))
             synchronize()
         }
-        get { return bool(forKey: createKey(UserDefaultsKeys.isShowWelcomeScreen.rawValue)) }
+        get { return bool(forKey: createKey(#function)) }
     }
     
     //MARK: Clear all data
