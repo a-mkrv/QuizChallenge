@@ -77,6 +77,7 @@
 		8DD570CC223B8DC500CD6073 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CB223B8DC500CD6073 /* Response.swift */; };
 		8DD570CE223BA5B400CD6073 /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CD223BA5B400CD6073 /* Opponent.swift */; };
 		8DD570D0223BB50B00CD6073 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CF223BB50B00CD6073 /* AuthController.swift */; };
+		8DD570D5223BE96800CD6073 /* VkAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570D4223BE96800CD6073 /* VkAuth.swift */; };
 		8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */; };
 		8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FCA22280E510011B811 /* AnswerCreateView.swift */; };
 		8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */; };
@@ -158,6 +159,7 @@
 		8DD570CB223B8DC500CD6073 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8DD570CD223BA5B400CD6073 /* Opponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
 		8DD570CF223BB50B00CD6073 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		8DD570D4223BE96800CD6073 /* VkAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkAuth.swift; sourceTree = "<group>"; };
 		8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
 		8DF64FCA22280E510011B811 /* AnswerCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCreateView.swift; sourceTree = "<group>"; };
 		8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCreateView.xib; sourceTree = "<group>"; };
@@ -411,7 +413,7 @@
 		77F30105221BF92600C2C76B /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8DD570CF223BB50B00CD6073 /* AuthController.swift */,
+				8DD570D1223BDBBA00CD6073 /* AuthController */,
 				77D6536C2212B4BD00E942B0 /* LoginViewModel.swift */,
 				77F30103221BF4A200C2C76B /* RegistrationViewModel.swift */,
 				77F30106221BF95400C2C76B /* ValidationViewModel.swift */,
@@ -434,6 +436,15 @@
 				772D1A922203318600607290 /* WelcomeViewController.swift */,
 			);
 			path = WelcomePage;
+			sourceTree = "<group>";
+		};
+		8DD570D1223BDBBA00CD6073 /* AuthController */ = {
+			isa = PBXGroup;
+			children = (
+				8DD570CF223BB50B00CD6073 /* AuthController.swift */,
+				8DD570D4223BE96800CD6073 /* VkAuth.swift */,
+			);
+			path = AuthController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,6 +663,7 @@
 				77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */,
 				7742D0F721F9A3E500F3A677 /* SimpleQuestionView.swift in Sources */,
 				8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */,
+				8DD570D5223BE96800CD6073 /* VkAuth.swift in Sources */,
 				77F30102221BE49200C2C76B /* Registration.swift in Sources */,
 				77F30109221C76D300C2C76B /* ImageSelector.swift in Sources */,
 				7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */,

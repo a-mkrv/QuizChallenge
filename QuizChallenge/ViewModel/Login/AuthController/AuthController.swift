@@ -10,47 +10,61 @@ import Foundation
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-enum SocialLogin {
+protocol SocialLoginHandlerDelegate {
+    func didReceivedToken(_ token: String, fromSocialNetwork socialNetwork: SocialNetwork)
+    func authorize()
+}
+
+enum SocialNetwork {
     case Facebook
     case Vkontakte
     case Google
 }
 
 // Facade Login Controller
-class AuthController {
+class AuthController: NSObject {
     
-    func doLogin(type: SocialLogin, from viewController: UIViewController) {
+    var delegate: SocialLoginHandlerDelegate?
+    
+    override init() {
+        super.init()
+        
+       
+    }
+    
+    func doLogin(type: SocialNetwork) {
         switch type {
         case .Facebook:
-            loginFacebook(from: viewController)
+            authorizeFacebook()
         case .Vkontakte:
-            print("VK Login")
+            authorizeVK()
         case .Google:
             print("Google Login")
         }
     }
+
+    
     
     // MARK: - Facebook
-    private func loginFacebook(from: UIViewController) {
+    private func authorizeFacebook() {
         
         let facebookLogin: FBSDKLoginManager = FBSDKLoginManager()
         facebookLogin.loginBehavior = FBSDKLoginBehavior.native
         facebookLogin.logOut() // logout with old credentials
         
-        facebookLogin.logIn(withReadPermissions: ["email"], from: from) {
+        facebookLogin.logIn(withReadPermissions: ["email"], from: (self.delegate as! UIViewController)) {
             (result, error) in
             
             guard error == nil else {
                 Logger.error(msg: error!.localizedDescription)
-                from.dismiss(animated: true, completion: nil)
                 return
             }
             
             guard result!.isCancelled != false else {
-                from.dismiss(animated: true, completion: nil)
+                Logger.error(msg: "User cancelled login.")
                 return
             }
-        
+            
             if let fbResult = result, fbResult.grantedPermissions != nil, fbResult.grantedPermissions.contains("email") {
                 self.readFacebookLoginResult()
             } else {
@@ -67,16 +81,18 @@ class AuthController {
         }
         
         FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email, locale, location, birthday, bio"]).start(completionHandler: { (connection, result, error) in
-            if result == nil {
-                print(error?.localizedDescription ?? "")
+            
+            guard error == nil, let result = result else {
+                Logger.error(msg: "Facebook parse result is nil or an error occurred")
+                return
             }
-            else{
-                let accessToken = FBSDKAccessToken.current().tokenString
-                Logger.info(msg: "FB Access token: \(accessToken ?? "nil")")
-                Logger.info(msg: "FB Response Data: \(result ?? "nil")")
+            
+            if let token = FBSDKAccessToken.current().tokenString {
+                self.delegate?.didReceivedToken(token, fromSocialNetwork: .Facebook)
+                Logger.info(msg: "FB Access token: \(token)")
+                Logger.info(msg: "FB Response Data: \(result)")
             }
         })
-        
     }
 }
 

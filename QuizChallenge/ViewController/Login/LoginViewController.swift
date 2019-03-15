@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
     
     func setViewModel(_ viewModel: LoginViewModel) {
         self.viewModel = viewModel
+        self.viewModel?.authController.doLogin(type: .Vkontakte)
     }
     
     // MARK: - Setup RX

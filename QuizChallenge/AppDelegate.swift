@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import SwiftyVK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,8 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        let handled = FBSDKApplicationDelegate.sharedInstance()?.application(app, open: url, options: options)
-        return handled!
+        
+        let sourceApp = options[.sourceApplication] as? String
+        VK.handle(url: url, sourceApplication: sourceApp)
+        
+        FBSDKApplicationDelegate.sharedInstance()?.application(app, open: url, options: options)
+        
+        return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
