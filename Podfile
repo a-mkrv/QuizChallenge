@@ -25,4 +25,7 @@ target 'QuizChallenge' do
   pod 'RxCocoa',    '~> 4.0'
   pod 'Sentry'
 
+  pod 'SwiftyVK'
+  pod 'FBSDKLoginKit'
+   
 end

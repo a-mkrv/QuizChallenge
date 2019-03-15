@@ -19,6 +19,7 @@ enum LoginResponse {
 
 class LoginViewModel {
     
+    let authController = AuthController()
     let usernameViewModel = UsernameViewModel()
     let passwordViewModel = PasswordViewModel()
     

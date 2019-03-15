@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: TransitionButton!
     @IBOutlet weak var loginTextField: IBTextField!
+    @IBOutlet weak var fbLoginButton: UIButton!
+    @IBOutlet weak var vkLoginButton: UIButton!
     @IBOutlet weak var passwordTextField: IBTextField!
     
     var viewModel: LoginViewModel?
