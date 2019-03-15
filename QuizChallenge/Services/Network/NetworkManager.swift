@@ -23,13 +23,6 @@ enum Result<Value> {
     case error(String, Int)
 }
 
-enum ApiError: Error {
-    case forbidden              // Code 403
-    case notFound               // Code 404
-    case conflict               // Code 409
-    case internalServerError    // Code 500
-}
-
 // MARK: - NetworkManager
 
 class NetworkManager {
@@ -79,16 +72,18 @@ class NetworkManager {
         return Observable.create { observer in
             
             let request = Alamofire.request(self.baseUrl + url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: self.tokenHeader)
-                
+                .validate(statusCode: 200..<300)
                 .responseJSON { response in
+                    let statusCode = ResponseStatus(response.response?.statusCode ?? 0)
                     
                     switch response.result {
                     case .success(_):
                         observer.onNext(true)
-                    case .failure(let error):
-                        observer.onError(error)
+                    case .failure:
+                        observer.onError(statusCode)
                     }
                     observer.onCompleted()
+                    Logger.debug(msg: statusCode, type: .NETWORK)
             }
             
             return Disposables.create {
@@ -104,20 +99,22 @@ class NetworkManager {
         return Observable.create { observer in
             
             let request = Alamofire.request(self.baseUrl + type.url(), method: method, parameters: parameters, encoding: JSONEncoding.default)
-                .validate()
+                .validate(statusCode: 200..<300)
                 .responseJSON { response in
-                    
+                    let statusCode = ResponseStatus(response.response?.statusCode ?? 0)
+
                     switch response.result {
                     case .success(let value):
                         if let response = Mapper<T>().map(JSONObject: value) {
                             observer.onNext(response)
                         } else {
-                            observer.onError(ApiError.notFound)
+                            observer.onError(ResponseStatus.badMappable)
                         }
-                    case .failure(let error):
-                        observer.onError(error)
+                    case .failure:
+                        observer.onError(statusCode)
                     }
                     observer.onCompleted()
+                    Logger.debug(msg: statusCode, type: .NETWORK)
             }
             
             return Disposables.create {

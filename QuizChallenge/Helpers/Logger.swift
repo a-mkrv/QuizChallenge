@@ -9,7 +9,7 @@
 import Foundation
 
 enum LogLevel {
-    case DEBUG, INFO, ERROR, MARK;
+    case DEBUG, INFO, ERROR, NETWORK, MARK;
     
     fileprivate func emotionLevel() -> String {
         var emotion = ""
@@ -20,6 +20,8 @@ enum LogLevel {
             emotion =  "\u{0001F446} "
         case .ERROR:
             emotion =  "\u{0001F621} "
+        case .NETWORK:
+            emotion = "\u{0001F310} "
         case .MARK:
             emotion =  "\u{0001F340} "
         }

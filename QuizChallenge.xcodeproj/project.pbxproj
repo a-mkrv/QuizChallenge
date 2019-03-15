@@ -74,6 +74,7 @@
 		8DABF1382238FCFC006C0B58 /* WelcomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF1372238FCFC006C0B58 /* WelcomeDataSource.swift */; };
 		8DABF13A22391349006C0B58 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13922391348006C0B58 /* NavigationViewController.swift */; };
 		8DABF13C22391912006C0B58 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13B22391912006C0B58 /* BaseViewController.swift */; };
+		8DD570CC223B8DC500CD6073 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CB223B8DC500CD6073 /* Response.swift */; };
 		8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */; };
 		8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FCA22280E510011B811 /* AnswerCreateView.swift */; };
 		8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */; };
@@ -152,6 +153,7 @@
 		8DABF13922391348006C0B58 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8DABF13B22391912006C0B58 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		8DD570CB223B8DC500CD6073 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
 		8DF64FCA22280E510011B811 /* AnswerCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCreateView.swift; sourceTree = "<group>"; };
 		8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCreateView.xib; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				7723AE7321F7121200F76DE7 /* NetworkManager.swift */,
+				8DD570CB223B8DC500CD6073 /* Response.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				777C770C21FAF15D0022A636 /* RealmManager.swift in Sources */,
 				77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */,
 				7723AE7421F7121200F76DE7 /* NetworkManager.swift in Sources */,
+				8DD570CC223B8DC500CD6073 /* Response.swift in Sources */,
 				7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */,
 				77AB718121F7571F008F4018 /* TextField+Extension.swift in Sources */,
 				8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */,
