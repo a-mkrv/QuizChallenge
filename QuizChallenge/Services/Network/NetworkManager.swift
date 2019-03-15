@@ -20,7 +20,7 @@ typealias APIParameters = [String : Any]
 
 enum Result<Value> {
     case success(Value)
-    case error(String, Int)
+    case error(Error)
 }
 
 // MARK: - NetworkManager
@@ -53,6 +53,10 @@ class NetworkManager {
     
     func getGamesHistory() -> Observable<Session> {
         return doRequest(type: Session.self, parameters: nil, method: .get)
+    }
+    
+    func searchOpponent(with userInfo: APIParameters) -> Observable<Opponent> {
+        return doRequest(type: Opponent.self, parameters: userInfo, method: .get)
     }
     
     // MARK: - Requests without Mappable Model

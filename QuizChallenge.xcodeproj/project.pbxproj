@@ -75,6 +75,7 @@
 		8DABF13A22391349006C0B58 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13922391348006C0B58 /* NavigationViewController.swift */; };
 		8DABF13C22391912006C0B58 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13B22391912006C0B58 /* BaseViewController.swift */; };
 		8DD570CC223B8DC500CD6073 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CB223B8DC500CD6073 /* Response.swift */; };
+		8DD570CE223BA5B400CD6073 /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CD223BA5B400CD6073 /* Opponent.swift */; };
 		8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */; };
 		8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FCA22280E510011B811 /* AnswerCreateView.swift */; };
 		8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */; };
@@ -154,6 +155,7 @@
 		8DABF13B22391912006C0B58 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		8DD570CB223B8DC500CD6073 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		8DD570CD223BA5B400CD6073 /* Opponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
 		8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
 		8DF64FCA22280E510011B811 /* AnswerCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCreateView.swift; sourceTree = "<group>"; };
 		8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCreateView.xib; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				7707D1442201901A006AA699 /* TypeDecodable.swift */,
 				7707D1462201B699006AA699 /* Settings.swift */,
 				77F30101221BE49200C2C76B /* Registration.swift */,
+				8DD570CD223BA5B400CD6073 /* Opponent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				77F30100221BC9D900C2C76B /* Login.swift in Sources */,
 				77AB718921F762E2008F4018 /* UISegue.swift in Sources */,
 				7740AAE121F897CE00CDDE4A /* PrepareGameViewController.swift in Sources */,
+				8DD570CE223BA5B400CD6073 /* Opponent.swift in Sources */,
 				7742D0F921F9A3F500F3A677 /* TrueFalseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
