@@ -60,8 +60,7 @@ class FindUserViewController: BaseViewController {
                     opponentModalVC.modalPresentationStyle = .overCurrentContext
                     self.present(opponentModalVC, animated: true, completion: nil)
                     
-                case .error(let error):
-                    print(error)
+                case .fail, .error:
                     CommonHelper.alert.showAlertView(title: "Error",
                                                      subTitle: "It seems you forgot to turn on the Internet",
                                                      buttonText: "Try Again",

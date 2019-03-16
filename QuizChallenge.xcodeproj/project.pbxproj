@@ -39,6 +39,8 @@
 		777C771221FC4CD60022A636 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C771121FC4CD60022A636 /* SettingsViewController.swift */; };
 		777C771421FC4D920022A636 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C771321FC4D920022A636 /* ProfileSettingsViewController.swift */; };
 		77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77894EA122081AF60041EE94 /* WelcomePageCell.swift */; };
+		778C4067223CE3E800907D18 /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778C4066223CE3E800907D18 /* FBAuth.swift */; };
+		778C4069223CE3FD00907D18 /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778C4068223CE3FD00907D18 /* GoogleAuth.swift */; };
 		77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0B2209D75300C821B6 /* CategoryCell.swift */; };
 		77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */; };
 		77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717A21F728A1008F4018 /* IBCustomView.swift */; };
@@ -76,8 +78,8 @@
 		8DABF13C22391912006C0B58 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13B22391912006C0B58 /* BaseViewController.swift */; };
 		8DD570CC223B8DC500CD6073 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CB223B8DC500CD6073 /* Response.swift */; };
 		8DD570CE223BA5B400CD6073 /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CD223BA5B400CD6073 /* Opponent.swift */; };
-		8DD570D0223BB50B00CD6073 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CF223BB50B00CD6073 /* AuthController.swift */; };
-		8DD570D5223BE96800CD6073 /* VkAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570D4223BE96800CD6073 /* VkAuth.swift */; };
+		8DD570D0223BB50B00CD6073 /* AuthFacadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CF223BB50B00CD6073 /* AuthFacadeController.swift */; };
+		8DD570D5223BE96800CD6073 /* VKAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570D4223BE96800CD6073 /* VKAuth.swift */; };
 		8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */; };
 		8DF64FCB22280E510011B811 /* AnswerCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF64FCA22280E510011B811 /* AnswerCreateView.swift */; };
 		8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */; };
@@ -117,6 +119,8 @@
 		777C771121FC4CD60022A636 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		777C771321FC4D920022A636 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileSettingsViewController.swift; path = "../New Group/ProfileSettingsViewController.swift"; sourceTree = "<group>"; };
 		77894EA122081AF60041EE94 /* WelcomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageCell.swift; sourceTree = "<group>"; };
+		778C4066223CE3E800907D18 /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
+		778C4068223CE3FD00907D18 /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
 		77A00A0B2209D75300C821B6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCell.swift; sourceTree = "<group>"; };
 		77AB717A21F728A1008F4018 /* IBCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBCustomView.swift; sourceTree = "<group>"; };
@@ -158,8 +162,8 @@
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		8DD570CB223B8DC500CD6073 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8DD570CD223BA5B400CD6073 /* Opponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
-		8DD570CF223BB50B00CD6073 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
-		8DD570D4223BE96800CD6073 /* VkAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkAuth.swift; sourceTree = "<group>"; };
+		8DD570CF223BB50B00CD6073 /* AuthFacadeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFacadeController.swift; sourceTree = "<group>"; };
+		8DD570D4223BE96800CD6073 /* VKAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuth.swift; sourceTree = "<group>"; };
 		8DF64FC62227E34F0011B811 /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
 		8DF64FCA22280E510011B811 /* AnswerCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCreateView.swift; sourceTree = "<group>"; };
 		8DF64FCC22280E6A0011B811 /* AnswerCreateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCreateView.xib; sourceTree = "<group>"; };
@@ -441,8 +445,10 @@
 		8DD570D1223BDBBA00CD6073 /* AuthController */ = {
 			isa = PBXGroup;
 			children = (
-				8DD570CF223BB50B00CD6073 /* AuthController.swift */,
-				8DD570D4223BE96800CD6073 /* VkAuth.swift */,
+				8DD570CF223BB50B00CD6073 /* AuthFacadeController.swift */,
+				8DD570D4223BE96800CD6073 /* VKAuth.swift */,
+				778C4066223CE3E800907D18 /* FBAuth.swift */,
+				778C4068223CE3FD00907D18 /* GoogleAuth.swift */,
 			);
 			path = AuthController;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				8D0B9B3F22242110003E5B33 /* FindUserViewController.swift in Sources */,
 				777C770C21FAF15D0022A636 /* RealmManager.swift in Sources */,
 				77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */,
+				778C4069223CE3FD00907D18 /* GoogleAuth.swift in Sources */,
 				7723AE7421F7121200F76DE7 /* NetworkManager.swift in Sources */,
 				8DD570CC223B8DC500CD6073 /* Response.swift in Sources */,
 				7723AE6A21F6E1F800F76DE7 /* MainViewController.swift in Sources */,
@@ -648,8 +655,9 @@
 				772D1A932203318600607290 /* WelcomeViewController.swift in Sources */,
 				8D0B9B47222564CA003E5B33 /* TypeGameViewController.swift in Sources */,
 				8DABF1382238FCFC006C0B58 /* WelcomeDataSource.swift in Sources */,
-				8DD570D0223BB50B00CD6073 /* AuthController.swift in Sources */,
+				8DD570D0223BB50B00CD6073 /* AuthFacadeController.swift in Sources */,
 				77F30104221BF4A200C2C76B /* RegistrationViewModel.swift in Sources */,
+				778C4067223CE3E800907D18 /* FBAuth.swift in Sources */,
 				77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */,
 				8D0B9B4122243B40003E5B33 /* OpponentViewController.swift in Sources */,
 				77D6536F2212B9B900E942B0 /* Router.swift in Sources */,
@@ -663,7 +671,7 @@
 				77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */,
 				7742D0F721F9A3E500F3A677 /* SimpleQuestionView.swift in Sources */,
 				8DF64FC72227E34F0011B811 /* CreateQuestionViewController.swift in Sources */,
-				8DD570D5223BE96800CD6073 /* VkAuth.swift in Sources */,
+				8DD570D5223BE96800CD6073 /* VKAuth.swift in Sources */,
 				77F30102221BE49200C2C76B /* Registration.swift in Sources */,
 				77F30109221C76D300C2C76B /* ImageSelector.swift in Sources */,
 				7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */,

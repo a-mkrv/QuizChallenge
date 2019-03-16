@@ -326,9 +326,11 @@
                         <viewLayoutGuide key="safeArea" id="tWN-3A-RbF"/>
                     </view>
                     <connections>
+                        <outlet property="fbLoginButton" destination="mZv-Ui-rJd" id="FCh-CI-IJE"/>
                         <outlet property="loginButton" destination="eek-lA-hDN" id="cXX-Pm-sbn"/>
                         <outlet property="loginTextField" destination="eR5-KC-Y9e" id="OD3-x7-vgl"/>
                         <outlet property="passwordTextField" destination="RO9-Jz-ri2" id="jjd-P6-V1a"/>
+                        <outlet property="vkLoginButton" destination="p06-Dw-EZ6" id="S3m-x6-b1S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS4-Yv-QRb" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,7 +19,6 @@ enum LoginResponse {
 
 class LoginViewModel {
     
-    let authController = AuthController()
     let usernameViewModel = UsernameViewModel()
     let passwordViewModel = PasswordViewModel()
     
@@ -31,6 +30,10 @@ class LoginViewModel {
         
         return Observable.combineLatest(usernameViewModel.validateCredentials(), passwordViewModel.validateCredentials(), usernameViewModel.data, passwordViewModel.data) { $0 && $1 && $2.count > 0 && $3.count > 0 }
             .distinctUntilChanged()
+    }
+    
+    func socialNetworkAuth(with socialNetworkType: SocialNetwork) -> Observable<LoginResponse> {
+        return AuthFacadeController.doLogin(type: socialNetworkType)
     }
     
     func serverNativeLogin() -> Observable<LoginResponse> {

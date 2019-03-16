@@ -1,5 +1,5 @@
 //
-//  VkAuth.swift
+//  VKAuth.swift
 //  QuizChallenge
 //
 //  Created by A.Makarov on 15/03/2019.
@@ -9,28 +9,33 @@
 import Foundation
 import SwiftyVK
 
-class VkAuth: SwiftyVKDelegate {
+class VKAuth: SwiftyVKDelegate, Authorizable {
     
     let VK_APP_ID:String = "6288855"
     
-    func doAuth() {
-         VK.setUp(appId: VK_APP_ID, delegate: self)
+    init() {
+        VK.setUp(appId: VK_APP_ID, delegate: self)
     }
     
-    private func authorizeVK() {
+    func authorize(complition: @escaping authComplitionData) {
         if (VK.sessions.default.state != .authorized) {
             VK.sessions.default.logIn(
                 onSuccess: { info in
-                    //didReceivedToken(info["access_token"]!, fromSocialNetwork: .Vkontakte)
+                    if let token = info["access_token"] {
+                        let authData = AuthData(token: token)
+                        complition(.success(authData))
+                    } else {
+                        complition(.fail)
+                    }
             },
                 onError: { error in
-                    
+                    complition(.fail)
             }
             )
         } else {
             VK.sessions.default.logOut()
             
-            authorizeVK()
+            authorize(complition: complition)
         }
     }
     

@@ -21,6 +21,7 @@ typealias APIParameters = [String : Any]
 enum Result<Value> {
     case success(Value)
     case error(Error)
+    case fail
 }
 
 // MARK: - NetworkManager

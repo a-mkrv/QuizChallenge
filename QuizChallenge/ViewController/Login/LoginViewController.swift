@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
     
     func setViewModel(_ viewModel: LoginViewModel) {
         self.viewModel = viewModel
-        self.viewModel?.authController.doLogin(type: .Vkontakte)
     }
     
     // MARK: - Setup RX
@@ -102,6 +101,21 @@ class LoginViewController: UIViewController {
                     Logger.info(msg: "None Case Response")
                 }
             }).disposed(by: disposeBag)
+        
+        fbLoginButton.rx.tap
+            .flatMap { [unowned self] _ -> Observable<LoginResponse> in
+                return (self.viewModel?.socialNetworkAuth(with: .Facebook))!
+            }
+            .subscribe(onNext: { status in
+                print(status)
+            })
+            .disposed(by: disposeBag)
+        
+        vkLoginButton.rx.tap
+            .subscribe(onNext: { _ in
+                
+            })
+            .disposed(by: disposeBag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
