@@ -30,6 +30,8 @@
 		7745EA3F21FDBA5B00210E96 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7745EA3E21FDBA5B00210E96 /* AudioManager.swift */; };
 		7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */; };
 		7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7745EA4221FF77E400210E96 /* HelperFile.swift */; };
+		774C0AB4223EC2FB00A7E251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774C0AB2223EC2FB00A7E251 /* Main.storyboard */; };
+		774C0AB5223EC2FB00A7E251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774C0AB3223EC2FB00A7E251 /* LaunchScreen.storyboard */; };
 		776EC55B21FA3827005BA18A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EC55A21FA3827005BA18A /* User.swift */; };
 		777A67A222086A7C00031808 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A67A122086A7C00031808 /* RegistrationViewController.swift */; };
 		777A67A422086BBD00031808 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A67A322086BBD00031808 /* UIView+Extension.swift */; };
@@ -56,9 +58,7 @@
 		77D6536F2212B9B900E942B0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D6536E2212B9B900E942B0 /* Router.swift */; };
 		77D653712212C76700E942B0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D653702212C76700E942B0 /* Logger.swift */; };
 		77E2B45821F192FD00E0FE75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2B45721F192FD00E0FE75 /* AppDelegate.swift */; };
-		77E2B45D21F192FD00E0FE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E2B45B21F192FD00E0FE75 /* Main.storyboard */; };
 		77E2B45F21F192FF00E0FE75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E2B45E21F192FF00E0FE75 /* Assets.xcassets */; };
-		77E2B46221F192FF00E0FE75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E2B46021F192FF00E0FE75 /* LaunchScreen.storyboard */; };
 		77F30100221BC9D900C2C76B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F300FF221BC9D900C2C76B /* Login.swift */; };
 		77F30102221BE49200C2C76B /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F30101221BE49200C2C76B /* Registration.swift */; };
 		77F30104221BF4A200C2C76B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F30103221BF4A200C2C76B /* RegistrationViewModel.swift */; };
@@ -110,6 +110,9 @@
 		7745EA3E21FDBA5B00210E96 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		7745EA4221FF77E400210E96 /* HelperFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFile.swift; sourceTree = "<group>"; };
+		774C0AB2223EC2FB00A7E251 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		774C0AB3223EC2FB00A7E251 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		774C0AB6223EC32D00A7E251 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		776EC55A21FA3827005BA18A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		777A67A122086A7C00031808 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		777A67A322086BBD00031808 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -137,10 +140,7 @@
 		77D653702212C76700E942B0 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77E2B45421F192FD00E0FE75 /* QuizChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E2B45721F192FD00E0FE75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77E2B45C21F192FD00E0FE75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77E2B45E21F192FF00E0FE75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		77E2B46121F192FF00E0FE75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		77E2B46321F192FF00E0FE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77F300FF221BC9D900C2C76B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		77F30101221BE49200C2C76B /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		77F30103221BF4A200C2C76B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -301,6 +301,26 @@
 			path = GameView;
 			sourceTree = "<group>";
 		};
+		774C0AB0223EC27500A7E251 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				77E2B45721F192FD00E0FE75 /* AppDelegate.swift */,
+				774C0AB6223EC32D00A7E251 /* Info.plist */,
+				774C0AB1223EC27D00A7E251 /* Storyboards */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		774C0AB1223EC27D00A7E251 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				77AB717E21F7459A008F4018 /* Login.storyboard */,
+				774C0AB2223EC2FB00A7E251 /* Main.storyboard */,
+				774C0AB3223EC2FB00A7E251 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		777C771521FC4DA70022A636 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,12 +424,8 @@
 				7723AE6721F64E9E00F76DE7 /* ViewModel */,
 				7723AE6821F6E18E00F76DE7 /* ViewController */,
 				77AB717921F7287A008F4018 /* Helpers */,
-				77E2B45721F192FD00E0FE75 /* AppDelegate.swift */,
-				77AB717E21F7459A008F4018 /* Login.storyboard */,
-				77E2B45B21F192FD00E0FE75 /* Main.storyboard */,
+				774C0AB0223EC27500A7E251 /* Supporting Files */,
 				77E2B45E21F192FF00E0FE75 /* Assets.xcassets */,
-				77E2B46021F192FF00E0FE75 /* LaunchScreen.storyboard */,
-				77E2B46321F192FF00E0FE75 /* Info.plist */,
 			);
 			path = QuizChallenge;
 			sourceTree = "<group>";
@@ -516,13 +532,13 @@
 				7707D143220187F1006AA699 /* Categories.json in Resources */,
 				77AB717F21F7459A008F4018 /* Login.storyboard in Resources */,
 				8DF64FCD22280E6A0011B811 /* AnswerCreateView.xib in Resources */,
+				774C0AB5223EC2FB00A7E251 /* LaunchScreen.storyboard in Resources */,
 				7742D0FB21F9A40400F3A677 /* TrueFalseView.xib in Resources */,
-				77E2B46221F192FF00E0FE75 /* LaunchScreen.storyboard in Resources */,
 				77E2B45F21F192FF00E0FE75 /* Assets.xcassets in Resources */,
 				7742D0F321F9A3A600F3A677 /* FourImagesView.xib in Resources */,
+				774C0AB4223EC2FB00A7E251 /* Main.storyboard in Resources */,
 				7742D0F521F9A3D700F3A677 /* SimpleQuestionView.xib in Resources */,
 				7742D0FF21F9B36F00F3A677 /* CountdownView.xib in Resources */,
-				77E2B45D21F192FD00E0FE75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,25 +701,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		77E2B45B21F192FD00E0FE75 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77E2B45C21F192FD00E0FE75 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		77E2B46021F192FF00E0FE75 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77E2B46121F192FF00E0FE75 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		77E2B46421F192FF00E0FE75 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -830,7 +827,7 @@
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA8RP8Z7ML;
-				INFOPLIST_FILE = QuizChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/QuizChallenge/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -853,7 +850,7 @@
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA8RP8Z7ML;
-				INFOPLIST_FILE = QuizChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/QuizChallenge/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
