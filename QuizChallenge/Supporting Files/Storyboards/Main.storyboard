@@ -311,6 +311,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxC-De-7Td"/>
                     </view>
+                    <connections>
+                        <outlet property="quickGameView" destination="oua-Gv-Llu" id="My3-oF-myt"/>
+                        <outlet property="tourneyGameView" destination="t7a-Ue-jcY" id="lei-xP-INr"/>
+                        <outlet property="trainGameView" destination="JaG-Tc-7JP" id="AUg-Ax-Gk0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUY-Pd-QSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

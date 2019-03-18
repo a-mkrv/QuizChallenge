@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class PrepareGameViewController: BaseViewController {
     
@@ -41,6 +42,20 @@ class PrepareGameViewController: BaseViewController {
         
         subcategoryCollectionView.delegate = self
         subcategoryCollectionView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+
+        categoryCollectionView?.reloadData()
+        categoryCollectionView?.performBatchUpdates({
+            UIView.animate(views: self.categoryCollectionView!.orderedVisibleCells,
+                           animations: [zoomAnimation], duration: 0.5)
+        }, completion: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     //MARK: - IBActions
@@ -137,6 +152,10 @@ extension PrepareGameViewController: UICollectionViewDelegate, UICollectionViewD
             gameInfo.selectCategory = dataSource?.typeQuestions[indexPath.row].name
             selectedCategory = indexPath.row
             selectedSubCategory = -1
+            
+            var visibleCells = subcategoryCollectionView.visibleCells + subcategoryCollectionView.orderedVisibleCells
+            
+            UIView.animate(views: visibleCells, animations: [AnimationType.zoom(scale: 0.5)], duration: 0.5, completion: nil)
             subcategoryCollectionView.reloadData()
             categoryCollectionView.scrollToItem(at: IndexPath(row: selectedCategory, section: 0), at: .centeredHorizontally, animated: true)
             categoryCollectionView.reloadData()

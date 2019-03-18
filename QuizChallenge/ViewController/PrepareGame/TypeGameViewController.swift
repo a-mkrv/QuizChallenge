@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 enum TypeGame {
     case Once
@@ -15,8 +16,17 @@ enum TypeGame {
 
 class TypeGameViewController: BaseViewController {
     
+    @IBOutlet weak var quickGameView: IBView!
+    @IBOutlet weak var tourneyGameView: IBView!
+    @IBOutlet weak var trainGameView: IBView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let animation = AnimationType.zoom(scale: 0.5)
+        UIView.animate(views: [quickGameView, tourneyGameView, trainGameView], animations: [animation], animationInterval: 0.13)
     }
     
     @IBAction func quickGamePress(_ sender: Any) {
