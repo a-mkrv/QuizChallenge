@@ -143,14 +143,14 @@ extension RegistrationViewController {
                     return false
                 } else { return true }
             }
-            .flatMap { [unowned self] _ -> Observable<LoginResponse> in
+            .flatMap { [unowned self] _ -> Observable<ResponseState> in
                 self.signUpButton.startAnimation()
                 return (self.viewModel?.registration())!
             }
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] status in
                 switch status {
-                case .noInternet:
+                case .networkError:
                     self.signUpButton.stopAnimation()
                     CommonHelper.alert.showAlertView(title: "Error",
                                                      subTitle: "It seems you forgot to turn on the Internet",
@@ -158,10 +158,8 @@ extension RegistrationViewController {
                                                      type: .error)
                 case .success:
                     self.successRegistration()
-                case .failCredentials:
+                case .badRequest:
                     self.errorRegistration()
-                case .none:
-                    Logger.info(msg: "None Case Response")
                 }
             }).disposed(by: disposeBag)
     }

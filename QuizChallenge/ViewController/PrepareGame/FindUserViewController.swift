@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 
 class FindUserViewController: BaseViewController {
     
@@ -19,6 +18,7 @@ class FindUserViewController: BaseViewController {
     
     let disposeBag = DisposeBag()
     var gameInfo = PrepareGameInfo()
+    var viewModel = PrepareGameViewModel()
     
     // MARK: - Lifecycle
     
@@ -48,48 +48,25 @@ class FindUserViewController: BaseViewController {
         
         // Tap Button
         usernameSearchButton.rx.tap
-            .flatMap { [unowned self] _ -> Observable<Result<Opponent>> in
-                return self.searchOpponentByName(userName: "amakarov")
+            .flatMap { [unowned self] _ -> Observable<Opponent> in
+                return self.viewModel.searchUserBy(name: self.userSearchTextField.text!)
             }
-            .subscribe(onNext: { response in
+            .subscribe(onNext: { opponent in
+                Logger.info(msg: opponent.username)
+                let opponentModalVC = CommonHelper.loadViewController(named: "OpponentScreen", isModal: true) as! OpponentViewController
+                self.present(opponentModalVC, animated: true, completion: nil)
                 
-                switch response {
-                case .success(let user):
-                    print(user.username)
-                    let opponentModalVC = CommonHelper.loadViewController(from: "Main", named: "OpponentScreen") as! OpponentViewController
-                    opponentModalVC.modalPresentationStyle = .overCurrentContext
-                    self.present(opponentModalVC, animated: true, completion: nil)
-                    
-                case .fail, .error:
-                    CommonHelper.alert.showAlertView(title: "Error",
-                                                     subTitle: "It seems you forgot to turn on the Internet",
-                                                     buttonText: "Try Again",
-                                                     type: .error)
-                }
+            }, onError: { error in
+                Logger.error(msg: "User not found, or error - \(error)")
             }).disposed(by: disposeBag)
     }
     
-    func searchOpponentByName(userName: String) -> Observable<Result<Opponent>> {
-        
-        return Observable.create{ observer in
-            
-            // TODO: 
-            let user: APIParameters = ["opponent": userName]
-            NetworkManager.shared.searchOpponent(with: user)
-                .subscribe(onNext: { opponent in
-                    observer.onNext(Result.success(opponent))
-                    observer.onCompleted()
-                }, onError: { error in
-                    observer.onError(error)
-                }).disposed(by: self.disposeBag)
-            
-            return Disposables.create()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RandomSearch" {
+            if let vc = segue.destination as? RandomOpponentViewController {
+                vc.questionCategory = gameInfo.selectCategory ?? "All"
+            }
         }
     }
-    
-    // MARK: - IBAction
-    
-    @IBAction func randomSearch(_ sender: Any) {
-        
-    }
+
 }

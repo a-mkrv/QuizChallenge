@@ -77,6 +77,8 @@
 		8DABF13A22391349006C0B58 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13922391348006C0B58 /* NavigationViewController.swift */; };
 		8DABF13C22391912006C0B58 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13B22391912006C0B58 /* BaseViewController.swift */; };
 		8DB6E0232240F84900895FE4 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6E0222240F84900895FE4 /* UICollectionView+Extension.swift */; };
+		8DB6E0252241115900895FE4 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6E0242241115900895FE4 /* GameViewModel.swift */; };
+		8DB6E027224120FB00895FE4 /* PrepareGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6E026224120FB00895FE4 /* PrepareGameViewModel.swift */; };
 		8DD570CC223B8DC500CD6073 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CB223B8DC500CD6073 /* Response.swift */; };
 		8DD570CE223BA5B400CD6073 /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CD223BA5B400CD6073 /* Opponent.swift */; };
 		8DD570D0223BB50B00CD6073 /* AuthFacadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CF223BB50B00CD6073 /* AuthFacadeController.swift */; };
@@ -161,6 +163,8 @@
 		8DABF13922391348006C0B58 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8DABF13B22391912006C0B58 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8DB6E0222240F84900895FE4 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		8DB6E0242241115900895FE4 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		8DB6E026224120FB00895FE4 /* PrepareGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameViewModel.swift; sourceTree = "<group>"; };
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		8DD570CB223B8DC500CD6073 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8DD570CD223BA5B400CD6073 /* Opponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				77F30105221BF92600C2C76B /* Login */,
+				8DB6E0242241115900895FE4 /* GameViewModel.swift */,
+				8DB6E026224120FB00895FE4 /* PrepareGameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -659,6 +665,7 @@
 				8DABF13A22391349006C0B58 /* NavigationViewController.swift in Sources */,
 				7745EA4121FE4A4400210E96 /* UserDefaults+Extension.swift in Sources */,
 				77894EA322081AF60041EE94 /* WelcomePageCell.swift in Sources */,
+				8DB6E0252241115900895FE4 /* GameViewModel.swift in Sources */,
 				7742D0F121F9A39700F3A677 /* FourImagesView.swift in Sources */,
 				77D6536B2212B1AD00E942B0 /* UserManager.swift in Sources */,
 				7707D1472201B699006AA699 /* Settings.swift in Sources */,
@@ -687,6 +694,7 @@
 				7707D1452201901A006AA699 /* TypeDecodable.swift in Sources */,
 				7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */,
 				7740AADF21F86C5D00CDDE4A /* AdvertisingCell.swift in Sources */,
+				8DB6E027224120FB00895FE4 /* PrepareGameViewModel.swift in Sources */,
 				8D0B9B45222447A8003E5B33 /* RandomOpponentViewController.swift in Sources */,
 				777C771221FC4CD60022A636 /* SettingsViewController.swift in Sources */,
 				77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */,

@@ -2746,7 +2746,7 @@ You can return to the menu and wait for an opponent later.</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="randomSearch:" destination="awt-gI-7OG" eventType="touchUpInside" id="dVm-Dj-Vnh"/>
-                                            <segue destination="Uuq-dP-j7A" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="O4r-4U-aR1"/>
+                                            <segue destination="Uuq-dP-j7A" kind="presentation" identifier="RandomSearch" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="O4r-4U-aR1"/>
                                         </connections>
                                     </button>
                                 </subviews>

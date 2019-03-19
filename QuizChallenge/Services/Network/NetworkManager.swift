@@ -20,8 +20,7 @@ typealias APIParameters = [String : Any]
 
 enum Result<Value> {
     case success(Value)
-    case error(Error)
-    case fail
+    case error(Error?)
 }
 
 // MARK: - NetworkManager
@@ -60,32 +59,47 @@ class NetworkManager {
         return doRequest(type: Opponent.self, parameters: userInfo, method: .get)
     }
     
+    func getQuestions(with parameters: APIParameters) -> Observable<Question> {
+        return doRequest(type: Question.self, parameters: parameters, method: .get)
+    }
+    
     // MARK: - Requests without Mappable Model
     
-    func createQuestion(with questionInfo: APIParameters) -> Observable<Bool> {
+    func createQuestion(with questionInfo: APIParameters) -> Observable<ResponseState> {
         return doRequestWithoutModel(url: "/questions", parameters: questionInfo, method: .post)
     }
     
-    func createNewGames(with userInfo: APIParameters) -> Observable<Bool> {
+    func createNewGames(with userInfo: APIParameters) -> Observable<ResponseState> {
         return doRequestWithoutModel(url: "/games/search_game", parameters: userInfo, method: .post)
     }
     
     // MARK: - Private request method
     
-    private func doRequestWithoutModel(url: String, parameters: APIParameters? = nil, method: HTTPMethod = .get) -> Observable<Bool> {
+    private func doRequestWithoutModel(url: String, parameters: APIParameters? = nil, method: HTTPMethod = .get) -> Observable<ResponseState> {
+        
+        guard CommonHelper.checkNetworkStatus() else {
+            return Observable.create { observer in
+                observer.onNext(.networkError)
+                return Disposables.create()
+            }
+        }
         
         return Observable.create { observer in
             
             let request = Alamofire.request(self.baseUrl + url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: self.tokenHeader)
                 .validate(statusCode: 200..<300)
                 .responseJSON { response in
-                    let statusCode = ResponseStatus(response.response?.statusCode ?? 0)
+                    let statusCode = ResponseStatusCode(response.response?.statusCode ??  response.result.error?._code ?? 0)
                     
                     switch response.result {
                     case .success(_):
-                        observer.onNext(true)
-                    case .failure:
-                        observer.onError(statusCode)
+                        observer.onNext(.success)
+                    case .failure(let error):
+                        if error._code == NSURLErrorTimedOut {
+                            observer.onError(ResponseStatusCode.timeout)
+                        } else {
+                            observer.onError(statusCode)
+                        }
                     }
                     observer.onCompleted()
                     Logger.debug(msg: statusCode, type: .NETWORK)
@@ -94,7 +108,7 @@ class NetworkManager {
             return Disposables.create {
                 request.cancel()
             }
-        }
+            }
             .observeOn(MainScheduler.instance)
             .share(replay: 1, scope: .whileConnected)
     }
@@ -106,16 +120,16 @@ class NetworkManager {
             let request = Alamofire.request(self.baseUrl + type.url(), method: method, parameters: parameters, encoding: JSONEncoding.default)
                 .validate(statusCode: 200..<300)
                 .responseJSON { response in
-                    let statusCode = ResponseStatus(response.response?.statusCode ?? 0)
-
+                    let statusCode = ResponseStatusCode(response.response?.statusCode ??  response.result.error?._code ?? 0)
+                    
                     switch response.result {
                     case .success(let value):
                         if let response = Mapper<T>().map(JSONObject: value) {
                             observer.onNext(response)
                         } else {
-                            observer.onError(ResponseStatus.badMappable)
+                            observer.onError(ResponseStatusCode.badMappable)
                         }
-                    case .failure:
+                    case .failure(let error):
                         observer.onError(statusCode)
                     }
                     observer.onCompleted()
@@ -125,7 +139,7 @@ class NetworkManager {
             return Disposables.create {
                 request.cancel()
             }
-        }
+            }
             .observeOn(MainScheduler.instance)
             .share(replay: 1, scope: .whileConnected)
     }

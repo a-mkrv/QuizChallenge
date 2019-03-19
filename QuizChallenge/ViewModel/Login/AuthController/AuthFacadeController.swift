@@ -41,16 +41,15 @@ struct AuthData {
 // Facade Login Controller
 class AuthFacadeController: NSObject {
     
-    static func doLogin(type: SocialNetwork) -> Observable<LoginResponse> {
+    static func doLogin(type: SocialNetwork) -> Observable<ResponseState> {
         let auth = setupAuthType(type)
         
         return Observable.create{observer in
             auth.authorize(complition: { result in
                 switch result {
-                case .fail, .error:
-                    observer.onNext(.failCredentials)
-                case .success(let data):
-                    print(data)
+                case .error:
+                    observer.onNext(.badRequest)
+                case .success:
                     observer.onNext(.success)
                 }
                 observer.onCompleted()

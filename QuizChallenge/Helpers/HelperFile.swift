@@ -78,9 +78,13 @@ class CommonHelper {
     }
     
     // Load view controller from storyboard
-    static func loadViewController(from storyboard: String, named name: String) -> UIViewController? {
+    static func loadViewController(from storyboard: String = "Main", named name: String, isModal: Bool = false) -> UIViewController? {
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: name)
+        let viewController = storyboard.instantiateViewController(withIdentifier: name)
+        if isModal {
+            viewController.modalPresentationStyle = .overCurrentContext
+        }
+        return viewController
     }
     
     // Load test file with questions

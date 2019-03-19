@@ -10,13 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-enum LoginResponse {
-    case success
-    case noInternet
-    case failCredentials
-    case none
-}
-
 class LoginViewModel {
     
     let usernameViewModel = UsernameViewModel()
@@ -32,16 +25,16 @@ class LoginViewModel {
             .distinctUntilChanged()
     }
     
-    func socialNetworkAuth(with socialNetworkType: SocialNetwork) -> Observable<LoginResponse> {
+    func socialNetworkAuth(with socialNetworkType: SocialNetwork) -> Observable<ResponseState> {
         return AuthFacadeController.doLogin(type: socialNetworkType)
     }
     
-    func serverNativeLogin() -> Observable<LoginResponse> {
+    func serverNativeLogin() -> Observable<ResponseState> {
       
         return Observable.create{ observer in
             
             guard CommonHelper.checkNetworkStatus() else {
-                observer.onNext(.noInternet)
+                observer.onNext(.networkError)
                 return Disposables.create()
             }
             
@@ -54,8 +47,9 @@ class LoginViewModel {
                     UserManager.shared.userToken = loginData.token
                     UserManager.shared.userName = loginData.user?.username ?? "Unknown"
                     observer.onNext(.success)
-                }, onError: { _ in
-                    observer.onNext(.failCredentials)
+                }, onError: { error in
+                    Logger.error(msg: "Login Error: \(error)")
+                    observer.onNext(.badRequest)
                 }).disposed(by: self.disposeBag)
             
             return Disposables.create()

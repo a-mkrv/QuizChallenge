@@ -8,7 +8,13 @@
 
 import Foundation
 
-public enum ResponseStatus: Error {
+enum ResponseState: Error {
+    case success
+    case networkError
+    case badRequest
+}
+
+public enum ResponseStatusCode: Error {
     
     case ok
     case timeout
@@ -43,13 +49,15 @@ public enum ResponseStatus: Error {
             self = .apiError(statusCode: statusCode)
         case 500 ... 527:
             self = .serverError(statusCode: statusCode)
+        case -1001:
+            self = .timeout
         default:
             self = .other(statusCode: statusCode)
         }
     }
 }
 
-extension ResponseStatus: CustomStringConvertible {
+extension ResponseStatusCode: CustomStringConvertible {
     
     public var description: String {
         return fullDescription

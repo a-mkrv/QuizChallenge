@@ -25,11 +25,11 @@ class VKAuth: SwiftyVKDelegate, Authorizable {
                         let authData = AuthData(token: token)
                         complition(.success(authData))
                     } else {
-                        complition(.fail)
+                        complition(.error(nil))
                     }
             },
                 onError: { error in
-                    complition(.fail)
+                    complition(.error(error))
             }
             )
         } else {

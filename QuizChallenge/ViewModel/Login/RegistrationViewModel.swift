@@ -26,12 +26,12 @@ class RegistrationViewModel {
             .distinctUntilChanged()
     }
     
-    func registration() -> Observable<LoginResponse> {
+    func registration() -> Observable<ResponseState> {
         
         return Observable.create{ observer in
             
             guard CommonHelper.checkNetworkStatus() else {
-                observer.onNext(.noInternet)
+                observer.onNext(.networkError)
                 return Disposables.create()
             }
             
@@ -42,8 +42,9 @@ class RegistrationViewModel {
             NetworkManager.shared.register(with: userData)
                 .subscribe(onNext: { _ in
                     observer.onNext(.success)
-                }, onError: { _ in
-                    observer.onNext(.failCredentials)
+                }, onError: { error in
+                    Logger.error(msg: "Registration Error: \(error)")
+                    observer.onNext(.badRequest)
                 }).disposed(by: self.disposeBag)
             
             return Disposables.create()

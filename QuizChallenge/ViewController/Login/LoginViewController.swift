@@ -80,30 +80,28 @@ class LoginViewController: UIViewController {
                     return false
                 } else { return true }
             }
-            .flatMap { [unowned self] _ -> Observable<LoginResponse> in
+            .flatMap { [unowned self] _ -> Observable<ResponseState> in
                 self.loginButton.startAnimation()
                 return (self.viewModel?.serverNativeLogin())!
             }
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] status in
                 switch status {
-                case .noInternet:
+                case .networkError:
                     self.loginButton.stopAnimation()
                     CommonHelper.alert.showAlertView(title: "Error",
                                                      subTitle: "It seems you forgot to turn on the Internet",
                                                      buttonText: "Try Again",
                                                      type: .error)
+                case .badRequest:
+                    self.errorLogin()
                 case .success:
                     self.successLogin()
-                case .failCredentials:
-                    self.errorLogin()
-                case .none:
-                    Logger.info(msg: "None Case Response")
                 }
             }).disposed(by: disposeBag)
         
         fbLoginButton.rx.tap
-            .flatMap { [unowned self] _ -> Observable<LoginResponse> in
+            .flatMap { [unowned self] _ -> Observable<ResponseState> in
                 return (self.viewModel?.socialNetworkAuth(with: .Facebook))!
             }
             .subscribe(onNext: { status in

@@ -25,14 +25,14 @@ class FBAuth: Authorizable {
             
             guard error == nil else {
                 Logger.error(msg: error!.localizedDescription)
-                complition(.fail)
+                complition(.error(error))
                 return
             }
             
             if let fbResult = result {
                 if fbResult.isCancelled {
                     Logger.error(msg: "User cancelled login.")
-                    complition(.fail)
+                    complition(.error(nil))
                 } else if fbResult.grantedPermissions != nil, fbResult.grantedPermissions.contains("email") {
                     self.readFacebookLoginResult(complition: { result in
                         complition(result)
@@ -41,7 +41,7 @@ class FBAuth: Authorizable {
                 
             } else {
                 Logger.error(msg: "Error Facebook Login. Check granted permissions")
-                complition(.fail)
+                complition(.error(nil))
             }
         }
     }
@@ -57,7 +57,7 @@ class FBAuth: Authorizable {
             
             guard error == nil, let result = result else {
                 Logger.error(msg: "Facebook parse result is nil or an error occurred")
-                complition(.fail)
+                complition(.error(nil))
                 return
             }
             
@@ -66,7 +66,7 @@ class FBAuth: Authorizable {
                 Logger.info(msg: "FB Response Data: \(result)")
                 
                 guard let userDict = result as? [String: Any] else {
-                    complition(.fail)
+                    complition(.error(nil))
                     return
                 }
                 

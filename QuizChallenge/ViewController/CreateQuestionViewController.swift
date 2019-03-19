@@ -102,7 +102,7 @@ class CreateQuestionViewController: BaseViewController {
                     }
                 }, onError: { error in
                      CommonHelper.alert.showAlertView(title: "Error", subTitle: "\nThere was an error sending a question", buttonText: "Try Again", type: .error, completion: nil)
-                }).disposed(by: self.disposeBag)
+                }).disposed(by: disposeBag)
         } else {
             CommonHelper.alert.showAlertView(title: "Oppps", subTitle: "\nPlease, enter all answer", buttonText: "Ok", type: .error, completion: nil)
         }
