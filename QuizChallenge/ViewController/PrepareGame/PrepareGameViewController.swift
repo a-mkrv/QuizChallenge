@@ -42,15 +42,10 @@ class PrepareGameViewController: BaseViewController {
         
         subcategoryCollectionView.delegate = self
         subcategoryCollectionView.dataSource = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let zoomAnimation = AnimationType.zoom(scale: 0.2)
 
-        categoryCollectionView?.reloadData()
         categoryCollectionView?.performBatchUpdates({
             UIView.animate(views: self.categoryCollectionView!.orderedVisibleCells,
-                           animations: [zoomAnimation], duration: 0.5)
+                           animations: [AnimationType.zoom(scale: 0.2)], duration: 0.5)
         }, completion: nil)
     }
     
@@ -153,10 +148,12 @@ extension PrepareGameViewController: UICollectionViewDelegate, UICollectionViewD
             selectedCategory = indexPath.row
             selectedSubCategory = -1
             
-            var visibleCells = subcategoryCollectionView.visibleCells + subcategoryCollectionView.orderedVisibleCells
-            
-            UIView.animate(views: visibleCells, animations: [AnimationType.zoom(scale: 0.5)], duration: 0.5, completion: nil)
             subcategoryCollectionView.reloadData()
+            subcategoryCollectionView.performBatchUpdates(nil, completion: { _ in
+                UIView.animate(views: self.subcategoryCollectionView.visibleCells, animations: [AnimationType.zoom(scale: 0.7)], duration: 0.25, completion: {
+                })
+            })
+            
             categoryCollectionView.scrollToItem(at: IndexPath(row: selectedCategory, section: 0), at: .centeredHorizontally, animated: true)
             categoryCollectionView.reloadData()
         } else {

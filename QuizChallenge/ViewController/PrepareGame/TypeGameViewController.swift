@@ -22,11 +22,7 @@ class TypeGameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let animation = AnimationType.zoom(scale: 0.5)
-        UIView.animate(views: [quickGameView, tourneyGameView, trainGameView], animations: [animation], animationInterval: 0.13)
+        UIView.animate(views: [quickGameView, tourneyGameView, trainGameView], animations: [AnimationType.zoom(scale: 0.5)], animationInterval: 0.13)
     }
     
     @IBAction func quickGamePress(_ sender: Any) {
