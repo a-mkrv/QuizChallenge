@@ -57,7 +57,13 @@ class FindUserViewController: BaseViewController {
                 self.present(opponentModalVC, animated: true, completion: nil)
                 
             }, onError: { error in
-                Logger.error(msg: "User not found, or error - \(error)")
+                switch error as! ResponseState {
+                case .success: break
+                case .networkUnavailable:
+                    self.showNetworkUnavailableAlert()
+                case .invalidStatusCode:
+                    self.showWrongAlert()
+                }
             }).disposed(by: disposeBag)
     }
     

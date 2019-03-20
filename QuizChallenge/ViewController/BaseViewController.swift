@@ -13,4 +13,12 @@ class BaseViewController: UIViewController {
     @IBAction func pressBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+    
+    func showNetworkUnavailableAlert() {
+        CommonHelper.alert.showAlertView(title: "Error!", subTitle: "Check network connection", buttonText: "Ok", type: .error)
+    }
+    
+    func showWrongAlert() {
+        CommonHelper.alert.showAlertView(title: "Error", subTitle: "Something went wrong", buttonText: "Search Again", type: .error)
+    }
 }

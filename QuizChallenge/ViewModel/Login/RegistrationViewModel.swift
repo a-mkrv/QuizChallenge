@@ -31,7 +31,7 @@ class RegistrationViewModel {
         return Observable.create{ observer in
             
             guard CommonHelper.checkNetworkStatus() else {
-                observer.onNext(.networkError)
+                observer.onNext(.networkUnavailable)
                 return Disposables.create()
             }
             
@@ -44,7 +44,7 @@ class RegistrationViewModel {
                     observer.onNext(.success)
                 }, onError: { error in
                     Logger.error(msg: "Registration Error: \(error)")
-                    observer.onNext(.badRequest)
+                    observer.onNext(.invalidStatusCode(code: error as! ResponseCode))
                 }).disposed(by: self.disposeBag)
             
             return Disposables.create()

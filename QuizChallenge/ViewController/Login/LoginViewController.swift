@@ -87,13 +87,13 @@ class LoginViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] status in
                 switch status {
-                case .networkError:
+                case .networkUnavailable:
                     self.loginButton.stopAnimation()
                     CommonHelper.alert.showAlertView(title: "Error",
                                                      subTitle: "It seems you forgot to turn on the Internet",
                                                      buttonText: "Try Again",
                                                      type: .error)
-                case .badRequest:
+                case .invalidStatusCode:
                     self.errorLogin()
                 case .success:
                     self.successLogin()

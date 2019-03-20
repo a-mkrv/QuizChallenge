@@ -34,7 +34,7 @@ class LoginViewModel {
         return Observable.create{ observer in
             
             guard CommonHelper.checkNetworkStatus() else {
-                observer.onNext(.networkError)
+                observer.onNext(.networkUnavailable)
                 return Disposables.create()
             }
             
@@ -49,7 +49,7 @@ class LoginViewModel {
                     observer.onNext(.success)
                 }, onError: { error in
                     Logger.error(msg: "Login Error: \(error)")
-                    observer.onNext(.badRequest)
+                    observer.onNext(.invalidStatusCode(code: error as! ResponseCode))
                 }).disposed(by: self.disposeBag)
             
             return Disposables.create()

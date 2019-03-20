@@ -47,8 +47,8 @@ class AuthFacadeController: NSObject {
         return Observable.create{observer in
             auth.authorize(complition: { result in
                 switch result {
-                case .error:
-                    observer.onNext(.badRequest)
+                case .error(let error):
+                    observer.onNext(.invalidStatusCode(code: error as! ResponseCode))
                 case .success:
                     observer.onNext(.success)
                 }

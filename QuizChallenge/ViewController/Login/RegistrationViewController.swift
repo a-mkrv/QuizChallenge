@@ -150,7 +150,7 @@ extension RegistrationViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] status in
                 switch status {
-                case .networkError:
+                case .networkUnavailable:
                     self.signUpButton.stopAnimation()
                     CommonHelper.alert.showAlertView(title: "Error",
                                                      subTitle: "It seems you forgot to turn on the Internet",
@@ -158,7 +158,7 @@ extension RegistrationViewController {
                                                      type: .error)
                 case .success:
                     self.successRegistration()
-                case .badRequest:
+                case .invalidStatusCode:
                     self.errorRegistration()
                 }
             }).disposed(by: disposeBag)

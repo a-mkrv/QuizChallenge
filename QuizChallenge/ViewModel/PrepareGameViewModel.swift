@@ -42,7 +42,6 @@ class PrepareGameViewModel {
                 observer.onCompleted()
             }, onError: { error in
                 observer.onError(error)
-                CommonHelper.alert.showAlertView(title: "Error", subTitle: "Something went wrong", buttonText: "Search Again", type: .error)
             }).disposed(by: self.disposeBag)
             
             return Disposables.create()

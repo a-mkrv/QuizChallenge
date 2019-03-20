@@ -37,7 +37,8 @@ class NetworkManager {
     private init() {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
-        configuration.timeoutIntervalForRequest = 20
+        configuration.timeoutIntervalForRequest = 5
+        configuration.timeoutIntervalForResource = 5
         session = Alamofire.SessionManager(configuration: configuration)
     }
     
@@ -79,7 +80,7 @@ class NetworkManager {
         
         guard CommonHelper.checkNetworkStatus() else {
             return Observable.create { observer in
-                observer.onNext(.networkError)
+                observer.onNext(.networkUnavailable)
                 return Disposables.create()
             }
         }
@@ -89,20 +90,22 @@ class NetworkManager {
             let request = Alamofire.request(self.baseUrl + url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: self.tokenHeader)
                 .validate(statusCode: 200..<300)
                 .responseJSON { response in
-                    let statusCode = ResponseStatusCode(response.response?.statusCode ??  response.result.error?._code ?? 0)
+                    
+                    let statusCode = ResponseCode(response.response?.statusCode ??  response.result.error?._code ?? 0)
+                    Logger.debug(msg: method.rawValue + " -> " + self.baseUrl + url + " - " + statusCode.description, type: .NETWORK)
                     
                     switch response.result {
                     case .success(_):
                         observer.onNext(.success)
+                        
                     case .failure(let error):
-                        if error._code == NSURLErrorTimedOut {
-                            observer.onError(ResponseStatusCode.timeout)
-                        } else {
-                            observer.onError(statusCode)
-                        }
+                        let responseError: ResponseState =
+                            (error._code == NSURLErrorNotConnectedToInternet)
+                                ? .networkUnavailable
+                                : .invalidStatusCode(code: statusCode)
+                        observer.onError(responseError)
                     }
                     observer.onCompleted()
-                    Logger.debug(msg: statusCode, type: .NETWORK)
             }
             
             return Disposables.create {
@@ -120,20 +123,25 @@ class NetworkManager {
             let request = Alamofire.request(self.baseUrl + type.url(), method: method, parameters: parameters, encoding: JSONEncoding.default)
                 .validate(statusCode: 200..<300)
                 .responseJSON { response in
-                    let statusCode = ResponseStatusCode(response.response?.statusCode ??  response.result.error?._code ?? 0)
+                    
+                    let statusCode = ResponseCode(response.response?.statusCode ??  response.result.error?._code ?? 0)
+                    Logger.debug(msg: method.rawValue + " -> " + self.baseUrl + type.url() + " - " + statusCode.description, type: .NETWORK)
                     
                     switch response.result {
                     case .success(let value):
                         if let response = Mapper<T>().map(JSONObject: value) {
                             observer.onNext(response)
                         } else {
-                            observer.onError(ResponseStatusCode.badMappable)
+                            observer.onError(ResponseState.invalidStatusCode(code: .badMappable))
                         }
                     case .failure(let error):
-                        observer.onError(statusCode)
+                        let responseError: ResponseState =
+                            (error._code == NSURLErrorNotConnectedToInternet)
+                                ? .networkUnavailable
+                                : .invalidStatusCode(code: statusCode)
+                        observer.onError(responseError)
                     }
                     observer.onCompleted()
-                    Logger.debug(msg: statusCode, type: .NETWORK)
             }
             
             return Disposables.create {

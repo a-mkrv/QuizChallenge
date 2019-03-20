@@ -10,14 +10,15 @@ import Foundation
 
 enum ResponseState: Error {
     case success
-    case networkError
-    case badRequest
+    case networkUnavailable
+    case invalidStatusCode(code: ResponseCode)
 }
 
-public enum ResponseStatusCode: Error {
+public enum ResponseCode: Error {
     
     case ok
     case timeout
+    case networkUnavailable
     case success(statusCode: Int)
     case badRequest
     case unAuthorized
@@ -51,13 +52,15 @@ public enum ResponseStatusCode: Error {
             self = .serverError(statusCode: statusCode)
         case -1001:
             self = .timeout
+        case -1009:
+            self = .networkUnavailable
         default:
             self = .other(statusCode: statusCode)
         }
     }
 }
 
-extension ResponseStatusCode: CustomStringConvertible {
+extension ResponseCode: CustomStringConvertible {
     
     public var description: String {
         return fullDescription
@@ -68,6 +71,8 @@ extension ResponseStatusCode: CustomStringConvertible {
         switch self {
         case .timeout:
             return "Request timeout"
+        case .networkUnavailable:
+            return "Network Unavailable"
         case .ok:
             return "200 OK"
         case .success(let statusCode):
@@ -99,14 +104,14 @@ extension ResponseStatusCode: CustomStringConvertible {
             return "✅"
         case .unAuthorized, .forbidden:
             return "🔑"
-        case .badRequest, .notFound, .conflict, .apiError:
+        case .badRequest, .notFound, .conflict, .apiError, .timeout, .networkUnavailable:
             return "❌"
         default:
             return "🙈"
         }
     }
     
-    private var fullDescription: String {
+    private var fullDescription: String {       
         return "\(textDescription) \(emojiDescription)"
     }
 }
