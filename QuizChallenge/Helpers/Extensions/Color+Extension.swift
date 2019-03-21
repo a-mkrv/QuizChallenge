@@ -40,5 +40,5 @@ extension UIColor {
     static let royal = UIColor(named: "RoyalColor") ?? .white
     static let lightRoyal = UIColor(named: "RoyalLightColor") ?? .white
     static let lightRed = UIColor(named: "Color-8") ?? .red
-
+    static let errorRed = UIColor(hex: 0xEE5A58)
 }
