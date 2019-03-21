@@ -108,7 +108,7 @@ class UniversalModalViewController: UIViewController {
         firstButton.setTitle(firstButtonText, for: .normal)
         
         switch typeModal {
-        case.confirm:
+        case .confirm:
             firstButton.setTitleColor(UIColor.lightGray, for: .normal)
             secondButton.setTitleColor(UIColor.royal, for: .normal)
             backgroundImage.image = UIImage(named: "PurpleRec")
@@ -141,6 +141,14 @@ class UniversalModalViewController: UIViewController {
         } else {
             separateLineView.removeFromSuperview()
             secondButton.removeFromSuperview()
+        }
+        
+        if case ModalType.confirm = typeModal {
+            // Auto dismiss disabled for confirm view
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                self?.dismissModalView()
+            }
         }
     }
     
