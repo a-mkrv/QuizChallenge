@@ -41,10 +41,10 @@ class SettingsViewController: BaseViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        CommonHelper.alert.showConfirmView(title: "Log Out", subTitle: "Are you sure you want to quit?", firstButtonText: "Yes", secondButtonText: "Cancel", completion: {
-                self.doLogOut()
-        }) {
+        PopUpHelper.showConfirmView(from: self, title: "Log Out", descript: "Are you sure you want to quit?", negativeButton: "Cancel", positiveButton: "Yes", completion: {
             Logger.debug(msg: "Press Cancel logout")
+        }) {
+            self.doLogOut()
         }
     }
     

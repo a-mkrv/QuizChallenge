@@ -10,7 +10,6 @@ target 'QuizChallenge' do
   # UI
   pod "Koloda"
   pod 'TransitionButton'  
-  pod 'SCLAlertView'
   pod 'AMPopTip'
   pod 'SwiftEntryKit', '0.8.8'
   pod "SkeletonView"

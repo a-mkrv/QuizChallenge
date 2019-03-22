@@ -40,9 +40,9 @@ class FindUserViewController: BaseViewController {
             .share(replay: 1)
         
         usernameValid
-            .bind(onNext: { [weak self] (isValid) in
-                self?.usernameSearchButton.isEnabled = isValid
-                self?.usernameSearchButton.setTitleColor(isValid ? UIColor(named: "LightBlue") : UIColor.lightGray, for: .normal)
+            .bind(onNext: { [unowned self] (isValid) in
+                self.usernameSearchButton.isEnabled = isValid
+                self.usernameSearchButton.setTitleColor(isValid ? UIColor(named: "LightBlue") : UIColor.lightGray, for: .normal)
             })
             .disposed(by: disposeBag)
         
@@ -51,12 +51,11 @@ class FindUserViewController: BaseViewController {
             .flatMap { [unowned self] _ -> Observable<Opponent> in
                 return self.viewModel.searchUserBy(name: self.userSearchTextField.text!)
             }
-            .subscribe(onNext: { opponent in
-                Logger.info(msg: opponent.username)
+            .subscribe(onNext: { [unowned self] (opponent) in
                 let opponentModalVC = CommonHelper.loadViewController(named: "OpponentScreen", isModal: true) as! OpponentViewController
                 self.present(opponentModalVC, animated: true, completion: nil)
                 
-            }, onError: { error in
+            }, onError: { [unowned self] (error) in
                 switch error as! ResponseState {
                 case .success: break
                 case .networkUnavailable:

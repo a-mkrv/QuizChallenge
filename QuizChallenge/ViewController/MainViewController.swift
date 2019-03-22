@@ -24,5 +24,9 @@ class MainViewController: CustomTransitionViewController {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         usernameLabel.text = UserManager.shared.curUser.username
         pointsLabel.text = "Points: \(UserManager.shared.curUser.points)"
+        
+        PopUpHelper.showSimpleAlert(from: self, type: .common, title: "dfvdfvdf", descript: "fdfdf", buttonText: "fdff", isAutoHide: false) {
+            print("kek")
+        }
     }
 }

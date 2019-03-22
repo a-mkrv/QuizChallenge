@@ -47,6 +47,7 @@ class UniversalModalViewController: UIViewController {
     // MARK: - Variables for init popup
     
     var typeModal = ModalType.simple(type: .common)
+    var isAutoHide: Bool = true
     var titleText: String?
     var descriptionText: String?
     var firstButtonText: String?
@@ -73,30 +74,31 @@ class UniversalModalViewController: UIViewController {
     
     // MARK: Open methods
     
-    func showSimpleAlert(type: ModalSimpleType, title: String? = nil, descript: String, buttonText: String, completion: EmptyClosure? = nil) {
-        setContentView(type: ModalType.simple(type: type), title: title, descript: descript, firstButton: buttonText, firstCompletion: completion)
+    func showSimpleAlert(type: ModalSimpleType, title: String? = nil, descript: String, buttonText: String, isAutoHide: Bool = true, completion: EmptyClosure? = nil) {
+        setContentView(type: ModalType.simple(type: type), title: title, descript: descript, firstButton: buttonText, isHide: isAutoHide, firstCompletion: completion)
     }
     
     func showConfirmAlert(title: String?, descript: String, negativeButton: String, positiveButton: String, negativeCompletion: @escaping EmptyClosure, positiveCompletion: @escaping EmptyClosure) {
-        setContentView(type: .confirm, title: title, descript: descript, firstButton: negativeButton, secondButton: positiveButton, firstCompletion: negativeCompletion, secondCompletion: positiveCompletion)
+        setContentView(type: .confirm, title: title, descript: descript, firstButton: negativeButton, secondButton: positiveButton, isHide: false, firstCompletion: negativeCompletion, secondCompletion: positiveCompletion)
     }
     
-    func showErrorAlert(type: ModalErrorType, title: String? = nil, descript: String?, buttonText: String?, completion: EmptyClosure? = nil) {
+    func showErrorAlert(type: ModalErrorType, title: String? = nil, descript: String? = nil, buttonText: String? = nil, isAutoHide: Bool = true, completion: EmptyClosure? = nil) {
         
         if type == .networkUnavailable {
-            setContentView(type: ModalType.error(type: type), title: "Network Error", descript: "Please check your network connection", firstButton: "Ok!", firstCompletion: completion)
+            setContentView(type: ModalType.error(type: type), title: "Network Error", descript: "Please check your network connection", firstButton: "Ok!", isHide: isAutoHide, firstCompletion: completion)
         } else {
-            setContentView(type: ModalType.error(type: type), title: title, descript: descript ?? "Something went wrong", firstButton: buttonText ?? "Ok!", firstCompletion: completion)
+            setContentView(type: ModalType.error(type: type), title: title, descript: descript ?? "Something went wrong", firstButton: buttonText ?? "Ok!", isHide: isAutoHide,  firstCompletion: completion)
         }
     }
     
-    private func setContentView(type: ModalType, title: String? = nil, descript: String, firstButton: String, secondButton: String? = nil, firstCompletion: EmptyClosure? = nil, secondCompletion: EmptyClosure? = nil) {
+    private func setContentView(type: ModalType, title: String? = nil, descript: String, firstButton: String, secondButton: String? = nil, isHide: Bool = true, firstCompletion: EmptyClosure? = nil, secondCompletion: EmptyClosure? = nil) {
         
         typeModal = type
         titleText = title
         descriptionText = descript
         firstButtonText = firstButton
         secondButtonText = secondButton
+        isAutoHide = isHide
         firstButtonCompletion = firstCompletion
         secondButtonCompletion = secondCompletion
     }
@@ -143,9 +145,7 @@ class UniversalModalViewController: UIViewController {
             secondButton.removeFromSuperview()
         }
         
-        if case ModalType.confirm = typeModal {
-            // Auto dismiss disabled for confirm view
-        } else {
+        if isAutoHide {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                 self?.dismissModalView()
             }

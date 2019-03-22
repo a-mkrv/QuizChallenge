@@ -72,8 +72,9 @@ class CreateQuestionViewController: BaseViewController {
     }
     
     @IBAction func sendQuestion(_ sender: Any) {
+
         guard let question = questionTextView.text, let type = typeQuestion.text, question.count > 7, type.count > 4 else {
-            CommonHelper.alert.showAlertView(title: "Oppps", subTitle: "\nQuestion or type are missing or too short", buttonText: "Ok", type: .error, isAutoHide: true, completion: nil)
+            PopUpHelper.showErrorAlert(from: self, type: .common, descript: "Question or type are missing or too short", buttonText: "Ok")
             return
         }
   
@@ -91,20 +92,20 @@ class CreateQuestionViewController: BaseViewController {
             ]
             
             NetworkManager.shared.createQuestion(with: params)
-                .subscribe(onNext: { status in
-                    CommonHelper.alert.showAlertView(title: "Thanks!", subTitle: "\nThank you for updating our database of questions. \nYou get 10 coins", buttonText: "Fine", type: .success) {
+                .subscribe(onNext: { [unowned self] status in
+                    PopUpHelper.showSimpleAlert(from: self, type: .common, title: "Thanks!", descript: "\nThank you for updating our database of questions. \n\nYou get 10 coins", buttonText: "Fine", isAutoHide: false, completion: {
                         self.questionTextView.text.removeAll()
                         self.typeQuestion.text?.removeAll()
                         _ = (self.answersView.subviews as? [AnswerCreateView])?.map{
                             $0.textView.resignFirstResponder()
                             $0.resetTextView()
                         }
-                    }
-                }, onError: { error in
-                     CommonHelper.alert.showAlertView(title: "Error", subTitle: "\nThere was an error sending a question", buttonText: "Try Again", type: .error, completion: nil)
+                    })
+                    }, onError: { [unowned self] error in
+                        PopUpHelper.showErrorAlert(from: self, type: .common, descript: "There was an error sending a question", buttonText: "Try Again")
                 }).disposed(by: disposeBag)
         } else {
-            CommonHelper.alert.showAlertView(title: "Oppps", subTitle: "\nPlease, enter all answer", buttonText: "Ok", type: .error, completion: nil)
+            PopUpHelper.showErrorAlert(from: self, type: .common, descript: "Please, enter all answer", buttonText: "Ok")
         }
     }
 }

@@ -102,7 +102,7 @@ class RegistrationViewController: BaseViewController {
         signUpButton.stopAnimation()
         DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1, execute: {
             DispatchQueue.main.async {
-                CommonHelper.alert.showAlertView(title: "Registration Success", subTitle: "\nCongratulations, you are registered. \nClick the button to start the game\n", buttonText: "Start", type: .success, isAutoHide: false) {                    
+                PopUpHelper.showSimpleAlert(from: self, type: .common, title: "Registration Success", descript: "\nCongratulations, you are registered. \nClick the button to start the game\n", buttonText: "Start", isAutoHide: false) {
                     self.navigationController?.popViewController(animated: true)
                 }
             }
@@ -152,10 +152,7 @@ extension RegistrationViewController {
                 switch status {
                 case .networkUnavailable:
                     self.signUpButton.stopAnimation()
-                    CommonHelper.alert.showAlertView(title: "Error",
-                                                     subTitle: "It seems you forgot to turn on the Internet",
-                                                     buttonText: "Try Again",
-                                                     type: .error)
+                    self.showNetworkUnavailableAlert()
                 case .success:
                     self.successRegistration()
                 case .invalidStatusCode:

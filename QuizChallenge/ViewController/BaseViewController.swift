@@ -15,10 +15,10 @@ class BaseViewController: UIViewController {
     }
     
     func showNetworkUnavailableAlert() {
-        CommonHelper.alert.showAlertView(title: "Error!", subTitle: "Check network connection", buttonText: "Ok", type: .error)
+        PopUpHelper.showErrorAlert(from: self, type: .networkUnavailable)
     }
     
     func showWrongAlert() {
-        CommonHelper.alert.showAlertView(title: "Error", subTitle: "Something went wrong", buttonText: "Search Again", type: .error)
+        PopUpHelper.showErrorAlert(from: self, type: .common, title: "Error", descript: "Something went wrong", buttonText: "Retry")
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import TransitionButton
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     @IBOutlet weak var loginButton: TransitionButton!
     @IBOutlet weak var loginTextField: IBTextField!
@@ -89,10 +89,7 @@ class LoginViewController: UIViewController {
                 switch status {
                 case .networkUnavailable:
                     self.loginButton.stopAnimation()
-                    CommonHelper.alert.showAlertView(title: "Error",
-                                                     subTitle: "It seems you forgot to turn on the Internet",
-                                                     buttonText: "Try Again",
-                                                     type: .error)
+                    self.showNetworkUnavailableAlert()
                 case .invalidStatusCode:
                     self.errorLogin()
                 case .success:

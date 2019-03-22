@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import SCLAlertView
 
 // MARK: - Closure typealias
 
@@ -17,51 +16,35 @@ public typealias BoolClosure = (Bool) -> ()
 public typealias IntClosure = (Int) -> ()
 public typealias StringClosure = (String) -> ()
 
-// MARK: - Alert Helper
+// MARK: - PopUp Alert Helper
 
-enum AlertType {
-    case warning
-    case error
-    case success
-}
-
-class AlertHelper {
-    
-    let timeOutShowing = 3.0
-    let colorTextButton: UInt = 0xFFFFFF
+class PopUpHelper {
     
     // Question Alert
-    func showConfirmView(title: String, subTitle: String, firstButtonText: String, secondButtonText: String? = nil, completion: @escaping EmptyClosure, secondCompletion: EmptyClosure? = nil) {
+    static func showConfirmView(from VC: UIViewController, title: String?, descript: String, negativeButton: String, positiveButton: String, completion: @escaping EmptyClosure, secondCompletion: @escaping EmptyClosure) {
         
-        let alertView = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        alertView.addButton(firstButtonText) { completion() }
+        let popUpView = CommonHelper.getPopUpView()
+        popUpView.showConfirmAlert(title: title, descript: descript, negativeButton: negativeButton, positiveButton: positiveButton, negativeCompletion: completion, positiveCompletion: secondCompletion)
         
-        if let text = secondButtonText, secondCompletion != nil {
-            alertView.addButton(text) { secondCompletion?() }
-        }
-        
-        alertView.showTitle(title, subTitle: subTitle, style: .question, closeButtonTitle: nil, timeout: nil, colorStyle: 0x43577E, colorTextButton: colorTextButton, circleIconImage: nil)
+        VC.present(popUpView, animated: true, completion: nil)
     }
     
-    // Simple Alert with duration
-    func showAlertView(title: String, subTitle: String, buttonText: String, type: AlertType, isAutoHide: Bool = true, completion: EmptyClosure? = nil) {
+    // Success simple Alert
+    static func showSimpleAlert(from VC: UIViewController, type: ModalSimpleType, title: String? = nil, descript: String, buttonText: String, isAutoHide: Bool = true, completion: EmptyClosure? = nil) {
         
-        let alertView = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        alertView.addButton(buttonText) { completion?() }
+        let popUpView = CommonHelper.getPopUpView()
+        popUpView.showSimpleAlert(type: type, title: title, descript: descript, buttonText: buttonText, isAutoHide: isAutoHide, completion: completion)
         
+        VC.present(popUpView, animated: true, completion: nil)
+    }
+    
+    // Success simple Alert
+    static func showErrorAlert(from VC: UIViewController, type: ModalErrorType, title: String? = nil, descript: String? = nil, buttonText: String? = nil, isAutoHide: Bool = true, completion: EmptyClosure? = nil) {
         
-        var timeOut: SCLAlertView.SCLTimeoutConfiguration? = nil
-        isAutoHide ? (timeOut = SCLAlertView.SCLTimeoutConfiguration(timeoutValue: timeOutShowing, timeoutAction: { completion?() })) : (timeOut = nil)
+        let popUpView = CommonHelper.getPopUpView()
+        popUpView.showErrorAlert(type: type, title: title, descript: descript, buttonText: buttonText, isAutoHide: isAutoHide, completion: completion)
         
-        // App Color: 0x43577E
-        switch type {
-        case .warning:
-            alertView.showWarning(title, subTitle: subTitle, closeButtonTitle: buttonText, timeout: timeOut)
-        case .error:
-            alertView.showError(title, subTitle: subTitle, closeButtonTitle: buttonText, timeout: timeOut)
-        case .success:
-            alertView.showSuccess(title, subTitle: subTitle, closeButtonTitle: buttonText, timeout: timeOut)
-        }
+        VC.present(popUpView, animated: true, completion: nil)
     }
 }
 
@@ -69,7 +52,6 @@ class AlertHelper {
 
 class CommonHelper {
     
-    static var alert = AlertHelper()
     static let networkStateManager = NetworkReachabilityManager()
 
     // Check Internet connection
@@ -113,4 +95,7 @@ class CommonHelper {
         return dateFormatter.string(from: Date())
     }
     
+    static func getPopUpView() -> UniversalModalViewController {
+        return CommonHelper.loadViewController(from: "Modals", named: "UniversalModal", isModal: true) as! UniversalModalViewController
+    }
 }
