@@ -10,18 +10,32 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class RandomOpponentViewController: UIViewController {
+class RandomOpponentViewController: BaseViewController {
 
     @IBOutlet weak var activityIndicator: ActivityIndicatorView!
     @IBOutlet weak var mainView: IBView!
     
+    var searchUserObservable: Observable<Opponent> = .empty()
     var questionCategory = "All"
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchUserObservable
+            .subscribe(onNext: { (opponent) in
+                Logger.debug(msg: opponent.username)
+            }, onError: { [unowned self] (error) in
+                Logger.error(msg: error)
+                switch error as! ResponseState {
+                case .success: break
+                case .networkUnavailable:
+                    self.showNetworkUnavailableAlert()
+                case .invalidStatusCode:
+                    self.showWrongAlert()
+                }
+            }).disposed(by: disposeBag)
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
 
@@ -44,19 +58,12 @@ class RandomOpponentViewController: UIViewController {
         }
     }
     
-
-    
     func goToGameInformations() {
         
-        //TODO: Instead of 3 seconds, need to make a request for active games every second
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-            
-            let navigationController = self.presentingViewController as? UINavigationController
-            self.dismiss(animated: false) {
-                let gameVC = CommonHelper.loadViewController(from: "Main", named: "GameInfoSB") as! GameInformationViewController
-                navigationController?.pushViewController(gameVC, animated: true)
-            }
+        let navigationController = self.presentingViewController as? UINavigationController
+        self.dismiss(animated: false) {
+            let gameVC = CommonHelper.loadViewController(from: "Main", named: "GameInfoSB") as! GameInformationViewController
+            navigationController?.pushViewController(gameVC, animated: true)
         }
     }
- 
 }

@@ -53,6 +53,10 @@ class PrepareGameViewController: BaseViewController {
         
     }
     
+    deinit {
+        Logger.mark()
+    }
+    
     //MARK: - IBActions
     
     @IBAction func startGame(_ sender: Any) {

@@ -22,6 +22,10 @@ class GameInformationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    @IBAction func startGame(_ sender: UIButton) {
+        let vc = CommonHelper.loadViewController(named: "GameSB") as! GameViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

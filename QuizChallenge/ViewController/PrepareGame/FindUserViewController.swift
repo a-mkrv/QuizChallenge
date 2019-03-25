@@ -70,6 +70,8 @@ class FindUserViewController: BaseViewController {
         if segue.identifier == "RandomSearch" {
             if let vc = segue.destination as? RandomOpponentViewController {
                 vc.questionCategory = gameInfo.selectCategory ?? "All"
+                vc.searchUserObservable = viewModel.searchUserBy(name: "Debug").asObservable()
+                // Need to make a request for active games every second
             }
         }
     }

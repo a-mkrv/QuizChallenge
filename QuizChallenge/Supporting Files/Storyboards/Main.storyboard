@@ -2366,6 +2366,7 @@ You can return to the menu and wait for an opponent later.</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startGame:" destination="WRA-mf-9pU" eventType="touchUpInside" id="4GS-on-Nj7"/>
+                                    <action selector="startGame:" destination="Zan-Z4-K9d" eventType="touchUpInside" id="yjK-iq-S3L"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qwerty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVf-C5-V0X">
@@ -2745,7 +2746,6 @@ You can return to the menu and wait for an opponent later.</string>
                                         <rect key="frame" x="8" y="8" width="264" height="173"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <action selector="randomSearch:" destination="awt-gI-7OG" eventType="touchUpInside" id="dVm-Dj-Vnh"/>
                                             <segue destination="Uuq-dP-j7A" kind="presentation" identifier="RandomSearch" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="O4r-4U-aR1"/>
                                         </connections>
                                     </button>

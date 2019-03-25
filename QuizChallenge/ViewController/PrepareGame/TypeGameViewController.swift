@@ -38,4 +38,8 @@ class TypeGameViewController: BaseViewController {
         prepareGameVC.gameInfo.type = type
         self.navigationController?.pushViewController(prepareGameVC, animated: true)
     }
+    
+    deinit {
+        Logger.mark()
+    }
 }

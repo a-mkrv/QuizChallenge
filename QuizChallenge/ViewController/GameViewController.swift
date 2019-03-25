@@ -133,6 +133,6 @@ class GameViewController: UIViewController {
         invalidTimer()
         
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 6], animated: true)
     }
 }
