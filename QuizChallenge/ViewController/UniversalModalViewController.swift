@@ -118,14 +118,14 @@ class UniversalModalViewController: UIViewController {
             imageView.image = UIImage(named: "confirmAlert")
         case .error(type: .networkUnavailable):
             firstButton.setTitleColor(UIColor.errorRed, for: .normal)
-            backgroundImage.image = UIImage(named: "OrangeRec")
+            backgroundImage.image = UIImage(named: "RedRec")
             imageView.image = UIImage(named: "networkAlert")
-            imageView.backgroundColor = UIColor(named: "Color-6")
+            imageView.backgroundColor = UIColor.errorRed
         case .error(type: .common):
             firstButton.setTitleColor(UIColor.errorRed, for: .normal)
-            backgroundImage.image = UIImage(named: "OrangeRec")
+            backgroundImage.image = UIImage(named: "RedRec")
             imageView.image = UIImage(named: "errorAlert")
-            imageView.backgroundColor = UIColor(named: "Color-6")
+            imageView.backgroundColor = UIColor.errorRed
         case .simple(type: .common):
             firstButton.setTitleColor(UIColor.royal, for: .normal)
             backgroundImage.image = UIImage(named: "PurpleRec")
