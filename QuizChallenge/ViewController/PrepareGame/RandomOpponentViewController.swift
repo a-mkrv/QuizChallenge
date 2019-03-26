@@ -63,6 +63,7 @@ class RandomOpponentViewController: BaseViewController {
         let navigationController = self.presentingViewController as? UINavigationController
         self.dismiss(animated: false) {
             let gameVC = CommonHelper.loadViewController(from: "Main", named: "GameInfoSB") as! GameInformationViewController
+            gameVC.isFirstGame = true
             navigationController?.pushViewController(gameVC, animated: true)
         }
     }

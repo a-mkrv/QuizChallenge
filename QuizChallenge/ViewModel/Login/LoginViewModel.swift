@@ -49,7 +49,7 @@ class LoginViewModel {
                     observer.onNext(.success)
                 }, onError: { error in
                     Logger.error(msg: "Login Error: \(error)")
-                    observer.onNext(.invalidStatusCode(code: error as! ResponseCode))
+                    observer.onNext(error as! ResponseState)
                 }).disposed(by: self.disposeBag)
             
             return Disposables.create()

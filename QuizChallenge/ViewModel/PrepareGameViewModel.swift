@@ -30,7 +30,7 @@ class PrepareGameViewModel {
         }
     }
     
-    func createGameWithRandomUser(category: String) -> Observable<ResponseState> {
+    func createGameWithUser(category: String) -> Observable<ResponseState> {
         
         let params = ["type": "text",  "category": category]
         

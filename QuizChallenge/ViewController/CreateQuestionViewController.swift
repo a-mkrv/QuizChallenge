@@ -13,6 +13,7 @@ class CreateQuestionViewController: BaseViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var answersView: UIView!
+    @IBOutlet weak var typeListButton: IBButton!
     @IBOutlet weak var createButton: IBButton!
     @IBOutlet weak var typeQuestion: IBTextField!
     @IBOutlet weak var questionTextView: UITextView!
@@ -38,6 +39,22 @@ class CreateQuestionViewController: BaseViewController {
         answer3Leading.constant = -300
         answer4Trailing.constant = -300
         _ = answersView.subviews.map({ $0.backgroundColor = .clear })
+        
+        typeListButton.rx.tap
+            .throttle(0.5, latest: false, scheduler: MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                
+                guard let sSelf = self else { return }
+                
+                if let questionsListVC = CommonHelper.loadViewController(named: "QuestionListSB") as? QuestionTypeListViewController {
+                    questionsListVC.type.subscribe(onNext: { type in
+                        sSelf.typeQuestion.text = type
+                        sSelf.navigationController?.popViewController(animated: true)
+                    }).disposed(by: sSelf.disposeBag)
+                    
+                    sSelf.navigationController?.pushViewController(questionsListVC, animated: true)
+                }
+        }.disposed(by: self.disposeBag)
     }
     
     @IBAction func segmentChanged(_ sender: Any) {

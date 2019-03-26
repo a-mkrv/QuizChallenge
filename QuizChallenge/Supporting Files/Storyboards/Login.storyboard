@@ -408,7 +408,7 @@
                                             <constraint firstAttribute="height" constant="1" id="WgG-2k-55h"/>
                                         </constraints>
                                     </view>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9R7-V6-zhB">
+                                    <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9R7-V6-zhB">
                                         <rect key="frame" x="150" y="6" width="75" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="au4-k1-8Mc"/>

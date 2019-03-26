@@ -41,7 +41,7 @@ class Question: Object, Mappable, Endpoint {
     }
     
     static func url() -> String {
-        return "http://138.68.106.0:8080/question"
+        return "/questions"
     }
 }
 
