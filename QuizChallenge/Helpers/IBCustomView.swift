@@ -36,10 +36,13 @@ import UIKit
     @IBInspectable var endLocation:   Double =   0.95 { didSet { updateLocations() }}
     @IBInspectable var horizontalMode:  Bool =  false { didSet { updatePoints() }}
     @IBInspectable var diagonalMode:    Bool =  false { didSet { updatePoints() }}
+    @IBInspectable var isAnimate:       Bool =  false { didSet { addAnimate() }}
     
     override class var layerClass: AnyClass { return CAGradientLayer.self }
     
     var gradientLayer: CAGradientLayer { return layer as! CAGradientLayer }
+    var currentGradient: Int = 0
+    var gradientSet: [[CGColor]] = [[CGColor]]()
     
     func updatePoints() {
         if horizontalMode {
@@ -59,11 +62,71 @@ import UIKit
         gradientLayer.colors = [startColor?.cgColor ?? UIColor.clear.cgColor, endColor?.cgColor ?? UIColor.clear.cgColor]
     }
     
+    func animateGradient() {
+      
+        guard isAnimate else {
+            stopAnimate()
+            return
+        }
+        
+        if currentGradient < gradientSet.count - 1 {
+            currentGradient += 1
+        } else {
+            currentGradient = 0
+        }
+        
+        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+        gradientChangeAnimation.duration = 1.0
+        gradientChangeAnimation.toValue = gradientSet[currentGradient]
+        gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
+        gradientChangeAnimation.isRemovedOnCompletion = false
+        gradientChangeAnimation.delegate = self
+        gradientLayer.add(gradientChangeAnimation, forKey: "colorChange")
+    }
+    
+    func startBackgroundAnimation() {
+        gradientLayer.colors = gradientSet[currentGradient]
+        gradientLayer.startPoint = CGPoint(x:0, y:0)
+        gradientLayer.endPoint = CGPoint(x:1, y:1)
+        gradientLayer.drawsAsynchronously = true
+        
+        animateGradient()
+    }
+    
+    func addAnimate() {
+        
+        guard isAnimate else {
+            stopAnimate()
+            return
+        }
+        
+        gradientSet.append([startColor!.cgColor, endColor!.cgColor])
+        gradientSet.append([endColor!.cgColor, startColor!.cgColor])
+
+        startBackgroundAnimation()
+    }
+    
+    func stopAnimate() {
+        gradientLayer.removeAllAnimations()
+        gradientSet = [[UIColor.white.cgColor]]
+        gradientLayer.colors = [UIColor.white.cgColor]
+        currentGradient = 0
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         updatePoints()
         updateLocations()
         updateColors()
+    }
+}
+
+extension GradientView: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if flag {
+            gradientLayer.colors = gradientSet[currentGradient]
+            animateGradient()
+        }
     }
 }
 

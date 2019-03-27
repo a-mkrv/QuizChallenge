@@ -13,6 +13,7 @@ class WelcomeViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var headerView: GradientView!
     @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var gradientNameView: GradientView!
     @IBOutlet weak var appNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -22,15 +23,21 @@ class WelcomeViewController: UIViewController {
     
     let bottomViewHeight: CGFloat = 46
     var pagesDataSource = WelcomeDataSource()
+    var leftSwipe = UISwipeGestureRecognizer()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipe(_:)))
+        leftSwipe.direction = .left
+        collectionView.addGestureRecognizer(leftSwipe)
+        
         topSpaceHeaderView.constant = -headerView.frame.height
         bottomViewConstraint.constant = 0
-        pageControl.numberOfPages = pagesDataSource.countPages
+        pageControl.numberOfPages = pagesDataSource.countPages - 1
+        gradientNameView.mask = appNameLabel
         
         // Collection View Config
         collectionView.dataSource = pagesDataSource
@@ -46,6 +53,11 @@ class WelcomeViewController: UIViewController {
         if pageControl.currentPage == pagesDataSource.countPages - 2 {
             bottomViewConstraint.constant = -bottomViewHeight
             topSpaceHeaderView.constant = 0
+            collectionView.removeGestureRecognizer(leftSwipe)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+                self.gradientNameView.isAnimate = false
+            }
             
             UIView.transition(with: appNameLabel, duration: 1.0, options: .transitionCrossDissolve, animations: {() -> Void in
                 self.view.layoutIfNeeded()
@@ -59,7 +71,11 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func skipTutorial(_ sender: Any) {
-        pageControl.currentPage = pagesDataSource.countPages - 2
+        pageControl.currentPage = pagesDataSource.countPages - 1
         nextPage(sender)
+    }
+    
+    @objc func leftSwipe(_ gesture: UIGestureRecognizer) {
+        nextPage(gesture)
     }
 }

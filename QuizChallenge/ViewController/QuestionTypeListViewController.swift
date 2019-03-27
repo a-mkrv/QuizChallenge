@@ -14,7 +14,7 @@ class QuestionTypeListViewController: BaseViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let qiestionTypeItems: BehaviorRelay<[String]> = BehaviorRelay(value: ["All", "Sport", "Animals", "Politics", "Programming"])
+    let qiestionTypeItems: BehaviorRelay<[String]> = BehaviorRelay(value: ["", "All", "Sport", "Animals", "Politics", "Programming"])
     let disposeBag = DisposeBag()
     var type = PublishSubject<String>()
     

@@ -369,14 +369,35 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7St-BH-jIN" customClass="GradientView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="35" width="250" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.78367185592651367" green="0.20090177655220032" blue="0.67846328020095825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" name="RoyalColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.050000000000000003"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="0.94999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimate" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUIZ Challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-Zo-McT">
-                                <rect key="frame" x="74.5" y="50" width="226" height="115"/>
+                                <rect key="frame" x="62.5" y="35" width="250" height="130"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="226" id="8kc-dO-jNO"/>
-                                    <constraint firstAttribute="height" constant="115" id="EWV-m1-gqN"/>
+                                    <constraint firstAttribute="width" constant="250" id="8kc-dO-jNO"/>
+                                    <constraint firstAttribute="height" constant="130" id="EWV-m1-gqN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="40"/>
-                                <color key="textColor" name="AppColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="45"/>
+                                <color key="textColor" name="RoyalColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRT-Uq-EsC">
@@ -384,8 +405,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jT-lJ-B6S">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="46"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Skip">
-                                            <color key="titleColor" name="RoyalColor"/>
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="skipTutorial:" destination="khU-Hw-die" eventType="touchUpInside" id="2hc-KS-P4L"/>
@@ -393,7 +415,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-cR-Dmh">
                                         <rect key="frame" x="225" y="0.0" width="150" height="46"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" name="RoyalColor"/>
                                         </state>
@@ -451,14 +473,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="417"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vz-Pt-LRu">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vz-Pt-LRu" customClass="IBView" customModule="QuizChallenge" customModuleProvider="target">
                                                     <rect key="frame" x="36" y="28" width="303" height="381"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST PAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vux-Xv-MB0">
-                                                            <rect key="frame" x="40" y="20" width="223" height="75.5"/>
-                                                            <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="33"/>
-                                                            <color key="textColor" name="AppColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST PAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vux-Xv-MB0" customClass="ShiftLabel" customModule="Shift">
+                                                            <rect key="frame" x="20" y="20" width="263" height="85.5"/>
+                                                            <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="35"/>
+                                                            <color key="textColor" name="Color-0"/>
                                                             <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="0.66666666666666663" alpha="0.66486515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="shadowOffset" width="1" height="1"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7" translatesAutoresizingMaskIntoConstraints="NO" id="uGH-oj-DX0" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
                                                             <rect key="frame" x="76.5" y="115.5" width="150" height="150"/>
@@ -476,14 +500,14 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First page, first page, first page, first page, first page, first page, first page, first page!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igc-E9-2WL">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick play on the road or keen tournament" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="igc-E9-2WL">
                                                             <rect key="frame" x="12" y="277.5" width="279" height="103.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                            <color key="textColor" red="0.25098039215686274" green="0.29803921568627451" blue="0.49019607843137253" alpha="0.88511344178082196" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-Jz-Op4" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
-                                                            <rect key="frame" x="90" y="328" width="123" height="48"/>
+                                                            <rect key="frame" x="90" y="308" width="123" height="48"/>
                                                             <color key="backgroundColor" name="RoyalLightColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="123" id="G4Q-06-YcN"/>
@@ -515,14 +539,14 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="uGH-oj-DX0" firstAttribute="centerY" secondItem="8Vz-Pt-LRu" secondAttribute="centerY" id="0RE-Gy-bQx"/>
-                                                        <constraint firstAttribute="bottom" secondItem="jjZ-Jz-Op4" secondAttribute="bottom" constant="5" id="1fS-3v-oN0"/>
+                                                        <constraint firstAttribute="bottom" secondItem="jjZ-Jz-Op4" secondAttribute="bottom" constant="25" id="1fS-3v-oN0"/>
                                                         <constraint firstItem="igc-E9-2WL" firstAttribute="top" secondItem="uGH-oj-DX0" secondAttribute="bottom" constant="12" id="Aq1-0W-z2a"/>
                                                         <constraint firstItem="igc-E9-2WL" firstAttribute="leading" secondItem="8Vz-Pt-LRu" secondAttribute="leading" constant="12" id="BaF-FW-Wqb"/>
                                                         <constraint firstItem="jjZ-Jz-Op4" firstAttribute="centerX" secondItem="8Vz-Pt-LRu" secondAttribute="centerX" id="Fw6-9t-opc"/>
-                                                        <constraint firstItem="Vux-Xv-MB0" firstAttribute="leading" secondItem="8Vz-Pt-LRu" secondAttribute="leading" constant="40" id="J63-Yd-Aka"/>
-                                                        <constraint firstItem="uGH-oj-DX0" firstAttribute="top" secondItem="Vux-Xv-MB0" secondAttribute="bottom" constant="20" id="KqM-eX-oCi"/>
+                                                        <constraint firstItem="Vux-Xv-MB0" firstAttribute="leading" secondItem="8Vz-Pt-LRu" secondAttribute="leading" constant="20" id="J63-Yd-Aka"/>
+                                                        <constraint firstItem="uGH-oj-DX0" firstAttribute="top" secondItem="Vux-Xv-MB0" secondAttribute="bottom" constant="10" id="KqM-eX-oCi"/>
                                                         <constraint firstAttribute="trailing" secondItem="igc-E9-2WL" secondAttribute="trailing" constant="12" id="MlT-O4-ZeW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Vux-Xv-MB0" secondAttribute="trailing" constant="40" id="OBj-KN-Wv8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Vux-Xv-MB0" secondAttribute="trailing" constant="20" id="OBj-KN-Wv8"/>
                                                         <constraint firstAttribute="bottom" secondItem="igc-E9-2WL" secondAttribute="bottom" id="QMX-tU-hUS"/>
                                                         <constraint firstItem="Vux-Xv-MB0" firstAttribute="top" secondItem="8Vz-Pt-LRu" secondAttribute="top" constant="20" id="nYL-fr-omE"/>
                                                         <constraint firstItem="uGH-oj-DX0" firstAttribute="centerX" secondItem="8Vz-Pt-LRu" secondAttribute="centerX" id="xcK-Hp-TK3"/>
@@ -530,6 +554,18 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="11"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -555,17 +591,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="agf-GQ-5Od" firstAttribute="trailing" secondItem="idn-YG-7fc" secondAttribute="trailing" id="22R-yI-P5c"/>
+                            <constraint firstItem="7St-BH-jIN" firstAttribute="leading" secondItem="sFi-Zo-McT" secondAttribute="leading" id="33q-to-Vz4"/>
                             <constraint firstItem="iL6-c6-gkK" firstAttribute="leading" secondItem="idn-YG-7fc" secondAttribute="leading" id="BRv-0D-CzR"/>
                             <constraint firstItem="sFi-Zo-McT" firstAttribute="centerX" secondItem="ydn-l8-w9U" secondAttribute="centerX" id="Doy-eS-qJt"/>
                             <constraint firstItem="idn-YG-7fc" firstAttribute="trailing" secondItem="iL6-c6-gkK" secondAttribute="trailing" id="ONZ-G1-FEN"/>
                             <constraint firstItem="agf-GQ-5Od" firstAttribute="leading" secondItem="idn-YG-7fc" secondAttribute="leading" id="P3N-aB-4y1"/>
                             <constraint firstItem="agf-GQ-5Od" firstAttribute="top" secondItem="ydn-l8-w9U" secondAttribute="top" id="QZN-Rs-iXC"/>
                             <constraint firstItem="LRT-Uq-EsC" firstAttribute="trailing" secondItem="idn-YG-7fc" secondAttribute="trailing" id="QbQ-2J-9WA"/>
+                            <constraint firstItem="7St-BH-jIN" firstAttribute="top" secondItem="sFi-Zo-McT" secondAttribute="top" id="TX2-lR-Hhx"/>
+                            <constraint firstItem="7St-BH-jIN" firstAttribute="width" secondItem="sFi-Zo-McT" secondAttribute="width" id="Tnw-Ry-yon"/>
                             <constraint firstItem="idn-YG-7fc" firstAttribute="bottom" secondItem="LRT-Uq-EsC" secondAttribute="bottom" id="UEB-v3-XW7"/>
                             <constraint firstItem="agf-GQ-5Od" firstAttribute="height" secondItem="ydn-l8-w9U" secondAttribute="height" multiplier="230 : 667" id="W3c-eE-tfB"/>
+                            <constraint firstItem="7St-BH-jIN" firstAttribute="height" secondItem="sFi-Zo-McT" secondAttribute="height" id="ovI-ok-21f"/>
                             <constraint firstAttribute="bottomMargin" secondItem="iL6-c6-gkK" secondAttribute="bottom" constant="80" id="sCD-As-6VI"/>
                             <constraint firstItem="LRT-Uq-EsC" firstAttribute="leading" secondItem="idn-YG-7fc" secondAttribute="leading" id="tOm-Gs-qms"/>
-                            <constraint firstItem="sFi-Zo-McT" firstAttribute="top" secondItem="idn-YG-7fc" secondAttribute="top" constant="30" id="xoq-Ji-9T5"/>
+                            <constraint firstItem="sFi-Zo-McT" firstAttribute="top" secondItem="idn-YG-7fc" secondAttribute="top" constant="15" id="xoq-Ji-9T5"/>
                             <constraint firstItem="iL6-c6-gkK" firstAttribute="top" secondItem="idn-YG-7fc" secondAttribute="top" constant="150" id="ykd-92-Apr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="idn-YG-7fc"/>
@@ -575,6 +615,7 @@
                         <outlet property="bottomView" destination="LRT-Uq-EsC" id="orl-Pl-yF6"/>
                         <outlet property="bottomViewConstraint" destination="UEB-v3-XW7" id="1PN-fF-Rbv"/>
                         <outlet property="collectionView" destination="iL6-c6-gkK" id="4hv-du-ubX"/>
+                        <outlet property="gradientNameView" destination="7St-BH-jIN" id="4iA-2C-3Jp"/>
                         <outlet property="headerView" destination="agf-GQ-5Od" id="X9E-sC-ZF6"/>
                         <outlet property="pageControl" destination="9R7-V6-zhB" id="hMB-eH-5aq"/>
                         <outlet property="topSpaceHeaderView" destination="QZN-Rs-iXC" id="9ux-Vr-aVb"/>
@@ -582,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxi-sy-6Pv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="161"/>
+            <point key="canvasLocation" x="-708" y="160.56971514242881"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="Ezc-kL-Pud">
@@ -1016,6 +1057,9 @@
         </namedColor>
         <namedColor name="AppColorShadow">
             <color red="0.82745098039215681" green="0.84313725490196079" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color-0">
+            <color red="0.49019607843137253" green="0.28627450980392155" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="RoyalColor">
             <color red="0.29803921568627451" green="0.35686274509803922" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

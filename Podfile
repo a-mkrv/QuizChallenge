@@ -14,6 +14,8 @@ target 'QuizChallenge' do
   pod 'SwiftEntryKit', '0.8.8'
   pod "SkeletonView"
   pod "ViewAnimator"
+  pod "Shift"
+  pod "Pastel"
   
   # Network, Storage
   pod 'Alamofire'

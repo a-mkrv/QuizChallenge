@@ -25,10 +25,11 @@ class WelcomeDataSource: NSObject, UICollectionViewDataSource {
     override init() {
         super.init()
         
-        addPage(title: "First page", desc: "First page", image: "nn")
-        addPage(title: "Second page", desc: "Second page", image: "nn")
-        addPage(title: "Third page", desc: "Third page", image: "nn")
-        addPage(title: "Good Game!", desc: "Fourth page", image: "nn")
+        addPage(title: "Get Fun", desc: "Enjoy playing a quiz with friends or random users!", image: "fun")
+        addPage(title: "Game Type", desc: "Quick play on the road or keen tournament!", image: "game_type")
+        addPage(title: "Creativity", desc: "Create your own questions for everyone!", image: "creativity")
+        addPage(title: "Be smarter", desc: "It’s never too late to learn!", image: "mind")
+        addPage(title: "Good luck", desc: "", image: "goodgame")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,8 +48,9 @@ class WelcomeDataSource: NSObject, UICollectionViewDataSource {
             }
         }
         
-        cell.titleLabel.text = pages[indexPath.row].title
+        cell.titleLabel.text = pages[indexPath.row].title.uppercased()
         cell.descriptionLabel.text = pages[indexPath.row].description
+        cell.imageView.image = UIImage(named: pages[indexPath.row].imageName)
         
         return cell
     }
