@@ -44,7 +44,7 @@ class RegistrationViewModel {
                     observer.onNext(.success)
                 }, onError: { error in
                     Logger.error(msg: "Registration Error: \(error)")
-                    observer.onNext(.invalidStatusCode(code: error as! ResponseCode))
+                    observer.onNext( error as! ResponseState )
                 }).disposed(by: self.disposeBag)
             
             return Disposables.create()
