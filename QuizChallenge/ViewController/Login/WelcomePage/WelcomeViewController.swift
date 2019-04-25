@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var bottomViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var topSpaceHeaderView: NSLayoutConstraint!
     
-    let bottomViewHeight: CGFloat = 46
+    var bottomViewHeight: CGFloat = 46
     var pagesDataSource = WelcomeDataSource()
     var leftSwipe = UISwipeGestureRecognizer()
     
@@ -38,6 +38,7 @@ class WelcomeViewController: UIViewController {
         bottomViewConstraint.constant = 0
         pageControl.numberOfPages = pagesDataSource.countPages - 1
         gradientNameView.mask = appNameLabel
+        bottomViewHeight = bottomView.frame.height
         
         // Collection View Config
         collectionView.dataSource = pagesDataSource
@@ -51,7 +52,7 @@ class WelcomeViewController: UIViewController {
         
         // Opening the last page
         if pageControl.currentPage == pagesDataSource.countPages - 2 {
-            bottomViewConstraint.constant = -bottomViewHeight
+            bottomViewConstraint.constant = -bottomViewHeight * 2
             topSpaceHeaderView.constant = 0
             collectionView.removeGestureRecognizer(leftSwipe)
             
