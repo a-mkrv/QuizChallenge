@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +17,49 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="lGe-iq-S0c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoPuzzle" translatesAutoresizingMaskIntoConstraints="NO" id="kDe-CS-yyd">
+                                <rect key="frame" x="117.5" y="70" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kDe-CS-yyd" secondAttribute="height" multiplier="1:1" id="YXA-Z0-i3w"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUIZ Challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRz-nE-zqK">
+                                <rect key="frame" x="62.5" y="268.5" width="250" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="HPA-1Z-y1p"/>
+                                    <constraint firstAttribute="width" constant="250" id="haE-fP-U3R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FRz-nE-zqK" firstAttribute="centerY" secondItem="lGe-iq-S0c" secondAttribute="centerY" id="2ES-h8-vbB"/>
+                            <constraint firstItem="kDe-CS-yyd" firstAttribute="width" secondItem="lGe-iq-S0c" secondAttribute="width" multiplier="140 : 375" id="M4O-rS-Chd"/>
+                            <constraint firstItem="lGe-iq-S0c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Sw1-8u-uuW"/>
+                            <constraint firstItem="kDe-CS-yyd" firstAttribute="centerX" secondItem="lGe-iq-S0c" secondAttribute="centerX" id="Yxg-Gi-ndM"/>
+                            <constraint firstItem="kDe-CS-yyd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="cVq-ye-VJe"/>
+                            <constraint firstItem="lGe-iq-S0c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gM3-Tb-THL"/>
+                            <constraint firstItem="lGe-iq-S0c" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="lGE-S6-Gww"/>
+                            <constraint firstItem="lGe-iq-S0c" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="nJW-Ww-sPE"/>
+                            <constraint firstItem="FRz-nE-zqK" firstAttribute="centerX" secondItem="lGe-iq-S0c" secondAttribute="centerX" id="vBm-wF-uhD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="375" height="230"/>
+        <image name="logoPuzzle" width="512" height="512"/>
+    </resources>
 </document>
