@@ -38,7 +38,7 @@ class PopUpHelper {
         VC.present(popUpView, animated: true, completion: nil)
     }
     
-    // Success simple Alert
+    // Success error Alert
     static func showErrorAlert(from VC: UIViewController, type: ModalErrorType, title: String? = nil, descript: String? = nil, buttonText: String? = nil, isAutoHide: Bool = true, completion: EmptyClosure? = nil) {
         
         let popUpView = CommonHelper.getPopUpView()

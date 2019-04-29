@@ -152,6 +152,18 @@ extension GradientView: CAAnimationDelegate {
         self.layer.shadowRadius = shadowRadius
         self.clipsToBounds = true
     }
+    
+    override var isEnabled:Bool {
+        willSet {
+            if newValue {
+                self.setTitleColor(UIColor.black, for: .normal)
+                self.layer.borderColor = borderColor.cgColor
+            } else {
+                self.setTitleColor(UIColor.black.withAlphaComponent(0.5), for: .normal)
+                self.layer.borderColor = borderColor.withAlphaComponent(0.5).cgColor
+            }
+        }
+    }
 }
 
 //MARK: UIImageView

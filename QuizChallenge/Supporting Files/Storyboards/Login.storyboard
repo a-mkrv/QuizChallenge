@@ -72,21 +72,21 @@
                                 <rect key="frame" x="43.5" y="195" width="288" height="230"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="EnI-c2-IGU">
-                                        <rect key="frame" x="44" y="43.5" width="200" height="120"/>
+                                        <rect key="frame" x="44" y="38.5" width="200" height="130"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NCz-aV-xac">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NCz-aV-xac">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-XA-OAe">
-                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="AppColorShadow"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="login_123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eR5-KC-Y9e" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="27.5" width="200" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="25.5" width="200" height="29.5"/>
                                                         <color key="textColor" name="AppColor"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -102,22 +102,22 @@
                                                 <constraints>
                                                     <constraint firstItem="eR5-KC-Y9e" firstAttribute="leading" secondItem="NCz-aV-xac" secondAttribute="leading" id="1AV-Mi-lEm"/>
                                                     <constraint firstAttribute="trailing" secondItem="eR5-KC-Y9e" secondAttribute="trailing" id="1gU-fC-bwd"/>
-                                                    <constraint firstAttribute="height" constant="50" id="qck-by-Rvm"/>
+                                                    <constraint firstAttribute="height" constant="55" id="qck-by-Rvm"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yD2-x5-79r">
-                                                <rect key="frame" x="0.0" y="74" width="200" height="46"/>
+                                                <rect key="frame" x="0.0" y="79" width="200" height="51"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihg-fy-qHw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="74" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="74" height="23"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="AppColorShadow"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RO9-Jz-ri2" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="25.5" width="200" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="200" height="23"/>
                                                         <color key="textColor" name="AppColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -137,7 +137,7 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="ldu-6L-bkL"/>
+                                            <constraint firstAttribute="height" constant="130" id="ldu-6L-bkL"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -977,10 +977,10 @@
             </objects>
             <point key="canvasLocation" x="888.79999999999995" y="160.56971514242881"/>
         </scene>
-        <!--View Controller-->
+        <!--Restore Pass View Controller-->
         <scene sceneID="zBM-bv-cS7">
             <objects>
-                <viewController id="vTy-0W-bKU" sceneMemberID="viewController">
+                <viewController id="vTy-0W-bKU" customClass="RestorePassViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pEA-bF-gGy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1007,6 +1007,9 @@
                                             <constraint firstAttribute="width" constant="30" id="Qd2-dw-gkg"/>
                                         </constraints>
                                         <state key="normal" image="left-arrow"/>
+                                        <connections>
+                                            <action selector="pressBack:" destination="vTy-0W-bKU" eventType="touchUpInside" id="Jo6-7x-cI3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1023,19 +1026,98 @@
                                     <constraint firstAttribute="bottom" secondItem="azB-z0-aDL" secondAttribute="bottom" id="xN5-m6-n6o"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail / Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="htg-YQ-v7s" customClass="IBTextField" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="312" width="250" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="O7G-Gs-tWj"/>
+                                    <constraint firstAttribute="height" constant="25" id="ftv-1p-xK0"/>
+                                </constraints>
+                                <color key="textColor" name="AppColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" name="RoyalColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLine" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwW-fP-XfI" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="102.5" y="417" width="170" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mKj-W1-hQi"/>
+                                    <constraint firstAttribute="width" constant="170" id="vMD-0O-JsK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Restore">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="RoyalColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="restorePassword:" destination="vTy-0W-bKU" eventType="touchUpInside" id="maS-Wf-oLM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOA-JW-FqM">
+                                <rect key="frame" x="47" y="105" width="280" height="172"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="172" id="fel-0c-tHe"/>
+                                </constraints>
+                                <string key="text">Enter your Quiz username, or the email address that you used to register. 
+
+We'll send you a link to reset your password.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pOA-JW-FqM" firstAttribute="leading" secondItem="Gfk-Eo-yjX" secondAttribute="leading" constant="47" id="Ef6-Cl-GoA"/>
                             <constraint firstItem="hdV-50-O0h" firstAttribute="trailing" secondItem="Gfk-Eo-yjX" secondAttribute="trailing" id="LEP-f3-X46"/>
+                            <constraint firstItem="WwW-fP-XfI" firstAttribute="top" secondItem="htg-YQ-v7s" secondAttribute="bottom" constant="80" id="WhE-id-jwZ"/>
                             <constraint firstItem="hdV-50-O0h" firstAttribute="top" secondItem="pEA-bF-gGy" secondAttribute="top" id="aAu-Pc-ILW"/>
+                            <constraint firstItem="htg-YQ-v7s" firstAttribute="top" secondItem="pOA-JW-FqM" secondAttribute="bottom" constant="35" id="cgg-7X-fo7"/>
+                            <constraint firstItem="pOA-JW-FqM" firstAttribute="top" secondItem="hdV-50-O0h" secondAttribute="bottom" constant="35" id="eBI-zy-spl"/>
+                            <constraint firstItem="htg-YQ-v7s" firstAttribute="centerX" secondItem="pEA-bF-gGy" secondAttribute="centerX" id="kU0-kf-giF"/>
                             <constraint firstItem="hdV-50-O0h" firstAttribute="leading" secondItem="Gfk-Eo-yjX" secondAttribute="leading" id="npe-an-tJ8"/>
+                            <constraint firstItem="Gfk-Eo-yjX" firstAttribute="trailing" secondItem="pOA-JW-FqM" secondAttribute="trailing" constant="48" id="nvb-JA-EQP"/>
+                            <constraint firstItem="WwW-fP-XfI" firstAttribute="centerX" secondItem="pEA-bF-gGy" secondAttribute="centerX" id="zCJ-c9-8oJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gfk-Eo-yjX"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="htg-YQ-v7s" id="W3j-b8-qXC"/>
+                        <outlet property="restoreButton" destination="WwW-fP-XfI" id="X6o-Ef-Dg0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Qg-bh-czy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="914"/>
+            <point key="canvasLocation" x="77.599999999999994" y="913.49325337331345"/>
         </scene>
     </scenes>
     <resources>

@@ -72,6 +72,7 @@
 		8D0B9B4922256570003E5B33 /* PrepareGameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B9B4822256570003E5B33 /* PrepareGameInfo.swift */; };
 		8D204F69223653AE005F5875 /* HistoryGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D204F68223653AE005F5875 /* HistoryGamesViewController.swift */; };
 		8D306CBF224A369600FCBC0B /* QuestionTypeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D306CBE224A369600FCBC0B /* QuestionTypeListViewController.swift */; };
+		8D5A20992276F7BF00C9EFE1 /* RestorePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5A20982276F7BF00C9EFE1 /* RestorePassViewController.swift */; };
 		8DA1DCE7222FF52700E1DDD1 /* GameInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA1DCE6222FF52700E1DDD1 /* GameInformationViewController.swift */; };
 		8DABF13122366316006C0B58 /* HistoryGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF13022366316006C0B58 /* HistoryGameCell.swift */; };
 		8DABF1382238FCFC006C0B58 /* WelcomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF1372238FCFC006C0B58 /* WelcomeDataSource.swift */; };
@@ -160,6 +161,7 @@
 		8D0B9B4822256570003E5B33 /* PrepareGameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameInfo.swift; sourceTree = "<group>"; };
 		8D204F68223653AE005F5875 /* HistoryGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGamesViewController.swift; sourceTree = "<group>"; };
 		8D306CBE224A369600FCBC0B /* QuestionTypeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTypeListViewController.swift; sourceTree = "<group>"; };
+		8D5A20982276F7BF00C9EFE1 /* RestorePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePassViewController.swift; sourceTree = "<group>"; };
 		8DA1DCE6222FF52700E1DDD1 /* GameInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInformationViewController.swift; sourceTree = "<group>"; };
 		8DABF13022366316006C0B58 /* HistoryGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGameCell.swift; sourceTree = "<group>"; };
 		8DABF1372238FCFC006C0B58 /* WelcomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDataSource.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				8DABF1342238FBC4006C0B58 /* WelcomePage */,
 				777A67A122086A7C00031808 /* RegistrationViewController.swift */,
 				77AB718221F75AAE008F4018 /* LoginViewController.swift */,
+				8D5A20982276F7BF00C9EFE1 /* RestorePassViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				8DD570D5223BE96800CD6073 /* VKAuth.swift in Sources */,
 				77F30102221BE49200C2C76B /* Registration.swift in Sources */,
 				77F30109221C76D300C2C76B /* ImageSelector.swift in Sources */,
+				8D5A20992276F7BF00C9EFE1 /* RestorePassViewController.swift in Sources */,
 				7745EA4321FF77E400210E96 /* HelperFile.swift in Sources */,
 				77F30100221BC9D900C2C76B /* Login.swift in Sources */,
 				8DB6E02B2243846400895FE4 /* UniversalModalViewController.swift in Sources */,

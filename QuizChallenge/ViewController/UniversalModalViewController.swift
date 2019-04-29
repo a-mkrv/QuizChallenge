@@ -148,13 +148,15 @@ class UniversalModalViewController: UIViewController {
         if isAutoHide {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                 self?.dismissModalView()
+                self?.firstButtonCompletion?()
+                self?.secondButtonCompletion?()
             }
         }
     }
     
     func dismissModalView() {
         UIView.springAnimate(animateCompletion: {
-            self.mainView.frame.origin.y = -self.mainView.frame.height
+            self.mainView.frame.origin.y = -self.mainView.frame.height - 100
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -162,12 +164,12 @@ class UniversalModalViewController: UIViewController {
     // MARK: - Buttons action callback
     
     @IBAction func pressFirstButton(_ sender: Any) {
-        firstButtonCompletion?()
         dismissModalView()
+        firstButtonCompletion?()
     }
     
     @IBAction func pressSecondButton(_ sender: Any) {
-        secondButtonCompletion?()
         dismissModalView()
+        secondButtonCompletion?()
     }
 }
