@@ -17,10 +17,11 @@ class HistoryGameCell: UITableViewCell {
     @IBOutlet weak var opponentScoreLabel: UILabel!
     @IBOutlet weak var gameStatusLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
-    @IBOutlet weak var bottomLine: UIView!
+    @IBOutlet weak var backView: UIView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()        
+        super.awakeFromNib()
+        backView.addShadowAndRadius(offset: CGSize(width: 2, height: 2), color: .gray, radius: 2, opacity: 0.18, cornerRadius: 3)
     }
     
     var statusGame: String! {
@@ -67,7 +68,6 @@ class HistoryGameCell: UITableViewCell {
         let gradient = SkeletonGradient(baseColor: UIColor.lightRoyal.withAlphaComponent(0.10),
                                         secondaryColor: UIColor.royal.withAlphaComponent(0.25))
         
-        bottomLine.isHidden = true
         [myImageView, opponentImageView, myScoreLabel, opponentScoreLabel, gameStatusLabel, pointsLabel].forEach(
             {   SkeletonAppearance.default.multilineHeight = $0?.frame.height ?? 20
                 $0?.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation) }
@@ -75,7 +75,6 @@ class HistoryGameCell: UITableViewCell {
     }
     
     func endSkeletonAnimation() {
-        bottomLine.isHidden = false
         [myImageView, opponentImageView, myScoreLabel, opponentScoreLabel, gameStatusLabel, pointsLabel].forEach(
             { $0?.hideSkeleton() })
     }

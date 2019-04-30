@@ -88,7 +88,6 @@ extension HistoryGamesViewController: UITableViewDelegate, UITableViewDataSource
             cell.endSkeletonAnimation()
             cell.statusGame = String(gamesSections[indexPath.section].games[indexPath.row])
             cell.score = "5 / 10"
-            cell.bottomLine.isHidden = (gamesSections[0].games.count == indexPath.row + 1) || (gamesSections[1].games.count == indexPath.row + 1)
         } else {
             cell.startSkeletonAnimate()
         }
@@ -107,18 +106,35 @@ extension HistoryGamesViewController: UITableViewDelegate, UITableViewDataSource
         label.text = gamesSections[section].header
         label.frame = CGRect(x: 16, y: 0, width: 150, height: 38)
         label.font = UIFont(name: "Futura-Medium", size: 20.0)
-        label.textColor = UIColor.royal
-        
+        label.textColor = .white
+        view.addShadowAndRadius(offset: CGSize(width: 1, height: 1), color: .gray, radius: 2, opacity: 0.18, cornerRadius: 5)
+
         let headerTapGesture = UITapGestureRecognizer()
         headerTapGesture.addTarget(self, action: #selector(sectionHeaderTouched(_:)))
         view.addGestureRecognizer(headerTapGesture)
-        
         view.addSubview(label)
         return view
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if section == 0 {
+            view.backgroundColor = UIColor.lightRoyal
+        } else if section == 1 {
+            view.backgroundColor = UIColor(named: "Color-4")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.backgroundColor = .clear
+        view.tintColor = .clear
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return isHistoryLoaded ? 45 : 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
     
     @objc func sectionHeaderTouched(_ sender: UITapGestureRecognizer) {

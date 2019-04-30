@@ -2620,17 +2620,23 @@ You can return to the menu and wait for an opponent later.</string>
                                     <constraint firstAttribute="bottom" secondItem="OeW-QT-qNd" secondAttribute="bottom" id="kEU-w9-B8u"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="115" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1DO-LW-kDO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="124" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1DO-LW-kDO">
                                 <rect key="frame" x="16" y="78" width="343" height="589"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryGameCell" rowHeight="115" id="8G6-Wb-Pkf" customClass="HistoryGameCell" customModule="QuizChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="115"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryGameCell" rowHeight="125" id="8G6-Wb-Pkf" customClass="HistoryGameCell" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8G6-Wb-Pkf" id="CT2-yj-pPW">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLe-fN-XNT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="IVD-44-1vb" customClass="IBImageView" customModule="QuizChallenge" customModuleProvider="target">
                                                     <rect key="frame" x="258" y="11" width="70" height="70"/>
                                                     <constraints>
@@ -2741,45 +2747,38 @@ You can return to the menu and wait for an opponent later.</string>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHK-gf-1Tp">
-                                                    <rect key="frame" x="0.0" y="114" width="343" height="1"/>
-                                                    <color key="backgroundColor" name="RoyalColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="OoR-Ee-aaf"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="RHK-gf-1Tp" secondAttribute="trailing" id="2xO-HX-JoH"/>
+                                                <constraint firstAttribute="trailing" secondItem="LLe-fN-XNT" secondAttribute="trailing" id="0bc-Uz-9xi"/>
                                                 <constraint firstItem="HdP-SV-Qej" firstAttribute="leading" secondItem="glz-08-bfZ" secondAttribute="trailing" constant="10" id="602-Ql-p40"/>
-                                                <constraint firstItem="glz-08-bfZ" firstAttribute="height" secondItem="CT2-yj-pPW" secondAttribute="height" multiplier="70 : 115" id="6Lk-AO-yji"/>
+                                                <constraint firstItem="glz-08-bfZ" firstAttribute="height" secondItem="LLe-fN-XNT" secondAttribute="height" multiplier="70 : 115" id="6Lk-AO-yji"/>
                                                 <constraint firstItem="No1-xM-8oB" firstAttribute="trailing" secondItem="IVD-44-1vb" secondAttribute="trailing" id="7WG-UZ-ham"/>
-                                                <constraint firstItem="glz-08-bfZ" firstAttribute="top" secondItem="CT2-yj-pPW" secondAttribute="topMargin" id="7eL-pe-W6f"/>
+                                                <constraint firstItem="glz-08-bfZ" firstAttribute="top" secondItem="LLe-fN-XNT" secondAttribute="topMargin" constant="3" id="7eL-pe-W6f"/>
                                                 <constraint firstItem="ISE-ik-2dv" firstAttribute="leading" secondItem="glz-08-bfZ" secondAttribute="trailing" constant="10" id="BXs-F8-lkZ"/>
+                                                <constraint firstItem="LLe-fN-XNT" firstAttribute="top" secondItem="CT2-yj-pPW" secondAttribute="top" id="CiF-7D-sM5"/>
                                                 <constraint firstItem="No1-xM-8oB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="IVD-44-1vb" secondAttribute="leading" id="KK2-ZP-Dy0"/>
                                                 <constraint firstItem="dMR-M5-Yhe" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="glz-08-bfZ" secondAttribute="trailing" id="LBG-h0-U3O"/>
                                                 <constraint firstItem="HdP-SV-Qej" firstAttribute="top" secondItem="ISE-ik-2dv" secondAttribute="bottom" constant="5" id="QkK-LT-b0L"/>
-                                                <constraint firstItem="ISE-ik-2dv" firstAttribute="top" secondItem="CT2-yj-pPW" secondAttribute="topMargin" id="R9i-fi-AX8"/>
-                                                <constraint firstItem="glz-08-bfZ" firstAttribute="leading" secondItem="CT2-yj-pPW" secondAttribute="leadingMargin" id="Sak-i6-h85"/>
-                                                <constraint firstItem="IVD-44-1vb" firstAttribute="height" secondItem="CT2-yj-pPW" secondAttribute="height" multiplier="70 : 115" id="dQd-J0-Ydi"/>
-                                                <constraint firstAttribute="bottom" secondItem="RHK-gf-1Tp" secondAttribute="bottom" id="eo4-uE-t5Z"/>
+                                                <constraint firstItem="ISE-ik-2dv" firstAttribute="top" secondItem="LLe-fN-XNT" secondAttribute="topMargin" constant="3" id="R9i-fi-AX8"/>
+                                                <constraint firstItem="glz-08-bfZ" firstAttribute="leading" secondItem="LLe-fN-XNT" secondAttribute="leadingMargin" constant="7" id="Sak-i6-h85"/>
+                                                <constraint firstItem="IVD-44-1vb" firstAttribute="height" secondItem="LLe-fN-XNT" secondAttribute="height" multiplier="70 : 115" id="dQd-J0-Ydi"/>
                                                 <constraint firstItem="dMR-M5-Yhe" firstAttribute="top" secondItem="glz-08-bfZ" secondAttribute="bottom" constant="4" id="f8H-34-VYH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="IVD-44-1vb" secondAttribute="trailing" id="fxG-Pd-BnO"/>
-                                                <constraint firstItem="IVD-44-1vb" firstAttribute="top" secondItem="CT2-yj-pPW" secondAttribute="topMargin" id="hzU-Bg-fSC"/>
-                                                <constraint firstItem="RHK-gf-1Tp" firstAttribute="leading" secondItem="CT2-yj-pPW" secondAttribute="leading" id="ilE-yG-GPi"/>
+                                                <constraint firstItem="LLe-fN-XNT" firstAttribute="trailingMargin" secondItem="IVD-44-1vb" secondAttribute="trailing" constant="7" id="fxG-Pd-BnO"/>
+                                                <constraint firstItem="IVD-44-1vb" firstAttribute="top" secondItem="LLe-fN-XNT" secondAttribute="topMargin" constant="3" id="hzU-Bg-fSC"/>
                                                 <constraint firstItem="IVD-44-1vb" firstAttribute="leading" secondItem="ISE-ik-2dv" secondAttribute="trailing" constant="10" id="jLY-9K-TMA"/>
-                                                <constraint firstAttribute="bottom" secondItem="No1-xM-8oB" secondAttribute="bottom" constant="4" id="kMg-Sa-dBa"/>
-                                                <constraint firstAttribute="bottom" secondItem="dMR-M5-Yhe" secondAttribute="bottom" constant="4" id="kuW-7T-JLl"/>
+                                                <constraint firstItem="LLe-fN-XNT" firstAttribute="bottom" secondItem="No1-xM-8oB" secondAttribute="bottom" constant="4" id="kMg-Sa-dBa"/>
+                                                <constraint firstItem="LLe-fN-XNT" firstAttribute="leading" secondItem="CT2-yj-pPW" secondAttribute="leading" id="kkI-Xh-bmk"/>
+                                                <constraint firstItem="LLe-fN-XNT" firstAttribute="bottom" secondItem="dMR-M5-Yhe" secondAttribute="bottom" constant="4" id="kuW-7T-JLl"/>
                                                 <constraint firstItem="dMR-M5-Yhe" firstAttribute="leading" secondItem="glz-08-bfZ" secondAttribute="leading" id="tNj-q6-ZAa"/>
                                                 <constraint firstItem="No1-xM-8oB" firstAttribute="top" secondItem="IVD-44-1vb" secondAttribute="bottom" constant="4" id="vPJ-dJ-x6a"/>
                                                 <constraint firstItem="IVD-44-1vb" firstAttribute="leading" secondItem="HdP-SV-Qej" secondAttribute="trailing" constant="10" id="vQp-oF-uC6"/>
+                                                <constraint firstAttribute="bottom" secondItem="LLe-fN-XNT" secondAttribute="bottom" constant="10" id="zCG-qP-w1q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="bottomLine" destination="RHK-gf-1Tp" id="ttR-NU-h23"/>
+                                            <outlet property="backView" destination="LLe-fN-XNT" id="yb4-0n-l0P"/>
                                             <outlet property="gameStatusLabel" destination="ISE-ik-2dv" id="avu-sy-JpS"/>
                                             <outlet property="myImageView" destination="glz-08-bfZ" id="tjM-Jx-Uks"/>
                                             <outlet property="myScoreLabel" destination="dMR-M5-Yhe" id="TPp-DE-Oal"/>
@@ -2795,7 +2794,7 @@ You can return to the menu and wait for an opponent later.</string>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.95294117647058818" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2zB-xY-D0o" firstAttribute="leading" secondItem="AYH-QB-NEJ" secondAttribute="leading" id="HO2-sk-0GY"/>
                             <constraint firstItem="2zB-xY-D0o" firstAttribute="trailing" secondItem="AYH-QB-NEJ" secondAttribute="trailing" id="K2S-T4-DSm"/>
@@ -2814,7 +2813,7 @@ You can return to the menu and wait for an opponent later.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHU-OM-6ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="-582.45877061469275"/>
+            <point key="canvasLocation" x="920.79999999999995" y="-583.3583208395803"/>
         </scene>
         <!--Find User View Controller-->
         <scene sceneID="cVk-Mn-1Fj">
