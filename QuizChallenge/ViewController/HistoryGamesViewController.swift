@@ -86,7 +86,9 @@ extension HistoryGamesViewController: UITableViewDelegate, UITableViewDataSource
         
         if isHistoryLoaded {
             cell.endSkeletonAnimation()
-            cell.gameStatusLabel.text = String(gamesSections[indexPath.section].games[indexPath.row])
+            cell.statusGame = String(gamesSections[indexPath.section].games[indexPath.row])
+            cell.score = "5 / 10"
+            cell.bottomLine.isHidden = (gamesSections[0].games.count == indexPath.row + 1) || (gamesSections[1].games.count == indexPath.row + 1)
         } else {
             cell.startSkeletonAnimate()
         }
