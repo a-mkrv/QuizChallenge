@@ -82,6 +82,7 @@
 		8DB6E027224120FB00895FE4 /* PrepareGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6E026224120FB00895FE4 /* PrepareGameViewModel.swift */; };
 		8DB6E02922437C3400895FE4 /* Modals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6E02822437C3400895FE4 /* Modals.storyboard */; };
 		8DB6E02B2243846400895FE4 /* UniversalModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6E02A2243846400895FE4 /* UniversalModalViewController.swift */; };
+		8DC2F9E422785050004B374C /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC2F9E322785050004B374C /* UIDevice+Extension.swift */; };
 		8DD570CC223B8DC500CD6073 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CB223B8DC500CD6073 /* Response.swift */; };
 		8DD570CE223BA5B400CD6073 /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CD223BA5B400CD6073 /* Opponent.swift */; };
 		8DD570D0223BB50B00CD6073 /* AuthFacadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD570CF223BB50B00CD6073 /* AuthFacadeController.swift */; };
@@ -171,6 +172,7 @@
 		8DB6E026224120FB00895FE4 /* PrepareGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareGameViewModel.swift; sourceTree = "<group>"; };
 		8DB6E02822437C3400895FE4 /* Modals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modals.storyboard; sourceTree = "<group>"; };
 		8DB6E02A2243846400895FE4 /* UniversalModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalModalViewController.swift; sourceTree = "<group>"; };
+		8DC2F9E322785050004B374C /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		8DD1E18B46E59D8823964802 /* Pods-QuizChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizChallenge/Pods-QuizChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		8DD570CB223B8DC500CD6073 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8DD570CD223BA5B400CD6073 /* Opponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				7745EA4021FE4A4400210E96 /* UserDefaults+Extension.swift */,
 				777A67A322086BBD00031808 /* UIView+Extension.swift */,
 				8DB6E0222240F84900895FE4 /* UICollectionView+Extension.swift */,
+				8DC2F9E322785050004B374C /* UIDevice+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				8D0B9B4122243B40003E5B33 /* OpponentViewController.swift in Sources */,
 				77D6536F2212B9B900E942B0 /* Router.swift in Sources */,
 				8DA1DCE7222FF52700E1DDD1 /* GameInformationViewController.swift in Sources */,
+				8DC2F9E422785050004B374C /* UIDevice+Extension.swift in Sources */,
 				77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */,
 				7707D1452201901A006AA699 /* TypeDecodable.swift in Sources */,
 				7742D10321F9CB1900F3A677 /* GameViewController+Koloda.swift in Sources */,

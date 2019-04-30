@@ -49,6 +49,10 @@ class FindUserViewController: BaseViewController {
         // Tap Button
         usernameSearchButton.rx.tap
             .flatMap { [unowned self] _ -> Observable<Opponent> in
+                // Demo
+                let opponentModalVC = CommonHelper.loadViewController(named: "OpponentScreen", isModal: true) as! OpponentViewController
+                self.present(opponentModalVC, animated: true, completion: nil)
+                
                 return self.viewModel.searchUserBy(name: self.userSearchTextField.text!)
             }
             .subscribe(onNext: { [unowned self] (opponent) in

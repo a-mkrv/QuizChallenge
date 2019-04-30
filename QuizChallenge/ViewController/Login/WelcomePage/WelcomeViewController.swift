@@ -44,6 +44,21 @@ class WelcomeViewController: UIViewController {
         collectionView.dataSource = pagesDataSource
         collectionView.backgroundColor = .clear
         collectionView.layer.cornerRadius = 10
+        collectionView.layoutIfNeeded()
+        
+        var height = collectionView.frame.height
+        if UIDevice().screenType == .iPhoneX {
+            height -= 60
+            topSpaceHeaderView.constant -= 50
+        }
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width:collectionView.frame.width, height: height)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.scrollDirection = .horizontal
+        collectionView!.collectionViewLayout = layout
     }
     
     // MARK: - Actions with Next/Skip buttons
