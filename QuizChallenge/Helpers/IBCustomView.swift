@@ -198,18 +198,19 @@ extension GradientView: CAAnimationDelegate {
 //MARK: UITextField
 @IBDesignable class IBTextField: UITextField {
     
-    @IBInspectable var lineWidth: CGFloat = 1.0 { didSet{ drawLines() } }
-    @IBInspectable var lineColor: UIColor = .black { didSet{ drawLines() } }
+    private let lineLayer = CALayer()
     
-    func drawLines() {
-        add(line: CGRect(x: 0.0, y: frame.size.height - lineWidth, width: frame.size.width, height: lineWidth))
+    @IBInspectable var lineWidth: CGFloat = 1.0 { didSet{ setLineLayer() } }
+    @IBInspectable var lineColor: UIColor = .black { didSet{ setLineLayer() } }
+    
+    override func draw(_ rect: CGRect) {
+        layer.addSublayer(lineLayer)
+        setLineLayer()
     }
     
-    private func add(line: CGRect) {
-        let border = CALayer()
-        border.frame = line
-        border.backgroundColor = lineColor.cgColor
-        layer.addSublayer(border)
+    private func setLineLayer() {
+        lineLayer.frame = CGRect(x: 0.0, y: frame.size.height - lineWidth, width: frame.size.width, height: lineWidth)
+        lineLayer.backgroundColor = lineColor.cgColor
     }
 }
 

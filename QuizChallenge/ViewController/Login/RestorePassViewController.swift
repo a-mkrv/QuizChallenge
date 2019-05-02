@@ -17,6 +17,7 @@ class RestorePassViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        keyboardSubscribe()
         
         emailTextField.rx.text.orEmpty
             .map { $0.count >= 1 }
@@ -24,10 +25,23 @@ class RestorePassViewController: BaseViewController {
             .bind(to: restoreButton.rx.isEnabled)
             .disposed(by: disposeBag)
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        keyboardUnsubscribe()
+    }
+    
     @IBAction func restorePassword(_ sender: UIButton) {
         PopUpHelper.showSimpleAlert(from: self, type: .common, descript: "Check your E-mail and recover your password!", buttonText: "Ok") {
             self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    override func keyboardWillShow(_ notification: Notification) {
+        if view.frame.origin.y == 0 {
+            if UIDevice().screenType == .iPhoneSE {
+                view.frame.origin.y -= 35
+            }
         }
     }
 }

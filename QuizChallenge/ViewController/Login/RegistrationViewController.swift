@@ -14,6 +14,7 @@ class RegistrationViewController: BaseViewController {
     
     // MARK: - UI Outlets
     
+    @IBOutlet weak var dataInputView: UIView!
     @IBOutlet weak var generalInfoView: UIView!
     @IBOutlet weak var optionalInfoView: UIView!
     
@@ -42,19 +43,30 @@ class RegistrationViewController: BaseViewController {
         super.viewDidLoad()
         
         setupRx()
-        keyboardNotification()
+        keyboardSubscribe()
         
         signUpButton.layer.borderColor = #colorLiteral(red: 0.2980392157, green: 0.3568627451, blue: 0.8666666667, alpha: 1)
         signUpButton.layer.borderWidth = 2
         triangleCenter.constant = -triangleConstraint
         optionalInfoView.isHidden = true
+        view.layoutIfNeeded()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
+        keyboardUnsubscribe()
     }
     
+    override func keyboardWillShow(_ notification: Notification) {
+        if view.frame.origin.y == 0 {
+            if UIDevice().screenType == .iPhoneX {
+                view.frame.origin.y -= 60
+            } else {
+                view.frame.origin.y -= (dataInputView.frame.origin.y - 20)
+            }
+        }
+    }
+
     // MARK: - Button Actions
     
     @IBAction func chooseAvatarImage(_ sender: Any) {
@@ -78,6 +90,14 @@ class RegistrationViewController: BaseViewController {
             optionalInfoIsShow = false
             animateChooseView(fromButton: additionalButton, toButton: generalButton)
             optionalInfoView.flip(to: generalInfoView)
+        }
+        
+        for textField in optionalInfoView.subviews[0].subviews where textField is UITextField {
+            textField.resignFirstResponder()
+        }
+        
+        for textField in generalInfoView.subviews[0].subviews where textField is UITextField {
+            textField.resignFirstResponder()
         }
     }
     
@@ -183,36 +203,6 @@ extension RegistrationViewController {
                         fields[i + 1].becomeFirstResponder()
                     }
                     }.disposed(by: disposeBag)
-            }
-        }
-    }
-}
-
-// MARK: - Keyboard Notification Selectors
-
-extension RegistrationViewController {
-    
-    fileprivate func keyboardNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if keyboardViewTopConstraint.constant == 0 {
-            keyboardViewTopConstraint.constant = -20
-            
-            UIView.animate(withDuration: 1) {
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if keyboardViewTopConstraint.constant != 0 {
-            keyboardViewTopConstraint.constant = 0
-            
-            UIView.animate(withDuration: 1) {
-                self.view.layoutIfNeeded()
             }
         }
     }

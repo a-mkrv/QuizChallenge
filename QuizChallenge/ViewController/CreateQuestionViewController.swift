@@ -27,8 +27,13 @@ class CreateQuestionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        keyboardNotification()
+        keyboardSubscribe()
         uiSetup()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        keyboardUnsubscribe()
     }
     
     fileprivate func uiSetup() {
@@ -159,18 +164,12 @@ extension CreateQuestionViewController: UITextViewDelegate {
 
 extension CreateQuestionViewController {
     
-    fileprivate func keyboardNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
+    override func keyboardWillShow(_ notification: Notification) {
         if self.view.frame.origin.y == 0 && ifAnswersInFocused() {
             self.view.frame.origin.y -= (answersView.frame.height - 20)
         }
     }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
+    override func keyboardWillHide(_ notification: Notification) {
         if self.view.frame.origin.y != 0 && ifAnswersInFocused() {
             self.view.frame.origin.y = 0
         }

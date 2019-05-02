@@ -27,6 +27,15 @@ class LoginViewController: BaseViewController {
         setupRx()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        keyboardSubscribe()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        keyboardUnsubscribe()
+    }
+    
     func setViewModel(_ viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }
@@ -120,9 +129,19 @@ class LoginViewController: BaseViewController {
         }
     }
 
+    override func keyboardWillShow(_ notification: Notification) {
+        if view.frame.origin.y == 0 {
+            if UIDevice().screenType == .iPhoneSE {
+                // Magic number (part of keyboard and save-autofill)
+                view.frame.origin.y -= 70
+            }
+        }
+    }
+    
     // MARK: - Private methods
     
     fileprivate func setupUI() {
+        view.layoutIfNeeded()
         loginTextField.text?.removeAll()
         passwordTextField.text?.removeAll()
         loginTextField.lineColor = UIColor.royal
