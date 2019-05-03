@@ -37,21 +37,10 @@ class AnswerCreateView: UIView {
     
     private func nibSetup() {
         
-        view = loadViewFromNib()
+        view = getNibView()
         view.frame = bounds
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.translatesAutoresizingMaskIntoConstraints = true
-        
         uiSetup()
         addSubview(view)
-    }
-    
-    private func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
-        let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        
-        return nibView
     }
     
     // MARK: Prepare UI

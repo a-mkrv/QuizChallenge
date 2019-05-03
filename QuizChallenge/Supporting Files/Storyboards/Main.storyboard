@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -3577,31 +3577,31 @@ You can return to the menu and wait for an opponent later.</string>
         <image name="OrangeRec" width="305" height="82"/>
         <image name="PurpleRec" width="305" height="82"/>
         <image name="TestBack" width="502" height="721"/>
-        <image name="activeGames" width="96" height="96"/>
+        <image name="activeGames" width="128" height="128"/>
         <image name="adCoins" width="323" height="323"/>
-        <image name="avatar" width="48" height="48"/>
-        <image name="badge" width="96" height="96"/>
-        <image name="cancel" width="18.399999618530273" height="18.399999618530273"/>
-        <image name="close" width="96" height="96"/>
-        <image name="console" width="48" height="48"/>
-        <image name="dices" width="192" height="192"/>
-        <image name="doneAlert" width="192" height="192"/>
-        <image name="envelope" width="48" height="48"/>
-        <image name="hint" width="96" height="96"/>
-        <image name="left-arrow" width="48" height="48"/>
-        <image name="medal" width="48" height="48"/>
-        <image name="next" width="96" height="96"/>
-        <image name="pencil" width="96" height="96"/>
-        <image name="piggy-bank" width="48" height="48"/>
+        <image name="avatar" width="64" height="64"/>
+        <image name="badge" width="128" height="128"/>
+        <image name="cancel" width="23" height="23"/>
+        <image name="close" width="128" height="128"/>
+        <image name="console" width="60" height="60"/>
+        <image name="dices" width="256" height="256"/>
+        <image name="doneAlert" width="256" height="256"/>
+        <image name="envelope" width="60" height="60"/>
+        <image name="hint" width="128" height="128"/>
+        <image name="left-arrow" width="60" height="60"/>
+        <image name="medal" width="60" height="60"/>
+        <image name="next" width="120" height="120"/>
+        <image name="pencil" width="128" height="128"/>
+        <image name="piggy-bank" width="64" height="64"/>
         <image name="play" width="110" height="110"/>
-        <image name="puzzle" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="questions-circular-button" width="192" height="192"/>
-        <image name="refresh" width="96" height="96"/>
-        <image name="resetTime" width="96" height="96"/>
-        <image name="settings" width="48" height="48"/>
-        <image name="sword" width="192" height="192"/>
-        <image name="trophy" width="96" height="96"/>
-        <image name="user" width="48" height="48"/>
+        <image name="puzzle" width="256" height="256"/>
+        <image name="questions-circular-button" width="256" height="256"/>
+        <image name="refresh" width="128" height="128"/>
+        <image name="resetTime" width="120" height="120"/>
+        <image name="settings" width="60" height="60"/>
+        <image name="sword" width="240" height="240"/>
+        <image name="trophy" width="128" height="128"/>
+        <image name="user" width="64" height="64"/>
         <namedColor name="AppColor">
             <color red="0.25098039215686274" green="0.29803921568627451" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

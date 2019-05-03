@@ -39,11 +39,28 @@ class HistoryGamesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadGameHistory()
-        
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { _ in
-            self.isHistoryLoaded = true
-            self.gamesTableView.reloadData()
+        // TODO: Create request to check existing games
+        switch Int.random(in: 0...1) {
+        case 0:
+            gamesTableView.removeFromSuperview()
+
+            let emptyView = EmptyActiveGameView()
+            view.addSubview(emptyView)
+            view.backgroundColor = .white
+
+            emptyView.translatesAutoresizingMaskIntoConstraints = false
+            emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            emptyView.widthAnchor.constraint(equalToConstant: 300).isActive = true
+            emptyView.heightAnchor.constraint(equalToConstant: view.frame.height / 1.5).isActive = true
+        case 1:
+            loadGameHistory()
+            
+            Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { _ in
+                self.isHistoryLoaded = true
+                self.gamesTableView.reloadData()
+            }
+        default: break
         }
     }
     

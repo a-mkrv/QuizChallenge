@@ -62,3 +62,35 @@ extension UIView {
         UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: animateCompletion, completion: finishCompletion)
     }
 }
+
+// MARK: Create view from Nib
+
+extension UIView {
+    
+    func getNibView(named nibName: String? = nil) -> UIView {
+        return createNibView(named: nibName)
+    }
+    
+    func addSubviewFromNib(named nibName: String? = nil) {
+       
+        let view = createNibView(named: nibName)
+        view.frame = self.bounds
+        addSubview(view)
+    }
+    
+    private func createNibView(named nibName: String? = nil) -> UIView {
+        
+        let bundle = Bundle(for: self.classForCoder)
+        
+        if let nibName = nibName {
+            return bundle.loadNibNamed(nibName, owner: self, options: nil)!.last as! UIView
+        } else {
+            let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+            return nib.instantiate(withOwner: self, options: nil).first as! UIView
+        }
+    }
+    
+    class func fromNib<T: UIView>() -> T {
+        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+    }
+}

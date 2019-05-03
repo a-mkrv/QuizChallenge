@@ -326,6 +326,7 @@
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="mZv-Ui-rJd" id="FCh-CI-IJE"/>
+                        <outlet property="googleLoginButton" destination="GLI-N2-bY6" id="Kxs-e6-wgB"/>
                         <outlet property="loginButton" destination="eek-lA-hDN" id="cXX-Pm-sbn"/>
                         <outlet property="loginTextField" destination="eR5-KC-Y9e" id="OD3-x7-vgl"/>
                         <outlet property="passwordTextField" destination="RO9-Jz-ri2" id="jjd-P6-V1a"/>

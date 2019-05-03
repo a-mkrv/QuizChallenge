@@ -14,9 +14,11 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var loginButton: TransitionButton!
     @IBOutlet weak var loginTextField: IBTextField!
+    @IBOutlet weak var passwordTextField: IBTextField!
+
     @IBOutlet weak var fbLoginButton: UIButton!
     @IBOutlet weak var vkLoginButton: UIButton!
-    @IBOutlet weak var passwordTextField: IBTextField!
+    @IBOutlet weak var googleLoginButton: UIButton!
     
     var viewModel: LoginViewModel?
     var disposeBag = DisposeBag()
@@ -107,17 +109,23 @@ class LoginViewController: BaseViewController {
             }).disposed(by: disposeBag)
         
         fbLoginButton.rx.tap
-            .flatMap { [unowned self] _ -> Observable<ResponseState> in
-                return (self.viewModel?.socialNetworkAuth(with: .Facebook))!
-            }
+//            .flatMap { [unowned self] _ -> Observable<ResponseState> in
+//                return (self.viewModel?.socialNetworkAuth(with: .Facebook))!
+//            }
             .subscribe(onNext: { status in
-                print(status)
+                PopUpHelper.showSimpleAlert(from: self, type: .common, title: "Soon..", descript: "Facebook authorization in development", buttonText: "Ok", isAutoHide: true, completion: nil)
             })
             .disposed(by: disposeBag)
         
         vkLoginButton.rx.tap
             .subscribe(onNext: { _ in
-                
+                PopUpHelper.showSimpleAlert(from: self, type: .common, title: "Soon..", descript: "VK authorization in development", buttonText: "Ok", isAutoHide: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        googleLoginButton.rx.tap
+            .subscribe(onNext: { _ in
+                PopUpHelper.showSimpleAlert(from: self, type: .common, title: "Soon..", descript: "Google has not started yet. Fork and help me :)", buttonText: "Ok", isAutoHide: true, completion: nil)
             })
             .disposed(by: disposeBag)
     }

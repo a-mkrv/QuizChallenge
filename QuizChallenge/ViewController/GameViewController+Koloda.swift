@@ -14,15 +14,14 @@ extension GameViewController: KolodaViewDataSource, KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         
         if index == 0 {
-            let countdownView = Bundle.main.loadNibNamed("CountdownView", owner: self, options: nil)?.first as? CountdownView
-            countdownView?.startCallback = {
+            let countdownView: CountdownView = .fromNib()
+            countdownView.startCallback = {
                 self.startTimer()
                 self.kolodaView.swipe(arc4random_uniform(2) == 1 ? .left : .right)
             }
-            return countdownView ?? UIView()
+            return countdownView
         } else {
-            let questionView = Bundle.main.loadNibNamed("SimpleQuestionView", owner: self, options: nil)?.first as? SimpleQuestionView
-            return questionView ?? UIView()
+            return SimpleQuestionView.fromNib()
         }
     }
     

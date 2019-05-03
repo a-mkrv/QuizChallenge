@@ -46,6 +46,8 @@
 		778C4069223CE3FD00907D18 /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778C4068223CE3FD00907D18 /* GoogleAuth.swift */; };
 		77A00A0C2209D75400C821B6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0B2209D75300C821B6 /* CategoryCell.swift */; };
 		77A00A102209D7FD00C821B6 /* SubcategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */; };
+		77A025AE227B7670000B3948 /* EmptyActiveGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A025AD227B7670000B3948 /* EmptyActiveGameView.swift */; };
+		77A025B0227B76CB000B3948 /* EmptyActiveGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A025AF227B76CB000B3948 /* EmptyActiveGameView.xib */; };
 		77AB717B21F728A1008F4018 /* IBCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717A21F728A1008F4018 /* IBCustomView.swift */; };
 		77AB717D21F7292E008F4018 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB717C21F7292E008F4018 /* Color+Extension.swift */; };
 		77AB717F21F7459A008F4018 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77AB717E21F7459A008F4018 /* Login.storyboard */; };
@@ -134,6 +136,8 @@
 		778C4068223CE3FD00907D18 /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
 		77A00A0B2209D75300C821B6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		77A00A0F2209D7FD00C821B6 /* SubcategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCell.swift; sourceTree = "<group>"; };
+		77A025AD227B7670000B3948 /* EmptyActiveGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyActiveGameView.swift; sourceTree = "<group>"; };
+		77A025AF227B76CB000B3948 /* EmptyActiveGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyActiveGameView.xib; sourceTree = "<group>"; };
 		77AB717A21F728A1008F4018 /* IBCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBCustomView.swift; sourceTree = "<group>"; };
 		77AB717C21F7292E008F4018 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		77AB717E21F7459A008F4018 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -390,9 +394,19 @@
 			path = PrepareGameView;
 			sourceTree = "<group>";
 		};
+		77A025AC227B7628000B3948 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				77A025AD227B7670000B3948 /* EmptyActiveGameView.swift */,
+				77A025AF227B76CB000B3948 /* EmptyActiveGameView.xib */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
 		77AB717421F726B4008F4018 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				77A025AC227B7628000B3948 /* EmptyView */,
 				77894E9B2204A7890041EE94 /* LoginView */,
 				7797F6F722006B1E00DAB4C7 /* PrepareGameView */,
 				7742D0EF21F982E100F3A677 /* GameView */,
@@ -558,6 +572,7 @@
 				774C0ABB223EC54500A7E251 /* Assets.xcassets in Resources */,
 				7742D0FB21F9A40400F3A677 /* TrueFalseView.xib in Resources */,
 				7742D0F321F9A3A600F3A677 /* FourImagesView.xib in Resources */,
+				77A025B0227B76CB000B3948 /* EmptyActiveGameView.xib in Resources */,
 				774C0AB4223EC2FB00A7E251 /* Main.storyboard in Resources */,
 				7742D0F521F9A3D700F3A677 /* SimpleQuestionView.xib in Resources */,
 				7742D0FF21F9B36F00F3A677 /* CountdownView.xib in Resources */,
@@ -712,6 +727,7 @@
 				7740AADF21F86C5D00CDDE4A /* AdvertisingCell.swift in Sources */,
 				8DB6E027224120FB00895FE4 /* PrepareGameViewModel.swift in Sources */,
 				8D0B9B45222447A8003E5B33 /* RandomOpponentViewController.swift in Sources */,
+				77A025AE227B7670000B3948 /* EmptyActiveGameView.swift in Sources */,
 				777C771221FC4CD60022A636 /* SettingsViewController.swift in Sources */,
 				77AB718321F75AAE008F4018 /* LoginViewController.swift in Sources */,
 				7742D0F721F9A3E500F3A677 /* SimpleQuestionView.swift in Sources */,
