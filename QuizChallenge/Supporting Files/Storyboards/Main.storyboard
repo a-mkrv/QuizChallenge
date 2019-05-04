@@ -2714,7 +2714,7 @@ You can return to the menu and wait for an opponent later.</string>
                                     <constraint firstAttribute="bottom" secondItem="OeW-QT-qNd" secondAttribute="bottom" id="kEU-w9-B8u"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="124" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1DO-LW-kDO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1DO-LW-kDO">
                                 <rect key="frame" x="16" y="78" width="343" height="589"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2879,6 +2879,52 @@ You can return to the menu and wait for an opponent later.</string>
                                             <outlet property="opponentImageView" destination="IVD-44-1vb" id="2Wn-h7-7ZT"/>
                                             <outlet property="opponentScoreLabel" destination="No1-xM-8oB" id="Ecp-o6-mKb"/>
                                             <outlet property="pointsLabel" destination="HdP-SV-Qej" id="59x-vc-upm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StartGameCell" rowHeight="65" id="bkO-zl-fXG" customClass="StartGameCell" customModule="QuizChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="153" width="343" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bkO-zl-fXG" id="Bc3-R4-a0E">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE1-WI-SJu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgl-lR-JXl" customClass="IBButton" customModule="QuizChallenge" customModuleProvider="target">
+                                                            <rect key="frame" x="57" y="7" width="229" height="41"/>
+                                                            <color key="backgroundColor" name="RoyalLightColor"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                            <state key="normal" title="Start another game" backgroundImage="Background">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="20"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="vgl-lR-JXl" firstAttribute="centerY" secondItem="aE1-WI-SJu" secondAttribute="centerY" id="5Am-Fd-riD"/>
+                                                        <constraint firstItem="vgl-lR-JXl" firstAttribute="width" secondItem="aE1-WI-SJu" secondAttribute="width" multiplier="1 : 1.5" id="BaS-zh-5cH"/>
+                                                        <constraint firstItem="vgl-lR-JXl" firstAttribute="height" secondItem="aE1-WI-SJu" secondAttribute="height" multiplier="0.75" id="hmk-Vr-7ym"/>
+                                                        <constraint firstItem="vgl-lR-JXl" firstAttribute="centerX" secondItem="aE1-WI-SJu" secondAttribute="centerX" id="zGm-RC-1n6"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="aE1-WI-SJu" firstAttribute="top" secondItem="Bc3-R4-a0E" secondAttribute="top" id="0Zj-VM-hHT"/>
+                                                <constraint firstItem="aE1-WI-SJu" firstAttribute="leading" secondItem="Bc3-R4-a0E" secondAttribute="leading" id="9Pq-GC-zIX"/>
+                                                <constraint firstAttribute="bottom" secondItem="aE1-WI-SJu" secondAttribute="bottom" constant="10" id="LBq-On-iQR"/>
+                                                <constraint firstAttribute="trailing" secondItem="aE1-WI-SJu" secondAttribute="trailing" id="b8o-OO-Rld"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="startGameButton" destination="vgl-lR-JXl" id="ZF3-0w-e3r"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

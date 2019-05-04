@@ -55,16 +55,7 @@ class HistoryGamesViewController: BaseViewController {
             emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
             emptyView.widthAnchor.constraint(equalToConstant: 300).isActive = true
             emptyView.heightAnchor.constraint(equalToConstant: view.frame.height / 1.5).isActive = true
-            
-            emptyView.button.rx.tap
-                .subscribe { [weak self] _ in
-                    guard let sSelf = self, var vcArray = sSelf.navigationController?.viewControllers else { return }
-                    
-                    let vc = CommonHelper.loadViewController(named: "TypeGameSB") as! TypeGameViewController
-                    vcArray.removeLast()
-                    vcArray.append(vc)
-                    sSelf.navigationController?.setViewControllers(vcArray, animated: true)
-            }.disposed(by: self.disposeBag)
+            startButtonHandler(button: emptyView.button)
             
         case 1:
             loadGameHistory()
@@ -83,8 +74,23 @@ class HistoryGamesViewController: BaseViewController {
         var finishedGames = GameSection(header: "Finished Games", games: [], status: .Finished)
         debugData.forEach{ $0 == "0" ? finishedGames.games.append($0) : activeGames.games.append($0) }
         
-        activeGames.games.isEmpty ? () : gamesSections.append(activeGames)
+        if !activeGames.games.isEmpty {
+            activeGames.games.append("1")
+            gamesSections.append(activeGames)
+        }
         finishedGames.games.isEmpty ? () : gamesSections.append(finishedGames)
+    }
+    
+    func startButtonHandler(button: UIButton) {
+        button.rx.tap
+            .subscribe { [weak self] _ in
+                guard let sSelf = self, var vcArray = sSelf.navigationController?.viewControllers else { return }
+                
+                let vc = CommonHelper.loadViewController(named: "TypeGameSB") as! TypeGameViewController
+                vcArray.removeLast()
+                vcArray.append(vc)
+                sSelf.navigationController?.setViewControllers(vcArray, animated: true)
+            }.disposed(by: self.disposeBag)
     }
 }
 
@@ -111,6 +117,12 @@ extension HistoryGamesViewController: UITableViewDelegate, UITableViewDataSource
     
     // Setup Cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if isHistoryLoaded && indexPath.section == 0 && indexPath.row == gamesSections[0].games.count - 1 {
+            let startCell = tableView.dequeueReusableCell(withIdentifier: "StartGameCell", for: indexPath) as! StartGameCell
+            startButtonHandler(button: startCell.startGameButton)
+            return startCell
+        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryGameCell", for: indexPath) as! HistoryGameCell
         
@@ -157,6 +169,19 @@ extension HistoryGamesViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         view.backgroundColor = .clear
         view.tintColor = .clear
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if !isHistoryLoaded {
+            return CGFloat(tableCellHeight)
+        }
+
+        if indexPath.section == 0 && indexPath.row == gamesSections[0].games.count - 1 {
+            return 65.0
+        }
+        
+        return CGFloat(tableCellHeight)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
