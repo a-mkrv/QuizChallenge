@@ -8,6 +8,7 @@
 
 import UIKit
 import SkeletonView
+import RxSwift
 
 enum StatusGame {
     case Active
@@ -35,7 +36,8 @@ class HistoryGamesViewController: BaseViewController {
     var tableCellHeight = 115
     var isHistoryLoaded = false
     var gamesSections = [GameSection]()
-    
+    let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +45,7 @@ class HistoryGamesViewController: BaseViewController {
         switch Int.random(in: 0...1) {
         case 0:
             gamesTableView.removeFromSuperview()
-
+            
             let emptyView = EmptyActiveGameView()
             view.addSubview(emptyView)
             view.backgroundColor = .white
@@ -53,6 +55,17 @@ class HistoryGamesViewController: BaseViewController {
             emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
             emptyView.widthAnchor.constraint(equalToConstant: 300).isActive = true
             emptyView.heightAnchor.constraint(equalToConstant: view.frame.height / 1.5).isActive = true
+            
+            emptyView.button.rx.tap
+                .subscribe { [weak self] _ in
+                    guard let sSelf = self, var vcArray = sSelf.navigationController?.viewControllers else { return }
+                    
+                    let vc = CommonHelper.loadViewController(named: "TypeGameSB") as! TypeGameViewController
+                    vcArray.removeLast()
+                    vcArray.append(vc)
+                    sSelf.navigationController?.setViewControllers(vcArray, animated: true)
+            }.disposed(by: self.disposeBag)
+            
         case 1:
             loadGameHistory()
             

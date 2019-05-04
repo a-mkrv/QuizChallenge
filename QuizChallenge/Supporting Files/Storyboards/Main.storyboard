@@ -14,7 +14,7 @@
         <!--Type Game View Controller-->
         <scene sceneID="BD4-EV-RDb">
             <objects>
-                <viewController id="IEX-ZO-ZFa" customClass="TypeGameViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TypeGameSB" id="IEX-ZO-ZFa" customClass="TypeGameViewController" customModule="QuizChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JQV-rz-BUs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

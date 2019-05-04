@@ -8,18 +8,10 @@
 
 import UIKit
 
-class EmptyActiveGameView: UIView {
-    
-    // MARK: - Setup view
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubviewFromNib()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        addSubviewFromNib()
-    }
+//TODO: Replace to Generic View (with set title, img, button)
 
+class EmptyActiveGameView: BaseView {
+    
+    @IBOutlet weak var button: IBButton!
+    
 }
